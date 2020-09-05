@@ -11,6 +11,7 @@ import CoreData
 
 class FoodViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate;
 
     var foodItems: [NSManagedObject] = []
 
@@ -65,12 +66,12 @@ class FoodViewController: UIViewController {
     }
 
     func save(name: String, group: String, calories: String) {
-        do {
+        /*do {
 
             if let intCalories = Int(calories) {
                 let NSCalories = NSNumber(value:intCalories)
 
-            /* CoreDataHelper.insertCoreData should throw an a CoreDataHelper.MyError.insertionError if there is a problem, so I am going to go ahead and force unwrap the NSManagedObject? to NSManagedObject (with the bang symbol: !). It shouldn't ever try to unwrap it if there is a problem beacuse the error should be thrown instead. Low-key haven't tested it fully so I hope it doesn't crash the app :/e
+            /* CoreDataHelper.insertCoreData should throw an a CoreDataHelper.MyError.insertionError if there is a problem, so I am going to go ahead and force unwrap the NSManagedObject? to NSManagedObject (with the bang symbol: !). It shouldn't ever try to unwrap it if there is a problem beacuse the error should be thrown instead. Low-key haven't tested it fully so I hope it doesn't crash the app :/
              */
                 try foodItems.append(CoreDataHelper.insertCoreData(entityName: "FoodItem", attributeValues: [name, group, NSCalories, DailyState.todaysDate], attributeNames: ["name", "group", "calories", "date"])!)
             } else {
@@ -80,14 +81,17 @@ class FoodViewController: UIViewController {
             print("There was an error inserting into Core Data. Data not saved.")
         } catch {
             print("You tried to insert something, but something went really wrong :( Data not saved.")
-        }
+        }*/
     }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        guard appDelegate.persistentContainer != nil else {
+            fatalError("This view needs a persistent container.")
+        }
         // Do any additional setup after loading the view.
 
-        title = "The List"
+        /*title = "The List"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
         do {
@@ -98,7 +102,7 @@ class FoodViewController: UIViewController {
             print("There was an error fetching Core Data. Data not reloaded")
         } catch {
             print("You tried to insert something, but something went really wrong :( Data not reloaded")
-        }
+        }*/
     }
 }
 

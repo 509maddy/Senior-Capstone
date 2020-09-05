@@ -13,6 +13,7 @@ import CoreData
  * I am thinking this will hold a copy of the daily user information for ease of use
  */
 class DailyState {
+    
 
     static var calories:Int = 2000
     static var todaysDate: String = "9/4/20"
