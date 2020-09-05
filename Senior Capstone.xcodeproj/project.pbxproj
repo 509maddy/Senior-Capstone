@@ -7,25 +7,31 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C9AF9302502B8F900BB1058 /* DailyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AF92F2502B8F900BB1058 /* DailyState.swift */; };
 		2CAE271025001CEB00BAAB6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE270F25001CEB00BAAB6A /* AppDelegate.swift */; };
 		2CAE271225001CEB00BAAB6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE271125001CEB00BAAB6A /* SceneDelegate.swift */; };
-		2CAE271425001CEB00BAAB6A /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE271325001CEB00BAAB6A /* ViewController.swift */; };
+		2CAE271425001CEB00BAAB6A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE271325001CEB00BAAB6A /* SettingsViewController.swift */; };
 		2CAE271725001CEB00BAAB6A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAE271525001CEB00BAAB6A /* Main.storyboard */; };
 		2CAE271A25001CEB00BAAB6A /* Senior_Capstone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE271825001CEB00BAAB6A /* Senior_Capstone.xcdatamodeld */; };
 		2CAE271C25001CED00BAAB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAE271B25001CED00BAAB6A /* Assets.xcassets */; };
 		2CAE271F25001CED00BAAB6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAE271D25001CED00BAAB6A /* LaunchScreen.storyboard */; };
+		2CAE272725001EE600BAAB6A /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE272625001EE600BAAB6A /* FoodViewController.swift */; };
+		2CAE272925010E3A00BAAB6A /* CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE272825010E3A00BAAB6A /* CoreDataHelper.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C9AF92F2502B8F900BB1058 /* DailyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyState.swift; sourceTree = "<group>"; };
 		2CAE270C25001CEB00BAAB6A /* Senior Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Senior Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAE270F25001CEB00BAAB6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CAE271125001CEB00BAAB6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		2CAE271325001CEB00BAAB6A /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		2CAE271325001CEB00BAAB6A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		2CAE271625001CEB00BAAB6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CAE271925001CEB00BAAB6A /* Senior_Capstone.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Senior_Capstone.xcdatamodel; sourceTree = "<group>"; };
 		2CAE271B25001CED00BAAB6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CAE271E25001CED00BAAB6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CAE272025001CED00BAAB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CAE272625001EE600BAAB6A /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
+		2CAE272825010E3A00BAAB6A /* CoreDataHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataHelper.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +66,11 @@
 			children = (
 				2CAE270F25001CEB00BAAB6A /* AppDelegate.swift */,
 				2CAE271125001CEB00BAAB6A /* SceneDelegate.swift */,
-				2CAE271325001CEB00BAAB6A /* ViewController.swift */,
+				2CAE271325001CEB00BAAB6A /* SettingsViewController.swift */,
 				2CAE271525001CEB00BAAB6A /* Main.storyboard */,
+				2CAE272625001EE600BAAB6A /* FoodViewController.swift */,
+				2CAE272825010E3A00BAAB6A /* CoreDataHelper.swift */,
+				2C9AF92F2502B8F900BB1058 /* DailyState.swift */,
 				2CAE271B25001CED00BAAB6A /* Assets.xcassets */,
 				2CAE271D25001CED00BAAB6A /* LaunchScreen.storyboard */,
 				2CAE272025001CED00BAAB6A /* Info.plist */,
@@ -102,6 +111,7 @@
 				TargetAttributes = {
 					2CAE270B25001CEB00BAAB6A = {
 						CreatedOnToolsVersion = 11.3;
+						LastSwiftMigration = 1130;
 					};
 				};
 			};
@@ -142,8 +152,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				2CAE271A25001CEB00BAAB6A /* Senior_Capstone.xcdatamodeld in Sources */,
-				2CAE271425001CEB00BAAB6A /* ViewController.swift in Sources */,
+				2CAE272725001EE600BAAB6A /* FoodViewController.swift in Sources */,
+				2CAE272925010E3A00BAAB6A /* CoreDataHelper.swift in Sources */,
+				2CAE271425001CEB00BAAB6A /* SettingsViewController.swift in Sources */,
 				2CAE271025001CEB00BAAB6A /* AppDelegate.swift in Sources */,
+				2C9AF9302502B8F900BB1058 /* DailyState.swift in Sources */,
 				2CAE271225001CEB00BAAB6A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -288,6 +301,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M46FXS8KQT;
 				INFOPLIST_FILE = "Senior Capstone/Info.plist";
@@ -297,6 +311,8 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "me.Senior-Capstone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Senior Capstone/Senior Capstone-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -306,6 +322,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = M46FXS8KQT;
 				INFOPLIST_FILE = "Senior Capstone/Info.plist";
@@ -315,6 +332,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "me.Senior-Capstone";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Senior Capstone/Senior Capstone-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};

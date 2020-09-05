@@ -33,6 +33,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
     }
 
+    private func preloadData() {
+        let preloadedDataKey = "didPreloadData"
+        let userDefaults = UserDefaults.standard
+
+        if userDefaults.bool(forKey: preloadedDataKey) == false {
+
+            userDefaults.set(true, forKey:preloadedDataKey)
+        }
+    }
+
     // MARK: - Core Data stack
 
     lazy var persistentContainer: NSPersistentCloudKitContainer = {
