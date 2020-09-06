@@ -106,7 +106,6 @@ class Food2ViewController: UIViewController {
             foodItems = try appDelegate.persistentContainer.viewContext.fetch(request)
             print(foodItems)
             print("Got \(foodItems.count) foodItems")
-
             tableView.reloadData()
         } catch {
             print("Fetch failed")
@@ -128,6 +127,8 @@ extension Food2ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath)
         -> UITableViewCell {
+
+            print("Am I going here?")
 
             let foodItem = foodItems[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
