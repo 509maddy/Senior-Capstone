@@ -88,6 +88,9 @@ class Food2ViewController: UIViewController {
             fatalError("This view needs a persistent container.")
         }
 
+        title = "The List"
+        tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
+
         // if we ever need to use an API (i.e. fetch JSON), it would go at this point in the viewDidLoad (or viewWillAppear if necessary)
            // good step-by-step guide: https://www.hackingwithswift.com/read/38/4/creating-an-nsmanagedobject-subclass-with-xcode
 
@@ -128,14 +131,10 @@ extension Food2ViewController: UITableViewDataSource {
                    cellForRowAt indexPath: IndexPath)
         -> UITableViewCell {
 
-            print("Am I going here?")
-
             let foodItem = foodItems[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-            cell.textLabel?.text =
-                foodItem.value(forKeyPath: "name") as? String
-            cell.detailTextLabel!.text = foodItem.group
-            print("hello?")
+            cell.textLabel?.text = foodItem.value(forKeyPath: "name") as? String
+            cell.detailTextLabel?.text = foodItem.value(forKeyPath: "group") as? String
 
             return cell
     }
