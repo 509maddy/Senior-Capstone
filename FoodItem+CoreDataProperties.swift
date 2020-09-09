@@ -10,7 +10,10 @@
 import Foundation
 import CoreData
 
-
+/**
+* Here is where I made the attributes for the enity FoodItem not optional. XCode would default to
+* @NSManaged public var calories: Int32?, but I ommited the question mark.
+*/
 extension FoodItem {
 
     @nonobjc public class func createFetchRequest() -> NSFetchRequest<FoodItem> {

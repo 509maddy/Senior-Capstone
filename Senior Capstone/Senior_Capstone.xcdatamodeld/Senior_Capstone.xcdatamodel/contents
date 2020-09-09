@@ -6,12 +6,6 @@
         <attribute name="group" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="FoodItem2" representedClassName="FoodItem2" syncable="YES" codeGenerationType="class">
-        <attribute name="calories" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="date" optional="YES" attributeType="String"/>
-        <attribute name="group" optional="YES" attributeType="String"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
-    </entity>
     <entity name="UserDailyData" representedClassName="UserDailyData" syncable="YES" codeGenerationType="class">
         <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="totalCalories" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
@@ -19,8 +13,7 @@
         <attribute name="totalVeggieCalories" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="UserDailyData" positionX="-27" positionY="45" width="128" height="103"/>
         <element name="FoodItem" positionX="-36" positionY="45" width="128" height="103"/>
-        <element name="FoodItem2" positionX="-18" positionY="54" width="128" height="103"/>
+        <element name="UserDailyData" positionX="-27" positionY="45" width="128" height="103"/>
     </elements>
 </model>
