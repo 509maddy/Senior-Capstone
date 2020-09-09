@@ -9,6 +9,12 @@
 import UIKit
 import CoreData
 
+/**
+ * This is the first thing to get launched when the app restarts (i.e. actually close app rather than resuming session).
+ * This is where we would need to check to see if this is the user's first time opening the application and preload data,
+ * or if this is not their first time and we need to initilize DailyState.swift, which I am thinking will hold their targets and
+ * other personal settings.
+ */
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
@@ -16,6 +22,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+
         return true
     }
 

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
-    <entity name="FoodItem" representedClassName="FoodItem" syncable="YES" codeGenerationType="class">
+    <entity name="FoodItem" representedClassName="FoodItem" syncable="YES">
         <attribute name="calories" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="String"/>
         <attribute name="group" optional="YES" attributeType="String"/>
@@ -13,7 +13,7 @@
         <attribute name="totalVeggieCalories" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
-        <element name="FoodItem" positionX="-54" positionY="-9" width="128" height="103"/>
+        <element name="FoodItem" positionX="-36" positionY="45" width="128" height="103"/>
         <element name="UserDailyData" positionX="-27" positionY="45" width="128" height="103"/>
     </elements>
 </model>
