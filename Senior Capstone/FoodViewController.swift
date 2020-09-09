@@ -14,7 +14,7 @@ import CoreData
  * In this class, I update the database directly. That can probably be abstracted out into generic functions
  *  so we dont have to repeat code across strings
  */
-class Food2ViewController: UIViewController {
+class FoodViewController: UIViewController {
 
     // gives us a reference to the table
     @IBOutlet weak var tableView: UITableView!
@@ -154,7 +154,7 @@ class Food2ViewController: UIViewController {
 }
 
 // there are all just mandatory things I needed to override to get the table to work
-extension Food2ViewController: UITableViewDataSource {
+extension FoodViewController: UITableViewDataSource {
 
     // saying the number of rows is equal to the number of foodItems returned
     func tableView(_ tableView: UITableView,

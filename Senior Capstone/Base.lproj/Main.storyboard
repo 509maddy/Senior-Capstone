@@ -143,10 +143,10 @@
             </objects>
             <point key="canvasLocation" x="-117.39130434782609" y="-922.09821428571422"/>
         </scene>
-        <!--Food2 View Controller-->
+        <!--Food View Controller-->
         <scene sceneID="LiL-Gi-xf5">
             <objects>
-                <viewController storyboardIdentifier="Food2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZTH-Mu-lc6" customClass="Food2ViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Food2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZTH-Mu-lc6" customClass="FoodViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tOj-13-Uqp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
