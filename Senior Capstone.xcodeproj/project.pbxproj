@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		2C9AF9302502B8F900BB1058 /* DailyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AF92F2502B8F900BB1058 /* DailyState.swift */; };
 		2C9AF93225040D3200BB1058 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AF93125040D3200BB1058 /* FoodViewController.swift */; };
-		2C9AF93B250414FF00BB1058 /* FoodItem+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AF939250414FF00BB1058 /* FoodItem+CoreDataClass.swift */; };
-		2C9AF93C250414FF00BB1058 /* FoodItem+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AF93A250414FF00BB1058 /* FoodItem+CoreDataProperties.swift */; };
 		2CAE271025001CEB00BAAB6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE270F25001CEB00BAAB6A /* AppDelegate.swift */; };
 		2CAE271225001CEB00BAAB6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE271125001CEB00BAAB6A /* SceneDelegate.swift */; };
 		2CAE271425001CEB00BAAB6A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE271325001CEB00BAAB6A /* SettingsViewController.swift */; };
@@ -23,8 +21,6 @@
 /* Begin PBXFileReference section */
 		2C9AF92F2502B8F900BB1058 /* DailyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyState.swift; sourceTree = "<group>"; };
 		2C9AF93125040D3200BB1058 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
-		2C9AF939250414FF00BB1058 /* FoodItem+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodItem+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
-		2C9AF93A250414FF00BB1058 /* FoodItem+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodItem+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		2CAE270C25001CEB00BAAB6A /* Senior Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Senior Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAE270F25001CEB00BAAB6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CAE271125001CEB00BAAB6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -66,8 +62,6 @@
 		2CAE270E25001CEB00BAAB6A /* Senior Capstone */ = {
 			isa = PBXGroup;
 			children = (
-				2C9AF939250414FF00BB1058 /* FoodItem+CoreDataClass.swift */,
-				2C9AF93A250414FF00BB1058 /* FoodItem+CoreDataProperties.swift */,
 				2CAE270F25001CEB00BAAB6A /* AppDelegate.swift */,
 				2CAE271125001CEB00BAAB6A /* SceneDelegate.swift */,
 				2CAE271325001CEB00BAAB6A /* SettingsViewController.swift */,
@@ -158,10 +152,8 @@
 				2CAE271425001CEB00BAAB6A /* SettingsViewController.swift in Sources */,
 				2CAE271025001CEB00BAAB6A /* AppDelegate.swift in Sources */,
 				2C9AF93225040D3200BB1058 /* FoodViewController.swift in Sources */,
-				2C9AF93B250414FF00BB1058 /* FoodItem+CoreDataClass.swift in Sources */,
 				2C9AF9302502B8F900BB1058 /* DailyState.swift in Sources */,
 				2CAE271225001CEB00BAAB6A /* SceneDelegate.swift in Sources */,
-				2C9AF93C250414FF00BB1058 /* FoodItem+CoreDataProperties.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
