@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C301AC425150FE6006D7C6A /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C301AC325150FE6006D7C6A /* AddFoodViewController.swift */; };
 		2C9AF9302502B8F900BB1058 /* DailyState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AF92F2502B8F900BB1058 /* DailyState.swift */; };
 		2C9AF93225040D3200BB1058 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AF93125040D3200BB1058 /* FoodViewController.swift */; };
 		2C9AF93B250414FF00BB1058 /* FoodRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AF939250414FF00BB1058 /* FoodRecord+CoreDataClass.swift */; };
@@ -21,6 +22,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2C301AC325150FE6006D7C6A /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		2C9AF92F2502B8F900BB1058 /* DailyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyState.swift; sourceTree = "<group>"; };
 		2C9AF93125040D3200BB1058 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		2C9AF939250414FF00BB1058 /* FoodRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodRecord+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
@@ -72,6 +74,7 @@
 				2CAE271125001CEB00BAAB6A /* SceneDelegate.swift */,
 				2CAE271325001CEB00BAAB6A /* SettingsViewController.swift */,
 				2CAE271525001CEB00BAAB6A /* Main.storyboard */,
+				2C301AC325150FE6006D7C6A /* AddFoodViewController.swift */,
 				2C9AF93125040D3200BB1058 /* FoodViewController.swift */,
 				2C9AF92F2502B8F900BB1058 /* DailyState.swift */,
 				2CAE271B25001CED00BAAB6A /* Assets.xcassets */,
@@ -158,6 +161,7 @@
 				2CAE271425001CEB00BAAB6A /* SettingsViewController.swift in Sources */,
 				2CAE271025001CEB00BAAB6A /* AppDelegate.swift in Sources */,
 				2C9AF93225040D3200BB1058 /* FoodViewController.swift in Sources */,
+				2C301AC425150FE6006D7C6A /* AddFoodViewController.swift in Sources */,
 				2C9AF93B250414FF00BB1058 /* FoodRecord+CoreDataClass.swift in Sources */,
 				2C9AF9302502B8F900BB1058 /* DailyState.swift in Sources */,
 				2CAE271225001CEB00BAAB6A /* SceneDelegate.swift in Sources */,
