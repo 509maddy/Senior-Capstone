@@ -99,6 +99,7 @@
                     <connections>
                         <segue destination="2ea-AR-yVB" kind="relationship" relationship="viewControllers" id="vuV-2D-SrB"/>
                         <segue destination="Bal-uO-D9g" kind="relationship" relationship="viewControllers" id="Drv-E8-3tc"/>
+                        <segue destination="612-k2-Iag" kind="relationship" relationship="viewControllers" id="bxw-2S-uLg"/>
                         <segue destination="mgX-hK-pxb" kind="relationship" relationship="viewControllers" id="iQ9-7Q-6xR"/>
                     </connections>
                 </tabBarController>
@@ -106,11 +107,27 @@
             </objects>
             <point key="canvasLocation" x="-946" y="-218"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="dgr-cl-upO">
+            <objects>
+                <viewController id="612-k2-Iag" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="uc9-dW-Kk8">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="iFJ-vM-j3P"/>
+                    </view>
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="DD2-jB-Ua4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VVG-ZJ-Vza" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1036" y="591"/>
+        </scene>
         <!--Settings-->
         <scene sceneID="dpP-g4-pjN">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mgX-hK-pxb" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Settings" id="aca-zQ-z2N"/>
+                    <tabBarItem key="tabBarItem" title="Settings" image="gear" catalog="system" id="aca-zQ-z2N"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="wmu-a8-ssy">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -125,11 +142,11 @@
             </objects>
             <point key="canvasLocation" x="-28.985507246376812" y="106.47321428571428"/>
         </scene>
-        <!--Display FoodItems-->
+        <!--Today's Food-->
         <scene sceneID="aBN-0z-5Xx">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2ea-AR-yVB" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Display FoodItems" id="g2U-YH-IvW"/>
+                    <tabBarItem key="tabBarItem" title="Today's Food" image="hare" catalog="system" id="g2U-YH-IvW"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="46t-5C-5WR">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -192,7 +209,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="AGZ-eC-FSG">
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGZ-eC-FSG">
                                 <rect key="frame" x="-7" y="300" width="414" height="216"/>
                             </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oX-hy-F2N">
@@ -201,29 +218,33 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qkj-eD-VK6">
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qkj-eD-VK6">
                                 <rect key="frame" x="197" y="150" width="99" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Number of Servings:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-xw-ijH">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number of Servings:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-xw-ijH">
                                 <rect key="frame" x="34" y="226" width="157" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="HNx-6i-h1x"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2o1-rm-l7y">
-                                <rect key="frame" x="199" y="221" width="97" height="34"/>
+                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2o1-rm-l7y">
+                                <rect key="frame" x="199" y="221" width="32" height="34"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mbF-Pi-Q2g">
+                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="dateAndTime" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="mbF-Pi-Q2g">
                                 <rect key="frame" x="0.0" y="506" width="414" height="162"/>
                             </datePicker>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="9oX-hy-F2N" firstAttribute="top" secondItem="Qyn-jc-Fsb" secondAttribute="top" constant="68" id="1cs-dZ-ObS"/>
+                            <constraint firstItem="2o1-rm-l7y" firstAttribute="leading" secondItem="FQt-xw-ijH" secondAttribute="trailing" constant="8" id="342-ii-cAC"/>
                             <constraint firstItem="mbF-Pi-Q2g" firstAttribute="trailing" secondItem="Qyn-jc-Fsb" secondAttribute="trailing" id="3WQ-tr-oI9"/>
                             <constraint firstItem="mbF-Pi-Q2g" firstAttribute="leading" secondItem="Qyn-jc-Fsb" secondAttribute="leading" id="3jM-kS-f7a"/>
                             <constraint firstItem="2o1-rm-l7y" firstAttribute="top" secondItem="qkj-eD-VK6" secondAttribute="bottom" constant="37" id="4NY-J0-fzi"/>
@@ -231,7 +252,11 @@
                             <constraint firstItem="FQt-xw-ijH" firstAttribute="top" secondItem="9oX-hy-F2N" secondAttribute="bottom" constant="49.5" id="78x-k5-ifg"/>
                             <constraint firstItem="AGZ-eC-FSG" firstAttribute="top" secondItem="2o1-rm-l7y" secondAttribute="bottom" constant="45" id="8Xb-mt-BSI"/>
                             <constraint firstItem="Qyn-jc-Fsb" firstAttribute="trailing" secondItem="qkj-eD-VK6" secondAttribute="trailing" constant="118" id="Kfe-NS-wKy"/>
+                            <constraint firstItem="FQt-xw-ijH" firstAttribute="top" secondItem="WOe-9f-uvI" secondAttribute="top" constant="226" id="TSS-Cd-bcW"/>
+                            <constraint firstItem="FQt-xw-ijH" firstAttribute="baseline" secondItem="2o1-rm-l7y" secondAttribute="baseline" id="Xel-eM-mde"/>
+                            <constraint firstItem="AGZ-eC-FSG" firstAttribute="top" secondItem="FQt-xw-ijH" secondAttribute="bottom" constant="53" id="YKQ-NV-psB"/>
                             <constraint firstItem="Qyn-jc-Fsb" firstAttribute="bottom" secondItem="mbF-Pi-Q2g" secondAttribute="bottom" constant="145" id="dPR-ym-3nf"/>
+                            <constraint firstItem="FQt-xw-ijH" firstAttribute="leading" secondItem="Qyn-jc-Fsb" secondAttribute="leading" constant="34" id="eaR-WN-3xx"/>
                             <constraint firstItem="mbF-Pi-Q2g" firstAttribute="top" secondItem="2o1-rm-l7y" secondAttribute="bottom" constant="251" id="kcf-gP-syj"/>
                             <constraint firstItem="9oX-hy-F2N" firstAttribute="leading" secondItem="Qyn-jc-Fsb" secondAttribute="leading" constant="92" id="o1V-6n-kGg"/>
                             <constraint firstItem="qkj-eD-VK6" firstAttribute="top" secondItem="Qyn-jc-Fsb" secondAttribute="top" constant="62" id="uMg-71-W6I"/>
@@ -250,7 +275,7 @@
         <scene sceneID="aUf-pX-1GM">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Bal-uO-D9g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Add Food" image="plus.circle.fill" catalog="system" id="H40-hR-pND"/>
+                    <tabBarItem key="tabBarItem" title="Add Food" image="plus.circle" catalog="system" id="H40-hR-pND"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="Xrz-mY-ENc">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
@@ -267,6 +292,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="plus.circle.fill" catalog="system" width="128" height="121"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="hare" catalog="system" width="128" height="92"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>
