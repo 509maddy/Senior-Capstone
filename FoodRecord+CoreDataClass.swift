@@ -15,7 +15,7 @@ import CoreData
  *  "Add Entity". However, XCode will make the attributes optional, and I don't think we want that, so I wrote the defintions
  *  in case we need to modify them.
  */
-@objc(FoodItem)
-public class FoodItem: NSManagedObject {
+@objc(FoodRecord)
+public class FoodRecord: NSManagedObject {
 
 }
