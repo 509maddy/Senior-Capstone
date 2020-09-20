@@ -15,7 +15,7 @@ import CoreData
  *  so we dont have to repeat code across strings
  */
 class FoodViewController: UIViewController {
-
+    
     // gives us a reference to the table
     @IBOutlet weak var tableView: UITableView!
 

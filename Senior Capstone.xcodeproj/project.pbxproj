@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,7 @@
 		2C9AF93225040D3200BB1058 /* FoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AF93125040D3200BB1058 /* FoodViewController.swift */; };
 		2C9AF93B250414FF00BB1058 /* FoodRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AF939250414FF00BB1058 /* FoodRecord+CoreDataClass.swift */; };
 		2C9AF93C250414FF00BB1058 /* FoodRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C9AF93A250414FF00BB1058 /* FoodRecord+CoreDataProperties.swift */; };
+		2CA992C02517A47D00048726 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CA992BF2517A47D00048726 /* HomeViewController.swift */; };
 		2CAE271025001CEB00BAAB6A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE270F25001CEB00BAAB6A /* AppDelegate.swift */; };
 		2CAE271225001CEB00BAAB6A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE271125001CEB00BAAB6A /* SceneDelegate.swift */; };
 		2CAE271425001CEB00BAAB6A /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE271325001CEB00BAAB6A /* SettingsViewController.swift */; };
@@ -19,14 +20,17 @@
 		2CAE271A25001CEB00BAAB6A /* Senior_Capstone.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CAE271825001CEB00BAAB6A /* Senior_Capstone.xcdatamodeld */; };
 		2CAE271C25001CED00BAAB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAE271B25001CED00BAAB6A /* Assets.xcassets */; };
 		2CAE271F25001CED00BAAB6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAE271D25001CED00BAAB6A /* LaunchScreen.storyboard */; };
+		AA1E9963E4DD955E5D493305 /* Pods_Senior_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143AAA652CBCEDDC0575C24B /* Pods_Senior_Capstone.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		143AAA652CBCEDDC0575C24B /* Pods_Senior_Capstone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Senior_Capstone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		2C301AC325150FE6006D7C6A /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		2C9AF92F2502B8F900BB1058 /* DailyState.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DailyState.swift; sourceTree = "<group>"; };
 		2C9AF93125040D3200BB1058 /* FoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FoodViewController.swift; sourceTree = "<group>"; };
 		2C9AF939250414FF00BB1058 /* FoodRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodRecord+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		2C9AF93A250414FF00BB1058 /* FoodRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodRecord+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
+		2CA992BF2517A47D00048726 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		2CAE270C25001CEB00BAAB6A /* Senior Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Senior Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAE270F25001CEB00BAAB6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CAE271125001CEB00BAAB6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -36,6 +40,8 @@
 		2CAE271B25001CED00BAAB6A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CAE271E25001CED00BAAB6A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CAE272025001CED00BAAB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		6A3BBDAD2BC0500D587D335A /* Pods-Senior Capstone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Senior Capstone.release.xcconfig"; path = "Target Support Files/Pods-Senior Capstone/Pods-Senior Capstone.release.xcconfig"; sourceTree = "<group>"; };
+		710BE54F3DC80F62C1CAFC4E /* Pods-Senior Capstone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Senior Capstone.debug.xcconfig"; path = "Target Support Files/Pods-Senior Capstone/Pods-Senior Capstone.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AA1E9963E4DD955E5D493305 /* Pods_Senior_Capstone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -54,6 +61,8 @@
 			children = (
 				2CAE270E25001CEB00BAAB6A /* Senior Capstone */,
 				2CAE270D25001CEB00BAAB6A /* Products */,
+				D0CA5E612770A3C9A746ED49 /* Pods */,
+				D646C996946840F0E187FD40 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,6 +83,7 @@
 				2CAE271125001CEB00BAAB6A /* SceneDelegate.swift */,
 				2CAE271325001CEB00BAAB6A /* SettingsViewController.swift */,
 				2CAE271525001CEB00BAAB6A /* Main.storyboard */,
+				2CA992BF2517A47D00048726 /* HomeViewController.swift */,
 				2C301AC325150FE6006D7C6A /* AddFoodViewController.swift */,
 				2C9AF93125040D3200BB1058 /* FoodViewController.swift */,
 				2C9AF92F2502B8F900BB1058 /* DailyState.swift */,
@@ -85,6 +95,23 @@
 			path = "Senior Capstone";
 			sourceTree = "<group>";
 		};
+		D0CA5E612770A3C9A746ED49 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				710BE54F3DC80F62C1CAFC4E /* Pods-Senior Capstone.debug.xcconfig */,
+				6A3BBDAD2BC0500D587D335A /* Pods-Senior Capstone.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		D646C996946840F0E187FD40 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				143AAA652CBCEDDC0575C24B /* Pods_Senior_Capstone.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -92,9 +119,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CAE272325001CED00BAAB6A /* Build configuration list for PBXNativeTarget "Senior Capstone" */;
 			buildPhases = (
+				46E1C8DAFAEDF5EE1F36DA1A /* [CP] Check Pods Manifest.lock */,
 				2CAE270825001CEB00BAAB6A /* Sources */,
 				2CAE270925001CEB00BAAB6A /* Frameworks */,
 				2CAE270A25001CEB00BAAB6A /* Resources */,
+				93E9A497630A6267A0AD809E /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -152,6 +181,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		46E1C8DAFAEDF5EE1F36DA1A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Senior Capstone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		93E9A497630A6267A0AD809E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Senior Capstone/Pods-Senior Capstone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Senior Capstone/Pods-Senior Capstone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Senior Capstone/Pods-Senior Capstone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		2CAE270825001CEB00BAAB6A /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -162,6 +233,7 @@
 				2CAE271025001CEB00BAAB6A /* AppDelegate.swift in Sources */,
 				2C9AF93225040D3200BB1058 /* FoodViewController.swift in Sources */,
 				2C301AC425150FE6006D7C6A /* AddFoodViewController.swift in Sources */,
+				2CA992C02517A47D00048726 /* HomeViewController.swift in Sources */,
 				2C9AF93B250414FF00BB1058 /* FoodRecord+CoreDataClass.swift in Sources */,
 				2C9AF9302502B8F900BB1058 /* DailyState.swift in Sources */,
 				2CAE271225001CEB00BAAB6A /* SceneDelegate.swift in Sources */,
@@ -307,6 +379,7 @@
 		};
 		2CAE272425001CED00BAAB6A /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 710BE54F3DC80F62C1CAFC4E /* Pods-Senior Capstone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
@@ -328,6 +401,7 @@
 		};
 		2CAE272525001CED00BAAB6A /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6A3BBDAD2BC0500D587D335A /* Pods-Senior Capstone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;

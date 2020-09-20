@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2h-8f-ZMB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2h-8f-ZMB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -87,6 +87,39 @@
             </objects>
             <point key="canvasLocation" x="640.57971014492762" y="105.80357142857143"/>
         </scene>
+        <!--Home-->
+        <scene sceneID="VLL-28-k3J">
+            <objects>
+                <navigationController id="9Ju-Vb-B06" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="Tj7-hT-HVD"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="yWj-4s-8dO">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="eiP-0m-p1r" kind="relationship" relationship="rootViewController" id="JDU-jw-afH"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="myO-AK-Iii" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-2578" y="429"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="hSK-Jq-zNg">
+            <objects>
+                <viewController id="eiP-0m-p1r" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="WYY-9T-hKs">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="zMo-qF-wB2"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bzt-yN-Aui"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kdB-UL-7Fb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1819" y="427"/>
+        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lDa-zl-7X7">
             <objects>
@@ -99,29 +132,13 @@
                     <connections>
                         <segue destination="2ea-AR-yVB" kind="relationship" relationship="viewControllers" id="vuV-2D-SrB"/>
                         <segue destination="Bal-uO-D9g" kind="relationship" relationship="viewControllers" id="Drv-E8-3tc"/>
-                        <segue destination="612-k2-Iag" kind="relationship" relationship="viewControllers" id="bxw-2S-uLg"/>
                         <segue destination="mgX-hK-pxb" kind="relationship" relationship="viewControllers" id="iQ9-7Q-6xR"/>
+                        <segue destination="9Ju-Vb-B06" kind="relationship" relationship="viewControllers" id="D1l-0q-2En"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofH-VC-HKi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-946" y="-218"/>
-        </scene>
-        <!--Home-->
-        <scene sceneID="dgr-cl-upO">
-            <objects>
-                <viewController id="612-k2-Iag" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="uc9-dW-Kk8">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="iFJ-vM-j3P"/>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="Home" image="house" catalog="system" id="DD2-jB-Ua4"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VVG-ZJ-Vza" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1036" y="591"/>
         </scene>
         <!--Settings-->
         <scene sceneID="dpP-g4-pjN">
@@ -307,9 +324,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="64" height="58"/>
-        <image name="hare" catalog="system" width="64" height="46"/>
-        <image name="house" catalog="system" width="64" height="54"/>
-        <image name="plus.circle" catalog="system" width="64" height="60"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="hare" catalog="system" width="128" height="92"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
     </resources>
 </document>
