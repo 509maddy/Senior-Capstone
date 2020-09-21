@@ -1,0 +1,6 @@
+framework module Pods_Senior_Capstone {
+  umbrella header "Pods-Senior Capstone-umbrella.h"
+
+  export *
+  module * { export * }
+}
