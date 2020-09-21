@@ -1,7 +1,7 @@
 # Senior-Capstone
 
 ## Git Cheat Sheet
-- [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
+[Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
 
 ## Our Branches
 1. `master` branch will hold the code that was demonstated at our latest "progress report"
