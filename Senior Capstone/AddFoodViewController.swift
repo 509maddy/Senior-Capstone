@@ -34,19 +34,17 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         guard let nameToSave = nameInputBox.text else {
             return
         }
-        let mealToSave = "Breakfast"
-        let dateToSave = DailyState.todaysDate
 
-        self.save(name: nameToSave, meal: mealToSave, date: dateToSave)
+        DatabaseFunctions.insertFoodRecord(name: nameToSave, meal: "Breakfast", date: DailyState.todaysDate)
         tabBarController?.selectedIndex = 0
     }
 
-    func save(name: String, meal: String, date: String) {
-        let foodRecord = FoodRecord(context: appDelegate.persistentContainer.viewContext)
-        foodRecord.date = DailyState.todaysDate
-        foodRecord.meal = meal
-        foodRecord.name = name
-        appDelegate.saveContext()
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        let strDate = dateFormatter.string(from: datePicker.date)
+        DailyState.updateTodaysDate(todaysDate: strDate)
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {

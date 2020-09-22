@@ -43,24 +43,9 @@ class FoodViewController: UIViewController {
     }
 
     func loadSavedData() {
+        foodRecords = DatabaseFunctions.retrieveFoodRecord(date: DailyState.todaysDate)
+        tableView.reloadData()
 
-        // prepares a fetch request for all the FoodItem entites stored in the database, sorted by date
-        // this is all the stuff we can abstract out
-        let request = FoodRecord.createFetchRequest()
-        let sort = NSSortDescriptor(key: "date", ascending: false)
-        request.sortDescriptors = [sort]
-
-        // here I am saying only pull foodItems whose date matches todaysDate
-        request.predicate = NSPredicate(format: "date == %@", DailyState.todaysDate)
-
-        do {
-            foodRecords = try appDelegate.persistentContainer.viewContext.fetch(request)
-            print(foodRecords)
-            print("Got \(foodRecords.count) foodItems")
-            tableView.reloadData()
-        } catch {
-            print("Fetch failed")
-        }
     }
 
 }
@@ -97,17 +82,9 @@ extension FoodViewController: UITableViewDataSource {
         if (editingStyle == .delete) {
             // pull out the item the user swiped left on
             let item = foodRecords[indexPath.row]
-
-            // ask for the persistant container and delete it there
-            appDelegate.persistentContainer.viewContext.delete(item)
-
-            // remove it from the array that the table uses to display the rows also
+            DatabaseFunctions.deleteFoodRecord(foodItem: item)
             foodRecords.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-
-            // we updateed the persistant container, so when we "save" the changes,
-            // the appDelegate will update the database
-            appDelegate.saveContext()
         }
     }
 }
