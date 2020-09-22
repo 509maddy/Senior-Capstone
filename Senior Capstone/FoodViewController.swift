@@ -43,11 +43,11 @@ class FoodViewController: UIViewController {
     }
 
     func loadSavedData() {
-        foodRecords = DatabaseFunctions.retrieveFoodRecord(date: DailyState.todaysDate)
+        let predicate = NSPredicate(format: "date == %@", DailyState.todaysDate)
+        foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
         tableView.reloadData()
 
     }
-
 }
 
 // there are all just mandatory things I needed to override to get the table to work
