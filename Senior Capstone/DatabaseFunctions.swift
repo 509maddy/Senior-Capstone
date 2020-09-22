@@ -33,10 +33,10 @@ class DatabaseFunctions {
         return foodRecords
     }
 
-    static func insertFoodRecord(name: String, meal:String, date:String) {
+    static func insertFoodRecord(name: String, group:String, date:String) {
         let foodRecord = FoodRecord(context: appDelegate.persistentContainer.viewContext)
         foodRecord.date = DailyState.todaysDate
-        foodRecord.meal = meal
+        foodRecord.group = group
         foodRecord.name = name
         appDelegate.saveContext()
     }

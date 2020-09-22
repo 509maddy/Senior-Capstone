@@ -21,7 +21,7 @@ extension FoodRecord {
     }
 
     @NSManaged public var date: String
-    @NSManaged public var meal: String
+    @NSManaged public var group: String
     @NSManaged public var name: String
 
 }

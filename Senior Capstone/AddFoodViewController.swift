@@ -19,7 +19,7 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     @IBOutlet weak var submitButton: UIButton!
 
     let pickerData = ["Fruit", "Vegtable & Beans", "Protein", "Grain", "Dairy"]
-    var groupChoice = "Fruit"
+    var group = "Fruit" // needed a default value
     let appDelegate = UIApplication.shared.delegate as! AppDelegate;
 
     @IBAction func registerDateChange(_ sender: Any) {
@@ -35,7 +35,7 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             return
         }
 
-        DatabaseFunctions.insertFoodRecord(name: nameToSave, meal: "Breakfast", date: DailyState.todaysDate)
+        DatabaseFunctions.insertFoodRecord(name: nameToSave, group: group, date: DailyState.todaysDate)
         tabBarController?.selectedIndex = 0
     }
 
@@ -60,6 +60,6 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
     }
 
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       groupChoice = pickerData[row]
+       group = pickerData[row]
     }
 }
