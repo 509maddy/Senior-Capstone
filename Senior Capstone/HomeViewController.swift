@@ -11,18 +11,26 @@ import Charts
 
 class HomeViewController: UIViewController, ChartViewDelegate {
 
-    var pieChart = PieChartView()
+    var pieChart1 = PieChartView()
+    var pieChart2 = PieChartView()
     
+    @IBOutlet weak var fruit: UIView!
+    
+    @IBOutlet weak var meat: UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        pieChart.delegate = self
+        pieChart1.delegate = self
+        pieChart2.delegate = self
     }
     
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
-        pieChart.frame = CGRect(x:0, y:0, width: self.view.frame.size.width, height: self.view.frame.size.width)
-        pieChart.center = view.center
-        view.addSubview(pieChart)
+        pieChart1.frame = CGRect(x:0, y:0, width: fruit.frame.size.width, height: fruit.frame.size.width)
+        pieChart2.frame = CGRect(x:0, y:0, width: meat.frame.size.width, height: meat.frame.size.width)
+        pieChart1.center = fruit.center
+        pieChart2.center = meat.center
+        view.addSubview(pieChart1)
+        view.addSubview(pieChart2)
         
         var entries = [ChartDataEntry]()
         
@@ -32,7 +40,8 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         let set = PieChartDataSet(entries : entries)
         set.colors = ChartColorTemplates.colorful()
         let data = PieChartData(dataSet: set)
-        pieChart.data = data
+        pieChart1.data = data
+        pieChart2.data = data
     }
     
 
