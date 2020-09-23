@@ -2,7 +2,7 @@
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
     <entity name="FoodRecord" representedClassName="FoodRecord" syncable="YES">
         <attribute name="date" optional="YES" attributeType="String"/>
-        <attribute name="meal" optional="YES" attributeType="String"/>
+        <attribute name="group" optional="YES" attributeType="String"/>
         <attribute name="name" optional="YES" attributeType="String"/>
     </entity>
     <entity name="UserDailyData" representedClassName="UserDailyData" syncable="YES" codeGenerationType="class">
