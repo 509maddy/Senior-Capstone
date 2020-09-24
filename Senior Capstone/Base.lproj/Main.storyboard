@@ -291,6 +291,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="ykv-BE-vJu"/>
                     <connections>
+                        <outlet property="datePicker" destination="jsB-Ar-wur" id="LQf-D6-Exd"/>
                         <outlet property="tableView" destination="efW-4p-Q6x" id="gFW-JE-s9W"/>
                     </connections>
                 </viewController>

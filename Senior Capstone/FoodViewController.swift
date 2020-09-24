@@ -18,6 +18,8 @@ class FoodViewController: UIViewController {
     
     // gives us a reference to the table
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var datePicker: UIDatePicker!
+
 
     // the persistant container belongs to the appDelegate class
     // appDelegate acts as a singleton, which means there is only once instance
@@ -32,7 +34,7 @@ class FoodViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
 
-        title = "The List"
+        title = "Today's Food"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
         // if we ever need to use an API (i.e. fetch JSON), it would go at this point in the viewDidLoad (or viewWillAppear if necessary)
@@ -43,7 +45,17 @@ class FoodViewController: UIViewController {
     }
 
     func loadSavedData() {
-        let predicate = NSPredicate(format: "date == %@", DailyState.todaysDate)
+        let date = datePicker.date
+        
+        let formatter = DateFormatter()
+        formatter.dateFormat = "MM/dd/yy"
+        let selectedDate = formatter.string(from: date)
+        
+        
+        let predicate = NSPredicate(format: "date == %@", selectedDate)
+       
+        print(selectedDate)
+        
         foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
         tableView.reloadData()
 
