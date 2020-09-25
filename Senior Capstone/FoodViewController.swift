@@ -20,7 +20,10 @@ class FoodViewController: UIViewController {
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var datePicker: UIDatePicker!
 
-
+    @IBAction func datePickerOnChange(_ sender: Any) {
+        loadSavedData()
+    }
+    
     // the persistant container belongs to the appDelegate class
     // appDelegate acts as a singleton, which means there is only once instance
     // of the appDelegate all screens share (basically its a static class)
@@ -48,7 +51,7 @@ class FoodViewController: UIViewController {
         let date = datePicker.date
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "MM/dd/yy"
+        formatter.dateFormat = "M/dd/yy"
         let selectedDate = formatter.string(from: date)
         
         
