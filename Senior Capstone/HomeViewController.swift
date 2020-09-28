@@ -11,73 +11,67 @@ import Charts
 
 class HomeViewController: UIViewController, ChartViewDelegate {
 
-    // creating each pie chart
-    var fruitChart = PieChartView()
-    var meatChart = PieChartView()
-    /*var grainsChart = PieChartView()
-    var dairyChart = PieChartView()
-    var vegChart = PieChartView()*/
-    
-    // connecting to each view
-    @IBOutlet weak var fruit: UIView!
-    @IBOutlet weak var meat: UIView!
-    /*@IBOutlet weak var dairy: UIView!
-    @IBOutlet weak var grains: UIView!
-    @IBOutlet weak var veg: UIView!*/
-    
+    @IBOutlet weak var fruitPieChartView: PieChartView!
+    @IBOutlet weak var meatPieChartView: PieChartView!
+
+    let players = ["Ozil", "Ramsey", "Laca", "Auba", "Xhaka", "Torreira"]
+    let goals = [6, 8, 26, 30, 8, 10]
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        fruitChart.delegate = self
-        meatChart.delegate = self
-       /* grainsChart.delegate = self
-        dairyChart.delegate = self
-        vegChart.delegate = self*/
+        customizeChart(dataPoints: players, values: goals.map{ Double($0) })
     }
-    
-    override func viewDidLayoutSubviews() {
-        super.viewDidLayoutSubviews()
-        
-        // adding the location
-        fruitChart.frame = CGRect(x:0, y:0, width: fruit.frame.size.width, height: fruit.frame.size.width)
-        meatChart.frame = CGRect(x:0, y:0, width: meat.frame.size.width, height: meat.frame.size.width)
-       /*dairyChart.frame = CGRect(x:0, y:0, width: dairy.frame.size.width, height: dairy.frame.size.width)
-        grainsChart.frame = CGRect(x:0, y:0, width: grains.frame.size.width, height: grains.frame.size.width)
-        vegChart.frame = CGRect(x:0, y:0, width: veg.frame.size.width, height: veg.frame.size.width)*/
-        
-        // placing in center of view
-        fruitChart.center = fruit.center
-        meatChart.center = meat.center
-        /*grainsChart.center = grains.center
-        dairyChart.center = dairy.center
-        vegChart.center = veg.center*/
-        
-        // adding to view
-        view.addSubview(fruitChart)
-        view.addSubview(meatChart)
-       /* view.addSubview(grainsChart)
-        view.addSubview(dairyChart)
-        view.addSubview(vegChart)*/
-        
-        // creating dummy data
-        var entries = [ChartDataEntry]()
-        
-        for x in 0..<10 {
-            entries.append(ChartDataEntry(x: Double(x), y: Double(x)))
+
+    func customizeChart(dataPoints: [String], values: [Double]) {
+      // TO-DO: customize the chart here
+
+        // 1. Set ChartDataEntry
+        var foodRecords = [FoodRecord]()
+        let predicate = NSPredicate(format: "date == %@ AND group == %@", DailyState.todaysDate, "Fruit")
+        foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
+
+        var dataEntries: [ChartDataEntry] = []
+
+        for i in 0..<dataPoints.count {
+          let dataEntry = PieChartDataEntry(value: values[i], label: dataPoints[i], data: dataPoints[i] as AnyObject)
+          dataEntries.append(dataEntry)
         }
-        let set = PieChartDataSet(entries : entries)
-        set.colors = ChartColorTemplates.colorful()
-        let data = PieChartData(dataSet: set)
-        
-        // adding dummy data to each pie chart
-        fruitChart.data = data
-        fruitChart.legend.enabled = false
-        meatChart.data = data
-        meatChart.legend.enabled = false
-       /* grainsChart.data = data
-        grainsChart.legend.enabled = false
-        dairyChart.data = data
-        dairyChart.legend.enabled = false
-        vegChart.data = data
-        vegChart.legend.enabled = false*/
+
+        // 2. Set ChartDataSet
+        let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
+        pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataPoints.count)
+
+        // 3. Set ChartData
+        let pieChartData = PieChartData(dataSet: pieChartDataSet)
+        let format = NumberFormatter()
+         format.numberStyle = .none
+         let formatter = DefaultValueFormatter(formatter: format)
+         pieChartData.setValueFormatter(formatter)
+
+        // 4. Assign it to the chart’s data
+        fruitPieChartView.data = pieChartData
+        fruitPieChartView.legend.enabled = false
+        fruitPieChartView.rotationEnabled = false
+        fruitPieChartView.holeRadiusPercent = 0.4
+        fruitPieChartView.transparentCircleRadiusPercent = 0.5
+        meatPieChartView.data = pieChartData
+        meatPieChartView.legend.enabled = false
+        meatPieChartView.rotationEnabled = false
+        meatPieChartView.holeRadiusPercent = 0.4
+        meatPieChartView.transparentCircleRadiusPercent = 0.5
     }
+
+    private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
+      var colors: [UIColor] = []
+      for _ in 0..<numbersOfColor {
+        let red = Double(arc4random_uniform(256))
+        let green = Double(arc4random_uniform(256))
+        let blue = Double(arc4random_uniform(256))
+        let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
+        colors.append(color)
+      }
+      return colors
+    }
+
+
 }
