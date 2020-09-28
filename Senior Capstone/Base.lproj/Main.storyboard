@@ -187,6 +187,7 @@
                                             <constraint firstItem="aa4-p5-IMm" firstAttribute="top" secondItem="3Ud-I9-8Ue" secondAttribute="bottom" id="M37-fZ-eI7"/>
                                             <constraint firstItem="gZo-oV-xW6" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="MdD-TV-V9X"/>
                                             <constraint firstItem="jLf-b8-8vN" firstAttribute="top" secondItem="bBr-wq-9JE" secondAttribute="bottom" id="Mg0-jZ-TaN"/>
+                                            <constraint firstItem="jLf-b8-8vN" firstAttribute="width" secondItem="bBr-wq-9JE" secondAttribute="width" id="TXw-Rj-yMC"/>
                                             <constraint firstAttribute="height" constant="1500" id="Tdm-Zs-AO1"/>
                                             <constraint firstItem="jLf-b8-8vN" firstAttribute="height" secondItem="Uf5-Tz-bIi" secondAttribute="height" multiplier="0.525" id="U9O-Vu-Gmg"/>
                                             <constraint firstItem="3Ud-I9-8Ue" firstAttribute="height" secondItem="Cin-Nz-RbJ" secondAttribute="height" id="ZB5-r6-hVx"/>
@@ -194,10 +195,10 @@
                                             <constraint firstAttribute="trailing" secondItem="Cin-Nz-RbJ" secondAttribute="trailing" id="bz3-TB-IrZ"/>
                                             <constraint firstItem="eRk-yv-wmz" firstAttribute="top" secondItem="aa4-p5-IMm" secondAttribute="bottom" id="cZA-Wh-jtH"/>
                                             <constraint firstItem="Cin-Nz-RbJ" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="g0M-15-xt9"/>
+                                            <constraint firstItem="gZo-oV-xW6" firstAttribute="height" secondItem="Uf5-Tz-bIi" secondAttribute="height" multiplier="0.6" id="iy0-LG-f2I"/>
                                             <constraint firstItem="3Ud-I9-8Ue" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="iyj-0F-Emg"/>
                                             <constraint firstAttribute="trailing" secondItem="jLf-b8-8vN" secondAttribute="trailing" id="nSG-tC-vro"/>
                                             <constraint firstItem="aa4-p5-IMm" firstAttribute="height" secondItem="Uf5-Tz-bIi" secondAttribute="height" multiplier="0.9" id="o0y-wQ-kyc"/>
-                                            <constraint firstItem="jLf-b8-8vN" firstAttribute="width" secondItem="eRk-yv-wmz" secondAttribute="width" id="ohd-pY-JXG"/>
                                             <constraint firstItem="Uf5-Tz-bIi" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="rwM-kK-IE4"/>
                                             <constraint firstAttribute="trailing" secondItem="Uf5-Tz-bIi" secondAttribute="trailing" id="wm5-zQ-0Y1"/>
                                             <constraint firstAttribute="trailing" secondItem="bBr-wq-9JE" secondAttribute="trailing" id="ySO-5A-Uhm"/>

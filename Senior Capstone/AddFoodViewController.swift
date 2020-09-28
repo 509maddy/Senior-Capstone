@@ -34,8 +34,17 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         guard let nameToSave = nameInputBox.text else {
             return
         }
+        guard let servingsToSave = servingsInputBox.text else {
+            return
+        }
 
-        DatabaseFunctions.insertFoodRecord(name: nameToSave, group: group, date: DailyState.todaysDate)
+        if let servingsToSaveDecimal = Double(servingsToSave) {
+            print(servingsToSaveDecimal)
+            DatabaseFunctions.insertFoodRecord(name: nameToSave, group: group, date: DailyState.todaysDate, servings: servingsToSaveDecimal)
+        } else {
+            print("didn't take servings correctly so didnt add to table")
+        }
+
         tabBarController?.selectedIndex = 0
     }
 
