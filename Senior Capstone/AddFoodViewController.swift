@@ -10,18 +10,22 @@ import Foundation
 import CoreData
 import UIKit
 
-class AddFoodViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddFoodViewController: UIViewController, UIPickerViewDelegate {
 
     @IBOutlet weak var nameInputBox: UITextField!
-    @IBOutlet weak var servingsInputBox: UITextField!
 
+    @IBOutlet weak var fruitServingStepper: UIStepper!
+    @IBOutlet weak var fruitServingLabel: UILabel!
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var submitButton: UIButton!
 
-    let pickerData = ["Fruit", "Vegtable & Beans", "Protein", "Grain", "Dairy"]
-    var group = "Fruit" // needed a default value
     let appDelegate = UIApplication.shared.delegate as! AppDelegate;
 
+    
+    @IBAction func registerFruitServingChange(_ sender: Any) {
+        fruitServingLabel.text = String(Int(fruitServingStepper.value))
+    }
+    
     @IBAction func registerDateChange(_ sender: Any) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
@@ -35,7 +39,7 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
             return
         }
 
-        DatabaseFunctions.insertFoodRecord(name: nameToSave, group: group, date: DailyState.todaysDate)
+        DatabaseFunctions.insertFoodRecord(name: nameToSave, group: "Fruit", date: DailyState.todaysDate)
         tabBarController?.selectedIndex = 0
     }
 
@@ -49,17 +53,5 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-         return pickerData.count
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
-    }
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       group = pickerData[row]
     }
 }
