@@ -402,6 +402,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="registerFruitServingChange:" destination="b6A-cl-TVP" eventType="valueChanged" id="SmJ-RE-ACd"/>
+                                    <action selector="registerProtienServingChange:" destination="b6A-cl-TVP" eventType="valueChanged" id="PVP-2y-OC7"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dairy Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qr8-lB-gGj">
@@ -422,6 +423,7 @@
                                 <rect key="frame" x="283" y="501" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="registerDairyServingChange:" destination="b6A-cl-TVP" eventType="valueChanged" id="jVd-I3-KHE"/>
                                     <action selector="registerFruitServingChange:" destination="b6A-cl-TVP" eventType="valueChanged" id="R4E-IM-BzO"/>
                                 </connections>
                             </stepper>
@@ -443,6 +445,7 @@
                                 <rect key="frame" x="283" y="576" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
+                                    <action selector="registerCarbServingChange:" destination="b6A-cl-TVP" eventType="valueChanged" id="mSR-Ge-NMi"/>
                                     <action selector="registerFruitServingChange:" destination="b6A-cl-TVP" eventType="valueChanged" id="wAe-bi-D7E"/>
                                 </connections>
                             </stepper>
@@ -452,10 +455,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="20a-BV-X2s"/>
                     <connections>
+                        <outlet property="carbServingLabel" destination="Gjs-nI-y5B" id="5eG-La-9WW"/>
+                        <outlet property="carbServingStepper" destination="o7u-B7-GKF" id="omN-8a-Pl9"/>
+                        <outlet property="dairyServingLabel" destination="Bso-S0-CMx" id="vKV-rZ-5PY"/>
+                        <outlet property="dairyServingStepper" destination="t4g-oG-X9m" id="wU3-dT-JrU"/>
                         <outlet property="datePicker" destination="mbF-Pi-Q2g" id="ocq-RC-SPj"/>
                         <outlet property="fruitServingLabel" destination="LCZ-iV-i9B" id="4UZ-gr-gaA"/>
                         <outlet property="fruitServingStepper" destination="DaT-Jx-sih" id="TnH-K3-P34"/>
                         <outlet property="nameInputBox" destination="qkj-eD-VK6" id="LKr-gz-Z2t"/>
+                        <outlet property="protienServingLabel" destination="G4u-M9-XOW" id="DE9-Jx-D5v"/>
+                        <outlet property="protienServingStepper" destination="i58-UP-dNO" id="62r-ZR-rZw"/>
                         <outlet property="submitButton" destination="ULx-jo-eL8" id="fxd-xS-tj4"/>
                         <outlet property="vegServingLabel" destination="fBY-Df-nKy" id="A9B-ZM-Ebu"/>
                         <outlet property="vegServingStepper" destination="bVa-tK-2N6" id="zzL-hg-cu1"/>
