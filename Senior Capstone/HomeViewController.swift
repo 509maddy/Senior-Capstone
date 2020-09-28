@@ -14,24 +14,24 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     // creating each pie chart
     var fruitChart = PieChartView()
     var meatChart = PieChartView()
-    var grainsChart = PieChartView()
+    /*var grainsChart = PieChartView()
     var dairyChart = PieChartView()
-    var vegChart = PieChartView()
+    var vegChart = PieChartView()*/
     
     // connecting to each view
     @IBOutlet weak var fruit: UIView!
     @IBOutlet weak var meat: UIView!
-    @IBOutlet weak var dairy: UIView!
+    /*@IBOutlet weak var dairy: UIView!
     @IBOutlet weak var grains: UIView!
-    @IBOutlet weak var veg: UIView!
+    @IBOutlet weak var veg: UIView!*/
     
     override func viewDidLoad() {
         super.viewDidLoad()
         fruitChart.delegate = self
         meatChart.delegate = self
-        grainsChart.delegate = self
+       /* grainsChart.delegate = self
         dairyChart.delegate = self
-        vegChart.delegate = self
+        vegChart.delegate = self*/
     }
     
     override func viewDidLayoutSubviews() {
@@ -40,23 +40,23 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         // adding the location
         fruitChart.frame = CGRect(x:0, y:0, width: fruit.frame.size.width, height: fruit.frame.size.width)
         meatChart.frame = CGRect(x:0, y:0, width: meat.frame.size.width, height: meat.frame.size.width)
-        dairyChart.frame = CGRect(x:0, y:0, width: dairy.frame.size.width, height: dairy.frame.size.width)
+       /*dairyChart.frame = CGRect(x:0, y:0, width: dairy.frame.size.width, height: dairy.frame.size.width)
         grainsChart.frame = CGRect(x:0, y:0, width: grains.frame.size.width, height: grains.frame.size.width)
-        vegChart.frame = CGRect(x:0, y:0, width: veg.frame.size.width, height: veg.frame.size.width)
+        vegChart.frame = CGRect(x:0, y:0, width: veg.frame.size.width, height: veg.frame.size.width)*/
         
         // placing in center of view
         fruitChart.center = fruit.center
         meatChart.center = meat.center
-        grainsChart.center = grains.center
+        /*grainsChart.center = grains.center
         dairyChart.center = dairy.center
-        vegChart.center = veg.center
+        vegChart.center = veg.center*/
         
         // adding to view
         view.addSubview(fruitChart)
         view.addSubview(meatChart)
-        view.addSubview(grainsChart)
+       /* view.addSubview(grainsChart)
         view.addSubview(dairyChart)
-        view.addSubview(vegChart)
+        view.addSubview(vegChart)*/
         
         // creating dummy data
         var entries = [ChartDataEntry]()
@@ -70,9 +70,14 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         
         // adding dummy data to each pie chart
         fruitChart.data = data
+        fruitChart.legend.enabled = false
         meatChart.data = data
-        grainsChart.data = data
+        meatChart.legend.enabled = false
+       /* grainsChart.data = data
+        grainsChart.legend.enabled = false
         dairyChart.data = data
+        dairyChart.legend.enabled = false
         vegChart.data = data
+        vegChart.legend.enabled = false*/
     }
 }

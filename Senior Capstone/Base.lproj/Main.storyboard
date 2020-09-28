@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2h-8f-ZMB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2h-8f-ZMB">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -112,86 +112,64 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DwZ-ov-B5U">
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5EE-qt-8Wh">
                                 <rect key="frame" x="0.0" y="88" width="414" height="725"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NfG-Te-RoC">
-                                        <rect key="frame" x="56" y="78" width="103" height="101"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AvV-rO-Fzt">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1000"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="QWP-wO-YvC">
+                                                <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="stB-tI-CwA"/>
+                                                </constraints>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jBW-Ne-o1A">
+                                                <rect key="frame" x="20" y="308" width="374" height="300"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="Zzd-wD-2VS"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="jBW-Ne-o1A" firstAttribute="top" secondItem="QWP-wO-YvC" secondAttribute="bottom" constant="8" symbolic="YES" id="Khx-5o-gYy"/>
+                                            <constraint firstAttribute="trailing" secondItem="QWP-wO-YvC" secondAttribute="trailing" id="Q8f-cd-FEL"/>
+                                            <constraint firstAttribute="height" constant="1000" id="Tdm-Zs-AO1"/>
+                                            <constraint firstItem="QWP-wO-YvC" firstAttribute="top" secondItem="AvV-rO-Fzt" secondAttribute="top" id="h51-e4-CM3"/>
+                                            <constraint firstAttribute="trailing" secondItem="jBW-Ne-o1A" secondAttribute="trailing" constant="20" symbolic="YES" id="knG-4W-y72"/>
+                                            <constraint firstItem="jBW-Ne-o1A" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" constant="20" symbolic="YES" id="nvx-JM-Z1Y"/>
+                                            <constraint firstItem="QWP-wO-YvC" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="osq-vc-plI"/>
+                                        </constraints>
                                     </view>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="FLg-CA-J3t">
-                                        <rect key="frame" x="261" y="78" width="110" height="105"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Fruit" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wvq-ck-gII">
-                                        <rect key="frame" x="86" y="26" width="42" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Meat" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8d8-ru-mGL">
-                                        <rect key="frame" x="295" y="26" width="42" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8r8-vk-KfF">
-                                        <rect key="frame" x="56" y="282" width="103" height="101"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dairy" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="D3l-nN-VGh">
-                                        <rect key="frame" x="86" y="230" width="42" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="W1S-2k-yb3">
-                                        <rect key="frame" x="265" y="282" width="103" height="101"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Grains" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PVr-2Q-f3L">
-                                        <rect key="frame" x="295" y="230" width="50" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Scn-mm-wfH">
-                                        <rect key="frame" x="156" y="487" width="103" height="101"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Vegetables" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jb0-Kq-ldt">
-                                        <rect key="frame" x="164" y="435" width="86" height="75"/>
-                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                 </subviews>
-                                <viewLayoutGuide key="contentLayoutGuide" id="GON-SC-hgx"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="yeh-Ak-QYd"/>
+                                <constraints>
+                                    <constraint firstItem="AvV-rO-Fzt" firstAttribute="top" secondItem="ILa-Lh-UIk" secondAttribute="top" id="KYl-2F-re5"/>
+                                    <constraint firstItem="AvV-rO-Fzt" firstAttribute="width" secondItem="f8y-Xu-521" secondAttribute="width" id="Zgo-iV-qUa"/>
+                                    <constraint firstItem="AvV-rO-Fzt" firstAttribute="bottom" secondItem="ILa-Lh-UIk" secondAttribute="bottom" id="ZhP-Pc-gbn"/>
+                                    <constraint firstItem="AvV-rO-Fzt" firstAttribute="trailing" secondItem="ILa-Lh-UIk" secondAttribute="trailing" id="e3p-hc-Fdb"/>
+                                    <constraint firstItem="AvV-rO-Fzt" firstAttribute="leading" secondItem="ILa-Lh-UIk" secondAttribute="leading" id="mg7-Qo-DSe"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="ILa-Lh-UIk"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="f8y-Xu-521"/>
                             </scrollView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5EE-qt-8Wh" firstAttribute="leading" secondItem="zMo-qF-wB2" secondAttribute="leading" id="kGE-KP-MGj"/>
+                            <constraint firstItem="5EE-qt-8Wh" firstAttribute="top" secondItem="zMo-qF-wB2" secondAttribute="top" id="n3g-OH-Lsw"/>
+                            <constraint firstItem="5EE-qt-8Wh" firstAttribute="trailing" secondItem="zMo-qF-wB2" secondAttribute="trailing" id="qCd-iX-VAr"/>
+                            <constraint firstItem="5EE-qt-8Wh" firstAttribute="bottom" secondItem="zMo-qF-wB2" secondAttribute="bottom" id="umR-6p-rQm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="zMo-qF-wB2"/>
                     </view>
                     <navigationItem key="navigationItem" id="Bzt-yN-Aui"/>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
-                        <outlet property="dairy" destination="8r8-vk-KfF" id="nfK-Jp-haD"/>
-                        <outlet property="fruit" destination="NfG-Te-RoC" id="8ST-fh-ZfR"/>
-                        <outlet property="grains" destination="W1S-2k-yb3" id="uMw-hx-Fox"/>
-                        <outlet property="meat" destination="FLg-CA-J3t" id="Wgu-nz-TlT"/>
-                        <outlet property="veg" destination="Scn-mm-wfH" id="OaH-JG-z3d"/>
+                        <outlet property="fruit" destination="QWP-wO-YvC" id="Xx1-Pc-Kn7"/>
+                        <outlet property="meat" destination="jBW-Ne-o1A" id="mtR-4f-IJG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdB-UL-7Fb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -402,9 +380,9 @@
         </scene>
     </scenes>
     <resources>
-        <image name="gear" catalog="system" width="128" height="119"/>
-        <image name="hare" catalog="system" width="128" height="92"/>
-        <image name="house" catalog="system" width="128" height="110"/>
-        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="hare" catalog="system" width="64" height="46"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="plus.circle" catalog="system" width="64" height="60"/>
     </resources>
 </document>
