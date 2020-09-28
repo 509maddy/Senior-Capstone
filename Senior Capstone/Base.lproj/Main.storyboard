@@ -312,13 +312,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AGZ-eC-FSG">
-                                <rect key="frame" x="7" y="195" width="400" height="216"/>
-                                <connections>
-                                    <outlet property="dataSource" destination="b6A-cl-TVP" id="KQh-TC-PQH"/>
-                                    <outlet property="delegate" destination="b6A-cl-TVP" id="9zT-s3-CV1"/>
-                                </connections>
-                            </pickerView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9oX-hy-F2N">
                                 <rect key="frame" x="92" y="108" width="50" height="22"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -344,8 +337,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="mbF-Pi-Q2g">
-                                <rect key="frame" x="7" y="413" width="400" height="216"/>
+                            <datePicker contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="mbF-Pi-Q2g">
+                                <rect key="frame" x="7" y="413" width="400" height="64"/>
                                 <connections>
                                     <action selector="registerDateChange:" destination="b6A-cl-TVP" eventType="valueChanged" id="Gaa-cB-BOb"/>
                                 </connections>
@@ -358,26 +351,18 @@
                                     <action selector="registerSubmit:" destination="b6A-cl-TVP" eventType="touchUpInside" id="nJJ-hR-YVa"/>
                                 </connections>
                             </button>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZhT-HP-vuq">
-                                <rect key="frame" x="49" y="727" width="49" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            </switch>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Qyn-jc-Fsb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
-                            <constraint firstItem="mbF-Pi-Q2g" firstAttribute="top" secondItem="AGZ-eC-FSG" secondAttribute="bottom" constant="2" id="0yU-fJ-TIw"/>
                             <constraint firstItem="9oX-hy-F2N" firstAttribute="top" secondItem="Qyn-jc-Fsb" secondAttribute="top" constant="20" id="1cs-dZ-ObS"/>
                             <constraint firstAttribute="trailing" secondItem="mbF-Pi-Q2g" secondAttribute="trailing" constant="7" id="PaE-ON-snM"/>
-                            <constraint firstItem="AGZ-eC-FSG" firstAttribute="top" secondItem="2o1-rm-l7y" secondAttribute="bottom" constant="5" id="UMO-LG-7uO"/>
                             <constraint firstItem="2o1-rm-l7y" firstAttribute="top" secondItem="qkj-eD-VK6" secondAttribute="bottom" constant="20" id="cJd-CC-E8y"/>
                             <constraint firstItem="FQt-xw-ijH" firstAttribute="leading" secondItem="Qyn-jc-Fsb" secondAttribute="leading" constant="34" id="eaR-WN-3xx"/>
                             <constraint firstItem="2o1-rm-l7y" firstAttribute="leading" secondItem="FQt-xw-ijH" secondAttribute="trailing" constant="27" id="h9g-yQ-cZw"/>
                             <constraint firstItem="mbF-Pi-Q2g" firstAttribute="leading" secondItem="Qyn-jc-Fsb" secondAttribute="leading" constant="7" id="km3-Q4-d4l"/>
                             <constraint firstItem="9oX-hy-F2N" firstAttribute="leading" secondItem="Qyn-jc-Fsb" secondAttribute="leading" constant="92" id="o1V-6n-kGg"/>
                             <constraint firstItem="qkj-eD-VK6" firstAttribute="leading" secondItem="9oX-hy-F2N" secondAttribute="trailing" constant="57" id="vEo-4y-FAa"/>
-                            <constraint firstItem="Qyn-jc-Fsb" firstAttribute="trailing" secondItem="AGZ-eC-FSG" secondAttribute="trailing" constant="7" id="wSg-Qk-h6O"/>
-                            <constraint firstItem="AGZ-eC-FSG" firstAttribute="leading" secondItem="WOe-9f-uvI" secondAttribute="leading" constant="7" id="weY-tE-34v"/>
                             <constraint firstItem="FQt-xw-ijH" firstAttribute="top" secondItem="qkj-eD-VK6" secondAttribute="bottom" constant="20" id="xc2-nT-BfC"/>
                             <constraint firstItem="qkj-eD-VK6" firstAttribute="top" secondItem="Qyn-jc-Fsb" secondAttribute="top" constant="14" id="zmi-lH-DVW"/>
                             <constraint firstItem="qkj-eD-VK6" firstAttribute="centerY" secondItem="9oX-hy-F2N" secondAttribute="centerY" id="zxL-az-XWB"/>
@@ -386,7 +371,6 @@
                     <navigationItem key="navigationItem" id="20a-BV-X2s"/>
                     <connections>
                         <outlet property="datePicker" destination="mbF-Pi-Q2g" id="ocq-RC-SPj"/>
-                        <outlet property="foodGroupPicker" destination="AGZ-eC-FSG" id="GDx-cy-jAZ"/>
                         <outlet property="nameInputBox" destination="qkj-eD-VK6" id="LKr-gz-Z2t"/>
                         <outlet property="servingsInputBox" destination="2o1-rm-l7y" id="J3p-wU-ANq"/>
                         <outlet property="submitButton" destination="ULx-jo-eL8" id="fxd-xS-tj4"/>

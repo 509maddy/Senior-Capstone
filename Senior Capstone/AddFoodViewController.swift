@@ -14,7 +14,7 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
 
     @IBOutlet weak var nameInputBox: UITextField!
     @IBOutlet weak var servingsInputBox: UITextField!
-    @IBOutlet weak var foodGroupPicker: UIPickerView!
+
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var submitButton: UIButton!
 
