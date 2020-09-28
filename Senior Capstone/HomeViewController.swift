@@ -13,6 +13,8 @@ class HomeViewController: UIViewController, ChartViewDelegate {
 
     @IBOutlet weak var fruitPieChartView: PieChartView!
     @IBOutlet weak var meatPieChartView: PieChartView!
+    @IBOutlet weak var vegetablePieChartView: PieChartView!
+    @IBOutlet weak var grainPieChartView: PieChartView!
 
     let players = ["Ozil", "Ramsey", "Laca", "Auba", "Xhaka", "Torreira"]
     let goals = [6, 8, 26, 30, 8, 10]
@@ -59,6 +61,16 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         meatPieChartView.rotationEnabled = false
         meatPieChartView.holeRadiusPercent = 0.4
         meatPieChartView.transparentCircleRadiusPercent = 0.5
+        vegetablePieChartView.data = pieChartData
+        vegetablePieChartView.legend.enabled = false
+        vegetablePieChartView.rotationEnabled = false
+        vegetablePieChartView.holeRadiusPercent = 0.4
+        vegetablePieChartView.transparentCircleRadiusPercent = 0.5
+        grainPieChartView.data = pieChartData
+        grainPieChartView.legend.enabled = false
+        grainPieChartView.rotationEnabled = false
+        grainPieChartView.holeRadiusPercent = 0.4
+        grainPieChartView.transparentCircleRadiusPercent = 0.5
     }
 
     private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
