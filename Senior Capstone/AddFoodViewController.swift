@@ -69,9 +69,37 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
         guard let nameToSave = nameInputBox.text else {
             return
         }
+        
+        //Remove once we are saving multiple food groups
+        var groupType = "none"
+        var numToSave = 0
+        
+        if (Int(fruitServingStepper.value) > numToSave){
+            groupType = "fruit"
+            numToSave = Int(fruitServingStepper.value)
+        }
+        if (Int(vegServingStepper.value) > numToSave){
+            groupType = "vegetable"
+            numToSave = Int(vegServingStepper.value)
+        }
+        if (Int(dairyServingStepper.value) > numToSave){
+            groupType = "dairy"
+            numToSave = Int(dairyServingStepper.value)
+        }
+        if (Int(protienServingStepper.value) > numToSave){
+            groupType = "protien"
+            numToSave = Int(protienServingStepper.value)
+        }
+        if (Int(grainServingStepper.value) > numToSave){
+            groupType = "grain"
+            numToSave = Int(grainServingStepper.value)
+        }
+        
 
-        DatabaseFunctions.insertFoodRecord(name: nameToSave, group: "Fruit", date: DailyState.todaysDate)
+        DatabaseFunctions.insertFoodRecord(name: nameToSave, group: groupType, date: DailyState.todaysDate)
         tabBarController?.selectedIndex = 0
+        print(numToSave)
+        print(groupType)
     }
 
     override func viewDidLoad() {
