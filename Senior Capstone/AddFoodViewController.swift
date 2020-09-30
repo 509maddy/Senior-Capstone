@@ -20,8 +20,8 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var vegServingStepper: UIStepper!
     @IBOutlet weak var vegServingLabel: UILabel!
     
-    @IBOutlet weak var protienServingStepper: UIStepper!
-    @IBOutlet weak var protienServingLabel: UILabel!
+    @IBOutlet weak var proteinServingStepper: UIStepper!
+    @IBOutlet weak var proteinServingLabel: UILabel!
     
     @IBOutlet weak var dairyServingStepper: UIStepper!
     @IBOutlet weak var dairyServingLabel: UILabel!
@@ -43,8 +43,8 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
         vegServingLabel.text = String(Int(vegServingStepper.value))
     }
     
-    @IBAction func registerProtienServingChange(_ sender: Any) {
-        protienServingLabel.text = String(Int(protienServingStepper.value))
+    @IBAction func registerProteinServingChange(_ sender: Any) {
+        proteinServingLabel.text = String(Int(proteinServingStepper.value))
     }
     
     @IBAction func registerDairyServingChange(_ sender: Any) {
@@ -86,9 +86,9 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
             groupType = "dairy"
             numToSave = Int(dairyServingStepper.value)
         }
-        if (Int(protienServingStepper.value) > numToSave){
-            groupType = "protien"
-            numToSave = Int(protienServingStepper.value)
+        if (Int(proteinServingStepper.value) > numToSave){
+            groupType = "protein"
+            numToSave = Int(proteinServingStepper.value)
         }
         if (Int(grainServingStepper.value) > numToSave){
             groupType = "grain"

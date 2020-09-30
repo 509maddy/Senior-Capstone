@@ -382,7 +382,7 @@
                                     <action selector="registerVegServingChange:" destination="b6A-cl-TVP" eventType="valueChanged" id="NON-fS-dFN"/>
                                 </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Protien Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkD-Kr-0cB">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Protein Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkD-Kr-0cB">
                                 <rect key="frame" x="37" y="438" width="125" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -400,7 +400,7 @@
                                 <rect key="frame" x="283" y="432" width="94" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <connections>
-                                    <action selector="registerProtienServingChange:" destination="b6A-cl-TVP" eventType="valueChanged" id="PVP-2y-OC7"/>
+                                    <action selector="registerProteinServingChange:" destination="b6A-cl-TVP" eventType="valueChanged" id="PVP-2y-OC7"/>
                                 </connections>
                             </stepper>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Dairy Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qr8-lB-gGj">
@@ -459,8 +459,8 @@
                         <outlet property="grainServingLabel" destination="s0w-5l-MUh" id="2U5-2j-3t3"/>
                         <outlet property="grainServingStepper" destination="o7u-B7-GKF" id="hbq-nO-egJ"/>
                         <outlet property="nameInputBox" destination="qkj-eD-VK6" id="LKr-gz-Z2t"/>
-                        <outlet property="protienServingLabel" destination="G4u-M9-XOW" id="DE9-Jx-D5v"/>
-                        <outlet property="protienServingStepper" destination="i58-UP-dNO" id="62r-ZR-rZw"/>
+                        <outlet property="proteinServingLabel" destination="G4u-M9-XOW" id="DE9-Jx-D5v"/>
+                        <outlet property="proteinServingStepper" destination="i58-UP-dNO" id="62r-ZR-rZw"/>
                         <outlet property="submitButton" destination="ULx-jo-eL8" id="fxd-xS-tj4"/>
                         <outlet property="vegServingLabel" destination="fBY-Df-nKy" id="A9B-ZM-Ebu"/>
                         <outlet property="vegServingStepper" destination="bVa-tK-2N6" id="zzL-hg-cu1"/>
