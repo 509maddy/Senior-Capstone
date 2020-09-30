@@ -26,9 +26,8 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var dairyServingStepper: UIStepper!
     @IBOutlet weak var dairyServingLabel: UILabel!
     
-    @IBOutlet weak var carbServingStepper: UIStepper!
-    @IBOutlet weak var carbServingLabel: UILabel!
-    
+    @IBOutlet weak var grainServingStepper: UIStepper!
+    @IBOutlet weak var grainServingLabel: UILabel!
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var submitButton: UIButton!
@@ -52,8 +51,9 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
         dairyServingLabel.text = String(Int(dairyServingStepper.value))
     }
     
-    @IBAction func registerCarbServingChange(_ sender: Any) {
-        carbServingLabel.text = String(Int(carbServingStepper.value))
+    
+    @IBAction func registerGrainServingChange(_ sender: Any) {
+        grainServingLabel.text = String(Int(grainServingStepper.value))
     }
     
     
