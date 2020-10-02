@@ -16,37 +16,40 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var vegetablePieChartView: PieChartView!
     @IBOutlet weak var grainPieChartView: PieChartView!
 
-    let players = ["Ozil", "Ramsey", "Laca", "Auba", "Xhaka", "Torreira"]
-    let goals = [6, 8, 26, 30, 8, 10]
-
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        customizeChart(dataPoints: players, values: goals.map{ Double($0) })
+        customizeChart(group: "fruit", pieChartView: fruitPieChartView)
+        customizeChart(group: "protien", pieChartView: meatPieChartView)
 
         // insert test data into Core Database
         
     }
 
-    func customizeChart(dataPoints: [String], values: [Double]) {
+    func customizeChart(group: String, pieChartView: PieChartView) {
       // TO-DO: customize the chart here
 
         // 1. Set ChartDataEntry
         var foodRecords = [FoodRecord]()
-        let predicate = NSPredicate(format: "date == %@ AND group == %@", DailyState.todaysDate, "Fruit")
+        let predicate = NSPredicate(format: "date == %@ AND group == %@", DailyState.todaysDate, group)
         foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
 
         var dataEntries: [ChartDataEntry] = []
+        var totalServings = 0.0
         for i in 0..<foodRecords.count {
-            print(i)
             let dataEntry = PieChartDataEntry(value: foodRecords[i].value(forKeyPath: "servings") as! Double, label: foodRecords[i].value(forKeyPath: "name") as? String, data: foodRecords[i] as AnyObject)
             dataEntries.append(dataEntry)
+            totalServings += foodRecords[i].value(forKeyPath: "servings") as! Double
         }
 
-
-       /* for i in 0..<dataPoints.count {
-          let dataEntry = PieChartDataEntry(value: values[i], label: dataPoints[i], data: dataPoints[i] as AnyObject)
-          dataEntries.append(dataEntry)
-        }*/
+        if (foodRecords.count != 0) {
+            let dataEntry2 = PieChartDataEntry(value: 20 - totalServings, label: "Remaining", data: foodRecords[0] as AnyObject)
+            dataEntries.append(dataEntry2)
+        } else {
+            //let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+           // let foodRecord = FoodRecord(context: appDelegate.persistentContainer.viewContext)
+            let dataEntry2 = PieChartDataEntry(value: 100, label: "Remaining", data: 0 as AnyObject)
+            dataEntries.append(dataEntry2)
+        }
 
         // 2. Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
@@ -60,26 +63,11 @@ class HomeViewController: UIViewController, ChartViewDelegate {
          pieChartData.setValueFormatter(formatter)
 
         // 4. Assign it to the chart’s data
-        fruitPieChartView.data = pieChartData
-        fruitPieChartView.legend.enabled = false
-        fruitPieChartView.rotationEnabled = false
-        fruitPieChartView.holeRadiusPercent = 0.4
-        fruitPieChartView.transparentCircleRadiusPercent = 0.5
-        meatPieChartView.data = pieChartData
-        meatPieChartView.legend.enabled = false
-        meatPieChartView.rotationEnabled = false
-        meatPieChartView.holeRadiusPercent = 0.4
-        meatPieChartView.transparentCircleRadiusPercent = 0.5
-        vegetablePieChartView.data = pieChartData
-        vegetablePieChartView.legend.enabled = false
-        vegetablePieChartView.rotationEnabled = false
-        vegetablePieChartView.holeRadiusPercent = 0.4
-        vegetablePieChartView.transparentCircleRadiusPercent = 0.5
-        grainPieChartView.data = pieChartData
-        grainPieChartView.legend.enabled = false
-        grainPieChartView.rotationEnabled = false
-        grainPieChartView.holeRadiusPercent = 0.4
-        grainPieChartView.transparentCircleRadiusPercent = 0.5
+        pieChartView.data = pieChartData
+        pieChartView.legend.enabled = false
+        pieChartView.rotationEnabled = false
+        pieChartView.holeRadiusPercent = 0.4
+        pieChartView.transparentCircleRadiusPercent = 0.5
     }
 
     private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
