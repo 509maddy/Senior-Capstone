@@ -51,7 +51,7 @@ class FoodViewController: UIViewController {
         let date = datePicker.date
         
         let formatter = DateFormatter()
-        formatter.dateFormat = "M/dd/yy"
+        formatter.dateFormat = "M/d/yy"
         let selectedDate = formatter.string(from: date)
         
         
