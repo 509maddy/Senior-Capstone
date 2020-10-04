@@ -42,9 +42,11 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         }
 
         if (foodRecords.count != 0) {
+            // value should be goalServings - total servings
             let dataEntry2 = PieChartDataEntry(value: 20 - totalServings, label: "Remaining")
             dataEntries.append(dataEntry2)
         } else {
+            // value should be goalServings
             let dataEntry3 = PieChartDataEntry(value: 100, label: "Remaining")
             dataEntries.append(dataEntry3)
         }
