@@ -15,18 +15,18 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var meatPieChartView: PieChartView!
     @IBOutlet weak var vegetablePieChartView: PieChartView!
     @IBOutlet weak var grainPieChartView: PieChartView!
+    @IBOutlet weak var dairyPieChartView: PieChartView!
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        customizeChart(group: "fruit", pieChartView: fruitPieChartView)
-        customizeChart(group: "protien", pieChartView: meatPieChartView)
-
-        // insert test data into Core Database
-        
+        customizeChart(group: "Fruit", pieChartView: fruitPieChartView)
+        customizeChart(group: "Protien", pieChartView: meatPieChartView)
+        customizeChart(group: "Vegtable & Beans", pieChartView: vegetablePieChartView)
+        customizeChart(group: "Grain", pieChartView: grainPieChartView)
+        customizeChart(group: "Dairy", pieChartView: dairyPieChartView)
     }
 
     func customizeChart(group: String, pieChartView: PieChartView) {
-      // TO-DO: customize the chart here
 
         // 1. Set ChartDataEntry
         var foodRecords = [FoodRecord]()
@@ -36,24 +36,22 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         var dataEntries: [ChartDataEntry] = []
         var totalServings = 0.0
         for i in 0..<foodRecords.count {
-            let dataEntry = PieChartDataEntry(value: foodRecords[i].value(forKeyPath: "servings") as! Double, label: foodRecords[i].value(forKeyPath: "name") as? String, data: foodRecords[i] as AnyObject)
+            let dataEntry = PieChartDataEntry(value: foodRecords[i].value(forKeyPath: "servings") as! Double, label: foodRecords[i].value(forKeyPath: "name") as? String)
             dataEntries.append(dataEntry)
             totalServings += foodRecords[i].value(forKeyPath: "servings") as! Double
         }
 
         if (foodRecords.count != 0) {
-            let dataEntry2 = PieChartDataEntry(value: 20 - totalServings, label: "Remaining", data: foodRecords[0] as AnyObject)
+            let dataEntry2 = PieChartDataEntry(value: 20 - totalServings, label: "Remaining")
             dataEntries.append(dataEntry2)
         } else {
-            //let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-           // let foodRecord = FoodRecord(context: appDelegate.persistentContainer.viewContext)
-            let dataEntry2 = PieChartDataEntry(value: 100, label: "Remaining", data: 0 as AnyObject)
-            dataEntries.append(dataEntry2)
+            let dataEntry3 = PieChartDataEntry(value: 100, label: "Remaining")
+            dataEntries.append(dataEntry3)
         }
 
         // 2. Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
-        pieChartDataSet.colors = colorsOfCharts(numbersOfColor: foodRecords.count)
+        pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataEntries.count)
 
         // 3. Set ChartData
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
@@ -81,7 +79,5 @@ class HomeViewController: UIViewController, ChartViewDelegate {
       }
       return colors
     }
-
-
 }
 
