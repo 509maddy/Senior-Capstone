@@ -10,18 +10,53 @@ import Foundation
 import CoreData
 import UIKit
 
-class AddFoodViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
+class AddFoodViewController: UIViewController, UIPickerViewDelegate {
 
     @IBOutlet weak var nameInputBox: UITextField!
-    @IBOutlet weak var servingsInputBox: UITextField!
-    @IBOutlet weak var foodGroupPicker: UIPickerView!
+
+    @IBOutlet weak var fruitServingStepper: UIStepper!
+    @IBOutlet weak var fruitServingLabel: UILabel!
+    
+    @IBOutlet weak var vegServingStepper: UIStepper!
+    @IBOutlet weak var vegServingLabel: UILabel!
+    
+    @IBOutlet weak var proteinServingStepper: UIStepper!
+    @IBOutlet weak var proteinServingLabel: UILabel!
+    
+    @IBOutlet weak var dairyServingStepper: UIStepper!
+    @IBOutlet weak var dairyServingLabel: UILabel!
+    
+    @IBOutlet weak var grainServingStepper: UIStepper!
+    @IBOutlet weak var grainServingLabel: UILabel!
+    
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var submitButton: UIButton!
 
-    let pickerData = ["Fruit", "Vegtable & Beans", "Protein", "Grain", "Dairy"]
-    var group = "Fruit" // needed a default value
     let appDelegate = UIApplication.shared.delegate as! AppDelegate;
 
+    
+    @IBAction func registerFruitServingChange(_ sender: Any) {
+        fruitServingLabel.text = String(Int(fruitServingStepper.value))
+    }
+    
+    @IBAction func registerVegServingChange(_ sender: Any) {
+        vegServingLabel.text = String(Int(vegServingStepper.value))
+    }
+    
+    @IBAction func registerProteinServingChange(_ sender: Any) {
+        proteinServingLabel.text = String(Int(proteinServingStepper.value))
+    }
+    
+    @IBAction func registerDairyServingChange(_ sender: Any) {
+        dairyServingLabel.text = String(Int(dairyServingStepper.value))
+    }
+    
+    
+    @IBAction func registerGrainServingChange(_ sender: Any) {
+        grainServingLabel.text = String(Int(grainServingStepper.value))
+    }
+    
+    
     @IBAction func registerDateChange(_ sender: Any) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
@@ -34,9 +69,37 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
         guard let nameToSave = nameInputBox.text else {
             return
         }
+        
+        //Remove once we are saving multiple food groups
+        var groupType = "none"
+        var numToSave = 0
+        
+        if (Int(fruitServingStepper.value) > numToSave){
+            groupType = "fruit"
+            numToSave = Int(fruitServingStepper.value)
+        }
+        if (Int(vegServingStepper.value) > numToSave){
+            groupType = "vegetable"
+            numToSave = Int(vegServingStepper.value)
+        }
+        if (Int(dairyServingStepper.value) > numToSave){
+            groupType = "dairy"
+            numToSave = Int(dairyServingStepper.value)
+        }
+        if (Int(proteinServingStepper.value) > numToSave){
+            groupType = "protein"
+            numToSave = Int(proteinServingStepper.value)
+        }
+        if (Int(grainServingStepper.value) > numToSave){
+            groupType = "grain"
+            numToSave = Int(grainServingStepper.value)
+        }
+        
 
-        DatabaseFunctions.insertFoodRecord(name: nameToSave, group: group, date: DailyState.todaysDate)
+        DatabaseFunctions.insertFoodRecord(name: nameToSave, group: groupType, date: DailyState.todaysDate)
         tabBarController?.selectedIndex = 0
+        print(numToSave)
+        print(groupType)
     }
 
     override func viewDidLoad() {
@@ -49,17 +112,5 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, UIPickerVie
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
-    }
-
-    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-         return pickerData.count
-    }
-
-    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return pickerData[row]
-    }
-
-    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-       group = pickerData[row]
     }
 }
