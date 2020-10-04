@@ -20,7 +20,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         customizeChart(group: "Fruit", pieChartView: fruitPieChartView)
-        customizeChart(group: "Protien", pieChartView: meatPieChartView)
+        customizeChart(group: "Protein", pieChartView: meatPieChartView)
         customizeChart(group: "Vegtable & Beans", pieChartView: vegetablePieChartView)
         customizeChart(group: "Grain", pieChartView: grainPieChartView)
         customizeChart(group: "Dairy", pieChartView: dairyPieChartView)
@@ -57,7 +57,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
         let format = NumberFormatter()
          format.numberStyle = .none
-         let formatter = DefaultValueFormatter(decimals: 2)
+        let formatter = DefaultValueFormatter(decimals: 2)
          pieChartData.setValueFormatter(formatter)
 
         // 4. Assign it to the chart’s data
