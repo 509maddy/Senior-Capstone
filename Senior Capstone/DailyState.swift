@@ -22,6 +22,15 @@ class DailyState {
         self.todaysDate = todaysDate
     }
 
+    enum GroupName: String {
+        case Fruit = "fruit"
+        case Vegetable = "vegetable"
+        case Protien = "protein"
+        case Grain = "grain"
+        case Dairy = "dairy"
+    }
+
+
     // initilize state with plist when app first launched after download
         // I think this will be done in the AppDelegate file? => NOT DONE HERE
         // https://www.youtube.com/watch?v=hrwx_teqwdQ

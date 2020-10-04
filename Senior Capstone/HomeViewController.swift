@@ -19,11 +19,11 @@ class HomeViewController: UIViewController, ChartViewDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        customizeChart(group: "fruit", pieChartView: fruitPieChartView)
-        customizeChart(group: "protein", pieChartView: meatPieChartView)
-        customizeChart(group: "vegetable", pieChartView: vegetablePieChartView)
-        customizeChart(group: "grain", pieChartView: grainPieChartView)
-        customizeChart(group: "dairy", pieChartView: dairyPieChartView)
+        customizeChart(group: DailyState.GroupName.Fruit.rawValue, pieChartView: fruitPieChartView)
+        customizeChart(group: DailyState.GroupName.Protien.rawValue, pieChartView: meatPieChartView)
+        customizeChart(group: DailyState.GroupName.Vegetable.rawValue, pieChartView: vegetablePieChartView)
+        customizeChart(group: DailyState.GroupName.Grain.rawValue, pieChartView: grainPieChartView)
+        customizeChart(group: DailyState.GroupName.Dairy.rawValue, pieChartView: dairyPieChartView)
     }
 
     func customizeChart(group: String, pieChartView: PieChartView) {
