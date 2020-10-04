@@ -96,10 +96,8 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
         }
         
 
-        DatabaseFunctions.insertFoodRecord(name: nameToSave, group: groupType, date: DailyState.todaysDate)
+        DatabaseFunctions.insertFoodRecord(name: nameToSave, group: groupType, date: DailyState.todaysDate, servings: Double(numToSave))
         tabBarController?.selectedIndex = 0
-        print(numToSave)
-        print(groupType)
     }
 
     override func viewDidLoad() {

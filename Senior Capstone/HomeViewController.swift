@@ -19,11 +19,11 @@ class HomeViewController: UIViewController, ChartViewDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        customizeChart(group: "Fruit", pieChartView: fruitPieChartView)
-        customizeChart(group: "Protein", pieChartView: meatPieChartView)
-        customizeChart(group: "Vegtable & Beans", pieChartView: vegetablePieChartView)
-        customizeChart(group: "Grain", pieChartView: grainPieChartView)
-        customizeChart(group: "Dairy", pieChartView: dairyPieChartView)
+        customizeChart(group: "fruit", pieChartView: fruitPieChartView)
+        customizeChart(group: "protein", pieChartView: meatPieChartView)
+        customizeChart(group: "vegetable", pieChartView: vegetablePieChartView)
+        customizeChart(group: "grain", pieChartView: grainPieChartView)
+        customizeChart(group: "dairy", pieChartView: dairyPieChartView)
     }
 
     func customizeChart(group: String, pieChartView: PieChartView) {
@@ -42,12 +42,12 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         }
 
         if (foodRecords.count != 0) {
-            // value should be goalServings - total servings
+            // value should be goalServings - total servings not 20 - totalServings
             let dataEntry2 = PieChartDataEntry(value: 20 - totalServings, label: "Remaining")
             dataEntries.append(dataEntry2)
         } else {
-            // value should be goalServings
-            let dataEntry3 = PieChartDataEntry(value: 100, label: "Remaining")
+            // value should be goalServings not 20
+            let dataEntry3 = PieChartDataEntry(value: 20, label: "Remaining")
             dataEntries.append(dataEntry3)
         }
 
