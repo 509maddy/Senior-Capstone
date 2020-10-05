@@ -53,11 +53,12 @@ class DatabaseFunctions {
 
     }
 
-    static func insertFoodRecord(name: String, group:String, date:String) {
+    static func insertFoodRecord(name: String, group: String, date: String, servings: Double) {
         let foodRecord = FoodRecord(context: appDelegate.persistentContainer.viewContext)
         foodRecord.date = DailyState.todaysDate
         foodRecord.group = group
         foodRecord.name = name
+        foodRecord.servings = servings
         appDelegate.saveContext()
     }
 
