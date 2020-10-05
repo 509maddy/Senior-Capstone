@@ -25,7 +25,7 @@ class DailyState {
     enum GroupName: String {
         case Fruit = "fruit"
         case Vegetable = "vegetable"
-        case Protien = "protein"
+        case Protein = "protein"
         case Grain = "grain"
         case Dairy = "dairy"
     }

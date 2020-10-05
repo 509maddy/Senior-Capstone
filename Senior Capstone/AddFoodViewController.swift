@@ -87,7 +87,7 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
             numToSave = Int(dairyServingStepper.value)
         }
         if (Int(proteinServingStepper.value) > numToSave){
-            groupType = DailyState.GroupName.Protien.rawValue
+            groupType = DailyState.GroupName.Protein.rawValue
             numToSave = Int(proteinServingStepper.value)
         }
         if (Int(grainServingStepper.value) > numToSave){
