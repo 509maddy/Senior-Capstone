@@ -32,6 +32,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         var foodRecords = [FoodRecord]()
         let predicate = NSPredicate(format: "date == %@ AND group == %@", DailyState.todaysDate, group)
         foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
+        print(DailyState.todaysDate)
 
         var dataEntries: [ChartDataEntry] = []
         var totalServings = 0.0

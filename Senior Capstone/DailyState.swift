@@ -16,7 +16,15 @@ class DailyState {
     
 
     static var calories:Int = 2000
-    static var todaysDate: String = "9/28/20"
+    static var todaysDate: String = initDate()
+
+    static func initDate() -> String {
+        let date = Date()
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.short
+        let result = formatter.string(from: date)
+        return result
+    }
 
     static func updateTodaysDate(todaysDate: String) {
         self.todaysDate = todaysDate

@@ -18,11 +18,6 @@ class FoodViewController: UIViewController {
     
     // gives us a reference to the table
     @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var datePicker: UIDatePicker!
-
-    @IBAction func datePickerOnChange(_ sender: Any) {
-        loadSavedData()
-    }
     
     // the persistant container belongs to the appDelegate class
     // appDelegate acts as a singleton, which means there is only once instance
@@ -48,17 +43,9 @@ class FoodViewController: UIViewController {
     }
 
     func loadSavedData() {
-        let date = datePicker.date
         
-        let formatter = DateFormatter()
-        formatter.dateFormat = "M/d/yy"
-        let selectedDate = formatter.string(from: date)
-        
-        
-        let predicate = NSPredicate(format: "date == %@", selectedDate)
+        let predicate = NSPredicate(format: "date == %@", DailyState.todaysDate)
        
-        print(selectedDate)
-        
         foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
         tableView.reloadData()
 
