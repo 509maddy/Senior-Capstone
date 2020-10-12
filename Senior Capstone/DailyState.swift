@@ -16,11 +16,20 @@ class DailyState {
     
 
     static var calories:Int = 2000
-    static var todaysDate: String = "9/9/20"
+    static var todaysDate: String = "9/28/20"
 
     static func updateTodaysDate(todaysDate: String) {
         self.todaysDate = todaysDate
     }
+
+    enum GroupName: String {
+        case Fruit = "fruit"
+        case Vegetable = "vegetable"
+        case Protein = "protein"
+        case Grain = "grain"
+        case Dairy = "dairy"
+    }
+
 
     // initilize state with plist when app first launched after download
         // I think this will be done in the AppDelegate file? => NOT DONE HERE
