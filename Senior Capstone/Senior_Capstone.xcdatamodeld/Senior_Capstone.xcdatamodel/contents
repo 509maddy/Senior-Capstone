@@ -6,14 +6,16 @@
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="servings" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
     </entity>
-    <entity name="UserDailyData" representedClassName="UserDailyData" syncable="YES" codeGenerationType="class">
+    <entity name="GoalRecord" representedClassName="GoalRecord" syncable="YES">
+        <attribute name="dairyGoal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
         <attribute name="date" optional="YES" attributeType="String"/>
-        <attribute name="totalCalories" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="totalFruitCalories" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="totalVeggieCalories" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="fruitGoal" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="grainGoal" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="proteinGoal" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="vegetableGoal" optional="YES" attributeType="Double" defaultValueString="0" usesScalarValueType="YES"/>
     </entity>
     <elements>
         <element name="FoodRecord" positionX="-36" positionY="45" width="128" height="103"/>
-        <element name="UserDailyData" positionX="-27" positionY="45" width="128" height="103"/>
+        <element name="GoalRecord" positionX="-27" positionY="45" width="128" height="133"/>
     </elements>
 </model>
