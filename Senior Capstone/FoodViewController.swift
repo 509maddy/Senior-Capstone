@@ -14,7 +14,7 @@ import CoreData
  * In this class, I update the database directly. That can probably be abstracted out into generic functions
  *  so we dont have to repeat code across strings
  */
-class FoodViewController: UIViewController {
+class FoodViewController: UIViewController, UITableViewDelegate {
     
     // gives us a reference to the table
     @IBOutlet weak var tableView: UITableView!
@@ -39,6 +39,7 @@ class FoodViewController: UIViewController {
            // good step-by-step guide (although they implement persistant storage a little differently): https://www.hackingwithswift.com/read/38/4/creating-an-nsmanagedobject-subclass-with-xcode
 
         loadSavedData()
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
     }
 
@@ -88,5 +89,10 @@ extension FoodViewController: UITableViewDataSource {
             foodRecords.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
+    }
+    
+    // will display info about item when clicked on
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        print("You selected cell #\(indexPath.row)!")
     }
 }
