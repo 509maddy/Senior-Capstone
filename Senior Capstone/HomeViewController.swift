@@ -26,21 +26,41 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         customizeChart(group: DailyState.GroupName.Dairy.rawValue, pieChartView: dairyPieChartView)
     }
 
+    // TODO: Remove date param
     func customizeChart(group: String, pieChartView: PieChartView) {
 
         // 1. Set ChartDataEntry
         var foodRecords = [FoodRecord]()
-        let predicate = NSPredicate(format: "date == %@ AND group == %@", DailyState.todaysDate, group)
+        let predicate = NSPredicate(format: "date == %@", DailyState.todaysDate)
         foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
 
         var dataEntries: [ChartDataEntry] = []
-        var totalServings = 0.0
+        var totalFruitServings = 0.0
+        var totalDairyServings = 0.0
+        var totalGrainServings = 0.0
+        var totalProteinServings = 0.0
+        var totalVegServings = 0.0
+
         for i in 0..<foodRecords.count {
-            let dataEntry = PieChartDataEntry(value: foodRecords[i].value(forKeyPath: "servings") as! Double, label: foodRecords[i].value(forKeyPath: "name") as? String)
+            let fruit = foodRecords[i].value(forKeyPath: "fruitServings") as! Double
+            let dairy = foodRecords[i].value(forKeyPath: "dairyServings") as! Double
+            let grain = foodRecords[i].value(forKeyPath: "grainServings") as! Double
+            let protein = foodRecords[i].value(forKeyPath: "proteinServings") as! Double
+            let veg = foodRecords[i].value(forKeyPath: "vegServings") as! Double
+            
+            totalFruitServings += fruit
+            totalDairyServings += dairy
+            totalGrainServings += grain
+            totalProteinServings += protein
+            totalVegServings += veg
+            
+            let dataEntry = PieChartDataEntry(value: foodRecords[i].value(forKeyPath: "fruitServings") as! Double, label: foodRecords[i].value(forKeyPath: "name") as? String)
+            
             dataEntries.append(dataEntry)
-            totalServings += foodRecords[i].value(forKeyPath: "servings") as! Double
+
         }
 
+        /*
         if (foodRecords.count != 0) {
             // value should be goalServings - total servings not 20 - totalServings
             let dataEntry2 = PieChartDataEntry(value: 20 - totalServings, label: "Remaining")
@@ -50,6 +70,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
             let dataEntry3 = PieChartDataEntry(value: 20, label: "Remaining")
             dataEntries.append(dataEntry3)
         }
+        */
 
         // 2. Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
