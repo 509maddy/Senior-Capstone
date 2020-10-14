@@ -49,7 +49,10 @@ class FoodViewController: UIViewController, UITableViewDelegate {
        
         foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
         tableView.reloadData()
-
+    }
+    
+    private func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
+        print("You selected cell #\(indexPath.row)!")
     }
 }
 
@@ -62,13 +65,12 @@ extension FoodViewController: UITableViewDataSource {
         return foodRecords.count
     }
 
-    // sayin that you can modify the table
+    // saying that you can modify the table
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
 
-    // saying that I want to display the name
-    // I should also be able to display the group, but I didn't get that working at the moment
+    // saying that I want to display the name in each cell
     func tableView(_ tableView: UITableView,
                    cellForRowAt indexPath: IndexPath)
         -> UITableViewCell {
@@ -89,10 +91,5 @@ extension FoodViewController: UITableViewDataSource {
             foodRecords.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
-    }
-    
-    // will display info about item when clicked on
-    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        print("You selected cell #\(indexPath.row)!")
     }
 }
