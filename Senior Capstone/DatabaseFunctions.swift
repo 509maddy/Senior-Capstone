@@ -18,13 +18,13 @@ class DatabaseFunctions {
         let request = FoodRecord.createFetchRequest()
 
         // order by date (newest date at top)
-        let sort = NSSortDescriptor(key: "date", ascending: true)
+        let sort = NSSortDescriptor(key: "date", ascending: false)
         request.sortDescriptors = [sort]
 
         do {
             foodRecords = try appDelegate.persistentContainer.viewContext.fetch(request)
             print(foodRecords)
-            print("Got \(foodRecords.count) dateItems")
+            print("Got \(foodRecords.count) foodItems")
         } catch {
             print("Fetch failed")
         }
@@ -37,13 +37,13 @@ class DatabaseFunctions {
         let request = GoalRecord.createFetchRequest()
 
         // order by date (newest date at top)
-        let sort = NSSortDescriptor(key: "date", ascending: true)
+        let sort = NSSortDescriptor(key: "date", ascending: false)
         request.sortDescriptors = [sort]
 
         do {
             goalRecords = try appDelegate.persistentContainer.viewContext.fetch(request)
             print(goalRecords)
-            print("Got \(goalRecords.count) dateItems")
+            print("Got \(goalRecords.count) goalItems")
 
         } catch {
             print("Fetch failed")
@@ -57,7 +57,7 @@ class DatabaseFunctions {
         let request = FoodRecord.createFetchRequest()
 
         // order by date (newest date at top)
-        let sort = NSSortDescriptor(key: "date", ascending: true)
+        let sort = NSSortDescriptor(key: "date", ascending: false)
         request.sortDescriptors = [sort]
         request.predicate = predicate
 
