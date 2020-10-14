@@ -31,7 +31,6 @@ class DailyState {
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.short
         let result = formatter.string(from: date)
-        print(result)
         return result
     }
 
@@ -111,9 +110,6 @@ class DailyState {
                 fruitGoal = dairyGoalDefault
             }
         }
-
-        print("Grain Goal: ")
-        print(grainGoal)
     }
 
     static func updateGoals(fruitGoal: Double, vegetableGoal: Double, proteinGoal: Double, grainGoal: Double, dairyGoal: Double) {
