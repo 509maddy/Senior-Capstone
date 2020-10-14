@@ -19,22 +19,24 @@ class HomeViewController: UIViewController, ChartViewDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        customizeChart(group: DailyState.GroupName.Fruit.rawValue, pieChartView: fruitPieChartView)
-        customizeChart(group: DailyState.GroupName.Protein.rawValue, pieChartView: meatPieChartView)
-        customizeChart(group: DailyState.GroupName.Vegetable.rawValue, pieChartView: vegetablePieChartView)
-        customizeChart(group: DailyState.GroupName.Grain.rawValue, pieChartView: grainPieChartView)
-        customizeChart(group: DailyState.GroupName.Dairy.rawValue, pieChartView: dairyPieChartView)
+        loadPieCharts()
     }
 
     // TODO: Remove date param
-    func customizeChart(group: String, pieChartView: PieChartView) {
+    func loadPieCharts() {
 
         // 1. Set ChartDataEntry
         var foodRecords = [FoodRecord]()
         let predicate = NSPredicate(format: "date == %@", DailyState.todaysDate)
         foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
 
-        var dataEntries: [ChartDataEntry] = []
+        var fruitChartEntries: [ChartDataEntry] = []
+        var dairyChartEntries: [ChartDataEntry] = []
+        var grainChartEntries: [ChartDataEntry] = []
+        var proteinChartEntries: [ChartDataEntry] = []
+        var vegChartEntries: [ChartDataEntry] = []
+
+        
         var totalFruitServings = 0.0
         var totalDairyServings = 0.0
         var totalGrainServings = 0.0
@@ -42,6 +44,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         var totalVegServings = 0.0
 
         for i in 0..<foodRecords.count {
+            let label = foodRecords[i].value(forKeyPath: "name") as? String
             let fruit = foodRecords[i].value(forKeyPath: "fruitServings") as! Double
             let dairy = foodRecords[i].value(forKeyPath: "dairyServings") as! Double
             let grain = foodRecords[i].value(forKeyPath: "grainServings") as! Double
@@ -54,10 +57,26 @@ class HomeViewController: UIViewController, ChartViewDelegate {
             totalProteinServings += protein
             totalVegServings += veg
             
-            let dataEntry = PieChartDataEntry(value: foodRecords[i].value(forKeyPath: "fruitServings") as! Double, label: foodRecords[i].value(forKeyPath: "name") as? String)
-            
-            dataEntries.append(dataEntry)
-
+            if (fruit > 0){
+                let dataEntry = PieChartDataEntry(value: fruit, label: label)
+                fruitChartEntries.append(dataEntry)
+            }
+            if (dairy > 0){
+                let dataEntry = PieChartDataEntry(value: dairy, label: label)
+                dairyChartEntries.append(dataEntry)
+            }
+            if (grain > 0){
+                let dataEntry = PieChartDataEntry(value: grain, label: label)
+                grainChartEntries.append(dataEntry)
+            }
+            if (protein > 0){
+                let dataEntry = PieChartDataEntry(value: protein, label: label)
+                proteinChartEntries.append(dataEntry)
+            }
+            if (veg > 0){
+                let dataEntry = PieChartDataEntry(value: veg, label: label)
+                vegChartEntries.append(dataEntry)
+            }
         }
 
         /*
@@ -72,6 +91,15 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         }
         */
 
+        
+        customPieChart(dataEntries: fruitChartEntries, pieChartView: fruitPieChartView)
+        customPieChart(dataEntries: dairyChartEntries, pieChartView: dairyPieChartView)
+        customPieChart(dataEntries: grainChartEntries, pieChartView: grainPieChartView)
+        customPieChart(dataEntries: proteinChartEntries, pieChartView: vegetablePieChartView)
+        customPieChart(dataEntries: vegChartEntries, pieChartView: meatPieChartView)
+    }
+    
+    private func customPieChart(dataEntries: [ChartDataEntry], pieChartView: PieChartView) {
         // 2. Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
         pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataEntries.count)
