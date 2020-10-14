@@ -10,10 +10,6 @@ import Foundation
 import UIKit
 import CoreData
 
-/**
- * In this class, I update the database directly. That can probably be abstracted out into generic functions
- *  so we dont have to repeat code across strings
- */
 class FoodViewController: UIViewController, UITableViewDelegate {
     
     // gives us a reference to the table
@@ -35,9 +31,6 @@ class FoodViewController: UIViewController, UITableViewDelegate {
         title = "Today's Food"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
-        // if we ever need to use an API (i.e. fetch JSON), it would go at this point in the viewDidLoad (or viewWillAppear if necessary)
-           // good step-by-step guide (although they implement persistant storage a little differently): https://www.hackingwithswift.com/read/38/4/creating-an-nsmanagedobject-subclass-with-xcode
-
         loadSavedData()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
@@ -49,6 +42,10 @@ class FoodViewController: UIViewController, UITableViewDelegate {
        
         foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
         tableView.reloadData()
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath : IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: self)
     }
     
 }
@@ -68,15 +65,10 @@ extension FoodViewController: UITableViewDataSource {
     }
 
     // saying that I want to display the name in each cell
-    func tableView(_ tableView: UITableView,
-                   cellForRowAt indexPath: IndexPath)
-        -> UITableViewCell {
-
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let foodRecord = foodRecords[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             cell.textLabel?.text = foodRecord.value(forKeyPath: "name") as? String
-            cell.detailTextLabel?.text = foodRecord.value(forKeyPath: "group") as? String
-            // subtitle isn't displaying, why????
             
             return cell
     }
