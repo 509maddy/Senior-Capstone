@@ -51,9 +51,6 @@ class FoodViewController: UIViewController, UITableViewDelegate {
         tableView.reloadData()
     }
     
-    private func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        print("You selected cell #\(indexPath.row)!")
-    }
 }
 
 // there are all just mandatory things I needed to override to get the table to work
@@ -78,7 +75,9 @@ extension FoodViewController: UITableViewDataSource {
             let foodRecord = foodRecords[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             cell.textLabel?.text = foodRecord.value(forKeyPath: "name") as? String
-
+            cell.detailTextLabel?.text = foodRecord.value(forKeyPath: "group") as? String
+            // subtitle isn't displaying, why????
+            
             return cell
     }
 
@@ -92,4 +91,5 @@ extension FoodViewController: UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
 }
