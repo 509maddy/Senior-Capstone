@@ -15,6 +15,11 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var vLabel: UILabel!
     @IBOutlet weak var pLabel: UILabel!
     @IBOutlet weak var dLabel: UILabel!
+    @IBOutlet weak var gSlider: UISlider!
+    @IBOutlet weak var dSlider: UISlider!
+    @IBOutlet weak var pSlider: UISlider!
+    @IBOutlet weak var fSlider: UISlider!
+    @IBOutlet weak var vSlider: UISlider!
 
     var grainValue: Double = DailyState.grainGoal
     var fruitValue: Double = DailyState.fruitGoal
@@ -39,11 +44,16 @@ class SettingsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        gLabel.text = String(Int(grainValue))
-        fLabel.text = String(Int(fruitValue))
-        vLabel.text = String(Int(vegetableValue))
-        pLabel.text = String(Int(proteinValue))
-        dLabel.text = String(Int(dairyValue))
+        gLabel.text = String(Int(DailyState.grainGoal))
+        gSlider.setValue(Float(Int(DailyState.grainGoal)), animated: true)
+        fLabel.text = String(Int(DailyState.fruitGoal))
+        fSlider.setValue(Float(Int(DailyState.fruitGoal)), animated: true)
+        vLabel.text = String(Int(DailyState.vegetableGoal))
+        vSlider.setValue(Float(Int(DailyState.vegetableGoal)), animated: true)
+        pLabel.text = String(Int(DailyState.proteinGoal))
+        pSlider.setValue(Float(Int(DailyState.proteinGoal)), animated: true)
+        dLabel.text = String(Int(DailyState.dairyGoal))
+        dSlider.setValue(Float(Int(DailyState.dairyGoal)), animated: true)
     }
 
     @IBAction func gSliderValueChanged(_ sender: UISlider) {

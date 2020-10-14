@@ -59,10 +59,52 @@ class DailyState {
     }
 
     static func refreshGoals() {
-        // check if goal exists for this date
-        // if so, update goals
-        // if not, pull most recent goal before this date
-        // if no goal at all, use defaults
+        print("refreshed goals")
+        var goalRecords = [GoalRecord]()
+        let predicate = NSPredicate(format: "date == %@", DailyState.todaysDate)
+        goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
+        let formatter = DateFormatter()
+        formatter.dateStyle = DateFormatter.Style.short
+        let date = formatter.date(from: DailyState.todaysDate)!
+
+        if goalRecords.count != 0 {
+            vegetableGoal = goalRecords[0].value(forKey: "vegetableGoal") as! Double
+            proteinGoal = goalRecords[0].value(forKey: "proteinGoal") as! Double
+            grainGoal = goalRecords[0].value(forKey: "grainGoal") as! Double
+            dairyGoal = goalRecords[0].value(forKey: "dairyGoal") as! Double
+            fruitGoal = goalRecords[0].value(forKey: "fruitGoal") as! Double
+        } else {
+
+            goalRecords = DatabaseFunctions.retrieveGoalRecord()
+
+            var foundGoal = false
+            var counter = 0;
+            while (foundGoal == false && counter < goalRecords.count) {
+                let recordString = goalRecords[counter].value(forKey: "date")
+                let recordDate = formatter.date(from: recordString as! String)!
+                    if recordDate < date {
+                        vegetableGoal = goalRecords[counter].value(forKey: "vegetableGoal") as! Double
+                        proteinGoal = goalRecords[counter].value(forKey: "proteinGoal") as! Double
+                        grainGoal = goalRecords[counter].value(forKey: "grainGoal") as! Double
+                        dairyGoal = goalRecords[counter].value(forKey: "dairyGoal") as! Double
+                        fruitGoal = goalRecords[counter].value(forKey: "fruitGoal") as! Double
+                        foundGoal = true;
+                        print(recordDate)
+                    }
+                counter = counter + 1;
+            }
+
+            if foundGoal == false {
+                vegetableGoal = fruitGoalDefault
+                proteinGoal = proteinGoalDefault
+                grainGoal = grainGoalDefault
+                dairyGoal = vegetableGoalDefault
+                fruitGoal = dairyGoalDefault
+            }
+        }
+
+        print("Grain Goal: ")
+        print(grainGoal)
     }
 
     static func updateGoals(fruitGoal: Double, vegetableGoal: Double, proteinGoal: Double, grainGoal: Double, dairyGoal: Double) {
