@@ -33,8 +33,6 @@ class SettingsViewController: UIViewController {
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
         let date = dateFormatter.date(from: DailyState.todaysDate)!
 
-        print(date)
-
         var goalRecords = [GoalRecord]()
         let predicate = NSPredicate(format: "date == %@", date as NSDate)
         goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)

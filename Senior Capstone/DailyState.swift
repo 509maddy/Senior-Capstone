@@ -66,9 +66,6 @@ class DailyState {
         dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
         let date = dateFormatter.date(from: DailyState.todaysDate)!
 
-        print("TODAYS DATE NEXT:")
-        print(date)
-
         var goalRecords = [GoalRecord]()
         let predicate = NSPredicate(format: "date == %@", date as NSDate)
         goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
@@ -88,8 +85,6 @@ class DailyState {
             var counter = 0;
             while (foundGoal == false && counter < goalRecords.count) {
                 let recordDate = goalRecords[counter].value(forKey: "date") as! Date
-                print(date)
-                print(recordDate)
                     if recordDate < date {
                         vegetableGoal = goalRecords[counter].value(forKey: "vegetableGoal") as! Double
                         proteinGoal = goalRecords[counter].value(forKey: "proteinGoal") as! Double
@@ -97,7 +92,6 @@ class DailyState {
                         dairyGoal = goalRecords[counter].value(forKey: "dairyGoal") as! Double
                         fruitGoal = goalRecords[counter].value(forKey: "fruitGoal") as! Double
                         foundGoal = true;
-                        print(recordDate)
                     }
                 counter = counter + 1;
             }
