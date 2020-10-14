@@ -28,17 +28,25 @@ class SettingsViewController: UIViewController {
     var dairyValue: Double = DailyState.dairyGoal
 
     @IBAction func saveSliderValues(_ sender: Any) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+        let date = dateFormatter.date(from: DailyState.todaysDate)!
+
+        print(date)
+
         var goalRecords = [GoalRecord]()
-        let predicate = NSPredicate(format: "date == %@", DailyState.todaysDate)
+        let predicate = NSPredicate(format: "date == %@", date as NSDate)
         goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
 
         if goalRecords.count != 0 {
             print("Goal already exists for this date, modification made.")
-            DatabaseFunctions.modifyGoalRecord(date: DailyState.todaysDate, fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
+            
+            DatabaseFunctions.modifyGoalRecord(date: date, fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
 
         } else {
             print("No existing entitiy for this date. New goal entity made.")
-            DatabaseFunctions.insertGoalRecord(date: DailyState.todaysDate, fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
+            DatabaseFunctions.insertGoalRecord(date: date, fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
         }
     }
 

@@ -31,6 +31,7 @@ class DailyState {
         let formatter = DateFormatter()
         formatter.dateStyle = DateFormatter.Style.short
         let result = formatter.string(from: date)
+        print(result)
         return result
     }
 
@@ -60,12 +61,19 @@ class DailyState {
 
     static func refreshGoals() {
         print("refreshed goals")
+
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+        let date = dateFormatter.date(from: DailyState.todaysDate)!
+
+        print("TODAYS DATE NEXT:")
+        print(date)
+
         var goalRecords = [GoalRecord]()
-        let predicate = NSPredicate(format: "date == %@", DailyState.todaysDate)
+        let predicate = NSPredicate(format: "date == %@", date as NSDate)
         goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
-        let formatter = DateFormatter()
-        formatter.dateStyle = DateFormatter.Style.short
-        let date = formatter.date(from: DailyState.todaysDate)!
+
 
         if goalRecords.count != 0 {
             vegetableGoal = goalRecords[0].value(forKey: "vegetableGoal") as! Double
@@ -74,14 +82,15 @@ class DailyState {
             dairyGoal = goalRecords[0].value(forKey: "dairyGoal") as! Double
             fruitGoal = goalRecords[0].value(forKey: "fruitGoal") as! Double
         } else {
-
-            goalRecords = DatabaseFunctions.retrieveGoalRecord()
+            let predicate = NSPredicate(format: "date < %@", date as NSDate)
+            goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
 
             var foundGoal = false
             var counter = 0;
             while (foundGoal == false && counter < goalRecords.count) {
-                let recordString = goalRecords[counter].value(forKey: "date")
-                let recordDate = formatter.date(from: recordString as! String)!
+                let recordDate = goalRecords[counter].value(forKey: "date") as! Date
+                print(date)
+                print(recordDate)
                     if recordDate < date {
                         vegetableGoal = goalRecords[counter].value(forKey: "vegetableGoal") as! Double
                         proteinGoal = goalRecords[counter].value(forKey: "proteinGoal") as! Double

@@ -17,7 +17,7 @@ extension GoalRecord {
         return NSFetchRequest<GoalRecord>(entityName: "GoalRecord")
     }
 
-    @NSManaged public var date: String
+    @NSManaged public var date: Date
     @NSManaged public var fruitGoal: Double
     @NSManaged public var vegetableGoal: Double
     @NSManaged public var proteinGoal: Double
