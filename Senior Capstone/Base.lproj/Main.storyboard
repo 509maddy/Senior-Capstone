@@ -401,6 +401,7 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <connections>
                                             <outlet property="dataSource" destination="ZTH-Mu-lc6" id="lJz-wr-MnO"/>
+                                            <outlet property="delegate" destination="ZTH-Mu-lc6" id="qMW-Kw-ss0"/>
                                         </connections>
                                     </tableView>
                                 </subviews>
