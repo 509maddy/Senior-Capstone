@@ -84,4 +84,10 @@ extension FoodViewController: UITableViewDataSource {
         }
     }
     
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailVC {
+            destination.foodItem = foodRecords[(tableView.indexPathForSelectedRow?.row)!]
+        }
+    }
+    
 }

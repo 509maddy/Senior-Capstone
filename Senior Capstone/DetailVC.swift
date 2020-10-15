@@ -17,6 +17,6 @@ class DetailVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.text = foodItem?.value(forKeyPath: "name") as? String
+        label.text = "\((foodItem?.name)!) is in the food group \((foodItem?.group)!) and you had \((foodItem?.servings)!) servings"
     }
 }
