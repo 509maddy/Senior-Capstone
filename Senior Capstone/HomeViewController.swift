@@ -79,6 +79,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
             }
         }
         
+        //Change these Hard coded goals in ticket 45
         let goalFruit = 20.0
         let goalDairy = 20.0
         let goalGrain = 20.0
