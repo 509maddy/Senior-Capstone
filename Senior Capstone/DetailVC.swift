@@ -10,13 +10,17 @@ import UIKit
 
 class DetailVC: UIViewController {
 
-    @IBOutlet weak var label: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var groupLabel : UILabel!
+    @IBOutlet weak var servingsLabel : UILabel!
     
     var foodItem : FoodRecord?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        label.text = "\((foodItem?.name)!) is in the food group \((foodItem?.group)!) and you had \((foodItem?.servings)!) servings"
+        nameLabel.text = "\((foodItem?.name)!)"
+        groupLabel.text = "\((foodItem?.group)!)"
+        servingsLabel.text = "\((foodItem?.servings)!)"
     }
 }

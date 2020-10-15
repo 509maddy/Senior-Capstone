@@ -431,7 +431,31 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfT-ai-qVq">
-                                <rect key="frame" x="10" y="108" width="394" height="21"/>
+                                <rect key="frame" x="30" y="148" width="354" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Food Group:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkO-Te-rlY">
+                                <rect key="frame" x="30" y="219" width="96" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wgl-Hw-dQ5">
+                                <rect key="frame" x="136" y="219" width="42" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Servings:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RTn-en-TBc">
+                                <rect key="frame" x="30" y="290" width="72" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FLj-0S-lBo">
+                                <rect key="frame" x="112" y="289.5" width="42" height="20.5"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -439,20 +463,30 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="vzA-ws-dxq" firstAttribute="trailing" secondItem="EfT-ai-qVq" secondAttribute="trailing" constant="10" id="9WR-HN-Fw6"/>
-                            <constraint firstItem="EfT-ai-qVq" firstAttribute="top" secondItem="vzA-ws-dxq" secondAttribute="top" constant="20" id="DXv-HE-lfd"/>
-                            <constraint firstItem="EfT-ai-qVq" firstAttribute="leading" secondItem="vzA-ws-dxq" secondAttribute="leading" constant="10" id="iCp-7u-dvJ"/>
+                            <constraint firstItem="RTn-en-TBc" firstAttribute="top" secondItem="hkO-Te-rlY" secondAttribute="bottom" constant="50" id="2dU-3M-QSU"/>
+                            <constraint firstItem="vzA-ws-dxq" firstAttribute="trailing" secondItem="EfT-ai-qVq" secondAttribute="trailing" constant="30" id="Dc5-Wy-fIq"/>
+                            <constraint firstItem="FLj-0S-lBo" firstAttribute="leading" secondItem="RTn-en-TBc" secondAttribute="trailing" constant="10" id="PPL-Qi-zdT"/>
+                            <constraint firstItem="wgl-Hw-dQ5" firstAttribute="top" secondItem="EfT-ai-qVq" secondAttribute="bottom" constant="50" id="TNk-5r-L24"/>
+                            <constraint firstItem="wgl-Hw-dQ5" firstAttribute="leading" secondItem="hkO-Te-rlY" secondAttribute="trailing" constant="10" id="a3z-rb-M9v"/>
+                            <constraint firstItem="hkO-Te-rlY" firstAttribute="leading" secondItem="vzA-ws-dxq" secondAttribute="leading" constant="30" id="bgt-4b-Uo2"/>
+                            <constraint firstItem="RTn-en-TBc" firstAttribute="leading" secondItem="vzA-ws-dxq" secondAttribute="leading" constant="30" id="f6t-j5-mUW"/>
+                            <constraint firstItem="hkO-Te-rlY" firstAttribute="top" secondItem="EfT-ai-qVq" secondAttribute="bottom" constant="50" id="ize-a3-qBz"/>
+                            <constraint firstItem="FLj-0S-lBo" firstAttribute="top" secondItem="wgl-Hw-dQ5" secondAttribute="bottom" constant="50" id="on1-ff-Gp8"/>
+                            <constraint firstItem="EfT-ai-qVq" firstAttribute="top" secondItem="vzA-ws-dxq" secondAttribute="top" constant="60" id="s2F-HZ-AgK"/>
+                            <constraint firstItem="EfT-ai-qVq" firstAttribute="leading" secondItem="vzA-ws-dxq" secondAttribute="leading" constant="30" id="sZp-vq-aRp"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vzA-ws-dxq"/>
                     </view>
                     <navigationItem key="navigationItem" id="Vol-XD-jxJ"/>
                     <connections>
-                        <outlet property="label" destination="EfT-ai-qVq" id="HTJ-jx-T8C"/>
+                        <outlet property="groupLabel" destination="wgl-Hw-dQ5" id="X3Q-v3-8MO"/>
+                        <outlet property="nameLabel" destination="EfT-ai-qVq" id="PmO-RC-RDz"/>
+                        <outlet property="servingsLabel" destination="FLj-0S-lBo" id="0JP-wl-xur"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJm-gr-CYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1480" y="-1241"/>
+            <point key="canvasLocation" x="1478.2608695652175" y="-1241.5178571428571"/>
         </scene>
         <!--Add Food View Controller-->
         <scene sceneID="nRN-yC-a5Q">
