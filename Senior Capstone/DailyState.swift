@@ -15,6 +15,7 @@ import CoreData
 class DailyState {
 
     static var todaysDate: String = initDate()
+    static var todaysDateAsDate: Date = initDateAsDate()
     static var fruitGoal: Double = initGoal(group: GroupName.Fruit)
     static var vegetableGoal: Double = initGoal(group: GroupName.Vegetable)
     static var proteinGoal: Double = initGoal(group: GroupName.Protein)
@@ -32,6 +33,14 @@ class DailyState {
         formatter.dateStyle = DateFormatter.Style.short
         let result = formatter.string(from: date)
         return result
+    }
+
+    static func initDateAsDate() -> Date {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
+        let date = dateFormatter.date(from: DailyState.todaysDate)!
+        return date
     }
 
     static func initGoal(group: GroupName) -> Double {
@@ -55,37 +64,37 @@ class DailyState {
 
     static func updateTodaysDate(todaysDate: String) {
         self.todaysDate = todaysDate
+        self.todaysDateAsDate = initDateAsDate()
         refreshGoals()
     }
 
     static func refreshGoals() {
-        print("refreshed goals")
-
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
-        dateFormatter.timeZone = TimeZone(abbreviation: "GMT+0:00")
-        let date = dateFormatter.date(from: DailyState.todaysDate)!
+        print("refresing goals")
 
         var goalRecords = [GoalRecord]()
-        let predicate = NSPredicate(format: "date == %@", date as NSDate)
+        let predicate = NSPredicate(format: "date == %@", todaysDateAsDate as NSDate)
         goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
 
 
         if goalRecords.count != 0 {
+            print("found match")
+            print(todaysDateAsDate)
             vegetableGoal = goalRecords[0].value(forKey: "vegetableGoal") as! Double
             proteinGoal = goalRecords[0].value(forKey: "proteinGoal") as! Double
             grainGoal = goalRecords[0].value(forKey: "grainGoal") as! Double
             dairyGoal = goalRecords[0].value(forKey: "dairyGoal") as! Double
             fruitGoal = goalRecords[0].value(forKey: "fruitGoal") as! Double
         } else {
-            let predicate = NSPredicate(format: "date < %@", date as NSDate)
+            let predicate = NSPredicate(format: "date < %@", todaysDateAsDate as NSDate)
             goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
 
             var foundGoal = false
             var counter = 0;
             while (foundGoal == false && counter < goalRecords.count) {
                 let recordDate = goalRecords[counter].value(forKey: "date") as! Date
-                    if recordDate < date {
+                    print(recordDate)
+                    print(todaysDateAsDate)
+                    if recordDate < todaysDateAsDate {
                         vegetableGoal = goalRecords[counter].value(forKey: "vegetableGoal") as! Double
                         proteinGoal = goalRecords[counter].value(forKey: "proteinGoal") as! Double
                         grainGoal = goalRecords[counter].value(forKey: "grainGoal") as! Double
@@ -104,10 +113,6 @@ class DailyState {
                 fruitGoal = dairyGoalDefault
             }
         }
-    }
-
-    static func updateGoals(fruitGoal: Double, vegetableGoal: Double, proteinGoal: Double, grainGoal: Double, dairyGoal: Double) {
-
     }
 
     enum GroupName: String {
