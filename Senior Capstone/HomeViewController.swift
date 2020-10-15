@@ -78,28 +78,30 @@ class HomeViewController: UIViewController, ChartViewDelegate {
                 vegChartEntries.append(dataEntry)
             }
         }
-
-        /*
-        if (foodRecords.count != 0) {
-            // value should be goalServings - total servings not 20 - totalServings
-            let dataEntry2 = PieChartDataEntry(value: 20 - totalServings, label: "Remaining")
-            dataEntries.append(dataEntry2)
-        } else {
-            // value should be goalServings not 20
-            let dataEntry3 = PieChartDataEntry(value: 20, label: "Remaining")
-            dataEntries.append(dataEntry3)
-        }
-        */
-
         
-        customPieChart(dataEntries: fruitChartEntries, pieChartView: fruitPieChartView)
-        customPieChart(dataEntries: dairyChartEntries, pieChartView: dairyPieChartView)
-        customPieChart(dataEntries: grainChartEntries, pieChartView: grainPieChartView)
-        customPieChart(dataEntries: proteinChartEntries, pieChartView: vegetablePieChartView)
-        customPieChart(dataEntries: vegChartEntries, pieChartView: meatPieChartView)
+        let goalFruit = 20.0
+        let goalDairy = 20.0
+        let goalGrain = 20.0
+        let goalProtein = 20.0
+        let goalVeg = 20.0
+        
+        customPieChart(dataEntries: &fruitChartEntries, pieChartView: fruitPieChartView, goalServings: goalFruit, totalServings: totalFruitServings)
+        customPieChart(dataEntries: &dairyChartEntries, pieChartView: dairyPieChartView, goalServings: goalDairy, totalServings: totalDairyServings)
+        customPieChart(dataEntries: &grainChartEntries, pieChartView: grainPieChartView, goalServings: goalGrain, totalServings: totalGrainServings)
+        customPieChart(dataEntries: &proteinChartEntries, pieChartView: vegetablePieChartView, goalServings: goalProtein, totalServings: totalProteinServings)
+        customPieChart(dataEntries: &vegChartEntries, pieChartView: meatPieChartView, goalServings: goalVeg, totalServings: totalVegServings)
     }
     
-    private func customPieChart(dataEntries: [ChartDataEntry], pieChartView: PieChartView) {
+    private func customPieChart( dataEntries: inout [ChartDataEntry], pieChartView: PieChartView, goalServings: Double, totalServings: Double) {
+        // 1. Figure out remaining
+        let remaining = goalServings - totalServings
+        
+        if remaining > 0{
+            let remainingEntries = PieChartDataEntry(value: remaining, label: "Remaining")
+            dataEntries.append(remainingEntries)
+        }
+
+        
         // 2. Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
         pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataEntries.count)
