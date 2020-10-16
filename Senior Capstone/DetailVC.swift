@@ -11,8 +11,11 @@ import UIKit
 class DetailVC: UIViewController {
 
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var groupLabel : UILabel!
-    @IBOutlet weak var servingsLabel : UILabel!
+    @IBOutlet weak var fruitLabel : UILabel!
+    @IBOutlet weak var proteinLabel : UILabel!
+    @IBOutlet weak var vegLabel : UILabel!
+    @IBOutlet weak var grainsLabel : UILabel!
+    @IBOutlet weak var dairyLabel : UILabel!
     
     var foodItem : FoodRecord?
     
@@ -20,7 +23,10 @@ class DetailVC: UIViewController {
         super.viewDidLoad()
         
         nameLabel.text = "\((foodItem?.name)!)"
-        groupLabel.text = "\((foodItem?.group)!)"
-        servingsLabel.text = "\((foodItem?.servings)!)"
+        fruitLabel.text = "\((foodItem?.fruitServings)!)"
+        proteinLabel.text = "\((foodItem?.proteinServings)!)"
+        vegLabel.text = "\((foodItem?.vegServings)!)"
+        grainsLabel.text = "\((foodItem?.grainServings)!)"
+        dairyLabel.text = "\((foodItem?.dairyServings)!)"
     }
 }
