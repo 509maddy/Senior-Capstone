@@ -70,33 +70,14 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
             return
         }
         
-        //Remove once we are saving multiple food groups
-        var groupType = "none"
-        var numToSave = 0
-        
-        if (Int(fruitServingStepper.value) > numToSave){
-            groupType = DailyState.GroupName.Fruit.rawValue
-            numToSave = Int(fruitServingStepper.value)
-        }
-        if (Int(vegServingStepper.value) > numToSave){
-            groupType = DailyState.GroupName.Vegetable.rawValue
-            numToSave = Int(vegServingStepper.value)
-        }
-        if (Int(dairyServingStepper.value) > numToSave){
-            groupType = DailyState.GroupName.Dairy.rawValue
-            numToSave = Int(dairyServingStepper.value)
-        }
-        if (Int(proteinServingStepper.value) > numToSave){
-            groupType = DailyState.GroupName.Protein.rawValue
-            numToSave = Int(proteinServingStepper.value)
-        }
-        if (Int(grainServingStepper.value) > numToSave){
-            groupType = DailyState.GroupName.Grain.rawValue
-            numToSave = Int(grainServingStepper.value)
-        }
-        
+        DatabaseFunctions.insertFoodRecord(name: nameToSave,
+                                           date: DailyState.todaysDate,
+                                           dairyServings: Double(dairyServingStepper.value),
+                                           fruitServings: Double(fruitServingStepper.value),
+                                           grainServings: Double(grainServingStepper.value),
+                                           proteinServings: Double(proteinServingStepper.value),
+                                           vegServings: Double(vegServingStepper.value))
 
-        DatabaseFunctions.insertFoodRecord(name: nameToSave, group: groupType, date: DailyState.todaysDate, servings: Double(numToSave))
         tabBarController?.selectedIndex = 0
     }
 
