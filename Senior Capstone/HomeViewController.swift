@@ -26,12 +26,10 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadPieCharts()
-        updateGoals()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        updateGoals()
     }
     
     func updateGoals(){
@@ -44,6 +42,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     }
 
     func loadPieCharts() {
+        updateGoals()
 
         // 1. Set ChartDataEntry
         var foodRecords = [FoodRecord]()
