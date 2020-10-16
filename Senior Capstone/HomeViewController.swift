@@ -22,7 +22,11 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         loadPieCharts()
     }
 
-    // TODO: Remove date param
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        DailyState.refreshGoals()
+    }
+
     func loadPieCharts() {
 
         // 1. Set ChartDataEntry
