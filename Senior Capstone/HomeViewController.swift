@@ -26,6 +26,11 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         customizeChart(group: DailyState.GroupName.Dairy.rawValue, pieChartView: dairyPieChartView)
     }
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        DailyState.refreshGoals()
+    }
+
     func customizeChart(group: String, pieChartView: PieChartView) {
 
         // 1. Set ChartDataEntry

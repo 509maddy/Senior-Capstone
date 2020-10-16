@@ -140,6 +140,14 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u3y-mY-GFp">
+                                <rect key="frame" x="103" y="150" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="saveSliderValues:" destination="xdt-Tk-pTc" eventType="touchUpInside" id="I2t-Tw-YBP"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ONH-Lh-qce"/>
@@ -147,10 +155,15 @@
                     <navigationItem key="navigationItem" id="7Q7-77-MHF"/>
                     <connections>
                         <outlet property="dLabel" destination="ycc-83-P8B" id="Byc-Ym-BxY"/>
+                        <outlet property="dSlider" destination="dB0-MW-zUZ" id="SVQ-J9-Bb5"/>
                         <outlet property="fLabel" destination="OQW-hU-TbV" id="zHZ-2m-Wej"/>
+                        <outlet property="fSlider" destination="oXY-AX-v25" id="rjJ-dk-1Ui"/>
                         <outlet property="gLabel" destination="ow3-Cn-aeG" id="x3n-5Y-1O6"/>
+                        <outlet property="gSlider" destination="FDy-54-VUR" id="6JU-Ny-Oec"/>
                         <outlet property="pLabel" destination="T8E-Ho-lb7" id="6CR-eJ-Q6P"/>
+                        <outlet property="pSlider" destination="ljq-Jx-erX" id="x1p-a0-rM7"/>
                         <outlet property="vLabel" destination="gE7-8H-W5Y" id="GVg-4J-Jov"/>
+                        <outlet property="vSlider" destination="0Yk-Su-3MP" id="Iqe-DM-c0h"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4TM-sF-Ztw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

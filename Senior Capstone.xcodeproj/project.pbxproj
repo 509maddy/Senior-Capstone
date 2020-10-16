@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C22FBE82536607100C35C81 /* GoalRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C22FBE62536607100C35C81 /* GoalRecord+CoreDataClass.swift */; };
+		2C22FBE92536607100C35C81 /* GoalRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C22FBE72536607100C35C81 /* GoalRecord+CoreDataProperties.swift */; };
 		2C301AC425150FE6006D7C6A /* AddFoodViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C301AC325150FE6006D7C6A /* AddFoodViewController.swift */; };
 		2C68B81925378A9800CDBCE7 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C68B81825378A9800CDBCE7 /* DetailVC.swift */; };
 		2C856A7A251A8F8400EAA879 /* DatabaseFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C856A79251A8F8400EAA879 /* DatabaseFunctions.swift */; };
@@ -27,6 +29,8 @@
 
 /* Begin PBXFileReference section */
 		143AAA652CBCEDDC0575C24B /* Pods_Senior_Capstone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Senior_Capstone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C22FBE62536607100C35C81 /* GoalRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoalRecord+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
+		2C22FBE72536607100C35C81 /* GoalRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "GoalRecord+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		2C301AC325150FE6006D7C6A /* AddFoodViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddFoodViewController.swift; sourceTree = "<group>"; };
 		2C68B81825378A9800CDBCE7 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		2C856A79251A8F8400EAA879 /* DatabaseFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatabaseFunctions.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 		2CAE270E25001CEB00BAAB6A /* Senior Capstone */ = {
 			isa = PBXGroup;
 			children = (
+				2C22FBE62536607100C35C81 /* GoalRecord+CoreDataClass.swift */,
+				2C22FBE72536607100C35C81 /* GoalRecord+CoreDataProperties.swift */,
 				2C9AF939250414FF00BB1058 /* FoodRecord+CoreDataClass.swift */,
 				2C9AF93A250414FF00BB1058 /* FoodRecord+CoreDataProperties.swift */,
 				2CAE270F25001CEB00BAAB6A /* AppDelegate.swift */,
@@ -237,9 +243,11 @@
 				2CAE271A25001CEB00BAAB6A /* Senior_Capstone.xcdatamodeld in Sources */,
 				2CAE271425001CEB00BAAB6A /* SettingsViewController.swift in Sources */,
 				2C856A7A251A8F8400EAA879 /* DatabaseFunctions.swift in Sources */,
+				2C22FBE82536607100C35C81 /* GoalRecord+CoreDataClass.swift in Sources */,
 				2CAE271025001CEB00BAAB6A /* AppDelegate.swift in Sources */,
 				2C9AF93225040D3200BB1058 /* FoodViewController.swift in Sources */,
 				2C68B81925378A9800CDBCE7 /* DetailVC.swift in Sources */,
+				2C22FBE92536607100C35C81 /* GoalRecord+CoreDataProperties.swift in Sources */,
 				2C301AC425150FE6006D7C6A /* AddFoodViewController.swift in Sources */,
 				2CA992C02517A47D00048726 /* HomeViewController.swift in Sources */,
 				2C9AF93B250414FF00BB1058 /* FoodRecord+CoreDataClass.swift in Sources */,
