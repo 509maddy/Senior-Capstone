@@ -16,15 +16,31 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var vegetablePieChartView: PieChartView!
     @IBOutlet weak var grainPieChartView: PieChartView!
     @IBOutlet weak var dairyPieChartView: PieChartView!
+    
+    var goalFruit: Double = 0.0
+    var goalDairy: Double = 0.0
+    var goalGrain: Double = 0.0
+    var goalProtein: Double = 0.0
+    var goalVeg: Double = 0.0
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadPieCharts()
+        updateGoals()
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateGoals()
+    }
+    
+    func updateGoals(){
         DailyState.refreshGoals()
+        goalFruit = DailyState.fruitGoal
+        goalDairy = DailyState.dairyGoal
+        goalGrain = DailyState.grainGoal
+        goalProtein = DailyState.proteinGoal
+        goalVeg = DailyState.vegetableGoal
     }
 
     func loadPieCharts() {
@@ -82,13 +98,6 @@ class HomeViewController: UIViewController, ChartViewDelegate {
                 vegChartEntries.append(dataEntry)
             }
         }
-        
-        //Change these Hard coded goals in ticket 45
-        let goalFruit = 20.0
-        let goalDairy = 20.0
-        let goalGrain = 20.0
-        let goalProtein = 20.0
-        let goalVeg = 20.0
         
         customPieChart(dataEntries: &fruitChartEntries, pieChartView: fruitPieChartView, goalServings: goalFruit, totalServings: totalFruitServings)
         customPieChart(dataEntries: &dairyChartEntries, pieChartView: dairyPieChartView, goalServings: goalDairy, totalServings: totalDairyServings)
