@@ -98,11 +98,11 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
         
         DatabaseFunctions.insertFoodRecord(name: nameToSave,
                                            date: DailyState.todaysDate,
-                                           dairyServings: Double(dairyServingStepper.value),
-                                           fruitServings: Double(fruitServingStepper.value),
-                                           grainServings: Double(grainServingStepper.value),
-                                           proteinServings: Double(proteinServingStepper.value),
-                                           vegServings: Double(vegServingStepper.value))
+                                           dairyServings: dairyValue,
+                                           fruitServings: fruitValue,
+                                           grainServings: grainValue,
+                                           proteinServings: proteinValue,
+                                           vegServings: vegValue)
 
         tabBarController?.selectedIndex = 0
     }
