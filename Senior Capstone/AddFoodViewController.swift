@@ -14,18 +14,23 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
 
     @IBOutlet weak var nameInputBox: UITextField!
 
+    var fruitValue: Double = 0.0
     @IBOutlet weak var fruitServingStepper: UIStepper!
     @IBOutlet weak var fruitServingLabel: UILabel!
     
+    var vegValue: Double = 0.0
     @IBOutlet weak var vegServingStepper: UIStepper!
     @IBOutlet weak var vegServingLabel: UILabel!
     
+    var proteinValue: Double = 0.0
     @IBOutlet weak var proteinServingStepper: UIStepper!
     @IBOutlet weak var proteinServingLabel: UILabel!
     
+    var dairyValue: Double = 0.0
     @IBOutlet weak var dairyServingStepper: UIStepper!
     @IBOutlet weak var dairyServingLabel: UILabel!
     
+    var grainValue: Double = 0.0
     @IBOutlet weak var grainServingStepper: UIStepper!
     @IBOutlet weak var grainServingLabel: UILabel!
     
@@ -34,26 +39,47 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate;
 
-    
-    @IBAction func registerFruitServingChange(_ sender: Any) {
-        fruitServingLabel.text = String(Int(fruitServingStepper.value))
+    /* Basically, for the UIStepper you can't tell if it's being incremented
+        or decremented unless you use this weird round about way.
+    */
+    func increment(_ sender: UIStepper, valueToUpdate: inout Double){
+        let increment: Double = 0.5
+        
+        if sender.value == 1.0 {
+            print("pos")
+            valueToUpdate += increment
+        }
+        else {
+            print("here")
+            valueToUpdate -= increment
+        }
+        sender.value = 0  //resetting the stepper value so negative is -1 and pos
     }
     
-    @IBAction func registerVegServingChange(_ sender: Any) {
-        vegServingLabel.text = String(Int(vegServingStepper.value))
+    func updateFoodGroup(_ sender: UIStepper, valueToUpdate: inout Double, label: UILabel){
+        increment(sender, valueToUpdate: &valueToUpdate)
+        label.text = String(valueToUpdate)
     }
     
-    @IBAction func registerProteinServingChange(_ sender: Any) {
-        proteinServingLabel.text = String(Int(proteinServingStepper.value))
+    @IBAction func registerFruitServingChange(_ sender: UIStepper) {
+        updateFoodGroup(sender, valueToUpdate: &fruitValue, label: fruitServingLabel)
     }
     
-    @IBAction func registerDairyServingChange(_ sender: Any) {
-        dairyServingLabel.text = String(Int(dairyServingStepper.value))
+    @IBAction func registerVegServingChange(_ sender: UIStepper) {
+        updateFoodGroup(sender, valueToUpdate: &vegValue, label: vegServingLabel)
+    }
+    
+    @IBAction func registerProteinServingChange(_ sender: UIStepper) {
+        updateFoodGroup(sender, valueToUpdate: &proteinValue, label: proteinServingLabel)
+    }
+    
+    @IBAction func registerDairyServingChange(_ sender: UIStepper) {
+        updateFoodGroup(sender, valueToUpdate: &dairyValue, label: dairyServingLabel)
     }
     
     
-    @IBAction func registerGrainServingChange(_ sender: Any) {
-        grainServingLabel.text = String(Int(grainServingStepper.value))
+    @IBAction func registerGrainServingChange(_ sender: UIStepper) {
+        updateFoodGroup(sender, valueToUpdate: &grainValue, label: grainServingLabel)
     }
     
     
