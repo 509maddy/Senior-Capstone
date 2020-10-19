@@ -12,9 +12,16 @@ import Charts
 class HomeViewController: UIViewController, ChartViewDelegate {
 
     @IBOutlet weak var fruitPieChartView: PieChartView!
+    @IBOutlet weak var fruitPieChartHeight: NSLayoutConstraint!
+    @IBOutlet weak var fruitLabelHeight: NSLayoutConstraint!
+    @IBOutlet weak var fruitDividerHeight: NSLayoutConstraint!
+
     @IBOutlet weak var meatPieChartView: PieChartView!
+
     @IBOutlet weak var vegetablePieChartView: PieChartView!
+
     @IBOutlet weak var grainPieChartView: PieChartView!
+
     @IBOutlet weak var dairyPieChartView: PieChartView!
     
     var goalFruit: Double = 0.0
@@ -26,6 +33,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadPieCharts()
+        
     }
 
     override func viewDidLoad() {
