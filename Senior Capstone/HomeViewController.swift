@@ -112,8 +112,8 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         customPieChart(dataEntries: &fruitChartEntries, pieChartView: fruitPieChartView, goalServings: goalFruit, totalServings: totalFruitServings)
         customPieChart(dataEntries: &dairyChartEntries, pieChartView: dairyPieChartView, goalServings: goalDairy, totalServings: totalDairyServings)
         customPieChart(dataEntries: &grainChartEntries, pieChartView: grainPieChartView, goalServings: goalGrain, totalServings: totalGrainServings)
-        customPieChart(dataEntries: &proteinChartEntries, pieChartView: vegetablePieChartView, goalServings: goalProtein, totalServings: totalProteinServings)
-        customPieChart(dataEntries: &vegChartEntries, pieChartView: meatPieChartView, goalServings: goalVeg, totalServings: totalVegServings)
+        customPieChart(dataEntries: &proteinChartEntries, pieChartView: meatPieChartView, goalServings: goalProtein, totalServings: totalProteinServings)
+        customPieChart(dataEntries: &vegChartEntries, pieChartView: vegetablePieChartView, goalServings: goalVeg, totalServings: totalVegServings)
     }
 
     func updateGoals(){
@@ -175,6 +175,8 @@ class HomeViewController: UIViewController, ChartViewDelegate {
             grainPieChartHeight.constant = 0.0
             grainLabelHeight.constant = 0.0
         }
+
+
     }
     
     private func customPieChart( dataEntries: inout [ChartDataEntry], pieChartView: PieChartView, goalServings: Double, totalServings: Double) {
