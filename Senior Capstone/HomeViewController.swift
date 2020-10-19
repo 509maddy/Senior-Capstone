@@ -14,16 +14,31 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     @IBOutlet weak var fruitPieChartView: PieChartView!
     @IBOutlet weak var fruitPieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var fruitLabelHeight: NSLayoutConstraint!
+    @IBOutlet weak var fruitPaddingHeight: NSLayoutConstraint!
     @IBOutlet weak var fruitDividerHeight: NSLayoutConstraint!
 
-    @IBOutlet weak var meatPieChartView: PieChartView!
-
     @IBOutlet weak var vegetablePieChartView: PieChartView!
+    @IBOutlet weak var vegetablePieChartHeight: NSLayoutConstraint!
+    @IBOutlet weak var vegetableLabelHight: NSLayoutConstraint!
+    @IBOutlet weak var vegetablePaddingHeight: NSLayoutConstraint!
+    @IBOutlet weak var vegetableDividerHeight: NSLayoutConstraint!
 
-    @IBOutlet weak var grainPieChartView: PieChartView!
+    @IBOutlet weak var meatPieChartView: PieChartView!
+    @IBOutlet weak var meatPieChartHeight: NSLayoutConstraint!
+    @IBOutlet weak var meatLabelHeight: NSLayoutConstraint!
+    @IBOutlet weak var meatPaddingHeight: NSLayoutConstraint!
+    @IBOutlet weak var meatDividerHeight: NSLayoutConstraint!
 
     @IBOutlet weak var dairyPieChartView: PieChartView!
-    
+    @IBOutlet weak var diaryPieChartHeight: NSLayoutConstraint!
+    @IBOutlet weak var dairyLabelHeight: NSLayoutConstraint!
+    @IBOutlet weak var dairyPaddingHeight: NSLayoutConstraint!
+    @IBOutlet weak var dairyDividerHeight: NSLayoutConstraint!
+
+    @IBOutlet weak var grainPieChartView: PieChartView!
+    @IBOutlet weak var grainPieChartHeight: NSLayoutConstraint!
+    @IBOutlet weak var grainLabelHeight: NSLayoutConstraint!
+
     var goalFruit: Double = 0.0
     var goalDairy: Double = 0.0
     var goalGrain: Double = 0.0
@@ -33,20 +48,8 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadPieCharts()
-        
-    }
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-    
-    func updateGoals(){
-        DailyState.refreshGoals()
-        goalFruit = DailyState.fruitGoal
-        goalDairy = DailyState.dairyGoal
-        goalGrain = DailyState.grainGoal
-        goalProtein = DailyState.proteinGoal
-        goalVeg = DailyState.vegetableGoal
+        loadViews()
+        hideViews()
     }
 
     func loadPieCharts() {
@@ -111,6 +114,67 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         customPieChart(dataEntries: &grainChartEntries, pieChartView: grainPieChartView, goalServings: goalGrain, totalServings: totalGrainServings)
         customPieChart(dataEntries: &proteinChartEntries, pieChartView: vegetablePieChartView, goalServings: goalProtein, totalServings: totalProteinServings)
         customPieChart(dataEntries: &vegChartEntries, pieChartView: meatPieChartView, goalServings: goalVeg, totalServings: totalVegServings)
+    }
+
+    func updateGoals(){
+        DailyState.refreshGoals()
+        goalFruit = DailyState.fruitGoal
+        goalDairy = DailyState.dairyGoal
+        goalGrain = DailyState.grainGoal
+        goalProtein = DailyState.proteinGoal
+        goalVeg = DailyState.vegetableGoal
+    }
+
+    func loadViews() {
+        fruitPieChartHeight.constant = 300.0
+        fruitLabelHeight.constant = 40.0
+        fruitPaddingHeight.constant = 15.0
+        fruitDividerHeight.constant = 3.0
+        vegetablePieChartHeight.constant = 300.0
+        vegetableLabelHight.constant = 40.0
+        vegetablePaddingHeight.constant = 15.0
+        vegetableDividerHeight.constant = 3.0
+        meatPieChartHeight.constant = 300.0
+        meatLabelHeight.constant = 40.0
+        meatPaddingHeight.constant = 15.0
+        meatDividerHeight.constant = 3.0
+        diaryPieChartHeight.constant = 300.0
+        dairyLabelHeight.constant = 40.0
+        dairyPaddingHeight.constant = 15.0
+        dairyDividerHeight.constant = 3.0
+        grainPieChartHeight.constant = 300.0
+        grainLabelHeight.constant = 40.0
+    }
+
+    func hideViews() {
+        if goalFruit == 0.0 {
+            fruitPieChartHeight.constant = 0.0
+            fruitLabelHeight.constant = 0.0
+            fruitPaddingHeight.constant = 0.0
+            fruitDividerHeight.constant = 0.0
+        }
+        if goalVeg == 0.0 {
+            vegetablePieChartHeight.constant = 0.0
+            vegetableLabelHight.constant = 0.0
+            vegetablePaddingHeight.constant = 0.0
+            vegetableDividerHeight.constant = 0.0
+        }
+        if goalProtein == 0.0 {
+            meatPieChartHeight.constant = 0.0
+            meatLabelHeight.constant = 0.0
+            meatPaddingHeight.constant = 0.0
+            meatDividerHeight.constant = 0.0
+        }
+        if goalDairy == 0.0 {
+            diaryPieChartHeight.constant = 0.0
+            dairyLabelHeight.constant = 0.0
+            dairyPaddingHeight.constant = 0.0
+            dairyDividerHeight.constant = 0.0
+        }
+        if goalGrain == 0.0 {
+            grainPieChartHeight.constant = 0.0
+            grainLabelHeight.constant = 0.0
+        }
     }
     
     private func customPieChart( dataEntries: inout [ChartDataEntry], pieChartView: PieChartView, goalServings: Double, totalServings: Double) {

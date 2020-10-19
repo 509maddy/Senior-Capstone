@@ -268,7 +268,6 @@
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="7A4-og-BXn"/>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="300" id="HNA-cf-Eq0"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43h-qa-yoY" userLabel="Protein">
@@ -315,7 +314,6 @@
                                                 <rect key="frame" x="0.0" y="1414" width="414" height="15"/>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="yNv-Ek-eUv"/>
                                                     <constraint firstAttribute="height" constant="15" id="zZR-pP-M8R"/>
                                                 </constraints>
                                             </view>
@@ -428,13 +426,28 @@
                     <navigationItem key="navigationItem" id="Bzt-yN-Aui"/>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
-                        <outlet property="dairyPieChartView" destination="o7g-zR-gLU" id="ghs-0h-xF2"/>
+                        <outlet property="dairyDividerHeight" destination="dvX-aZ-GD7" id="xIV-Fb-A4L"/>
+                        <outlet property="dairyLabelHeight" destination="ASu-kR-ONG" id="0ui-Cp-R7W"/>
+                        <outlet property="dairyPaddingHeight" destination="zZR-pP-M8R" id="zZh-fI-e5e"/>
+                        <outlet property="dairyPieChartView" destination="o7g-zR-gLU" id="TDh-tE-2nh"/>
+                        <outlet property="diaryPieChartHeight" destination="7fx-4i-M6k" id="kyG-fe-kCe"/>
                         <outlet property="fruitDividerHeight" destination="EKS-WA-Ax4" id="4fJ-8d-7V5"/>
                         <outlet property="fruitLabelHeight" destination="OVF-Rd-N29" id="NHn-R1-hQC"/>
+                        <outlet property="fruitPaddingHeight" destination="1rm-D2-9RK" id="9hZ-g1-E5H"/>
                         <outlet property="fruitPieChartHeight" destination="yUI-OI-C7V" id="Oej-W7-t52"/>
                         <outlet property="fruitPieChartView" destination="Cin-Nz-RbJ" id="tL7-8v-Hrr"/>
+                        <outlet property="grainLabelHeight" destination="Q9B-ED-o2r" id="WSV-3w-ph6"/>
+                        <outlet property="grainPieChartHeight" destination="8G2-G1-4Lb" id="R7Y-3R-0B5"/>
                         <outlet property="grainPieChartView" destination="1mh-L5-HfN" id="7NG-im-irH"/>
-                        <outlet property="meatPieChartView" destination="ZV2-WT-Zcs" id="ykL-H8-57P"/>
+                        <outlet property="meatDividerHeight" destination="Q5N-du-O51" id="UGG-Kg-Oe3"/>
+                        <outlet property="meatLabelHeight" destination="wYw-bJ-MvF" id="9HB-fj-o5n"/>
+                        <outlet property="meatPaddingHeight" destination="AaV-ZR-mmR" id="DKk-7R-wgV"/>
+                        <outlet property="meatPieChartHeight" destination="7A4-og-BXn" id="iy3-Fx-Lih"/>
+                        <outlet property="meatPieChartView" destination="ZV2-WT-Zcs" id="MlB-Fa-xoX"/>
+                        <outlet property="vegetableDividerHeight" destination="kzc-Iy-gE2" id="Jqc-cp-xNy"/>
+                        <outlet property="vegetableLabelHight" destination="wG2-c9-a6w" id="LXg-gX-8jb"/>
+                        <outlet property="vegetablePaddingHeight" destination="W6g-c3-3q5" id="lmE-Xq-enf"/>
+                        <outlet property="vegetablePieChartHeight" destination="NB9-as-HvX" id="fL6-bO-Tct"/>
                         <outlet property="vegetablePieChartView" destination="3Ud-I9-8Ue" id="B0c-pA-Lgf"/>
                     </connections>
                 </viewController>
