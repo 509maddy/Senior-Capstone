@@ -43,6 +43,18 @@ class SettingsViewController: UIViewController {
             DatabaseFunctions.insertGoalRecord(date: DailyState.todaysDateAsDate, fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
         }
     }
+    
+    @IBAction func coolThemeSelect(_ sender: Any) {
+        ThemeManager.applyTheme(theme: Theme.coolBlue)
+    }
+ 
+    @IBAction func warmThemeSelect(_ sender: Any) {
+        ThemeManager.applyTheme(theme: Theme.warmOrange)
+    }
+    
+    @IBAction func darkThemeSelect(_ sender: Any) {
+        ThemeManager.applyTheme(theme: Theme.darkTones)
+    }
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)

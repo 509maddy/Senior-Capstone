@@ -35,6 +35,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
 
         // 1. Set ChartDataEntry
         var foodRecords = [FoodRecord]()
+        var hasRemainder: Bool
         let predicate = NSPredicate(format: "date == %@ AND group == %@", DailyState.todaysDate, group)
         foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
 
@@ -56,9 +57,11 @@ class HomeViewController: UIViewController, ChartViewDelegate {
             dataEntries.append(dataEntry3)
         }
 
+        hasRemainder = true //need to fix this line but I need the new reminder calculation code
+        
         // 2. Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
-        pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataEntries.count)
+        pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataEntries.count, hasRemainder: hasRemainder)
 
         // 3. Set ChartData
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
@@ -66,24 +69,32 @@ class HomeViewController: UIViewController, ChartViewDelegate {
          format.numberStyle = .none
         let formatter = DefaultValueFormatter(decimals: 2)
          pieChartData.setValueFormatter(formatter)
+        pieChartData.setValueTextColor(ThemeManager.currentTheme().secondaryTextColor)
 
         // 4. Assign it to the chart’s data
         pieChartView.data = pieChartData
         pieChartView.legend.enabled = false
+        pieChartView.entryLabelColor = ThemeManager.currentTheme().secondaryTextColor
+        pieChartView.legend.textColor = ThemeManager.currentTheme().secondaryTextColor
         pieChartView.rotationEnabled = false
         pieChartView.holeRadiusPercent = 0.4
         pieChartView.transparentCircleRadiusPercent = 0.5
     }
 
-    private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
+    private func colorsOfCharts(numbersOfColor: Int, hasRemainder: Bool) -> [UIColor] {
       var colors: [UIColor] = []
-      for _ in 0..<numbersOfColor {
-        //let red = Double(arc4random_uniform(256))
-        //let green = Double(arc4random_uniform(256))
-        //let blue = Double(arc4random_uniform(256))
-
-        colors.append(ThemeManager.randomWheelColor())
-      }
+        //assign colors to the slices
+        for sliceNumber in 0..<(numbersOfColor-1) {
+            colors.append(ThemeManager.pieChartColor(sliceNumber: sliceNumber))
+        }
+        
+        //if there is a Remainder slice it should be in the base color
+        if hasRemainder {
+            colors.append(ThemeManager.currentTheme().baseColor)
+        }
+        else {
+            colors.append(ThemeManager.pieChartColor(sliceNumber: numbersOfColor-1))
+        }
       return colors
     }
 }
