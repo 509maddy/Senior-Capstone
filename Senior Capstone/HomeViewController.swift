@@ -226,7 +226,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         
         if remaining > 0{
             let remainingEntries = PieChartDataEntry(value: remaining, label: "Remaining")
-            dataEntries.append(remainingEntries)
+            dataEntries.insert(remainingEntries, at: 0)
         }
         
         // 2. Set ChartDataSet
@@ -260,4 +260,3 @@ class HomeViewController: UIViewController, ChartViewDelegate {
       return colors
     }
 }
-
