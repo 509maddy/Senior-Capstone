@@ -574,8 +574,8 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fruit Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-xw-ijH">
-                                <rect key="frame" x="20" y="332" width="105" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Fruit Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FQt-xw-ijH">
+                                <rect key="frame" x="20" y="332" width="125" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="hj2-Dg-CZX"/>
                                 </constraints>
@@ -628,8 +628,8 @@
                                     <action selector="registerVegServingChange:" destination="b6A-cl-TVP" eventType="valueChanged" id="NON-fS-dFN"/>
                                 </connections>
                             </stepper>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkD-Kr-0cB">
-                                <rect key="frame" x="20" y="456" width="125" height="32"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Protein Servings" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pkD-Kr-0cB">
+                                <rect key="frame" x="20" y="456" width="148" height="32"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="32" id="hld-Rz-9hS"/>
                                 </constraints>
@@ -808,8 +808,68 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You may be wondering how to quanitfy servings. Below is a helpful list of how to think about servings for each food group." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRe-85-xVW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You may be wondering how to quanitfy servings." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dRe-85-xVW">
                                 <rect key="frame" x="20" y="118" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" Below is a helpful list of how to think about" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tS3-yj-I0B">
+                                <rect key="frame" x="20" y="144" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="servings for each food group." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l1h-Qb-yE9">
+                                <rect key="frame" x="20" y="170" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fruit: One serving is one piece of fruit about the" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUF-5P-znT">
+                                <rect key="frame" x="20" y="241" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="size of a tennis ball." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fcv-v0-E9u">
+                                <rect key="frame" x="65" y="267" width="329" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegetables: One serving is the size of your fist." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1m-bO-Puv">
+                                <rect key="frame" x="20" y="338" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein: One serving is the size of your palm." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Es-JK-elU">
+                                <rect key="frame" x="20" y="409" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dairy: One serving is the size of your fist" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qe0-7X-X2p">
+                                <rect key="frame" x="20" y="480" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="doubled." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vAY-Y1-5Gk">
+                                <rect key="frame" x="65" y="506" width="329" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grains: One serving is the size of your palm" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nto-pi-SuP">
+                                <rect key="frame" x="20" y="577" width="374" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="doubled." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="G7b-9l-zBv">
+                                <rect key="frame" x="65" y="603" width="329" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -817,9 +877,39 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="Nto-pi-SuP" secondAttribute="trailing" constant="20" id="7AF-bQ-09D"/>
+                            <constraint firstItem="G7b-9l-zBv" firstAttribute="leading" secondItem="Xet-Py-3Hv" secondAttribute="leading" constant="65" id="AY8-W9-fnN"/>
+                            <constraint firstItem="Fcv-v0-E9u" firstAttribute="leading" secondItem="Xet-Py-3Hv" secondAttribute="leading" constant="65" id="CI8-dg-XS1"/>
+                            <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="vAY-Y1-5Gk" secondAttribute="trailing" constant="20" id="GqU-WM-G2H"/>
+                            <constraint firstItem="tS3-yj-I0B" firstAttribute="top" secondItem="dRe-85-xVW" secondAttribute="bottom" constant="5" id="HPm-QI-M51"/>
+                            <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="0Es-JK-elU" secondAttribute="trailing" constant="20" id="Jfc-bE-ULp"/>
+                            <constraint firstItem="N1m-bO-Puv" firstAttribute="leading" secondItem="Xet-Py-3Hv" secondAttribute="leading" constant="20" id="L5r-Cs-y7Y"/>
+                            <constraint firstItem="vAY-Y1-5Gk" firstAttribute="top" secondItem="Qe0-7X-X2p" secondAttribute="bottom" constant="5" id="Nj1-N5-pS6"/>
                             <constraint firstItem="dRe-85-xVW" firstAttribute="top" secondItem="Xet-Py-3Hv" secondAttribute="top" constant="30" id="QGh-WQ-LBQ"/>
+                            <constraint firstItem="0Es-JK-elU" firstAttribute="top" secondItem="N1m-bO-Puv" secondAttribute="bottom" constant="50" id="QIK-Wk-w3M"/>
+                            <constraint firstItem="Qe0-7X-X2p" firstAttribute="leading" secondItem="Xet-Py-3Hv" secondAttribute="leading" constant="20" id="S5y-R8-cZT"/>
                             <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="dRe-85-xVW" secondAttribute="trailing" constant="20" id="Szq-zt-FMr"/>
+                            <constraint firstItem="Nto-pi-SuP" firstAttribute="top" secondItem="vAY-Y1-5Gk" secondAttribute="bottom" constant="50" id="W5n-Nv-6C4"/>
+                            <constraint firstItem="BUF-5P-znT" firstAttribute="leading" secondItem="Xet-Py-3Hv" secondAttribute="leading" constant="20" id="WMq-0g-DN8"/>
+                            <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="G7b-9l-zBv" secondAttribute="trailing" constant="20" id="Xlg-Gs-Fls"/>
+                            <constraint firstItem="Nto-pi-SuP" firstAttribute="leading" secondItem="Xet-Py-3Hv" secondAttribute="leading" constant="20" id="Zqa-Ti-cXu"/>
+                            <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="Qe0-7X-X2p" secondAttribute="trailing" constant="20" id="ZtS-SG-A8l"/>
+                            <constraint firstItem="l1h-Qb-yE9" firstAttribute="top" secondItem="tS3-yj-I0B" secondAttribute="bottom" constant="5" id="ean-v5-mOY"/>
+                            <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="Fcv-v0-E9u" secondAttribute="trailing" constant="20" id="erW-9d-C7e"/>
+                            <constraint firstItem="Qe0-7X-X2p" firstAttribute="top" secondItem="0Es-JK-elU" secondAttribute="bottom" constant="50" id="esa-81-dz0"/>
+                            <constraint firstItem="BUF-5P-znT" firstAttribute="top" secondItem="l1h-Qb-yE9" secondAttribute="bottom" constant="50" id="h1O-c5-epb"/>
+                            <constraint firstAttribute="trailing" secondItem="tS3-yj-I0B" secondAttribute="trailing" constant="20" id="hIW-k1-Eb9"/>
+                            <constraint firstItem="G7b-9l-zBv" firstAttribute="top" secondItem="Nto-pi-SuP" secondAttribute="bottom" constant="5" id="l6b-Vs-Wry"/>
+                            <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="l1h-Qb-yE9" secondAttribute="trailing" constant="20" id="nsS-yO-S6e"/>
+                            <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="N1m-bO-Puv" secondAttribute="trailing" constant="20" id="oF9-Gh-B3l"/>
+                            <constraint firstItem="l1h-Qb-yE9" firstAttribute="leading" secondItem="Xet-Py-3Hv" secondAttribute="leading" constant="20" id="u1q-EW-nGT"/>
+                            <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="BUF-5P-znT" secondAttribute="trailing" constant="20" id="uTe-aF-i35"/>
                             <constraint firstItem="dRe-85-xVW" firstAttribute="leading" secondItem="Xet-Py-3Hv" secondAttribute="leading" constant="20" id="us9-sv-Zs8"/>
+                            <constraint firstItem="0Es-JK-elU" firstAttribute="leading" secondItem="Xet-Py-3Hv" secondAttribute="leading" constant="20" id="vgd-iA-0ea"/>
+                            <constraint firstItem="N1m-bO-Puv" firstAttribute="top" secondItem="Fcv-v0-E9u" secondAttribute="bottom" constant="50" id="wk9-Rf-sK2"/>
+                            <constraint firstItem="tS3-yj-I0B" firstAttribute="leading" secondItem="Xet-Py-3Hv" secondAttribute="leading" constant="20" id="xsD-GE-uVV"/>
+                            <constraint firstItem="vAY-Y1-5Gk" firstAttribute="leading" secondItem="Xet-Py-3Hv" secondAttribute="leading" constant="65" id="y2B-38-JAl"/>
+                            <constraint firstItem="Fcv-v0-E9u" firstAttribute="top" secondItem="BUF-5P-znT" secondAttribute="bottom" constant="5" id="ybm-fI-QJI"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xet-Py-3Hv"/>
                     </view>
