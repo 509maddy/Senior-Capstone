@@ -10,6 +10,8 @@ import UIKit
 import Charts
 
 class HomeViewController: UIViewController, ChartViewDelegate {
+    @IBOutlet weak var noDataView: UIView!
+    @IBOutlet weak var noDataHeight: NSLayoutConstraint!
 
     @IBOutlet weak var fruitPieChartView: PieChartView!
     @IBOutlet weak var fruitPieChartHeight: NSLayoutConstraint!
@@ -45,6 +47,11 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     var goalProtein: Double = 0.0
     var goalVeg: Double = 0.0
 
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        DailyState.refreshGoals()
+    }
+
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         loadPieCharts()
@@ -66,7 +73,6 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         var proteinChartEntries: [ChartDataEntry] = []
         var vegChartEntries: [ChartDataEntry] = []
 
-        
         var totalFruitServings = 0.0
         var totalDairyServings = 0.0
         var totalGrainServings = 0.0
@@ -117,7 +123,6 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     }
 
     func updateGoals(){
-        DailyState.refreshGoals()
         goalFruit = DailyState.fruitGoal
         goalDairy = DailyState.dairyGoal
         goalGrain = DailyState.grainGoal
@@ -144,42 +149,78 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         dairyDividerHeight.constant = 3.0
         grainPieChartHeight.constant = 300.0
         grainLabelHeight.constant = 40.0
+        noDataHeight.constant = 0.0
+        noDataView.isHidden = true
     }
 
     func hideViews() {
+        var visible:[Bool] = [true, true, true, true, true]
+
         if goalFruit == 0.0 {
             fruitPieChartHeight.constant = 0.0
             fruitLabelHeight.constant = 0.0
             fruitPaddingHeight.constant = 0.0
             fruitDividerHeight.constant = 0.0
+            visible[0] = false
         }
         if goalVeg == 0.0 {
             vegetablePieChartHeight.constant = 0.0
             vegetableLabelHight.constant = 0.0
             vegetablePaddingHeight.constant = 0.0
             vegetableDividerHeight.constant = 0.0
+            visible[1] = false
         }
         if goalProtein == 0.0 {
             meatPieChartHeight.constant = 0.0
             meatLabelHeight.constant = 0.0
             meatPaddingHeight.constant = 0.0
             meatDividerHeight.constant = 0.0
+            visible[2] = false
         }
         if goalDairy == 0.0 {
             diaryPieChartHeight.constant = 0.0
             dairyLabelHeight.constant = 0.0
             dairyPaddingHeight.constant = 0.0
             dairyDividerHeight.constant = 0.0
+            visible[3] = false
         }
         if goalGrain == 0.0 {
             grainPieChartHeight.constant = 0.0
             grainLabelHeight.constant = 0.0
+            visible[4] = false
         }
 
+        var index = 4
+        var firstTrue = -1
+        while index >= 0 && firstTrue == -1 {
+            if visible[index] == true {
+                firstTrue = index
+            }
+            index = index - 1
+        }
 
+        switch firstTrue {
+        case -1:
+            noDataView.isHidden = false
+            noDataHeight.constant = 500.0
+        case 0:
+            fruitPaddingHeight.constant = 0.0
+            fruitDividerHeight.constant = 0.0
+        case 1:
+            vegetablePaddingHeight.constant = 0.0
+            vegetableDividerHeight.constant = 0.0
+        case 2:
+            meatPaddingHeight.constant = 0.0
+            meatDividerHeight.constant = 0.0
+        case 3:
+            dairyPaddingHeight.constant = 0.0
+            dairyDividerHeight.constant = 0.0
+        default:
+            break
+        }
     }
     
-    private func customPieChart( dataEntries: inout [ChartDataEntry], pieChartView: PieChartView, goalServings: Double, totalServings: Double) {
+    private func customPieChart(dataEntries: inout [ChartDataEntry], pieChartView: PieChartView, goalServings: Double, totalServings: Double) {
         // 1. Figure out remaining
         let remaining = goalServings - totalServings
         
@@ -187,7 +228,6 @@ class HomeViewController: UIViewController, ChartViewDelegate {
             let remainingEntries = PieChartDataEntry(value: remaining, label: "Remaining")
             dataEntries.append(remainingEntries)
         }
-
         
         // 2. Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)

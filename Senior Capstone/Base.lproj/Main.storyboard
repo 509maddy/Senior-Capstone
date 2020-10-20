@@ -199,7 +199,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AvV-rO-Fzt">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="1782"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2272"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cin-Nz-RbJ" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -341,6 +341,21 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0g6-KP-kMP" userLabel="No Data View">
+                                                <rect key="frame" x="0.0" y="1772" width="414" height="500"/>
+                                                <subviews>
+                                                    <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="No Goals Set :(" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iy9-82-ZpG">
+                                                        <rect key="frame" x="108" y="145" width="198" height="43"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="28"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                </subviews>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="500" id="G1Q-AB-tuG"/>
+                                                </constraints>
+                                            </view>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -348,6 +363,7 @@
                                             <constraint firstItem="1mh-L5-HfN" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="2cy-vQ-px4"/>
                                             <constraint firstItem="WGa-Eo-7rK" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="386-qA-wni"/>
                                             <constraint firstItem="WGa-Eo-7rK" firstAttribute="top" secondItem="43h-qa-yoY" secondAttribute="bottom" id="4k2-sc-qdO"/>
+                                            <constraint firstItem="0g6-KP-kMP" firstAttribute="top" secondItem="abQ-cE-xwd" secondAttribute="bottom" id="5jk-zk-5AO"/>
                                             <constraint firstItem="d7O-rV-jgD" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="5xS-TB-khp"/>
                                             <constraint firstItem="43h-qa-yoY" firstAttribute="top" secondItem="ZV2-WT-Zcs" secondAttribute="bottom" id="61N-GL-SQm"/>
                                             <constraint firstItem="Cin-Nz-RbJ" firstAttribute="top" secondItem="AvV-rO-Fzt" secondAttribute="top" id="8Bm-lx-7nJ"/>
@@ -365,12 +381,15 @@
                                             <constraint firstAttribute="trailing" secondItem="WGa-Eo-7rK" secondAttribute="trailing" id="IHn-Nh-mPy"/>
                                             <constraint firstAttribute="trailing" secondItem="3Ud-I9-8Ue" secondAttribute="trailing" id="IPi-wC-649"/>
                                             <constraint firstAttribute="trailing" secondItem="aa4-p5-IMm" secondAttribute="trailing" id="IfK-dG-8cM"/>
+                                            <constraint firstAttribute="trailing" secondItem="0g6-KP-kMP" secondAttribute="trailing" id="JqW-TO-I9E"/>
                                             <constraint firstAttribute="trailing" secondItem="o7g-zR-gLU" secondAttribute="trailing" id="KWv-Ho-7aI"/>
                                             <constraint firstItem="aa4-p5-IMm" firstAttribute="top" secondItem="3Ud-I9-8Ue" secondAttribute="bottom" id="M37-fZ-eI7"/>
+                                            <constraint firstAttribute="bottom" secondItem="0g6-KP-kMP" secondAttribute="bottom" id="MWy-w5-EkN"/>
                                             <constraint firstAttribute="trailing" secondItem="phN-gd-XJQ" secondAttribute="trailing" id="MZI-A1-3IZ"/>
                                             <constraint firstAttribute="trailing" secondItem="o2B-5z-6ui" secondAttribute="trailing" id="OBe-Ye-1nK"/>
                                             <constraint firstAttribute="trailing" secondItem="lEZ-QS-BKW" secondAttribute="trailing" id="PcR-l6-nJt"/>
                                             <constraint firstAttribute="trailing" secondItem="1mh-L5-HfN" secondAttribute="trailing" id="R9U-em-nsF"/>
+                                            <constraint firstItem="0g6-KP-kMP" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="Z9B-eU-hgf"/>
                                             <constraint firstItem="o7g-zR-gLU" firstAttribute="top" secondItem="R7x-bn-xf7" secondAttribute="bottom" id="avc-zv-qZ0"/>
                                             <constraint firstItem="3Ud-I9-8Ue" firstAttribute="top" secondItem="p6q-rO-CoL" secondAttribute="bottom" id="b9R-0H-V7S"/>
                                             <constraint firstAttribute="trailing" secondItem="Cin-Nz-RbJ" secondAttribute="trailing" id="bz3-TB-IrZ"/>
@@ -380,7 +399,6 @@
                                             <constraint firstItem="abQ-cE-xwd" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="dhK-e5-Zc7"/>
                                             <constraint firstAttribute="trailing" secondItem="abQ-cE-xwd" secondAttribute="trailing" id="dou-Yb-Pt3"/>
                                             <constraint firstItem="llF-28-ZLL" firstAttribute="top" secondItem="Uf5-Tz-bIi" secondAttribute="bottom" id="eCN-tD-wVg"/>
-                                            <constraint firstAttribute="bottom" secondItem="abQ-cE-xwd" secondAttribute="bottom" constant="10" id="eTy-i9-CRB"/>
                                             <constraint firstItem="YGd-0A-xOJ" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="fUD-tv-NMk"/>
                                             <constraint firstItem="Cin-Nz-RbJ" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="g0M-15-xt9"/>
                                             <constraint firstItem="o2B-5z-6ui" firstAttribute="top" secondItem="aa4-p5-IMm" secondAttribute="bottom" id="h6U-72-6TK"/>
@@ -444,6 +462,8 @@
                         <outlet property="meatPaddingHeight" destination="AaV-ZR-mmR" id="DKk-7R-wgV"/>
                         <outlet property="meatPieChartHeight" destination="7A4-og-BXn" id="iy3-Fx-Lih"/>
                         <outlet property="meatPieChartView" destination="ZV2-WT-Zcs" id="MlB-Fa-xoX"/>
+                        <outlet property="noDataHeight" destination="G1Q-AB-tuG" id="FkY-KH-Mds"/>
+                        <outlet property="noDataView" destination="0g6-KP-kMP" id="Fjc-oU-sSj"/>
                         <outlet property="vegetableDividerHeight" destination="kzc-Iy-gE2" id="Jqc-cp-xNy"/>
                         <outlet property="vegetableLabelHight" destination="wG2-c9-a6w" id="LXg-gX-8jb"/>
                         <outlet property="vegetablePaddingHeight" destination="W6g-c3-3q5" id="lmE-Xq-enf"/>

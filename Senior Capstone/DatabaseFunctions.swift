@@ -124,6 +124,8 @@ class DatabaseFunctions {
             goalRecord.dairyGoal = dairyGoal
             appDelegate.saveContext()
         }
+        
+        DailyState.refreshGoals()
     }
 
     static func deleteFoodRecord(foodItem: FoodRecord) {
@@ -153,5 +155,7 @@ class DatabaseFunctions {
             print(goalRecords)
             print("Goal successfully saved.")
         }
+
+        DailyState.refreshGoals()
     }
 }
