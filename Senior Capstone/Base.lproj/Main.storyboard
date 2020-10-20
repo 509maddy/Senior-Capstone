@@ -726,9 +726,9 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cdA-5h-eEf">
-                                <rect key="frame" x="252" y="642" width="142" height="30"/>
+                                <rect key="frame" x="262" y="642" width="123" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Servings Information"/>
+                                <state key="normal" title="What's a Serving?"/>
                                 <connections>
                                     <segue destination="2o0-a9-Bx1" kind="show" id="hIE-1a-KlL"/>
                                 </connections>
