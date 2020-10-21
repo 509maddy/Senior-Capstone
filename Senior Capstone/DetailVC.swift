@@ -30,27 +30,40 @@ class DetailVC: UIViewController {
         
         nameLabel.text = "\((foodItem?.name)!)"
         
+        // fruit checks
         if (foodItem?.fruitServings != 0) {
             fruitLabel.text = "\((foodItem?.fruitServings)!)"
         } else if (foodItem?.fruitServings == 0) {
             fruitLabel.text = " "
             fruit.text = " "
-        } else if (foodItem?.proteinServings != 0) {
+        }
+        
+        // protein checks
+        if (foodItem?.proteinServings != 0) {
             proteinLabel.text = "\((foodItem?.proteinServings)!)"
         } else if (foodItem?.proteinServings == 0) {
             proteinLabel.text = " "
             protein.text = " "
-        } else if (foodItem?.vegServings != 0) {
+        }
+        
+        // veg checks
+        if (foodItem?.vegServings != 0) {
             vegLabel.text = "\((foodItem?.vegServings)!)"
         } else if (foodItem?.vegServings == 0) {
             vegLabel.text = " "
-            vegLabel.text = " "
-        } else if (foodItem?.grainServings != 0) {
+            veg.text = " "
+        }
+        
+        // grain checks
+        if (foodItem?.grainServings != 0) {
             grainsLabel.text = "\((foodItem?.grainServings)!)"
         } else if (foodItem?.grainServings == 0) {
             grainsLabel.text = " "
             grain.text = " "
-        } else if (foodItem?.dairyServings != 0) {
+        }
+        
+        // dairy check
+        if (foodItem?.dairyServings != 0) {
             dairyLabel.text = "\((foodItem?.dairyServings)!)"
         } else if (foodItem?.dairyServings == 0) {
             dairyLabel.text = " "
