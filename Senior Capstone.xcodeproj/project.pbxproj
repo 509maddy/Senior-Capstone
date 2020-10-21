@@ -25,6 +25,7 @@
 		2CAE271C25001CED00BAAB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAE271B25001CED00BAAB6A /* Assets.xcassets */; };
 		2CAE271F25001CED00BAAB6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAE271D25001CED00BAAB6A /* LaunchScreen.storyboard */; };
 		AA1E9963E4DD955E5D493305 /* Pods_Senior_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143AAA652CBCEDDC0575C24B /* Pods_Senior_Capstone.framework */; };
+		E15FACFB2539CCB700637103 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FACFA2539CCB700637103 /* ThemeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +51,7 @@
 		2CAE272025001CED00BAAB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A3BBDAD2BC0500D587D335A /* Pods-Senior Capstone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Senior Capstone.release.xcconfig"; path = "Target Support Files/Pods-Senior Capstone/Pods-Senior Capstone.release.xcconfig"; sourceTree = "<group>"; };
 		710BE54F3DC80F62C1CAFC4E /* Pods-Senior Capstone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Senior Capstone.debug.xcconfig"; path = "Target Support Files/Pods-Senior Capstone/Pods-Senior Capstone.debug.xcconfig"; sourceTree = "<group>"; };
+		E15FACFA2539CCB700637103 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +96,7 @@
 				2CAE271325001CEB00BAAB6A /* SettingsViewController.swift */,
 				2CAE271525001CEB00BAAB6A /* Main.storyboard */,
 				2CA992BF2517A47D00048726 /* HomeViewController.swift */,
+				E15FACFA2539CCB700637103 /* ThemeManager.swift */,
 				2C301AC325150FE6006D7C6A /* AddFoodViewController.swift */,
 				2C9AF93125040D3200BB1058 /* FoodViewController.swift */,
 				2C68B81825378A9800CDBCE7 /* DetailVC.swift */,
@@ -254,6 +257,7 @@
 				2C9AF9302502B8F900BB1058 /* DailyState.swift in Sources */,
 				2CAE271225001CEB00BAAB6A /* SceneDelegate.swift in Sources */,
 				2C9AF93C250414FF00BB1058 /* FoodRecord+CoreDataProperties.swift in Sources */,
+				E15FACFB2539CCB700637103 /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

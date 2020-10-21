@@ -223,15 +223,17 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     private func customPieChart(dataEntries: inout [ChartDataEntry], pieChartView: PieChartView, goalServings: Double, totalServings: Double) {
         // 1. Figure out remaining
         let remaining = goalServings - totalServings
+        var hasRemainder: Bool = false
         
         if remaining > 0{
             let remainingEntries = PieChartDataEntry(value: remaining, label: "Remaining")
-            dataEntries.insert(remainingEntries, at: 0)
+            dataEntries.append(remainingEntries)
+            hasRemainder = true
         }
         
         // 2. Set ChartDataSet
         let pieChartDataSet = PieChartDataSet(entries: dataEntries, label: nil)
-        pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataEntries.count)
+        pieChartDataSet.colors = colorsOfCharts(numbersOfColor: dataEntries.count, hasRemainder: hasRemainder)
 
         // 3. Set ChartData
         let pieChartData = PieChartData(dataSet: pieChartDataSet)
@@ -239,24 +241,32 @@ class HomeViewController: UIViewController, ChartViewDelegate {
          format.numberStyle = .none
         let formatter = DefaultValueFormatter(decimals: 2)
          pieChartData.setValueFormatter(formatter)
+        pieChartData.setValueTextColor(ThemeManager.currentTheme().secondaryTextColor)
 
         // 4. Assign it to the chart’s data
         pieChartView.data = pieChartData
         pieChartView.legend.enabled = false
+        pieChartView.entryLabelColor = ThemeManager.currentTheme().secondaryTextColor
+        pieChartView.legend.textColor = ThemeManager.currentTheme().secondaryTextColor
         pieChartView.rotationEnabled = false
         pieChartView.holeRadiusPercent = 0.4
         pieChartView.transparentCircleRadiusPercent = 0.5
     }
 
-    private func colorsOfCharts(numbersOfColor: Int) -> [UIColor] {
+    private func colorsOfCharts(numbersOfColor: Int, hasRemainder: Bool) -> [UIColor] {
       var colors: [UIColor] = []
-      for _ in 0..<numbersOfColor {
-        let red = Double(arc4random_uniform(256))
-        let green = Double(arc4random_uniform(256))
-        let blue = Double(arc4random_uniform(256))
-        let color = UIColor(red: CGFloat(red/255), green: CGFloat(green/255), blue: CGFloat(blue/255), alpha: 1)
-        colors.append(color)
-      }
+        //assign colors to the slices
+        for sliceNumber in 0..<(numbersOfColor-1) {
+            colors.append(ThemeManager.pieChartColor(sliceNumber: sliceNumber))
+        }
+        
+        //if there is a Remainder slice it should be in the base color
+        if hasRemainder {
+            colors.append(ThemeManager.currentTheme().baseColor)
+        }
+        else {
+            colors.append(ThemeManager.pieChartColor(sliceNumber: numbersOfColor-1))
+        }
       return colors
     }
 }
