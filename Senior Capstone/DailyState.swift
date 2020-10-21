@@ -92,8 +92,6 @@ class DailyState {
             var counter = 0;
             while (foundGoal == false && counter < goalRecords.count) {
                 let recordDate = goalRecords[counter].value(forKey: "date") as! Date
-                    print(recordDate)
-                    print(todaysDateAsDate)
                     if recordDate < todaysDateAsDate {
                         vegetableGoal = goalRecords[counter].value(forKey: "vegetableGoal") as! Double
                         proteinGoal = goalRecords[counter].value(forKey: "proteinGoal") as! Double

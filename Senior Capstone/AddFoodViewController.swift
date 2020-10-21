@@ -59,7 +59,6 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
         updateFoodGroup(sender, label: grainServingLabel)
     }
     
-    
     @IBAction func registerDateChange(_ sender: Any) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
@@ -95,7 +94,6 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
         vegServingStepper.stepValue = 0.5
         dairyServingStepper.stepValue = 0.5
         proteinServingStepper.stepValue = 0.5
-
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
