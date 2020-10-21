@@ -716,11 +716,16 @@
                     </view>
                     <navigationItem key="navigationItem" id="Vol-XD-jxJ"/>
                     <connections>
+                        <outlet property="dairy" destination="N2f-yX-cnC" id="DDL-xQ-atF"/>
                         <outlet property="dairyLabel" destination="FLy-7d-hfw" id="xWj-iK-OEE"/>
+                        <outlet property="fruit" destination="hkO-Te-rlY" id="0eC-Qi-DE6"/>
                         <outlet property="fruitLabel" destination="9Kb-fp-oz4" id="fza-QW-3yL"/>
-                        <outlet property="grainsLabel" destination="hFF-a2-Mf7" id="H6m-Up-9LC"/>
+                        <outlet property="grain" destination="rk9-De-GdD" id="9Mz-iG-zxc"/>
+                        <outlet property="grainsLabel" destination="hFF-a2-Mf7" id="wZ2-ny-4el"/>
                         <outlet property="nameLabel" destination="EfT-ai-qVq" id="PmO-RC-RDz"/>
+                        <outlet property="protein" destination="RTn-en-TBc" id="wqx-0j-AtK"/>
                         <outlet property="proteinLabel" destination="cTg-wh-hrf" id="QK2-pT-JXu"/>
+                        <outlet property="veg" destination="iYf-tx-HKI" id="q4v-pU-2vw"/>
                         <outlet property="vegLabel" destination="lu4-io-e3y" id="3se-4d-9EW"/>
                     </connections>
                 </viewController>
