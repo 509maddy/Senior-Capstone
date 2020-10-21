@@ -46,7 +46,6 @@ class SettingsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        DailyState.refreshGoals()
         gLabel.text = String(DailyState.grainGoal)
         gSlider.setValue(Float(DailyState.grainGoal), animated: true)
         fLabel.text = String(DailyState.fruitGoal)
