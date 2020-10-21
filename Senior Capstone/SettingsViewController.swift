@@ -58,45 +58,49 @@ class SettingsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        DailyState.refreshGoals()
-        gLabel.text = String(Int(DailyState.grainGoal))
-        gSlider.setValue(Float(Int(DailyState.grainGoal)), animated: true)
-        fLabel.text = String(Int(DailyState.fruitGoal))
-        fSlider.setValue(Float(Int(DailyState.fruitGoal)), animated: true)
-        vLabel.text = String(Int(DailyState.vegetableGoal))
-        vSlider.setValue(Float(Int(DailyState.vegetableGoal)), animated: true)
-        pLabel.text = String(Int(DailyState.proteinGoal))
-        pSlider.setValue(Float(Int(DailyState.proteinGoal)), animated: true)
-        dLabel.text = String(Int(DailyState.dairyGoal))
-        dSlider.setValue(Float(Int(DailyState.dairyGoal)), animated: true)
+        gLabel.text = String(DailyState.grainGoal)
+        gSlider.setValue(Float(DailyState.grainGoal), animated: true)
+        fLabel.text = String(DailyState.fruitGoal)
+        fSlider.setValue(Float(DailyState.fruitGoal), animated: true)
+        vLabel.text = String(DailyState.vegetableGoal)
+        vSlider.setValue(Float(DailyState.vegetableGoal), animated: true)
+        pLabel.text = String(DailyState.proteinGoal)
+        pSlider.setValue(Float(DailyState.proteinGoal), animated: true)
+        dLabel.text = String(DailyState.dairyGoal)
+        dSlider.setValue(Float(DailyState.dairyGoal), animated: true)
+    }
+    
+    func increment(value: Float) -> Float {
+        let increment: Float = 0.5
+        return round(value / increment) * increment
     }
 
     @IBAction func gSliderValueChanged(_ sender: UISlider) {
-        let currentValue = Int(sender.value)
+        let currentValue = increment(value: sender.value)
         gLabel.text = "\(currentValue)"
         grainValue = Double(currentValue)
     }
     
     @IBAction func fSliderValueChanged(_ sender: UISlider) {
-        let currentValue = Int(sender.value)
+        let currentValue = increment(value: sender.value)
         fLabel.text = "\(currentValue)"
         fruitValue = Double(currentValue)
     }
     
     @IBAction func vSliderValueChanged(_ sender: UISlider) {
-        let currentValue = Int(sender.value)
+        let currentValue = increment(value: sender.value)
         vLabel.text = "\(currentValue)"
         vegetableValue = Double(currentValue)
     }
     
     @IBAction func pSliderValueChanged(_ sender: UISlider) {
-        let currentValue = Int(sender.value)
+        let currentValue = increment(value: sender.value)
         pLabel.text = "\(currentValue)"
         proteinValue = Double(currentValue)
     }
     
     @IBAction func dSliderValueChanged(_ sender: UISlider) {
-        let currentValue = Int(sender.value)
+        let currentValue = increment(value: sender.value)
         dLabel.text = "\(currentValue)"
         dairyValue = Double(currentValue)
     }

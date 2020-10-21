@@ -94,12 +94,15 @@ class DatabaseFunctions {
 
     }
 
-    static func insertFoodRecord(name: String, group: String, date: String, servings: Double) {
+    static func insertFoodRecord(name: String, date: String, dairyServings: Double, fruitServings: Double, grainServings: Double, proteinServings: Double, vegServings: Double) {
         let foodRecord = FoodRecord(context: appDelegate.persistentContainer.viewContext)
         foodRecord.date = DailyState.todaysDate
-        foodRecord.group = group
         foodRecord.name = name
-        foodRecord.servings = servings
+        foodRecord.dairyServings = dairyServings
+        foodRecord.fruitServings = fruitServings
+        foodRecord.grainServings = grainServings
+        foodRecord.proteinServings = proteinServings
+        foodRecord.vegServings = vegServings
         appDelegate.saveContext()
     }
 
@@ -121,6 +124,8 @@ class DatabaseFunctions {
             goalRecord.dairyGoal = dairyGoal
             appDelegate.saveContext()
         }
+        
+        DailyState.refreshGoals()
     }
 
     static func deleteFoodRecord(foodItem: FoodRecord) {
@@ -150,5 +155,7 @@ class DatabaseFunctions {
             print(goalRecords)
             print("Goal successfully saved.")
         }
+
+        DailyState.refreshGoals()
     }
 }

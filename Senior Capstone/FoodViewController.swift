@@ -10,11 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-/**
- * In this class, I update the database directly. That can probably be abstracted out into generic functions
- *  so we dont have to repeat code across strings
- */
-class FoodViewController: UIViewController {
+class FoodViewController: UIViewController, UITableViewDelegate {
     
     // gives us a reference to the table
     @IBOutlet weak var tableView: UITableView!
@@ -35,10 +31,8 @@ class FoodViewController: UIViewController {
         title = "Today's Food"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
-        // if we ever need to use an API (i.e. fetch JSON), it would go at this point in the viewDidLoad (or viewWillAppear if necessary)
-           // good step-by-step guide (although they implement persistant storage a little differently): https://www.hackingwithswift.com/read/38/4/creating-an-nsmanagedobject-subclass-with-xcode
-
         loadSavedData()
+        self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
 
     }
 
@@ -48,8 +42,12 @@ class FoodViewController: UIViewController {
        
         foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
         tableView.reloadData()
-
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath : IndexPath) {
+        performSegue(withIdentifier: "showDetail", sender: self)
+    }
+    
 }
 
 // there are all just mandatory things I needed to override to get the table to work
@@ -61,21 +59,17 @@ extension FoodViewController: UITableViewDataSource {
         return foodRecords.count
     }
 
-    // sayin that you can modify the table
+    // saying that you can modify the table
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
         return true
     }
 
-    // saying that I want to display the name
-    // I should also be able to display the group, but I didn't get that working at the moment
-    func tableView(_ tableView: UITableView,
-                   cellForRowAt indexPath: IndexPath)
-        -> UITableViewCell {
-
+    // saying that I want to display the name in each cell
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
             let foodRecord = foodRecords[indexPath.row]
             let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
             cell.textLabel?.text = foodRecord.value(forKeyPath: "name") as? String
-
+            
             return cell
     }
 
@@ -89,4 +83,11 @@ extension FoodViewController: UITableViewDataSource {
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let destination = segue.destination as? DetailVC {
+            destination.foodItem = foodRecords[(tableView.indexPathForSelectedRow?.row)!]
+        }
+    }
+    
 }

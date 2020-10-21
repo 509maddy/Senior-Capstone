@@ -33,29 +33,31 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var submitButton: UIButton!
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-
     
-    @IBAction func registerFruitServingChange(_ sender: Any) {
-        fruitServingLabel.text = String(Int(fruitServingStepper.value))
+    func updateFoodGroup(_ sender: UIStepper, label: UILabel){
+        label.text = String(sender.value)
     }
     
-    @IBAction func registerVegServingChange(_ sender: Any) {
-        vegServingLabel.text = String(Int(vegServingStepper.value))
+    @IBAction func registerFruitServingChange(_ sender: UIStepper) {
+        updateFoodGroup(sender, label: fruitServingLabel)
     }
     
-    @IBAction func registerProteinServingChange(_ sender: Any) {
-        proteinServingLabel.text = String(Int(proteinServingStepper.value))
+    @IBAction func registerVegServingChange(_ sender: UIStepper) {
+        updateFoodGroup(sender, label: vegServingLabel)
     }
     
-    @IBAction func registerDairyServingChange(_ sender: Any) {
-        dairyServingLabel.text = String(Int(dairyServingStepper.value))
+    @IBAction func registerProteinServingChange(_ sender: UIStepper) {
+        updateFoodGroup(sender, label: proteinServingLabel)
+    }
+    
+    @IBAction func registerDairyServingChange(_ sender: UIStepper) {
+        updateFoodGroup(sender, label: dairyServingLabel)
     }
     
     
-    @IBAction func registerGrainServingChange(_ sender: Any) {
-        grainServingLabel.text = String(Int(grainServingStepper.value))
+    @IBAction func registerGrainServingChange(_ sender: UIStepper) {
+        updateFoodGroup(sender, label: grainServingLabel)
     }
-    
     
     @IBAction func registerDateChange(_ sender: Any) {
         let dateFormatter = DateFormatter()
@@ -70,33 +72,14 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
             return
         }
         
-        //Remove once we are saving multiple food groups
-        var groupType = "none"
-        var numToSave = 0
-        
-        if (Int(fruitServingStepper.value) > numToSave){
-            groupType = DailyState.GroupName.Fruit.rawValue
-            numToSave = Int(fruitServingStepper.value)
-        }
-        if (Int(vegServingStepper.value) > numToSave){
-            groupType = DailyState.GroupName.Vegetable.rawValue
-            numToSave = Int(vegServingStepper.value)
-        }
-        if (Int(dairyServingStepper.value) > numToSave){
-            groupType = DailyState.GroupName.Dairy.rawValue
-            numToSave = Int(dairyServingStepper.value)
-        }
-        if (Int(proteinServingStepper.value) > numToSave){
-            groupType = DailyState.GroupName.Protein.rawValue
-            numToSave = Int(proteinServingStepper.value)
-        }
-        if (Int(grainServingStepper.value) > numToSave){
-            groupType = DailyState.GroupName.Grain.rawValue
-            numToSave = Int(grainServingStepper.value)
-        }
-        
+        DatabaseFunctions.insertFoodRecord(name: nameToSave,
+                                           date: DailyState.todaysDate,
+                                           dairyServings: dairyServingStepper.value,
+                                           fruitServings: fruitServingStepper.value,
+                                           grainServings: grainServingStepper.value,
+                                           proteinServings: proteinServingStepper.value,
+                                           vegServings: vegServingStepper.value)
 
-        DatabaseFunctions.insertFoodRecord(name: nameToSave, group: groupType, date: DailyState.todaysDate, servings: Double(numToSave))
         tabBarController?.selectedIndex = 0
     }
 
@@ -106,6 +89,11 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
         dateFormatter.dateStyle = DateFormatter.Style.short
         let strDate = dateFormatter.string(from: datePicker.date)
         DailyState.updateTodaysDate(todaysDate: strDate)
+        fruitServingStepper.stepValue = 0.5
+        grainServingStepper.stepValue = 0.5
+        vegServingStepper.stepValue = 0.5
+        dairyServingStepper.stepValue = 0.5
+        proteinServingStepper.stepValue = 0.5
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
