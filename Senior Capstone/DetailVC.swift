@@ -37,6 +37,18 @@ class DetailVC: UIViewController {
     @IBOutlet weak var vegTop: NSLayoutConstraint!
     @IBOutlet weak var vegServingsConstraint: NSLayoutConstraint!
     
+    // protein constraints
+    @IBOutlet weak var proteinHeight: NSLayoutConstraint!
+    @IBOutlet weak var proteinServingsConstraint: NSLayoutConstraint!
+    @IBOutlet weak var proteinTop: NSLayoutConstraint!
+    
+    // dairy constraints
+    @IBOutlet weak var dairyHeight: NSLayoutConstraint!
+    @IBOutlet weak var dairyServingsConstraint: NSLayoutConstraint!
+    @IBOutlet weak var dairyTop: NSLayoutConstraint!
+    
+    // grain constraints
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -56,8 +68,9 @@ class DetailVC: UIViewController {
         if (foodItem?.proteinServings != 0) {
             proteinLabel.text = "\((foodItem?.proteinServings)!)"
         } else if (foodItem?.proteinServings == 0) {
-            proteinLabel.text = " "
-            protein.text = " "
+            proteinTop.constant = 0
+            proteinServingsConstraint.constant = 0
+            proteinHeight.constant = 0
         }
         
         // veg checks
@@ -81,8 +94,9 @@ class DetailVC: UIViewController {
         if (foodItem?.dairyServings != 0) {
             dairyLabel.text = "\((foodItem?.dairyServings)!)"
         } else if (foodItem?.dairyServings == 0) {
-            dairyLabel.text = " "
-            dairy.text = " "
+            dairyTop.constant = 0
+            dairyHeight.constant = 0
+            dairyServingsConstraint.constant = 0
         }
     }
 }

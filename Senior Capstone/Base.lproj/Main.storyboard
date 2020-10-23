@@ -749,7 +749,10 @@
                     <connections>
                         <outlet property="FruitHeight" destination="pq2-ea-Q7U" id="IGi-Y9-mJg"/>
                         <outlet property="dairy" destination="N2f-yX-cnC" id="DDL-xQ-atF"/>
+                        <outlet property="dairyHeight" destination="yyY-yr-xOo" id="aUD-gC-DmX"/>
                         <outlet property="dairyLabel" destination="FLy-7d-hfw" id="xWj-iK-OEE"/>
+                        <outlet property="dairyServingsConstraint" destination="Xbd-Xm-qVh" id="soQ-kB-l4X"/>
+                        <outlet property="dairyTop" destination="tTq-xI-YLj" id="GAL-Mz-T7m"/>
                         <outlet property="fruit" destination="hkO-Te-rlY" id="0eC-Qi-DE6"/>
                         <outlet property="fruitLabel" destination="9Kb-fp-oz4" id="fza-QW-3yL"/>
                         <outlet property="fruitServingsConstraint" destination="Usc-Gg-jbu" id="SDf-GZ-9zn"/>
@@ -758,7 +761,10 @@
                         <outlet property="grainsLabel" destination="hFF-a2-Mf7" id="wZ2-ny-4el"/>
                         <outlet property="nameLabel" destination="EfT-ai-qVq" id="PmO-RC-RDz"/>
                         <outlet property="protein" destination="RTn-en-TBc" id="wqx-0j-AtK"/>
+                        <outlet property="proteinHeight" destination="yvT-xL-7eq" id="59W-Qa-anP"/>
                         <outlet property="proteinLabel" destination="cTg-wh-hrf" id="QK2-pT-JXu"/>
+                        <outlet property="proteinServingsConstraint" destination="URj-OG-sff" id="Qyb-28-ook"/>
+                        <outlet property="proteinTop" destination="RJq-DI-kPD" id="fLS-xH-Qdx"/>
                         <outlet property="veg" destination="iYf-tx-HKI" id="q4v-pU-2vw"/>
                         <outlet property="vegHeight" destination="fvT-w3-B2f" id="eno-vw-1J3"/>
                         <outlet property="vegLabel" destination="lu4-io-e3y" id="3se-4d-9EW"/>
