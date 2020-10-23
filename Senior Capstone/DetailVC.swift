@@ -48,6 +48,9 @@ class DetailVC: UIViewController {
     @IBOutlet weak var dairyTop: NSLayoutConstraint!
     
     // grain constraints
+    @IBOutlet weak var grainHeight: NSLayoutConstraint!
+    @IBOutlet weak var grainServingsConstraint: NSLayoutConstraint!
+    @IBOutlet weak var grainTop: NSLayoutConstraint!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -86,8 +89,9 @@ class DetailVC: UIViewController {
         if (foodItem?.grainServings != 0) {
             grainsLabel.text = "\((foodItem?.grainServings)!)"
         } else if (foodItem?.grainServings == 0) {
-            grainsLabel.text = " "
-            grain.text = " "
+            grainTop.constant = 0
+            grainServingsConstraint.constant = 0
+            grainHeight.constant = 0
         }
         
         // dairy check

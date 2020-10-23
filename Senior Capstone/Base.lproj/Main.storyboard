@@ -758,6 +758,9 @@
                         <outlet property="fruitServingsConstraint" destination="Usc-Gg-jbu" id="SDf-GZ-9zn"/>
                         <outlet property="fruitTop" destination="udX-lr-coD" id="FPs-E6-Yia"/>
                         <outlet property="grain" destination="rk9-De-GdD" id="9Mz-iG-zxc"/>
+                        <outlet property="grainHeight" destination="6Qu-Bv-ghq" id="z9i-Wh-clj"/>
+                        <outlet property="grainServingsConstraint" destination="79I-g6-E1p" id="TlP-PS-Uqg"/>
+                        <outlet property="grainTop" destination="HCG-X6-oR6" id="C0g-cG-gFP"/>
                         <outlet property="grainsLabel" destination="hFF-a2-Mf7" id="wZ2-ny-4el"/>
                         <outlet property="nameLabel" destination="EfT-ai-qVq" id="PmO-RC-RDz"/>
                         <outlet property="protein" destination="RTn-en-TBc" id="wqx-0j-AtK"/>
