@@ -22,12 +22,12 @@ class DatePickerViewController: UIViewController {
     }
     
     override func viewDidLoad(){
+        super.viewDidLoad()
         label.text = DailyState.todaysDate
     }
     
     override func viewDidDisappear(_ animated: Bool) {
         print("time to update")
     }
-    
     
 }
