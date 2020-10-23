@@ -77,12 +77,25 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
     }
     
     @IBAction func registerSubmit(_ sender: Any) {
-        // Verify that the input data is valid, if not exit
-        if !dataValidation(){
+        // Verify that the input data is valid, if not push an error message popup and exit
+        if !nameValidation() && !dataValidation() {
+            let alert = UIAlertController(title: "No data found", message: "Please provide a name and at least on food group", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+            return
+        } else if !nameValidation(){
+            let alert = UIAlertController(title: "Name field empty", message: "Please provide a name for the food entry you are making", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
+            return
+        } else if !dataValidation(){
+            let alert = UIAlertController(title: "No servings entered", message: "Please input at least of of the food group", preferredStyle: .alert)
+            alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+            self.present(alert, animated: true)
             return
         }
         
-        // else add to database
+        // else add the entry to the database
         guard let nameToSave = nameInputBox.text else {
             return
         }
@@ -99,20 +112,7 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
     }
     
     func dataValidation() -> Bool {
-        var hasName: Bool = true
         var dataIsValid: Bool = false
-        
-        // Verify that a name has been provided for the input
-        guard let nameToSave = nameInputBox.text else {
-            return false
-        }
-        
-        if nameToSave.isEmpty{
-            nameLabel.textColor = UIColor.red
-            hasName = false
-        } else {
-            nameLabel.textColor = UIColor.black
-        }
         
         // Verify that at least one serving feild has an input
         let stepperValues = [fruitServingStepper.value, vegServingStepper.value, proteinServingStepper.value, dairyServingStepper.value, grainServingStepper.value]
@@ -134,7 +134,42 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
             }
         }
         
-        return hasName && dataIsValid
+        return dataIsValid
+    }
+    
+    func nameValidation() -> Bool {
+        var hasName: Bool = true
+        
+        // Verify that a name has been provided for the input
+        guard let nameToSave = nameInputBox.text else {
+            return false
+        }
+        
+        if nameToSave.isEmpty{
+            nameLabel.textColor = UIColor.red
+            hasName = false
+        } else {
+            nameLabel.textColor = UIColor.black
+        }
+        
+        return hasName
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        // Reset the name field
+        nameLabel.textColor = UIColor.black
+        nameInputBox.text = ""
+        
+        let steppers = [fruitServingStepper, vegServingStepper, proteinServingStepper, dairyServingStepper, grainServingStepper]
+        let servingsLabels = [fruitServingLabel, vegServingLabel, proteinServingLabel, dairyServingLabel, grainServingLabel]
+        let foodLabels = [fruitLabel, vegLabel, proteinLabel, dairyLabel, grainLabel]
+        
+        for i in 0...(steppers.count-1) {
+            steppers[i]?.value = 0
+            steppers[i]?.stepValue = 0.5
+            servingsLabels[i]?.text = "0"
+            foodLabels[i]?.textColor = UIColor.black
+        }
     }
 
     override func viewDidLoad() {
@@ -143,11 +178,6 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
         dateFormatter.dateStyle = DateFormatter.Style.short
         let strDate = dateFormatter.string(from: datePicker.date)
         DailyState.updateTodaysDate(todaysDate: strDate)
-        fruitServingStepper.stepValue = 0.5
-        grainServingStepper.stepValue = 0.5
-        vegServingStepper.stepValue = 0.5
-        dairyServingStepper.stepValue = 0.5
-        proteinServingStepper.stepValue = 0.5
     }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
