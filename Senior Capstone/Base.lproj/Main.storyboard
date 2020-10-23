@@ -760,7 +760,10 @@
                         <outlet property="protein" destination="RTn-en-TBc" id="wqx-0j-AtK"/>
                         <outlet property="proteinLabel" destination="cTg-wh-hrf" id="QK2-pT-JXu"/>
                         <outlet property="veg" destination="iYf-tx-HKI" id="q4v-pU-2vw"/>
+                        <outlet property="vegHeight" destination="fvT-w3-B2f" id="eno-vw-1J3"/>
                         <outlet property="vegLabel" destination="lu4-io-e3y" id="3se-4d-9EW"/>
+                        <outlet property="vegServingsConstraint" destination="rCx-Gj-33T" id="fio-dD-0PI"/>
+                        <outlet property="vegTop" destination="soa-ye-0bo" id="g66-wr-QTG"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJm-gr-CYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

@@ -10,6 +10,9 @@ import UIKit
 
 class DetailVC: UIViewController {
 
+    var foodItem : FoodRecord?
+    
+    // servings labels
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var fruitLabel : UILabel!
     @IBOutlet weak var proteinLabel : UILabel!
@@ -17,19 +20,23 @@ class DetailVC: UIViewController {
     @IBOutlet weak var grainsLabel : UILabel!
     @IBOutlet weak var dairyLabel : UILabel!
     
+    // name labels
     @IBOutlet weak var fruit : UILabel!
     @IBOutlet weak var protein : UILabel!
     @IBOutlet weak var veg : UILabel!
     @IBOutlet weak var grain : UILabel!
     @IBOutlet weak var dairy : UILabel!
     
+    // fruit constraints
     @IBOutlet weak var FruitHeight: NSLayoutConstraint!
-    var foodItem : FoodRecord?
-    
-    
     @IBOutlet weak var fruitTop: NSLayoutConstraint!
-    
     @IBOutlet weak var fruitServingsConstraint: NSLayoutConstraint!
+    
+    // veg contraints
+    @IBOutlet weak var vegHeight: NSLayoutConstraint!
+    @IBOutlet weak var vegTop: NSLayoutConstraint!
+    @IBOutlet weak var vegServingsConstraint: NSLayoutConstraint!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -57,8 +64,9 @@ class DetailVC: UIViewController {
         if (foodItem?.vegServings != 0) {
             vegLabel.text = "\((foodItem?.vegServings)!)"
         } else if (foodItem?.vegServings == 0) {
-            vegLabel.text = " "
-            veg.text = " "
+            vegHeight.constant = 0
+            vegServingsConstraint.constant = 0
+            vegTop.constant = 0
         }
         
         // grain checks
