@@ -481,6 +481,7 @@
                     <navigationItem key="navigationItem" id="Bzt-yN-Aui">
                         <barButtonItem key="rightBarButtonItem" title="Date" id="e3V-X7-hDd">
                             <connections>
+                                <action selector="button:" destination="Qnx-fp-YqQ" id="pzj-PT-TS7"/>
                                 <segue destination="NOk-wN-ufv" kind="popoverPresentation" popoverAnchorBarButtonItem="e3V-X7-hDd" id="BzP-gj-IiQ">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
@@ -507,6 +508,7 @@
                         <outlet property="meatPaddingHeight" destination="AaV-ZR-mmR" id="DKk-7R-wgV"/>
                         <outlet property="meatPieChartHeight" destination="7A4-og-BXn" id="iy3-Fx-Lih"/>
                         <outlet property="meatPieChartView" destination="ZV2-WT-Zcs" id="MlB-Fa-xoX"/>
+                        <outlet property="navDate" destination="e3V-X7-hDd" id="5Vf-Nv-H8g"/>
                         <outlet property="noDataHeight" destination="G1Q-AB-tuG" id="FkY-KH-Mds"/>
                         <outlet property="noDataView" destination="0g6-KP-kMP" id="Fjc-oU-sSj"/>
                         <outlet property="vegetableDividerHeight" destination="kzc-Iy-gE2" id="Jqc-cp-xNy"/>
@@ -517,6 +519,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdB-UL-7Fb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="Qnx-fp-YqQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-1820.289855072464" y="426.5625"/>
         </scene>
@@ -555,12 +558,13 @@
                     <navigationItem key="navigationItem" id="Z7h-9a-dTt"/>
                     <connections>
                         <outlet property="datePicker" destination="9CB-pV-QKd" id="2vL-fK-H6D"/>
+                        <outlet property="label" destination="4eh-RT-ffJ" id="mge-ad-tGF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4n-j8-lpP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="G0o-EC-lZJ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-378" y="791"/>
+            <point key="canvasLocation" x="-1464" y="1156"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="lDa-zl-7X7">

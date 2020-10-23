@@ -46,10 +46,12 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     var goalGrain: Double = 0.0
     var goalProtein: Double = 0.0
     var goalVeg: Double = 0.0
-
+    @IBOutlet weak var navDate: UIBarButtonItem!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         DailyState.refreshGoals()
+        navDate.title = DailyState.todaysDate
     }
 
     override func viewWillAppear(_ animated: Bool) {
