@@ -79,17 +79,17 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
     @IBAction func registerSubmit(_ sender: Any) {
         // Verify that the input data is valid, if not push an error message popup and exit
         if !nameValidation() && !dataValidation() {
-            let alert = UIAlertController(title: "No data found", message: "Please provide a name and at least on food group", preferredStyle: .alert)
+            let alert = UIAlertController(title: "No Data Found", message: "Please provide a name and at least one food group.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
             self.present(alert, animated: true)
             return
         } else if !nameValidation(){
-            let alert = UIAlertController(title: "Name field empty", message: "Please provide a name for the food entry you are making", preferredStyle: .alert)
+            let alert = UIAlertController(title: "Name Field Empty", message: "Please provide a name for the food entry you are making.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
             self.present(alert, animated: true)
             return
         } else if !dataValidation(){
-            let alert = UIAlertController(title: "No servings entered", message: "Please input at least of of the food group", preferredStyle: .alert)
+            let alert = UIAlertController(title: "No Servings Entered", message: "Please input at least one of the food groups.", preferredStyle: .alert)
             alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
             self.present(alert, animated: true)
             return
