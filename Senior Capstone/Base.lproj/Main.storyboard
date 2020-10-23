@@ -976,19 +976,25 @@
                     </view>
                     <navigationItem key="navigationItem" id="20a-BV-X2s"/>
                     <connections>
+                        <outlet property="dairyLabel" destination="Qr8-lB-gGj" id="erZ-1R-7lC"/>
                         <outlet property="dairyServingLabel" destination="Bso-S0-CMx" id="vKV-rZ-5PY"/>
-                        <outlet property="dairyServingStepper" destination="t4g-oG-X9m" id="wU3-dT-JrU"/>
-                        <outlet property="datePicker" destination="mbF-Pi-Q2g" id="ocq-RC-SPj"/>
+                        <outlet property="dairyServingStepper" destination="t4g-oG-X9m" id="p4F-bY-Di4"/>
+                        <outlet property="datePicker" destination="mbF-Pi-Q2g" id="a6P-lT-4Mf"/>
+                        <outlet property="fruitLabel" destination="FQt-xw-ijH" id="q8E-7x-tJf"/>
                         <outlet property="fruitServingLabel" destination="LCZ-iV-i9B" id="4UZ-gr-gaA"/>
                         <outlet property="fruitServingStepper" destination="DaT-Jx-sih" id="TnH-K3-P34"/>
+                        <outlet property="grainLabel" destination="Nek-QH-CxW" id="8Pb-rt-Nr8"/>
                         <outlet property="grainServingLabel" destination="s0w-5l-MUh" id="2U5-2j-3t3"/>
-                        <outlet property="grainServingStepper" destination="o7u-B7-GKF" id="hbq-nO-egJ"/>
+                        <outlet property="grainServingStepper" destination="o7u-B7-GKF" id="Cq9-et-B5h"/>
                         <outlet property="nameInputBox" destination="qkj-eD-VK6" id="LKr-gz-Z2t"/>
+                        <outlet property="nameLabel" destination="9oX-hy-F2N" id="Pgt-1J-gKd"/>
+                        <outlet property="proteinLabel" destination="pkD-Kr-0cB" id="wfA-bR-Sul"/>
                         <outlet property="proteinServingLabel" destination="G4u-M9-XOW" id="DE9-Jx-D5v"/>
-                        <outlet property="proteinServingStepper" destination="i58-UP-dNO" id="62r-ZR-rZw"/>
+                        <outlet property="proteinServingStepper" destination="i58-UP-dNO" id="a98-eb-cN3"/>
                         <outlet property="submitButton" destination="ULx-jo-eL8" id="fxd-xS-tj4"/>
+                        <outlet property="vegLabel" destination="U80-ll-Bd8" id="T3A-ia-9wL"/>
                         <outlet property="vegServingLabel" destination="fBY-Df-nKy" id="A9B-ZM-Ebu"/>
-                        <outlet property="vegServingStepper" destination="bVa-tK-2N6" id="zzL-hg-cu1"/>
+                        <outlet property="vegServingStepper" destination="bVa-tK-2N6" id="1wq-TY-S9w"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2kP-O1-8k8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
