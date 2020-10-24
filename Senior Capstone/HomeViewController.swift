@@ -50,6 +50,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(DailyState.todaysDate)
         DailyState.refreshGoals()
         navDate.title = DailyState.todaysDate
     }

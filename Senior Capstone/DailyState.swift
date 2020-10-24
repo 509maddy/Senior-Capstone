@@ -69,7 +69,6 @@ class DailyState {
     }
 
     static func refreshGoals() {
-        print("refresing goals")
 
         var goalRecords = [GoalRecord]()
         let predicate = NSPredicate(format: "date == %@", todaysDateAsDate as NSDate)
@@ -77,8 +76,6 @@ class DailyState {
 
 
         if goalRecords.count != 0 {
-            print("found match")
-            print(todaysDateAsDate)
             vegetableGoal = goalRecords[0].value(forKey: "vegetableGoal") as! Double
             proteinGoal = goalRecords[0].value(forKey: "proteinGoal") as! Double
             grainGoal = goalRecords[0].value(forKey: "grainGoal") as! Double

@@ -23,10 +23,7 @@ class DatabaseFunctions {
 
         do {
             foodRecords = try appDelegate.persistentContainer.viewContext.fetch(request)
-            print(foodRecords)
-            print("Got \(foodRecords.count) foodItems")
         } catch {
-            print("Fetch failed")
         }
 
         return foodRecords
@@ -42,9 +39,6 @@ class DatabaseFunctions {
 
         do {
             goalRecords = try appDelegate.persistentContainer.viewContext.fetch(request)
-            print(goalRecords)
-            print("Got \(goalRecords.count) goalItems")
-
         } catch {
             print("Fetch failed")
         }
@@ -63,8 +57,6 @@ class DatabaseFunctions {
 
         do {
                foodRecords = try appDelegate.persistentContainer.viewContext.fetch(request)
-               print(foodRecords)
-               print("Got \(foodRecords.count) foodItems")
            } catch {
                print("Fetch failed")
            }
@@ -84,8 +76,6 @@ class DatabaseFunctions {
 
         do {
                goalRecords = try appDelegate.persistentContainer.viewContext.fetch(request)
-               print(goalRecords)
-               print("Got \(goalRecords.count) goalItems")
            } catch {
                print("Fetch failed")
            }
@@ -113,7 +103,6 @@ class DatabaseFunctions {
         goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
 
         if goalRecords.count != 0 {
-            print("Goal already exists for this date. You should be calling the modifying function. No modificantions made.")
         } else {
             let goalRecord = GoalRecord(context: appDelegate.persistentContainer.viewContext)
             goalRecord.date = date
@@ -144,7 +133,6 @@ class DatabaseFunctions {
         goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
 
         if goalRecords.count == 0 {
-            print("Goal does not exist for this date, no modifications made.")
         } else {
             goalRecords[0].setValue(fruitGoal, forKey: "fruitGoal")
             goalRecords[0].setValue(vegetableGoal, forKey: "vegetableGoal")
@@ -152,8 +140,6 @@ class DatabaseFunctions {
             goalRecords[0].setValue(grainGoal, forKey: "grainGoal")
             goalRecords[0].setValue(dairyGoal, forKey: "dairyGoal")
             appDelegate.saveContext()
-            print(goalRecords)
-            print("Goal successfully saved.")
         }
 
         DailyState.refreshGoals()

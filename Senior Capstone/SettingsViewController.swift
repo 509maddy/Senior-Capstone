@@ -33,13 +33,9 @@ class SettingsViewController: UIViewController {
         let predicate = NSPredicate(format: "date == %@", DailyState.todaysDateAsDate as NSDate)
         goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
 
-        if goalRecords.count != 0 {
-            print("Goal already exists for this date, modification made.")
-            
+        if goalRecords.count != 0 {            
             DatabaseFunctions.modifyGoalRecord(date: DailyState.todaysDateAsDate, fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
-
         } else {
-            print("No existing entitiy for this date. New goal entity made.")
             DatabaseFunctions.insertGoalRecord(date: DailyState.todaysDateAsDate, fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
         }
     }
