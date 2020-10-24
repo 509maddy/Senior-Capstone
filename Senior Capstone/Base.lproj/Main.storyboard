@@ -541,14 +541,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hey" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4eh-RT-ffJ">
-                                <rect key="frame" x="124" y="102" width="132" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <datePicker contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="date" translatesAutoresizingMaskIntoConstraints="NO" id="9CB-pV-QKd">
-                                <rect key="frame" x="0.0" y="270" width="414" height="216"/>
+                                <rect key="frame" x="0.0" y="135" width="414" height="216"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <connections>
                                     <action selector="registerDateChange:" destination="NOk-wN-ufv" eventType="valueChanged" id="d2X-MI-JuR"/>
@@ -556,19 +550,22 @@
                                     <action selector="updateDatePicker:" destination="G0o-EC-lZJ" eventType="valueChanged" id="qf0-nL-5mB"/>
                                 </connections>
                             </datePicker>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Change Date" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tXv-eL-Zxv">
+                                <rect key="frame" x="116" y="50" width="182" height="36"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="36" id="Ga1-Fi-Tph"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <constraints>
-                            <constraint firstItem="4eh-RT-ffJ" firstAttribute="leading" secondItem="C39-cs-1lQ" secondAttribute="leading" constant="124" id="H5h-B5-KFu"/>
-                            <constraint firstItem="C39-cs-1lQ" firstAttribute="trailing" secondItem="4eh-RT-ffJ" secondAttribute="trailing" constant="158" id="cAM-Dt-1kQ"/>
-                            <constraint firstItem="4eh-RT-ffJ" firstAttribute="top" secondItem="C39-cs-1lQ" secondAttribute="top" constant="102" id="olM-5K-NlX"/>
-                        </constraints>
                         <viewLayoutGuide key="safeArea" id="C39-cs-1lQ"/>
                     </view>
                     <navigationItem key="navigationItem" id="Z7h-9a-dTt"/>
                     <connections>
                         <outlet property="datePicker" destination="9CB-pV-QKd" id="2vL-fK-H6D"/>
-                        <outlet property="label" destination="4eh-RT-ffJ" id="mge-ad-tGF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K4n-j8-lpP" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
