@@ -184,7 +184,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ONH-Lh-qce"/>
                     </view>
-                    <navigationItem key="navigationItem" id="7Q7-77-MHF"/>
+                    <navigationItem key="navigationItem" id="7Q7-77-MHF">
+                        <barButtonItem key="rightBarButtonItem" title="Date" id="bfM-Q9-AnU">
+                            <connections>
+                                <action selector="button:" destination="Qnx-fp-YqQ" id="7GS-8U-cTz"/>
+                                <segue destination="NOk-wN-ufv" kind="popoverPresentation" popoverAnchorBarButtonItem="bfM-Q9-AnU" id="0kR-tb-9Se">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dLabel" destination="ycc-83-P8B" id="Byc-Ym-BxY"/>
                         <outlet property="dSlider" destination="dB0-MW-zUZ" id="SVQ-J9-Bb5"/>
@@ -654,7 +663,16 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="bLY-1B-rvf"/>
                     </view>
-                    <navigationItem key="navigationItem" id="ykv-BE-vJu"/>
+                    <navigationItem key="navigationItem" id="ykv-BE-vJu">
+                        <barButtonItem key="rightBarButtonItem" title="Date" id="MTI-Tt-wlv">
+                            <connections>
+                                <action selector="button:" destination="Qnx-fp-YqQ" id="gBq-Tp-kDE"/>
+                                <segue destination="NOk-wN-ufv" kind="popoverPresentation" popoverAnchorBarButtonItem="MTI-Tt-wlv" id="huP-a5-k6O">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="tableView" destination="efW-4p-Q6x" id="gFW-JE-s9W"/>
                         <segue destination="cZR-ui-mYQ" kind="show" identifier="showDetail" id="Shu-jC-NfW"/>
@@ -673,7 +691,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EfT-ai-qVq">
-                                <rect key="frame" x="169" y="148" width="76.5" height="36"/>
+                                <rect key="frame" x="168.66666666666666" y="148" width="76.666666666666657" height="36"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="36" id="di2-wP-MkR"/>
                                 </constraints>
@@ -799,7 +817,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vzA-ws-dxq"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Vol-XD-jxJ"/>
+                    <navigationItem key="navigationItem" id="Vol-XD-jxJ">
+                        <barButtonItem key="rightBarButtonItem" title="Date" id="dd9-Vn-oWq">
+                            <connections>
+                                <action selector="button:" destination="Qnx-fp-YqQ" id="Qtr-3B-zJq"/>
+                                <segue destination="NOk-wN-ufv" kind="popoverPresentation" popoverAnchorBarButtonItem="dd9-Vn-oWq" id="pk3-pO-Iqp">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="FruitHeight" destination="pq2-ea-Q7U" id="IGi-Y9-mJg"/>
                         <outlet property="dairy" destination="N2f-yX-cnC" id="DDL-xQ-atF"/>
@@ -1080,7 +1107,16 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qyn-jc-Fsb"/>
                     </view>
-                    <navigationItem key="navigationItem" id="20a-BV-X2s"/>
+                    <navigationItem key="navigationItem" id="20a-BV-X2s">
+                        <barButtonItem key="rightBarButtonItem" title="Date" id="1XJ-GV-Dox">
+                            <connections>
+                                <action selector="button:" destination="Qnx-fp-YqQ" id="3Ff-4u-PWF"/>
+                                <segue destination="NOk-wN-ufv" kind="popoverPresentation" popoverAnchorBarButtonItem="1XJ-GV-Dox" id="EEw-Aj-ZL7">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="dairyLabel" destination="Qr8-lB-gGj" id="erZ-1R-7lC"/>
                         <outlet property="dairyServingLabel" destination="Bso-S0-CMx" id="vKV-rZ-5PY"/>
@@ -1284,6 +1320,9 @@
             <point key="canvasLocation" x="1205.7971014492755" y="-567.1875"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="EEw-Aj-ZL7"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <image name="gear" catalog="system" width="128" height="119"/>
         <image name="hare" catalog="system" width="128" height="92"/>
