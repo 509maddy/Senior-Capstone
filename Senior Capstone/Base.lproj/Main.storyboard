@@ -201,6 +201,7 @@
                         <outlet property="fSlider" destination="oXY-AX-v25" id="rjJ-dk-1Ui"/>
                         <outlet property="gLabel" destination="ow3-Cn-aeG" id="x3n-5Y-1O6"/>
                         <outlet property="gSlider" destination="FDy-54-VUR" id="6JU-Ny-Oec"/>
+                        <outlet property="navDate" destination="bfM-Q9-AnU" id="4g4-F0-SuK"/>
                         <outlet property="pLabel" destination="T8E-Ho-lb7" id="6CR-eJ-Q6P"/>
                         <outlet property="pSlider" destination="ljq-Jx-erX" id="x1p-a0-rM7"/>
                         <outlet property="vLabel" destination="gE7-8H-W5Y" id="GVg-4J-Jov"/>
@@ -666,7 +667,7 @@
                     <navigationItem key="navigationItem" id="ykv-BE-vJu">
                         <barButtonItem key="rightBarButtonItem" title="Date" id="MTI-Tt-wlv">
                             <connections>
-                                <action selector="button:" destination="Qnx-fp-YqQ" id="gBq-Tp-kDE"/>
+                                <action selector="navDate:" destination="fTn-Mi-0BK" id="w73-6u-Pjs"/>
                                 <segue destination="NOk-wN-ufv" kind="popoverPresentation" popoverAnchorBarButtonItem="MTI-Tt-wlv" id="huP-a5-k6O">
                                     <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
                                 </segue>
@@ -674,11 +675,13 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="navDate" destination="MTI-Tt-wlv" id="f32-GL-uy8"/>
                         <outlet property="tableView" destination="efW-4p-Q6x" id="gFW-JE-s9W"/>
                         <segue destination="cZR-ui-mYQ" kind="show" identifier="showDetail" id="Shu-jC-NfW"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gby-0D-Z8S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="fTn-Mi-0BK" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="539.13043478260875" y="-924.10714285714278"/>
         </scene>
@@ -817,16 +820,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="vzA-ws-dxq"/>
                     </view>
-                    <navigationItem key="navigationItem" id="Vol-XD-jxJ">
-                        <barButtonItem key="rightBarButtonItem" title="Date" id="dd9-Vn-oWq">
-                            <connections>
-                                <action selector="button:" destination="Qnx-fp-YqQ" id="Qtr-3B-zJq"/>
-                                <segue destination="NOk-wN-ufv" kind="popoverPresentation" popoverAnchorBarButtonItem="dd9-Vn-oWq" id="pk3-pO-Iqp">
-                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                </segue>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="Vol-XD-jxJ"/>
                     <connections>
                         <outlet property="FruitHeight" destination="pq2-ea-Q7U" id="IGi-Y9-mJg"/>
                         <outlet property="dairy" destination="N2f-yX-cnC" id="DDL-xQ-atF"/>
@@ -1130,6 +1124,7 @@
                         <outlet property="grainServingStepper" destination="o7u-B7-GKF" id="Cq9-et-B5h"/>
                         <outlet property="nameInputBox" destination="qkj-eD-VK6" id="LKr-gz-Z2t"/>
                         <outlet property="nameLabel" destination="9oX-hy-F2N" id="Pgt-1J-gKd"/>
+                        <outlet property="navDate" destination="1XJ-GV-Dox" id="bOz-wc-tLc"/>
                         <outlet property="proteinLabel" destination="pkD-Kr-0cB" id="wfA-bR-Sul"/>
                         <outlet property="proteinServingLabel" destination="G4u-M9-XOW" id="DE9-Jx-D5v"/>
                         <outlet property="proteinServingStepper" destination="i58-UP-dNO" id="a98-eb-cN3"/>

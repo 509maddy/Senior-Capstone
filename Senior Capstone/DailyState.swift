@@ -8,6 +8,7 @@
 
 import Foundation
 import CoreData
+import UIKit
 
 /**
  * I am thinking this will hold a copy of the daily user information for ease of use
@@ -66,6 +67,10 @@ class DailyState {
         self.todaysDate = todaysDate
         self.todaysDateAsDate = initDateAsDate()
         refreshGoals()
+    }
+    
+    static func updateNavDate(navDate: UIBarButtonItem){
+        navDate.title = self.todaysDate
     }
 
     static func refreshGoals() {

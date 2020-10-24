@@ -15,6 +15,7 @@ class FoodViewController: UIViewController, UITableViewDelegate {
     // gives us a reference to the table
     @IBOutlet weak var tableView: UITableView!
     
+    @IBOutlet weak var navDate: UIBarButtonItem!
     // the persistant container belongs to the appDelegate class
     // appDelegate acts as a singleton, which means there is only once instance
     // of the appDelegate all screens share (basically its a static class)
@@ -33,6 +34,7 @@ class FoodViewController: UIViewController, UITableViewDelegate {
 
         loadSavedData()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
+        DailyState.updateNavDate(navDate: navDate)
 
     }
 

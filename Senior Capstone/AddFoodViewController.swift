@@ -38,6 +38,8 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var submitButton: UIButton!
 
+    @IBOutlet weak var navDate: UIBarButtonItem!
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate;
     
     func updateFoodGroup(_ sender: UIStepper, label: UILabel){
@@ -170,6 +172,7 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
             servingsLabels[i]?.text = "0"
             foodLabels[i]?.textColor = UIColor.black
         }
+        DailyState.updateNavDate(navDate: navDate)
     }
 
     override func viewDidLoad() {

@@ -57,7 +57,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-        navDate.title = DailyState.todaysDate
+        DailyState.updateNavDate(navDate: navDate)
         loadPieCharts()
         loadViews()
         hideViews()

@@ -20,7 +20,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var pSlider: UISlider!
     @IBOutlet weak var fSlider: UISlider!
     @IBOutlet weak var vSlider: UISlider!
-
+    @IBOutlet weak var navDate: UIBarButtonItem!
+    
     var grainValue: Double = DailyState.grainGoal
     var fruitValue: Double = DailyState.fruitGoal
     var vegetableValue: Double = DailyState.vegetableGoal
@@ -64,6 +65,7 @@ class SettingsViewController: UIViewController {
         pSlider.setValue(Float(DailyState.proteinGoal), animated: true)
         dLabel.text = String(DailyState.dairyGoal)
         dSlider.setValue(Float(DailyState.dairyGoal), animated: true)
+        DailyState.updateNavDate(navDate: navDate)
     }
     
     func increment(value: Float) -> Float {
