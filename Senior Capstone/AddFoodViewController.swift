@@ -35,7 +35,6 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, ModalTransi
     @IBOutlet weak var grainServingLabel: UILabel!
     @IBOutlet weak var grainLabel: UILabel!
     
-    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var submitButton: UIButton!
 
     @IBOutlet weak var navDate: UIBarButtonItem!
@@ -69,13 +68,6 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, ModalTransi
     
     @IBAction func registerGrainServingChange(_ sender: UIStepper) {
         updateFoodGroup(sender, label: grainServingLabel)
-    }
-    
-    @IBAction func registerDateChange(_ sender: Any) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
-        let strDate = dateFormatter.string(from: datePicker.date)
-        DailyState.updateTodaysDate(todaysDate: strDate)
     }
     
     func popoverDismissed() {
@@ -189,9 +181,7 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, ModalTransi
         super.viewDidLoad()
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
-        let strDate = dateFormatter.string(from: datePicker.date)
-        DailyState.updateTodaysDate(todaysDate: strDate)
-    }
+        DailyState.updateNavDate(navDate: navDate)    }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

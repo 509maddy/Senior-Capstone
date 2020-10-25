@@ -52,7 +52,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         super.viewDidLoad()
         print(DailyState.todaysDate)
         DailyState.refreshGoals()
-        navDate.title = DailyState.todaysDate
+        DailyState.updateNavDate(navDate: navDate)
     }
 
     override func viewWillAppear(_ animated: Bool) {
