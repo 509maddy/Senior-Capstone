@@ -18,8 +18,12 @@ class DatePickerViewController: UIViewController {
         DailyState.updateTodaysDate(todaysDate: strDate)
     }
     
-    override func viewDidLoad(){
-        super.viewDidLoad()
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.short
+        let strDate = dateFormatter.date(from: DailyState.todaysDate)
+        datePicker.date = strDate!
     }
     
     override func viewDidDisappear(_ animated: Bool) {

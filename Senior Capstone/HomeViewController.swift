@@ -61,6 +61,7 @@ class HomeViewController: UIViewController, ChartViewDelegate {
         loadPieCharts()
         loadViews()
         hideViews()
+        print("home view will appear")
     }
     
     func loadPieCharts() {
