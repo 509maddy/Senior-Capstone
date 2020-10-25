@@ -28,6 +28,7 @@ class DatePickerViewController: UIViewController {
     
     override func viewDidDisappear(_ animated: Bool) {
         print("time to update")
+        ModalTransitionMediator.instance.sendPopoverDismissed(modelChanged: true)
     }
-    
+
 }

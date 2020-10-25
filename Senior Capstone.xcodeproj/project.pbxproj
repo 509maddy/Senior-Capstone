@@ -27,6 +27,7 @@
 		AA1E9963E4DD955E5D493305 /* Pods_Senior_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143AAA652CBCEDDC0575C24B /* Pods_Senior_Capstone.framework */; };
 		E15FACFB2539CCB700637103 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FACFA2539CCB700637103 /* ThemeManager.swift */; };
 		E4FE6A2025427F6A000EFBFE /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FE6A1F25427F6A000EFBFE /* DatePickerViewController.swift */; };
+		E4FE6A252545F022000EFBFE /* ModalTransitionMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FE6A242545F022000EFBFE /* ModalTransitionMediator.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -54,6 +55,7 @@
 		710BE54F3DC80F62C1CAFC4E /* Pods-Senior Capstone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Senior Capstone.debug.xcconfig"; path = "Target Support Files/Pods-Senior Capstone/Pods-Senior Capstone.debug.xcconfig"; sourceTree = "<group>"; };
 		E15FACFA2539CCB700637103 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E4FE6A1F25427F6A000EFBFE /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
+		E4FE6A242545F022000EFBFE /* ModalTransitionMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransitionMediator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				2CAE272025001CED00BAAB6A /* Info.plist */,
 				2CAE271825001CEB00BAAB6A /* Senior_Capstone.xcdatamodeld */,
 				E4FE6A1F25427F6A000EFBFE /* DatePickerViewController.swift */,
+				E4FE6A242545F022000EFBFE /* ModalTransitionMediator.swift */,
 			);
 			path = "Senior Capstone";
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				2C68B81925378A9800CDBCE7 /* DetailVC.swift in Sources */,
 				2C22FBE92536607100C35C81 /* GoalRecord+CoreDataProperties.swift in Sources */,
 				2C301AC425150FE6006D7C6A /* AddFoodViewController.swift in Sources */,
+				E4FE6A252545F022000EFBFE /* ModalTransitionMediator.swift in Sources */,
 				2CA992C02517A47D00048726 /* HomeViewController.swift in Sources */,
 				2C9AF93B250414FF00BB1058 /* FoodRecord+CoreDataClass.swift in Sources */,
 				2C9AF9302502B8F900BB1058 /* DailyState.swift in Sources */,

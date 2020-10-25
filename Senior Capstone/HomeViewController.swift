@@ -9,7 +9,7 @@
 import UIKit
 import Charts
 
-class HomeViewController: UIViewController, ChartViewDelegate {
+class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionListener {
     @IBOutlet weak var noDataView: UIView!
     @IBOutlet weak var noDataHeight: NSLayoutConstraint!
 
@@ -56,6 +56,17 @@ class HomeViewController: UIViewController, ChartViewDelegate {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        reloadView()
+        ModalTransitionMediator.instance.setListener(listener: self)
+    }
+    
+    func popoverDismissed() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+        reloadView()
+    }
+    
+    func reloadView() {
         super.viewWillAppear(true)
         DailyState.updateNavDate(navDate: navDate)
         loadPieCharts()

@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
-class AddFoodViewController: UIViewController, UIPickerViewDelegate {
+class AddFoodViewController: UIViewController, UIPickerViewDelegate, ModalTransitionListener {
 
     @IBOutlet weak var nameInputBox: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
@@ -76,6 +76,11 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
         dateFormatter.dateStyle = DateFormatter.Style.short
         let strDate = dateFormatter.string(from: datePicker.date)
         DailyState.updateTodaysDate(todaysDate: strDate)
+    }
+    
+    func popoverDismissed() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+        reloadView()
     }
     
     @IBAction func registerSubmit(_ sender: Any) {
@@ -158,7 +163,12 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // Reset the name field
+        super.viewWillAppear(true)
+        reloadView()
+        ModalTransitionMediator.instance.setListener(listener: self)
+    }
+    
+    func reloadView(){
         nameLabel.textColor = UIColor.black
         nameInputBox.text = ""
         

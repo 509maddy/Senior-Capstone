@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
-   
+class SettingsViewController: UIViewController, ModalTransitionListener  {
+       
     @IBOutlet weak var gLabel: UILabel!
     @IBOutlet weak var fLabel: UILabel!
     @IBOutlet weak var vLabel: UILabel!
@@ -55,6 +55,11 @@ class SettingsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        reloadView()
+        ModalTransitionMediator.instance.setListener(listener: self)
+    }
+    
+    func reloadView(){
         gLabel.text = String(DailyState.grainGoal)
         gSlider.setValue(Float(DailyState.grainGoal), animated: true)
         fLabel.text = String(DailyState.fruitGoal)
@@ -66,6 +71,11 @@ class SettingsViewController: UIViewController {
         dLabel.text = String(DailyState.dairyGoal)
         dSlider.setValue(Float(DailyState.dairyGoal), animated: true)
         DailyState.updateNavDate(navDate: navDate)
+    }
+    
+    func popoverDismissed() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+        reloadView()
     }
     
     func increment(value: Float) -> Float {

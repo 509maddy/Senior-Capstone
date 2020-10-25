@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import CoreData
 
-class FoodViewController: UIViewController, UITableViewDelegate {
+class FoodViewController: UIViewController, UITableViewDelegate, ModalTransitionListener {
     
     // gives us a reference to the table
     @IBOutlet weak var tableView: UITableView!
@@ -28,14 +28,22 @@ class FoodViewController: UIViewController, UITableViewDelegate {
     // because we might update the date or something
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
-
+        reloadView()
+        ModalTransitionMediator.instance.setListener(listener: self)
+    }
+    
+    func reloadView(){
         title = "Today's Food"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
 
         loadSavedData()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         DailyState.updateNavDate(navDate: navDate)
-
+    }
+    
+    func popoverDismissed() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+        reloadView()
     }
 
     func loadSavedData() {
