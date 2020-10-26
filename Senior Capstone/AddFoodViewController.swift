@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
-class AddFoodViewController: UIViewController, UIPickerViewDelegate {
+class AddFoodViewController: UIViewController, UIPickerViewDelegate, ModalTransitionListener {
 
     @IBOutlet weak var nameInputBox: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
@@ -35,9 +35,10 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
     @IBOutlet weak var grainServingLabel: UILabel!
     @IBOutlet weak var grainLabel: UILabel!
     
-    @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var submitButton: UIButton!
 
+    @IBOutlet weak var navDate: UIBarButtonItem!
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate;
     
     func updateFoodGroup(_ sender: UIStepper, label: UILabel){
@@ -69,11 +70,9 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
         updateFoodGroup(sender, label: grainServingLabel)
     }
     
-    @IBAction func registerDateChange(_ sender: Any) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
-        let strDate = dateFormatter.string(from: datePicker.date)
-        DailyState.updateTodaysDate(todaysDate: strDate)
+    func popoverDismissed() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+        reloadView()
     }
     
     @IBAction func registerSubmit(_ sender: Any) {
@@ -156,7 +155,12 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        // Reset the name field
+        super.viewWillAppear(true)
+        reloadView()
+        ModalTransitionMediator.instance.setListener(listener: self)
+    }
+    
+    func reloadView(){
         nameLabel.textColor = UIColor.black
         nameInputBox.text = ""
         
@@ -170,15 +174,14 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate {
             servingsLabels[i]?.text = "0"
             foodLabels[i]?.textColor = UIColor.black
         }
+        DailyState.updateNavDate(navDate: navDate)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
-        let strDate = dateFormatter.string(from: datePicker.date)
-        DailyState.updateTodaysDate(todaysDate: strDate)
-    }
+        DailyState.updateNavDate(navDate: navDate)    }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
