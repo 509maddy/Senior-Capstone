@@ -50,7 +50,6 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(DailyState.todaysDate)
         DailyState.refreshGoals()
         DailyState.updateNavDate(navDate: navDate)
     }
@@ -72,7 +71,6 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         loadPieCharts()
         loadViews()
         hideViews()
-        print("home view will appear")
     }
     
     func loadPieCharts() {
