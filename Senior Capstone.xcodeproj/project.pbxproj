@@ -25,6 +25,7 @@
 		2CAE271C25001CED00BAAB6A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAE271B25001CED00BAAB6A /* Assets.xcassets */; };
 		2CAE271F25001CED00BAAB6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAE271D25001CED00BAAB6A /* LaunchScreen.storyboard */; };
 		AA1E9963E4DD955E5D493305 /* Pods_Senior_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143AAA652CBCEDDC0575C24B /* Pods_Senior_Capstone.framework */; };
+		E1094B682549729200BC6B9A /* AddWaterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1094B672549729200BC6B9A /* AddWaterController.swift */; };
 		E15FACFB2539CCB700637103 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FACFA2539CCB700637103 /* ThemeManager.swift */; };
 		E4FE6A2025427F6A000EFBFE /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FE6A1F25427F6A000EFBFE /* DatePickerViewController.swift */; };
 		E4FE6A252545F022000EFBFE /* ModalTransitionMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FE6A242545F022000EFBFE /* ModalTransitionMediator.swift */; };
@@ -53,6 +54,7 @@
 		2CAE272025001CED00BAAB6A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		6A3BBDAD2BC0500D587D335A /* Pods-Senior Capstone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Senior Capstone.release.xcconfig"; path = "Target Support Files/Pods-Senior Capstone/Pods-Senior Capstone.release.xcconfig"; sourceTree = "<group>"; };
 		710BE54F3DC80F62C1CAFC4E /* Pods-Senior Capstone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Senior Capstone.debug.xcconfig"; path = "Target Support Files/Pods-Senior Capstone/Pods-Senior Capstone.debug.xcconfig"; sourceTree = "<group>"; };
+		E1094B672549729200BC6B9A /* AddWaterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaterController.swift; sourceTree = "<group>"; };
 		E15FACFA2539CCB700637103 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E4FE6A1F25427F6A000EFBFE /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		E4FE6A242545F022000EFBFE /* ModalTransitionMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransitionMediator.swift; sourceTree = "<group>"; };
@@ -102,6 +104,7 @@
 				2CA992BF2517A47D00048726 /* HomeViewController.swift */,
 				E15FACFA2539CCB700637103 /* ThemeManager.swift */,
 				2C301AC325150FE6006D7C6A /* AddFoodViewController.swift */,
+				E1094B672549729200BC6B9A /* AddWaterController.swift */,
 				2C9AF93125040D3200BB1058 /* FoodViewController.swift */,
 				2C68B81825378A9800CDBCE7 /* DetailVC.swift */,
 				2C9AF92F2502B8F900BB1058 /* DailyState.swift */,
@@ -258,6 +261,7 @@
 				2C9AF93225040D3200BB1058 /* FoodViewController.swift in Sources */,
 				2C68B81925378A9800CDBCE7 /* DetailVC.swift in Sources */,
 				2C22FBE92536607100C35C81 /* GoalRecord+CoreDataProperties.swift in Sources */,
+				E1094B682549729200BC6B9A /* AddWaterController.swift in Sources */,
 				2C301AC425150FE6006D7C6A /* AddFoodViewController.swift in Sources */,
 				E4FE6A252545F022000EFBFE /* ModalTransitionMediator.swift in Sources */,
 				2CA992C02517A47D00048726 /* HomeViewController.swift in Sources */,
