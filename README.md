@@ -1,5 +1,11 @@
 # Senior-Capstone
 
+## Why Cheo?
+
+We noticed a common problem among college students and young adults. They consider "dieting" to be equivalent to neglecting the food that their bodies need. Apps like MyFitnessPal and Noom only promote this unhealthy mindset by basing a person's dieting goals primarily on number of calories. With calorie based goals, someone could reach their goals by eating 2000 calories of ice cream!
+
+Clearly there is a need for a new approach to dieting apps. With Cheo, our primary focus is to promote well balanced meals. Our goals are based on serving sizes for each of the five major food groups - **because a healthy diet consists of more than one number!**
+
 ## Git Cheat Sheet
 
 - [Git Cheat Sheet](https://education.github.com/git-cheat-sheet-education.pdf)
@@ -26,4 +32,23 @@
 
 ## Walkthrough
 
-![Homescreen](./images/home.png =250x250)
+### Homescreen
+
+On the homescreen, the user can see their progress within each food group throughout the day. Each food group has a different target number of serving sizes. This can be adjusted on the "settings" page
+
+<img src="./images/home.png" alt="Homescreen" height="500px">
+
+### Today's Food
+
+On the today's food screen, users have a list view of everything that they have eaten that day. Users can click on a food to see a break down of how many servings of each food group that food is has.
+<img src="./images/todays_food.png" alt="Today's Food" height="500">
+
+### Settings
+
+On the settings screen, users can modify their target goals for each category. Future steps can be found under Progress Report 2 > Work to Be Done > Suggested Daily Goals
+
+### Add Food
+
+On the add food page, users can add food records. They are promted with tickers to increase/decrease the number of servings sizes that their food record contains. Users can click "What's a Serving?" to learn more about how to estimate a serving size.
+
+<img src="./images/hummus.png" alt="Today's Food" height="500">
