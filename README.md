@@ -41,11 +41,14 @@ On the homescreen, the user can see their progress within each food group throug
 ### Today's Food
 
 On the today's food screen, users have a list view of everything that they have eaten that day. Users can click on a food to see a break down of how many servings of each food group that food is has.
+
 <img src="./images/todays_food.png" alt="Today's Food" height="500">
 
 ### Settings
 
 On the settings screen, users can modify their target goals for each category. Future steps can be found under Progress Report 2 > Work to Be Done > Suggested Daily Goals
+
+<img src="./images/settings.png" alt="Today's Food" height="500">
 
 ### Add Food
 
