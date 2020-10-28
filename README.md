@@ -55,3 +55,31 @@ On the settings screen, users can modify their target goals for each category. F
 On the add food page, users can add food records. They are promted with tickers to increase/decrease the number of servings sizes that their food record contains. Users can click "What's a Serving?" to learn more about how to estimate a serving size.
 
 <img src="./images/hummus.png" alt="Today's Food" height="500">
+
+## How To Implement Date Picker
+
+1. Create all connections on storyboard
+1. Create a new IBOutlet to the navDate: `@IBOutlet weak var navDate: UIBarButtonItem!`
+1. Have your new ModelViewController extend `ModalTransitionListener`
+1. Override `viewWillAppear()` as follows:
+   ```
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(true)
+        reloadView()
+        ModalTransitionMediator.instance.setListener(listener: self)
+    }
+   ```
+1. Implement `reloadView()` as follows:
+   ```
+   func reloadView() {
+      // everything that was originally in viewWillAppear()
+      DailyState.updateNavDate(navDate: navDate)
+   }
+   ```
+1. Implement the `popoverDismissed()` function as follows:
+   ```
+   func popoverDismissed() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+        reloadView()
+    }
+   ```
