@@ -8,8 +8,8 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
-   
+class SettingsViewController: UIViewController, ModalTransitionListener  {
+       
     @IBOutlet weak var gLabel: UILabel!
     @IBOutlet weak var fLabel: UILabel!
     @IBOutlet weak var vLabel: UILabel!
@@ -20,7 +20,8 @@ class SettingsViewController: UIViewController {
     @IBOutlet weak var pSlider: UISlider!
     @IBOutlet weak var fSlider: UISlider!
     @IBOutlet weak var vSlider: UISlider!
-
+    @IBOutlet weak var navDate: UIBarButtonItem!
+    
     var grainValue: Double = DailyState.grainGoal
     var fruitValue: Double = DailyState.fruitGoal
     var vegetableValue: Double = DailyState.vegetableGoal
@@ -33,13 +34,9 @@ class SettingsViewController: UIViewController {
         let predicate = NSPredicate(format: "date == %@", DailyState.todaysDateAsDate as NSDate)
         goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
 
-        if goalRecords.count != 0 {
-            print("Goal already exists for this date, modification made.")
-            
+        if goalRecords.count != 0 {            
             DatabaseFunctions.modifyGoalRecord(date: DailyState.todaysDateAsDate, fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
-
         } else {
-            print("No existing entitiy for this date. New goal entity made.")
             DatabaseFunctions.insertGoalRecord(date: DailyState.todaysDateAsDate, fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
         }
     }
@@ -58,6 +55,11 @@ class SettingsViewController: UIViewController {
 
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
+        reloadView()
+        ModalTransitionMediator.instance.setListener(listener: self)
+    }
+    
+    func reloadView(){
         gLabel.text = String(DailyState.grainGoal)
         gSlider.setValue(Float(DailyState.grainGoal), animated: true)
         fLabel.text = String(DailyState.fruitGoal)
@@ -68,6 +70,12 @@ class SettingsViewController: UIViewController {
         pSlider.setValue(Float(DailyState.proteinGoal), animated: true)
         dLabel.text = String(DailyState.dairyGoal)
         dSlider.setValue(Float(DailyState.dairyGoal), animated: true)
+        DailyState.updateNavDate(navDate: navDate)
+    }
+    
+    func popoverDismissed() {
+        self.navigationController?.dismiss(animated: true, completion: nil)
+        reloadView()
     }
     
     func increment(value: Float) -> Float {
