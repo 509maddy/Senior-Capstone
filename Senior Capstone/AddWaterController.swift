@@ -10,39 +10,65 @@ import Foundation
 import CoreData
 import UIKit
 
-class AddWaterViewController: UIViewController, UIPickerViewDelegate, ModalTransitionListener {
+class AddWaterViewController: UIViewController, UIPickerViewDelegate{
     
-    @IBOutlet weak var customeNameLabelHeight: NSLayoutConstraint!
-    @IBOutlet weak var customeNameInputHeight: NSLayoutConstraint!
-    @IBOutlet weak var customeOuncesLabelHeight: NSLayoutConstraint!
-    @IBOutlet weak var customeOuncesSliderHeight: NSLayoutConstraint!
-    @IBOutlet weak var customeOuncesValueHeight: NSLayoutConstraint!
+    var customeInput: Bool = false
+    var savedInput: Bool = false
+    var numberOfSaved:Int = 0
     
-    @IBOutlet weak var savedNameLabelHeight: NSLayoutConstraint!
-    @IBOutlet weak var savedNameHeight: NSLayoutConstraint!
-    @IBOutlet weak var savedOuncesLabelHeight: NSLayoutConstraint!
-    @IBOutlet weak var savedOuncesValueHeight: NSLayoutConstraint!
-    @IBOutlet weak var savedValueUpper1: NSLayoutConstraint!
-    @IBOutlet weak var savedValueUpper2: NSLayoutConstraint!
+    @IBOutlet weak var addCustomAmountButton: UIButton!
+    @IBOutlet weak var addCustomAmountLabel: UILabel!
+    @IBOutlet weak var addCustomAmountAlignment: NSLayoutConstraint!
     
+    @IBOutlet weak var savedButton1: UIButton!
+    @IBOutlet weak var savedLabel1: UILabel!
 
+    @IBOutlet weak var savedButton2: UIButton!
+    @IBOutlet weak var savedLabel2: UILabel!
+    
+    @IBOutlet weak var savedButton3: UIButton!
+    @IBOutlet weak var savedLabel3: UILabel!
+    
+    @IBOutlet weak var headerLabel: UILabel!
+    
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var nameInput: UITextField!
+    @IBOutlet weak var nameCustome: UILabel!
+    
+    @IBOutlet weak var volumeLabel: UILabel!
+    @IBOutlet weak var volumeSlider: UISlider!
+    @IBOutlet weak var volumeReadOut: UILabel!
+    @IBOutlet weak var volumeCustome: UILabel!
+    
+    @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var addButtonHeight: NSLayoutConstraint!
-    @IBOutlet weak var add_save_buttonBetween: NSLayoutConstraint!
+    @IBOutlet weak var addButtonLowerConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var saveButtonHeight: NSLayoutConstraint!
-    @IBOutlet weak var save_edit_buttonBetween: NSLayoutConstraint!
+    @IBOutlet weak var saveButtonLowerConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var editButton: UIButton!
     @IBOutlet weak var editButtonHeight: NSLayoutConstraint!
-    @IBOutlet weak var edit_delete_buttonBetween: NSLayoutConstraint!
+    @IBOutlet weak var editButtonLowerConstraint: NSLayoutConstraint!
+    
+    @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var deleteButtonHeight: NSLayoutConstraint!
     
-    func popoverDismissed() {
-        self.navigationController?.dismiss(animated: true, completion: nil)
-        reloadView()
-    }
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate;
     
     func reloadView() {
+        self.view.layoutIfNeeded()
         collapseSavedValues()
+        
+        savedButton1.isHidden = true
+        savedButton2.isHidden = true
+        savedButton3.isHidden = true
+        savedLabel1.isHidden = true
+        savedLabel2.isHidden = true
+        savedLabel3.isHidden = true
+        addCustomAmountAlignment.constant = 0
     }
     
     func collapseCustomValues() {
@@ -50,31 +76,102 @@ class AddWaterViewController: UIViewController, UIPickerViewDelegate, ModalTrans
     }
     
     @IBAction func newCustomAmount(_ sender: Any) {
-        expandSavedValues()
+        expandCustomeValues()
     }
     
+    @IBAction func savedCustomAmount(_ sender: Any) {
+        
+    }
+    
+    @IBAction func addDrink(_ sender: Any) {
+    }
+    
+    @IBAction func saveDrink(_ sender: Any) {
+        let savedButtons:[UIButton] = [savedButton1, savedButton2, savedButton3]
+        let savedLabels:[UILabel] = [savedLabel1, savedLabel2, savedLabel3]
+        
+        if numberOfSaved < 3 {
+            numberOfSaved += 1
+            addCustomAmountAlignment.constant = CGFloat(39*numberOfSaved)
+            for newSave in 0...2 {
+                if savedButtons[newSave].isHidden {
+                    savedButtons[newSave].isHidden = false
+                    savedLabels[newSave].isHidden = false
+                    savedLabels[newSave].text = nameInput.text
+                    break
+                }
+            }
+        }
+    }
+    
+    @IBAction func editDrink(_ sender: Any) {
+    }
+    
+    @IBAction func deleteDrink(_ sender: Any) {
+    }
+    
+    
     func collapseSavedValues() {
-        savedNameLabelHeight.constant = 0
-        savedNameHeight.constant = 0
-        savedOuncesLabelHeight.constant = 0
-        savedOuncesValueHeight.constant = 0
-        savedValueUpper1.constant = 0
-        savedValueUpper2.constant = 0
+        headerLabel.alpha = 0
+        nameLabel.alpha = 0
+        nameInput.alpha = 0
+        nameCustome.alpha = 0
+        
+        volumeLabel.alpha = 0
+        volumeSlider.alpha = 0
+        volumeReadOut.alpha = 0
+        volumeCustome.alpha = 0
+        
+        addButton.alpha = 0
+        saveButton.alpha = 0
+        editButton.alpha = 0
+        deleteButton.alpha = 0
+    }
+    
+    func expandCustomeValues() {
+        headerLabel.text = "Add Custom Amount"
+        headerLabel.alpha = 1
+        nameLabel.alpha = 1
+        nameInput.alpha = 1
+        nameCustome.alpha = 0
+        
+        volumeLabel.alpha = 1
+        volumeSlider.alpha = 1
+        volumeReadOut.alpha = 1
+        volumeCustome.alpha = 0
+        
+        addButton.alpha = 1
+        saveButton.alpha = 1
+        editButton.alpha = 0
+        deleteButton.alpha = 0
+    }
+    
+    @IBAction func customeValueSliderChanged(_ sender: UISlider) {
+        let currentValue = round(sender.value / 0.5) * 0.5
+        volumeReadOut.text = "\(currentValue)"
     }
     
     func expandSavedValues() {
-        savedNameLabelHeight.constant = 21
-        savedNameHeight.constant = 21
-        savedOuncesLabelHeight.constant = 21
-        savedOuncesValueHeight.constant = 21
-        savedValueUpper1.constant = 25
-        savedValueUpper2.constant = 25
+        headerLabel.text = "Add Saved Amount"
+        headerLabel.alpha = 1
+        nameLabel.alpha = 1
+        nameInput.alpha = 0
+        nameCustome.alpha = 1
+        
+        volumeLabel.alpha = 1
+        volumeSlider.alpha = 0
+        volumeReadOut.alpha = 0
+        volumeCustome.alpha = 1
+        
+        addButton.alpha = 1
+        saveButton.alpha = 0
+        editButton.alpha = 1
+        deleteButton.alpha = 1
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         reloadView()
-        ModalTransitionMediator.instance.setListener(listener: self)
     }
     
 }

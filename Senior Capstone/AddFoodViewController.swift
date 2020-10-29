@@ -37,9 +37,12 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, ModalTransi
     
     @IBOutlet weak var submitButton: UIButton!
 
-    @IBOutlet weak var navDate: UIBarButtonItem!
-    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate;
+    
+    func popoverDismissed() {
+         self.navigationController?.dismiss(animated: true, completion: nil)
+         reloadView()
+     }
     
     func updateFoodGroup(_ sender: UIStepper, label: UILabel){
         if String(sender.value) == "0.0" {
@@ -68,11 +71,6 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, ModalTransi
     
     @IBAction func registerGrainServingChange(_ sender: UIStepper) {
         updateFoodGroup(sender, label: grainServingLabel)
-    }
-    
-    func popoverDismissed() {
-        self.navigationController?.dismiss(animated: true, completion: nil)
-        reloadView()
     }
     
     @IBAction func registerSubmit(_ sender: Any) {
@@ -174,14 +172,14 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, ModalTransi
             servingsLabels[i]?.text = "0"
             foodLabels[i]?.textColor = UIColor.black
         }
-        DailyState.updateNavDate(navDate: navDate)
     }
 
     override func viewDidLoad() {
         super.viewDidLoad()
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.short
-        DailyState.updateNavDate(navDate: navDate)    }
+        
+    }
 
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1

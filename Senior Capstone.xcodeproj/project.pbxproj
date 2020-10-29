@@ -26,6 +26,7 @@
 		2CAE271F25001CED00BAAB6A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAE271D25001CED00BAAB6A /* LaunchScreen.storyboard */; };
 		AA1E9963E4DD955E5D493305 /* Pods_Senior_Capstone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 143AAA652CBCEDDC0575C24B /* Pods_Senior_Capstone.framework */; };
 		E1094B682549729200BC6B9A /* AddWaterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1094B672549729200BC6B9A /* AddWaterController.swift */; };
+		E1094B6C254A2F1D00BC6B9A /* AddEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1094B6B254A2F1D00BC6B9A /* AddEntryViewController.swift */; };
 		E15FACFB2539CCB700637103 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = E15FACFA2539CCB700637103 /* ThemeManager.swift */; };
 		E4FE6A2025427F6A000EFBFE /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FE6A1F25427F6A000EFBFE /* DatePickerViewController.swift */; };
 		E4FE6A252545F022000EFBFE /* ModalTransitionMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FE6A242545F022000EFBFE /* ModalTransitionMediator.swift */; };
@@ -55,6 +56,7 @@
 		6A3BBDAD2BC0500D587D335A /* Pods-Senior Capstone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Senior Capstone.release.xcconfig"; path = "Target Support Files/Pods-Senior Capstone/Pods-Senior Capstone.release.xcconfig"; sourceTree = "<group>"; };
 		710BE54F3DC80F62C1CAFC4E /* Pods-Senior Capstone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Senior Capstone.debug.xcconfig"; path = "Target Support Files/Pods-Senior Capstone/Pods-Senior Capstone.debug.xcconfig"; sourceTree = "<group>"; };
 		E1094B672549729200BC6B9A /* AddWaterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddWaterController.swift; sourceTree = "<group>"; };
+		E1094B6B254A2F1D00BC6B9A /* AddEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddEntryViewController.swift; sourceTree = "<group>"; };
 		E15FACFA2539CCB700637103 /* ThemeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		E4FE6A1F25427F6A000EFBFE /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		E4FE6A242545F022000EFBFE /* ModalTransitionMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransitionMediator.swift; sourceTree = "<group>"; };
@@ -98,6 +100,7 @@
 				2C9AF939250414FF00BB1058 /* FoodRecord+CoreDataClass.swift */,
 				2C9AF93A250414FF00BB1058 /* FoodRecord+CoreDataProperties.swift */,
 				2CAE270F25001CEB00BAAB6A /* AppDelegate.swift */,
+				E1094B6B254A2F1D00BC6B9A /* AddEntryViewController.swift */,
 				2CAE271125001CEB00BAAB6A /* SceneDelegate.swift */,
 				2CAE271325001CEB00BAAB6A /* SettingsViewController.swift */,
 				2CAE271525001CEB00BAAB6A /* Main.storyboard */,
@@ -267,6 +270,7 @@
 				2CA992C02517A47D00048726 /* HomeViewController.swift in Sources */,
 				2C9AF93B250414FF00BB1058 /* FoodRecord+CoreDataClass.swift in Sources */,
 				2C9AF9302502B8F900BB1058 /* DailyState.swift in Sources */,
+				E1094B6C254A2F1D00BC6B9A /* AddEntryViewController.swift in Sources */,
 				2CAE271225001CEB00BAAB6A /* SceneDelegate.swift in Sources */,
 				2C9AF93C250414FF00BB1058 /* FoodRecord+CoreDataProperties.swift in Sources */,
 				E15FACFB2539CCB700637103 /* ThemeManager.swift in Sources */,
