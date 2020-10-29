@@ -35,9 +35,9 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
         goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
 
         if goalRecords.count != 0 {            
-            DatabaseFunctions.modifyGoalRecord(date: DailyState.todaysDateAsDate, fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
+            DatabaseFunctions.modifyGoalRecord(fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
         } else {
-            DatabaseFunctions.insertGoalRecord(date: DailyState.todaysDateAsDate, fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
+            DatabaseFunctions.insertGoalRecord(fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
         }
     }
     
