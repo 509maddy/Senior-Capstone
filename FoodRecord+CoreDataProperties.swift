@@ -20,7 +20,7 @@ extension FoodRecord {
         return NSFetchRequest<FoodRecord>(entityName: "FoodRecord")
     }
 
-    @NSManaged public var date: String
+    @NSManaged public var date: Date
     @NSManaged public var name: String
     @NSManaged public var dairyServings: Double
     @NSManaged public var fruitServings: Double

@@ -84,9 +84,10 @@ class DatabaseFunctions {
 
     }
 
-    static func insertFoodRecord(name: String, date: String, dairyServings: Double, fruitServings: Double, grainServings: Double, proteinServings: Double, vegServings: Double) {
+    static func insertFoodRecord(name: String, dairyServings: Double, fruitServings: Double, grainServings: Double, proteinServings: Double, vegServings: Double) {
         let foodRecord = FoodRecord(context: appDelegate.persistentContainer.viewContext)
-        foodRecord.date = DailyState.todaysDate
+        print(DailyState.todaysDateAsDate)
+        foodRecord.date = DailyState.todaysDateAsDate
         foodRecord.name = name
         foodRecord.dairyServings = dairyServings
         foodRecord.fruitServings = fruitServings
@@ -96,16 +97,16 @@ class DatabaseFunctions {
         appDelegate.saveContext()
     }
 
-    static func insertGoalRecord(date: Date, fruitGoal: Double, vegetableGoal: Double, proteinGoal: Double, grainGoal: Double, dairyGoal: Double) {
+    static func insertGoalRecord(fruitGoal: Double, vegetableGoal: Double, proteinGoal: Double, grainGoal: Double, dairyGoal: Double) {
         // check to see if one already exists
         var goalRecords = [GoalRecord]()
-        let predicate = NSPredicate(format: "date == %@", date as NSDate)
+        let predicate = NSPredicate(format: "date == %@", DailyState.todaysDateAsDate as NSDate)
         goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
 
         if goalRecords.count != 0 {
         } else {
             let goalRecord = GoalRecord(context: appDelegate.persistentContainer.viewContext)
-            goalRecord.date = date
+            goalRecord.date = DailyState.todaysDateAsDate
             goalRecord.fruitGoal = fruitGoal
             goalRecord.vegetableGoal = vegetableGoal
             goalRecord.proteinGoal = proteinGoal
@@ -127,9 +128,9 @@ class DatabaseFunctions {
         appDelegate.saveContext()
     }
 
-    static func modifyGoalRecord(date: Date, fruitGoal: Double, vegetableGoal: Double, proteinGoal: Double, grainGoal: Double, dairyGoal: Double) {
+    static func modifyGoalRecord(fruitGoal: Double, vegetableGoal: Double, proteinGoal: Double, grainGoal: Double, dairyGoal: Double) {
         var goalRecords = [GoalRecord]()
-        let predicate = NSPredicate(format: "date == %@", date as NSDate)
+        let predicate = NSPredicate(format: "date == %@", DailyState.todaysDateAsDate as NSDate)
         goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
 
         if goalRecords.count == 0 {

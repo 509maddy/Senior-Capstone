@@ -48,7 +48,7 @@ class FoodViewController: UIViewController, UITableViewDelegate, ModalTransition
 
     func loadSavedData() {
         
-        let predicate = NSPredicate(format: "date == %@", DailyState.todaysDate)
+        let predicate = NSPredicate(format: "date == %@", DailyState.todaysDateAsDate as NSDate)
        
         foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
         tableView.reloadData()
