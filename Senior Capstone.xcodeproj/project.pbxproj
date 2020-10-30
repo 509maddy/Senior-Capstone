@@ -42,7 +42,7 @@
 		2C9AF939250414FF00BB1058 /* FoodRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodRecord+CoreDataClass.swift"; sourceTree = SOURCE_ROOT; };
 		2C9AF93A250414FF00BB1058 /* FoodRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FoodRecord+CoreDataProperties.swift"; sourceTree = SOURCE_ROOT; };
 		2CA992BF2517A47D00048726 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
-		2CAE270C25001CEB00BAAB6A /* Senior Capstone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Senior Capstone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2CAE270C25001CEB00BAAB6A /* Cheo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cheo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAE270F25001CEB00BAAB6A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CAE271125001CEB00BAAB6A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		2CAE271325001CEB00BAAB6A /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -83,7 +83,7 @@
 		2CAE270D25001CEB00BAAB6A /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2CAE270C25001CEB00BAAB6A /* Senior Capstone.app */,
+				2CAE270C25001CEB00BAAB6A /* Cheo.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -152,7 +152,7 @@
 			);
 			name = "Senior Capstone";
 			productName = "Senior Capstone";
-			productReference = 2CAE270C25001CEB00BAAB6A /* Senior Capstone.app */;
+			productReference = 2CAE270C25001CEB00BAAB6A /* Cheo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -420,11 +420,11 @@
 				);
 				ONLY_ACTIVE_ARCH = NO;
 				PRODUCT_BUNDLE_IDENTIFIER = "me.Senior-Capstone";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Cheo;
 				SWIFT_OBJC_BRIDGING_HEADER = "Senior Capstone/Senior Capstone-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -442,10 +442,10 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "me.Senior-Capstone";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Cheo;
 				SWIFT_OBJC_BRIDGING_HEADER = "Senior Capstone/Senior Capstone-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
