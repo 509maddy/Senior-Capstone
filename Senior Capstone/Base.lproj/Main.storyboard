@@ -11,7 +11,7 @@
         <!--Settings View Controller-->
         <scene sceneID="fxP-Vo-tQV">
             <objects>
-                <viewController id="xdt-Tk-pTc" customClass="SettingsViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xdt-Tk-pTc" customClass="SettingsViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PTv-kx-zU1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -165,6 +165,34 @@
                                     <action selector="darkThemeSelect:" destination="xdt-Tk-pTc" eventType="touchUpInside" id="YOT-jX-pba"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Height:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hSq-Hy-zkh">
+                                <rect key="frame" x="60" y="675" width="56" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yHl-vj-7a8">
+                                <rect key="frame" x="47" y="714" width="59" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Goal Weight:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y0g-TR-noI">
+                                <rect key="frame" x="51" y="753" width="98" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Sex:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YQm-Rw-8ji">
+                                <rect key="frame" x="90" y="626" width="33" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -261,7 +289,7 @@
         <!--Home View Controller-->
         <scene sceneID="hSK-Jq-zNg">
             <objects>
-                <viewController id="eiP-0m-p1r" customClass="HomeViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eiP-0m-p1r" customClass="HomeViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WYY-9T-hKs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -565,7 +593,7 @@
         <!--Date Picker View Controller-->
         <scene sceneID="hAF-LC-xbQ">
             <objects>
-                <viewController id="NOk-wN-ufv" customClass="DatePickerViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NOk-wN-ufv" customClass="DatePickerViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qDV-M3-vhx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -669,7 +697,7 @@
         <!--Food View Controller-->
         <scene sceneID="LiL-Gi-xf5">
             <objects>
-                <viewController storyboardIdentifier="Food2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZTH-Mu-lc6" customClass="FoodViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Food2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZTH-Mu-lc6" customClass="FoodViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tOj-13-Uqp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -719,7 +747,7 @@
         <!--DetailVC-->
         <scene sceneID="wJB-jE-X22">
             <objects>
-                <viewController id="cZR-ui-mYQ" customClass="DetailVC" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cZR-ui-mYQ" customClass="DetailVC" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Obd-Vg-V4f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -888,7 +916,7 @@
         <!--Add Food View Controller-->
         <scene sceneID="nRN-yC-a5Q">
             <objects>
-                <viewController id="b6A-cl-TVP" customClass="AddFoodViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="b6A-cl-TVP" customClass="AddFoodViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WOe-9f-uvI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
