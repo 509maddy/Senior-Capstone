@@ -48,9 +48,11 @@ class AddEntryViewController: UIViewController, UIPickerViewDelegate, ModalTrans
         if sender.selectedSegmentIndex == 0 {
             addFoodView.alpha = 1
             addWaterView.alpha = 0
+            self.view.endEditing(true)
         } else {
             addFoodView.alpha = 0
             addWaterView.alpha = 1
+            self.view.endEditing(true)
         }
     }
         
