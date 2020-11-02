@@ -43,10 +43,10 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
     @IBOutlet weak var sex: UITextField!
     
     
-    let sex: DropDown = {
-        let sex = DropDown()
-        sex.dataSource = ["Male","Female"]
-        return sex
+    let sexMenu: DropDown = {
+        let sexMenu = DropDown()
+        sexMenu.dataSource = ["Male","Female"]
+        return sexMenu
     }()
     
     @IBAction func saveSliderValues(_ sender: Any) {
@@ -93,9 +93,9 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
         dSlider.setValue(Float(DailyState.dairyGoal), animated: true)
         DailyState.updateNavDate(navDate: navDate)
         
-        let dropDownView = UIView(frame: sex.frame ?? .zero)
-        sex.topItem?.titleView = dropDownView
-        guard let topView = sex.topItem?.titleView else {
+        let dropDownView = UIView(frame: sex.frame)
+        sex.inputView = dropDownView
+        guard let topView = sex.inputView else {
             return
         }
         let gesture = UITapGestureRecognizer(target: self,action: #selector(didTapTopItem))
@@ -106,7 +106,7 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
     }
     
     @objc func didTapTopItem() {
-        
+        sexMenu.show()
     }
     
     func popoverDismissed() {
