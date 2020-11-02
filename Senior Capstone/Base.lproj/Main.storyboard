@@ -238,18 +238,6 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
-                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="scn-lO-ggP">
-                                                <rect key="frame" x="220" y="652" width="175" height="34"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="175" id="QFe-4p-1xr"/>
-                                                    <constraint firstAttribute="height" constant="36" id="UXm-FQ-GV6"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                <textInputTraits key="textInputTraits"/>
-                                                <connections>
-                                                    <outlet property="delegate" destination="xdt-Tk-pTc" id="a6l-Bw-Atq"/>
-                                                </connections>
-                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -289,10 +277,8 @@
                                             <constraint firstItem="r4f-O9-Oy0" firstAttribute="top" secondItem="u3y-mY-GFp" secondAttribute="bottom" constant="25" id="aM0-am-uLM"/>
                                             <constraint firstAttribute="trailing" secondItem="PnU-Co-ZIy" secondAttribute="trailing" constant="20" id="bhi-2T-ZCX"/>
                                             <constraint firstAttribute="height" constant="725" id="cyz-7K-WMC"/>
-                                            <constraint firstItem="scn-lO-ggP" firstAttribute="top" secondItem="eUm-SQ-0VU" secondAttribute="bottom" constant="10" id="dC5-UK-lcb"/>
                                             <constraint firstItem="RgS-xq-uFn" firstAttribute="centerX" secondItem="EBC-fs-3AM" secondAttribute="centerX" id="dVO-CI-84B"/>
                                             <constraint firstItem="hSq-Hy-zkh" firstAttribute="leading" secondItem="H4N-jI-2Cp" secondAttribute="leading" constant="50" id="dqL-b0-vNz"/>
-                                            <constraint firstItem="scn-lO-ggP" firstAttribute="leading" secondItem="y0g-TR-noI" secondAttribute="trailing" constant="70" id="fJH-1r-DB9"/>
                                             <constraint firstItem="FDy-54-VUR" firstAttribute="leading" secondItem="0Yk-Su-3MP" secondAttribute="leading" id="fOh-1p-KAR"/>
                                             <constraint firstItem="yHl-vj-7a8" firstAttribute="leading" secondItem="H4N-jI-2Cp" secondAttribute="leading" constant="50" id="fWr-FM-48n"/>
                                             <constraint firstItem="0Yk-Su-3MP" firstAttribute="top" secondItem="oXY-AX-v25" secondAttribute="bottom" constant="23" id="fz8-eU-cxM"/>
@@ -315,17 +301,6 @@
                                             <constraint firstItem="ljq-Jx-erX" firstAttribute="top" secondItem="0Yk-Su-3MP" secondAttribute="bottom" constant="23" id="yCr-nU-Ueo"/>
                                         </constraints>
                                     </view>
-                                    <pickerView contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9um-Vb-m9P">
-                                        <rect key="frame" x="218" y="672" width="175" height="120"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="120" id="8N0-nE-Dsl"/>
-                                            <constraint firstAttribute="width" constant="175" id="wrI-CJ-Aih"/>
-                                        </constraints>
-                                        <connections>
-                                            <outlet property="dataSource" destination="xdt-Tk-pTc" id="gGB-gF-7gP"/>
-                                            <outlet property="delegate" destination="xdt-Tk-pTc" id="7mb-ZF-FFt"/>
-                                        </connections>
-                                    </pickerView>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="H4N-jI-2Cp" firstAttribute="top" secondItem="EAB-yo-ZGH" secondAttribute="top" id="39c-5m-yaa"/>
@@ -361,7 +336,6 @@
                     <connections>
                         <outlet property="dLabel" destination="ycc-83-P8B" id="Byc-Ym-BxY"/>
                         <outlet property="dSlider" destination="dB0-MW-zUZ" id="SVQ-J9-Bb5"/>
-                        <outlet property="dropDown" destination="9um-Vb-m9P" id="VYW-ja-0ur"/>
                         <outlet property="fLabel" destination="OQW-hU-TbV" id="zHZ-2m-Wej"/>
                         <outlet property="fSlider" destination="oXY-AX-v25" id="rjJ-dk-1Ui"/>
                         <outlet property="gLabel" destination="ow3-Cn-aeG" id="x3n-5Y-1O6"/>
@@ -371,7 +345,6 @@
                         <outlet property="navDate" destination="bfM-Q9-AnU" id="4g4-F0-SuK"/>
                         <outlet property="pLabel" destination="T8E-Ho-lb7" id="6CR-eJ-Q6P"/>
                         <outlet property="pSlider" destination="ljq-Jx-erX" id="x1p-a0-rM7"/>
-                        <outlet property="textBox" destination="scn-lO-ggP" id="5Pz-vC-Jrj"/>
                         <outlet property="vLabel" destination="gE7-8H-W5Y" id="GVg-4J-Jov"/>
                         <outlet property="vSlider" destination="0Yk-Su-3MP" id="Iqe-DM-c0h"/>
                         <outlet property="weight" destination="eUm-SQ-0VU" id="hMl-B8-j3C"/>
