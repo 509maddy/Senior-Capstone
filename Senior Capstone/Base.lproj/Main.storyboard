@@ -969,7 +969,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegetable:" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="N1m-bO-Puv">
-                                <rect key="frame" x="19.999999999999993" y="226" width="88.333333333333314" height="35"/>
+                                <rect key="frame" x="19.999999999999993" y="212" width="88.333333333333314" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="vBb-Xm-34u"/>
                                 </constraints>
@@ -977,12 +977,8 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdw-Ic-gNQ">
-                                <rect key="frame" x="118.33333333333331" y="226" width="260" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="JIo-eY-yFt"/>
-                                    <constraint firstAttribute="height" constant="75" id="sZz-dK-wPc"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdw-Ic-gNQ">
+                                <rect key="frame" x="130" y="212" width="264" height="40.666666666666657"/>
                                 <string key="text">One serving is the size of your fist.
 –– About 1 Cup.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -990,7 +986,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grain: " lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Nto-pi-SuP">
-                                <rect key="frame" x="20.000000000000004" y="511" width="53.333333333333343" height="35"/>
+                                <rect key="frame" x="20.000000000000004" y="434.66666666666669" width="53.333333333333343" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="FiY-BP-1Sl"/>
                                 </constraints>
@@ -998,24 +994,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H1-ye-jpI">
-                                <rect key="frame" x="118.33333333333331" y="511" width="260" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="Fdy-Lp-KpK"/>
-                                    <constraint firstAttribute="height" constant="75" id="fjC-Jo-b6m"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9H1-ye-jpI">
+                                <rect key="frame" x="130" y="434.66666666666669" width="264" height="61"/>
                                 <string key="text">One serving is the size of your palm doubled.
 –– About 1/2 Cup.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUF-5P-znT">
-                                <rect key="frame" x="118.33333333333331" y="131" width="260" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="260" id="AfA-5c-gw2"/>
-                                    <constraint firstAttribute="height" constant="75" id="bRt-I2-Rc0"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BUF-5P-znT">
+                                <rect key="frame" x="130" y="131" width="264" height="61"/>
                                 <string key="text">One serving is one piece of fruit about the size of a tennis ball. 
 –– About 1/2 Cup.</string>
                                 <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
@@ -1032,7 +1020,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0Es-JK-elU">
-                                <rect key="frame" x="20" y="321" width="65" height="35"/>
+                                <rect key="frame" x="20" y="272.66666666666669" width="65" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="YpH-zA-KX4"/>
                                 </constraints>
@@ -1040,32 +1028,24 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Io-T8-4tg">
-                                <rect key="frame" x="118.33333333333331" y="416" width="260" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="G04-Ck-nXF"/>
-                                    <constraint firstAttribute="width" constant="260" id="G1Q-1y-TJQ"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Io-T8-4tg">
+                                <rect key="frame" x="130" y="353.66666666666669" width="264" height="61"/>
                                 <string key="text">One serving is the size of your fist doubled.
 –– About 1 Cup.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcg-JP-3tu">
-                                <rect key="frame" x="118.33333333333331" y="321" width="260" height="75"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="75" id="Vau-2n-ZaT"/>
-                                    <constraint firstAttribute="width" constant="260" id="teb-Gx-ch9"/>
-                                </constraints>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qcg-JP-3tu">
+                                <rect key="frame" x="130" y="272.66666666666669" width="264" height="61"/>
                                 <string key="text">One serving is the size of your palm.
 –– About 1 Ounce.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Dairy: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qe0-7X-X2p">
-                                <rect key="frame" x="20" y="416" width="50" height="35"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dairy: " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Qe0-7X-X2p">
+                                <rect key="frame" x="20" y="353.66666666666669" width="53" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="35" id="n3h-Ns-a99"/>
                                 </constraints>
@@ -1077,15 +1057,23 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="Qe0-7X-X2p" firstAttribute="leading" secondItem="FQb-xr-dbD" secondAttribute="leading" id="3hp-68-RFw"/>
-                            <constraint firstItem="N1m-bO-Puv" firstAttribute="leading" secondItem="FQb-xr-dbD" secondAttribute="leading" id="6cZ-aG-TTZ"/>
+                            <constraint firstItem="vdw-Ic-gNQ" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="N1m-bO-Puv" secondAttribute="trailing" constant="1" id="4pX-2M-IXA"/>
+                            <constraint firstItem="9H1-ye-jpI" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Nto-pi-SuP" secondAttribute="trailing" constant="1" id="57P-zp-vk4"/>
                             <constraint firstItem="Qcg-JP-3tu" firstAttribute="leading" secondItem="BUF-5P-znT" secondAttribute="leading" id="70z-2s-zQz"/>
                             <constraint firstItem="Nto-pi-SuP" firstAttribute="leading" secondItem="FQb-xr-dbD" secondAttribute="leading" id="7SD-FB-0Af"/>
+                            <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="9H1-ye-jpI" secondAttribute="trailing" constant="20" id="ACO-fp-cLr"/>
+                            <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="1Io-T8-4tg" secondAttribute="trailing" constant="20" id="C8z-na-J8r"/>
+                            <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="BUF-5P-znT" secondAttribute="trailing" constant="20" id="JxS-oP-Wkz"/>
+                            <constraint firstAttribute="trailing" secondItem="Qcg-JP-3tu" secondAttribute="trailing" constant="20" id="KNc-lE-gTN"/>
                             <constraint firstItem="9H1-ye-jpI" firstAttribute="top" secondItem="Nto-pi-SuP" secondAttribute="top" id="NQ7-9J-fqA"/>
+                            <constraint firstItem="Qcg-JP-3tu" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="0Es-JK-elU" secondAttribute="trailing" constant="1" id="Onl-GB-I7S"/>
                             <constraint firstItem="1Io-T8-4tg" firstAttribute="leading" secondItem="BUF-5P-znT" secondAttribute="leading" id="P5A-Y3-42B"/>
                             <constraint firstItem="dRe-85-xVW" firstAttribute="top" secondItem="Xet-Py-3Hv" secondAttribute="top" constant="30" id="QGh-WQ-LBQ"/>
                             <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="dRe-85-xVW" secondAttribute="trailing" constant="20" id="Szq-zt-FMr"/>
                             <constraint firstItem="9H1-ye-jpI" firstAttribute="top" secondItem="Nto-pi-SuP" secondAttribute="top" id="X7U-I3-kwa"/>
-                            <constraint firstItem="BUF-5P-znT" firstAttribute="leading" secondItem="N1m-bO-Puv" secondAttribute="trailing" constant="10" id="ava-5k-D0u"/>
+                            <constraint firstItem="1Io-T8-4tg" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qe0-7X-X2p" secondAttribute="trailing" constant="1" id="Zrf-Gq-ekl"/>
+                            <constraint firstItem="BUF-5P-znT" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="FQb-xr-dbD" secondAttribute="trailing" constant="1" id="Zu1-Hk-TMy"/>
+                            <constraint firstItem="BUF-5P-znT" firstAttribute="leading" secondItem="Xet-Py-3Hv" secondAttribute="leading" constant="130" id="ava-5k-D0u"/>
                             <constraint firstItem="Qcg-JP-3tu" firstAttribute="top" secondItem="0Es-JK-elU" secondAttribute="top" id="b4U-MZ-rQd"/>
                             <constraint firstItem="9H1-ye-jpI" firstAttribute="top" secondItem="Nto-pi-SuP" secondAttribute="top" id="dVc-XO-P43"/>
                             <constraint firstItem="1Io-T8-4tg" firstAttribute="top" secondItem="Qcg-JP-3tu" secondAttribute="bottom" constant="20" id="fiU-yb-cqv"/>
@@ -1101,6 +1089,7 @@
                             <constraint firstItem="vdw-Ic-gNQ" firstAttribute="leading" secondItem="BUF-5P-znT" secondAttribute="leading" id="wKT-VH-ZkS"/>
                             <constraint firstItem="BUF-5P-znT" firstAttribute="top" secondItem="dRe-85-xVW" secondAttribute="bottom" constant="40" id="wd0-Xo-9k5"/>
                             <constraint firstItem="1Io-T8-4tg" firstAttribute="top" secondItem="Qe0-7X-X2p" secondAttribute="top" id="wh9-s8-VyN"/>
+                            <constraint firstItem="Xet-Py-3Hv" firstAttribute="trailing" secondItem="vdw-Ic-gNQ" secondAttribute="trailing" constant="20" id="xCp-UG-03J"/>
                             <constraint firstItem="Qcg-JP-3tu" firstAttribute="top" secondItem="vdw-Ic-gNQ" secondAttribute="bottom" constant="20" id="ypx-eq-N2C"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Xet-Py-3Hv"/>
@@ -1109,7 +1098,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="PIY-gc-Aid" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3800" y="-956"/>
+            <point key="canvasLocation" x="3800.0000000000005" y="-956.58482142857133"/>
         </scene>
         <!--Add Entry-->
         <scene sceneID="aUf-pX-1GM">
