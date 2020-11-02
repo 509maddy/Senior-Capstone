@@ -10,24 +10,37 @@ import UIKit
 
 class SettingsViewController: UIViewController, ModalTransitionListener  {
        
+    // outlets to labels
     @IBOutlet weak var gLabel: UILabel!
     @IBOutlet weak var fLabel: UILabel!
     @IBOutlet weak var vLabel: UILabel!
     @IBOutlet weak var pLabel: UILabel!
     @IBOutlet weak var dLabel: UILabel!
+    
+    // outlets to sliders
     @IBOutlet weak var gSlider: UISlider!
     @IBOutlet weak var dSlider: UISlider!
     @IBOutlet weak var pSlider: UISlider!
     @IBOutlet weak var fSlider: UISlider!
     @IBOutlet weak var vSlider: UISlider!
+    
+    // outlet to date
     @IBOutlet weak var navDate: UIBarButtonItem!
     
+    // value of goals
     var grainValue: Double = DailyState.grainGoal
     var fruitValue: Double = DailyState.fruitGoal
     var vegetableValue: Double = DailyState.vegetableGoal
     var proteinValue: Double = DailyState.proteinGoal
     var dairyValue: Double = DailyState.dairyGoal
-
+    
+    // personal info outlets
+    
+    @IBOutlet weak var height: UITextField!
+    @IBOutlet weak var weight: UITextField!
+    @IBOutlet weak var goalWeight: UITextField!
+    
+    
     @IBAction func saveSliderValues(_ sender: Any) {
 
         var goalRecords = [GoalRecord]()
@@ -112,5 +125,26 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
         dLabel.text = "\(currentValue)"
         dairyValue = Double(currentValue)
     }
+    
+    // personal settings logic
+    /**
+     check if they were changed
+     
+     if they were, calculate category
+     
+     male lose weight: 2.5 fruit, 3 veg, 9 grains, 6.5 protein, 3 dairy
+     
+     male gain weight: 2.5 fruit, 3.5 veg, 11 grains, 7.5 protein, 3 dairy
+     
+     male maintain weight: 2.5 fruit, 3.5 veg, 10 grains, 7 protein, 3 dairy
+     
+     female lose weight: 2  fruit, 2.5 veg, 6 grains, 5.5 protein, 3 dairy
+     
+     femal gain weight: 2 fruit, 3 veg, 8 grains, 6.5 protein, 3 dairy
+     
+     female maintain weight: 2 fruit, 3 veg, 7 grains, 6 protein, 3 dairy
+     
+     
+     */
 }
 
