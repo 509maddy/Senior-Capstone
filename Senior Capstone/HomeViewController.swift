@@ -78,7 +78,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
 
         // 1. Set ChartDataEntry
         var foodRecords = [FoodRecord]()
-        let predicate = NSPredicate(format: "date == %@", DailyState.todaysDate)
+        let predicate = NSPredicate(format: "date == %@", DailyState.todaysDateAsDate as NSDate)
         foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
 
         var fruitChartEntries: [ChartDataEntry] = []

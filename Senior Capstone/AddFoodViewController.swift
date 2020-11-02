@@ -98,7 +98,6 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, ModalTransi
         }
         
         DatabaseFunctions.insertFoodRecord(name: nameToSave,
-                                           date: DailyState.todaysDate,
                                            dairyServings: dairyServingStepper.value,
                                            fruitServings: fruitServingStepper.value,
                                            grainServings: grainServingStepper.value,
