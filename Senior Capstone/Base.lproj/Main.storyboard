@@ -232,6 +232,14 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
+                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Zmo-ZY-Kle">
+                                                <rect key="frame" x="221" y="645" width="175" height="34"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="CmB-Tg-4Mf"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -330,6 +338,7 @@
                         <outlet property="navDate" destination="bfM-Q9-AnU" id="4g4-F0-SuK"/>
                         <outlet property="pLabel" destination="T8E-Ho-lb7" id="6CR-eJ-Q6P"/>
                         <outlet property="pSlider" destination="ljq-Jx-erX" id="x1p-a0-rM7"/>
+                        <outlet property="sex" destination="Zmo-ZY-Kle" id="Hq5-K4-G8N"/>
                         <outlet property="vLabel" destination="gE7-8H-W5Y" id="GVg-4J-Jov"/>
                         <outlet property="vSlider" destination="0Yk-Su-3MP" id="Iqe-DM-c0h"/>
                         <outlet property="weight" destination="eUm-SQ-0VU" id="hMl-B8-j3C"/>
