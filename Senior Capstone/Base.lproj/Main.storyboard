@@ -1361,6 +1361,7 @@
                             <constraint firstItem="pNE-nx-jQk" firstAttribute="trailing" secondItem="U9Q-Mr-E0f" secondAttribute="trailing" id="qJi-2H-pDL"/>
                             <constraint firstItem="5HM-0V-ega" firstAttribute="leading" secondItem="mxh-AL-UcM" secondAttribute="centerX" constant="-100" id="u1G-ue-Z37"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="YY0-a1-INl"/>
                     </view>
                     <connections>
                         <outlet property="dairyLabel" destination="S93-Ht-hYl" id="mR9-Rn-sX3"/>
@@ -1643,6 +1644,7 @@
                             <constraint firstItem="lCU-vZ-3JW" firstAttribute="top" secondItem="Jpv-VH-Wp4" secondAttribute="top" id="wgy-C6-IcK"/>
                             <constraint firstItem="Jpv-VH-Wp4" firstAttribute="leading" secondItem="vrs-3M-otk" secondAttribute="trailing" constant="18" id="xH2-0k-PAb"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="cey-pS-9yo"/>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="vv2-xS-dnB" id="UP7-sh-puh"/>
