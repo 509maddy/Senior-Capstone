@@ -1,5 +1,5 @@
 //
-//  FoodItem+CoreDataProperties.swift
+//  BottleRecord+CoreDataProperties.swift
 //  Senior Capstone
 //
 //  Created by Madison Lucas on 9/5/20.
@@ -16,16 +16,10 @@ import CoreData
 */
 extension BottleRecord {
 
-    @nonobjc public class func createFetchRequest() -> NSFetchRequest<FoodRecord> {
-        return NSFetchRequest<FoodRecord>(entityName: "FoodRecord")
+    @nonobjc public class func createFetchRequest() -> NSFetchRequest<BottleRecord> {
+        return NSFetchRequest<BottleRecord>(entityName: "BottleRecord")
     }
 
-    @NSManaged public var date: Date
     @NSManaged public var name: String
-    @NSManaged public var dairyServings: Double
-    @NSManaged public var fruitServings: Double
-    @NSManaged public var grainServings: Double
-    @NSManaged public var proteinServings: Double
-    @NSManaged public var vegServings: Double
-
+    @NSManaged public var volume: Double
 }

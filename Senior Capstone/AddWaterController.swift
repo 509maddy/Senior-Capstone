@@ -13,7 +13,6 @@ import UIKit
 class AddWaterViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource{
 
     @IBOutlet weak var bottlePicker: UIPickerView!
-    @IBOutlet weak var headerLabel: UILabel!
     
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameInput: UITextField!
@@ -26,20 +25,16 @@ class AddWaterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     
     @IBOutlet weak var addButton: UIButton!
     @IBOutlet weak var addButtonHeight: NSLayoutConstraint!
-    @IBOutlet weak var addButtonLowerConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var saveButton: UIButton!
     @IBOutlet weak var saveButtonHeight: NSLayoutConstraint!
-    @IBOutlet weak var saveButtonLowerConstraint: NSLayoutConstraint!
-    
-    @IBOutlet weak var editButton: UIButton!
-    @IBOutlet weak var editButtonHeight: NSLayoutConstraint!
-    @IBOutlet weak var editButtonLowerConstraint: NSLayoutConstraint!
     
     @IBOutlet weak var deleteButton: UIButton!
     @IBOutlet weak var deleteButtonHeight: NSLayoutConstraint!
     
-    var pickerBottles: [String] = ["Choose An Option:", "New Custom Entry"]
+    var pickerBottles: [String] = [String]()
+    var storedBottles: [BottleRecord] = [BottleRecord]()
+    
     func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
@@ -53,7 +48,8 @@ class AddWaterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
-        if row == 0 {
+        nameLabel.textColor = UIColor.black
+        if row == 0 { // this is the row that says "Choose An Option:"
             nameLabel.alpha = 0
             nameInput.alpha = 0
             nameCustome.alpha = 0
@@ -66,7 +62,7 @@ class AddWaterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             addButton.alpha = 0
             saveButton.alpha = 0
             deleteButton.alpha = 0
-        } else if row == pickerBottles.count-1 {
+        } else if row == pickerBottles.count-1 { // this is the "New Custom Entry" row
             nameLabel.alpha = 1
             nameInput.alpha = 1
             nameCustome.alpha = 0
@@ -79,7 +75,7 @@ class AddWaterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             addButton.alpha = 1
             saveButton.alpha = 1
             deleteButton.alpha = 0
-        } else {
+        } else { // all the rows that are saved volumes
             nameLabel.alpha = 1
             nameInput.alpha = 0
             nameCustome.alpha = 1
@@ -89,7 +85,7 @@ class AddWaterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             volumeSlider.alpha = 0
             volumeReadOut.alpha = 0
             volumeCustome.alpha = 1
-            volumeCustome.text = pickerBottles[row]
+            volumeCustome.text = String(format: "%.1f", storedBottles[row-1].value(forKey: "volume") as! Double)
             
             addButton.alpha = 1
             saveButton.alpha = 0
@@ -105,6 +101,7 @@ class AddWaterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         self.bottlePicker.dataSource = self
         bottlePicker.selectRow(0, inComponent: 0, animated: true)
         pickerView(bottlePicker, didSelectRow: 0, inComponent: 0)
+        nameLabel.textColor = UIColor.black
         nameInput.text = ""
     }
     
@@ -124,14 +121,29 @@ class AddWaterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             return
         }
         
-        guard let volumeToSave = volumeReadOut.text else {
-            return
+        let volumeToSave: Double = Double(round(volumeSlider.value / 0.5) * 0.5)
+        print(volumeToSave)
+        
+        DatabaseFunctions.insertBottleVolumeRecord(name: nameToSave, volume: volumeToSave)
+        loadSavedBottles()
+        reloadView()
+        bottlePicker.selectRow(pickerBottles.firstIndex(of: nameToSave) ?? 0, inComponent: 0, animated: true)
+        pickerView(bottlePicker, didSelectRow: pickerBottles.firstIndex(of: nameToSave) ?? 0, inComponent: 0)
+    }
+    
+    func loadSavedBottles() {
+        storedBottles = DatabaseFunctions.retriveBottleRecord()
+        
+        pickerBottles.removeAll()
+        
+        if storedBottles.count > 0 {
+            for i in 0..<storedBottles.count {
+                pickerBottles.append((storedBottles[i].value(forKeyPath: "name") as? String)!)
+            }
         }
         
-        pickerBottles.insert(nameToSave + " -> " + volumeToSave + " oz", at: pickerBottles.count-1)
-        reloadView()
-        bottlePicker.selectRow(pickerBottles.count-2, inComponent: 0, animated: true)
-        pickerView(bottlePicker, didSelectRow: pickerBottles.count-2, inComponent: 0)
+        pickerBottles.append("New Custom Entry")
+        pickerBottles.insert("Choose An Option:", at: 0)
     }
     
     func nameValidation() -> Bool {
@@ -152,10 +164,11 @@ class AddWaterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         return hasName
     }
     
-    @IBAction func editDrink(_ sender: Any) {
-    }
-    
     @IBAction func deleteDrink(_ sender: Any) {
+        let pickerRow = bottlePicker.selectedRow(inComponent: 0)
+        DatabaseFunctions.deleteBottleRecord(bottleItem: storedBottles[pickerRow-1])
+        loadSavedBottles()
+        reloadView()
     }
     
     @IBAction func customeValueSliderChanged(_ sender: UISlider) {
@@ -166,11 +179,11 @@ class AddWaterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         reloadView()
+        loadSavedBottles()
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        reloadView()
     }
     
 }

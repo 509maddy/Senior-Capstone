@@ -1384,7 +1384,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="16.0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AO5-3H-3CI">
-                                <rect key="frame" x="312" y="255.66666666666663" width="32" height="21"/>
+                                <rect key="frame" x="325" y="227" width="32" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="SIr-tW-3sL"/>
                                 </constraints>
@@ -1393,61 +1393,43 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="16" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="Kn4-Qu-Bwt">
-                                <rect key="frame" x="160" y="251" width="144" height="31"/>
+                                <rect key="frame" x="163" y="222.66666666666666" width="154" height="31"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="CUv-Jl-vKP"/>
-                                    <constraint firstAttribute="width" constant="140" id="oWr-gm-nRb"/>
+                                    <constraint firstAttribute="width" constant="150" id="oWr-gm-nRb"/>
                                 </constraints>
                                 <connections>
                                     <action selector="customeValueSliderChanged:" destination="40f-uk-JBh" eventType="valueChanged" id="2r2-SY-mN5"/>
                                 </connections>
                             </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ounces:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RkK-oU-RXu">
-                                <rect key="frame" x="85" y="255.66666666666663" width="63.666666666666657" height="21"/>
+                                <rect key="frame" x="62" y="227" width="68" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="7EU-V3-SCc"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aUZ-SD-1oA">
-                                <rect key="frame" x="85" y="198.66666666666666" width="50" height="21"/>
+                                <rect key="frame" x="62" y="170" width="53.333333333333343" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="LG3-Fk-dg2"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add Custom Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sSI-gq-YaM">
-                                <rect key="frame" x="107" y="141" width="200" height="26"/>
-                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="21"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="guh-k4-HLf">
-                                <rect key="frame" x="180" y="192" width="150" height="34"/>
+                                <rect key="frame" x="165" y="163.66666666666666" width="192" height="34"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="hYP-1v-9eZ"/>
                                     <constraint firstAttribute="height" constant="34" id="scS-cM-a0h"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vv2-xS-dnB">
-                                <rect key="frame" x="141" y="306.66666666666669" width="132" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="OQX-D9-NlC"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Add This Amount"/>
-                                <connections>
-                                    <action selector="addDrink:" destination="40f-uk-JBh" eventType="touchUpInside" id="K3n-oe-Ids"/>
-                                </connections>
-                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CustomName" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xp6-rY-1t4">
-                                <rect key="frame" x="180" y="198.66666666666666" width="105" height="21"/>
+                                <rect key="frame" x="165.33333333333334" y="170" width="105.00000000000003" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="N7X-ev-U3R"/>
                                 </constraints>
@@ -1455,19 +1437,20 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yN4-Cc-DMG">
-                                <rect key="frame" x="137.66666666666666" y="349.66666666666669" width="138.99999999999997" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="yN4-Cc-DMG">
+                                <rect key="frame" x="232" y="278" width="130" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="uY7-w3-pKZ"/>
+                                    <constraint firstAttribute="width" constant="130" id="ZYu-hs-DlQ"/>
+                                    <constraint firstAttribute="height" constant="40" id="uY7-w3-pKZ"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Save This Amount"/>
+                                <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="17"/>
+                                <state key="normal" title="Save Volume For Reuse"/>
                                 <connections>
                                     <action selector="saveDrink:" destination="40f-uk-JBh" eventType="touchUpInside" id="c6h-g7-INA"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CustomVolume" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VpH-5Q-RAo">
-                                <rect key="frame" x="180" y="255.66666666666663" width="116" height="21"/>
+                                <rect key="frame" x="165.33333333333334" y="227" width="116.00000000000003" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="oW1-sQ-aDr"/>
                                 </constraints>
@@ -1475,69 +1458,63 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xlA-MX-uxD">
-                                <rect key="frame" x="124" y="435.66666666666669" width="166" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="QJj-YM-E18"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Delete Saved Amount"/>
-                                <connections>
-                                    <action selector="deleteDrink:" destination="40f-uk-JBh" eventType="touchUpInside" id="27j-R5-Erp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dGJ-cz-seA">
-                                <rect key="frame" x="134" y="392.66666666666669" width="146" height="33"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="33" id="a4z-xL-NMR"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <state key="normal" title="Edit Saved Amount"/>
-                                <connections>
-                                    <action selector="editDrink:" destination="40f-uk-JBh" eventType="touchUpInside" id="xkA-qC-VDb"/>
-                                </connections>
-                            </button>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ySt-Ud-hpt">
-                                <rect key="frame" x="87" y="494" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <viewLayoutGuide key="contentLayoutGuide" id="LFK-uB-7YL"/>
-                                <viewLayoutGuide key="frameLayoutGuide" id="WlY-H0-Xbr"/>
-                            </scrollView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfA-9C-lMP">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="135"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="135" id="SBq-MJ-LFf"/>
                                 </constraints>
                             </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="vv2-xS-dnB">
+                                <rect key="frame" x="72" y="278" width="110" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="OQX-D9-NlC"/>
+                                    <constraint firstAttribute="width" constant="110" id="VTF-sk-GfC"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Log This Volume"/>
+                                <connections>
+                                    <action selector="addDrink:" destination="40f-uk-JBh" eventType="touchUpInside" id="K3n-oe-Ids"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="xlA-MX-uxD">
+                                <rect key="frame" x="237" y="268" width="120" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="QJj-YM-E18"/>
+                                    <constraint firstAttribute="width" constant="120" id="RPG-Bh-duf"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <state key="normal" title="Delete Saved Volume"/>
+                                <connections>
+                                    <action selector="deleteDrink:" destination="40f-uk-JBh" eventType="touchUpInside" id="27j-R5-Erp"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="Kn4-Qu-Bwt" firstAttribute="leading" secondItem="V5K-cK-30n" secondAttribute="centerX" constant="-45" id="1h9-Mj-qRB"/>
-                            <constraint firstItem="guh-k4-HLf" firstAttribute="top" secondItem="sSI-gq-YaM" secondAttribute="bottom" constant="25" id="7WR-lz-nXd"/>
+                            <constraint firstItem="Xp6-rY-1t4" firstAttribute="leading" secondItem="aUZ-SD-1oA" secondAttribute="trailing" constant="50" id="27d-Pb-FNb"/>
+                            <constraint firstItem="yN4-Cc-DMG" firstAttribute="leading" secondItem="vv2-xS-dnB" secondAttribute="trailing" constant="50" id="4BJ-gu-xk2"/>
+                            <constraint firstItem="vv2-xS-dnB" firstAttribute="leading" secondItem="aUZ-SD-1oA" secondAttribute="leading" constant="10" id="7yW-Wc-s0b"/>
                             <constraint firstItem="rfA-9C-lMP" firstAttribute="trailing" secondItem="cey-pS-9yo" secondAttribute="trailing" id="8mS-UK-cPA"/>
-                            <constraint firstItem="yN4-Cc-DMG" firstAttribute="centerX" secondItem="V5K-cK-30n" secondAttribute="centerX" id="9VO-nf-Ybi"/>
+                            <constraint firstItem="Kn4-Qu-Bwt" firstAttribute="leading" secondItem="guh-k4-HLf" secondAttribute="leading" id="99T-gX-wSS"/>
                             <constraint firstItem="Xp6-rY-1t4" firstAttribute="centerY" secondItem="aUZ-SD-1oA" secondAttribute="centerY" id="EJv-kX-QbD"/>
                             <constraint firstItem="RkK-oU-RXu" firstAttribute="leading" secondItem="aUZ-SD-1oA" secondAttribute="leading" id="Er0-5l-u2u"/>
                             <constraint firstItem="AO5-3H-3CI" firstAttribute="centerY" secondItem="RkK-oU-RXu" secondAttribute="centerY" id="FRS-fo-F5h"/>
-                            <constraint firstItem="dGJ-cz-seA" firstAttribute="top" secondItem="yN4-Cc-DMG" secondAttribute="bottom" constant="10" id="Inp-rl-S90"/>
-                            <constraint firstItem="guh-k4-HLf" firstAttribute="leading" secondItem="V5K-cK-30n" secondAttribute="centerX" constant="-27" id="MQp-lM-gHX"/>
                             <constraint firstItem="guh-k4-HLf" firstAttribute="centerY" secondItem="aUZ-SD-1oA" secondAttribute="centerY" id="NTX-of-zuX"/>
+                            <constraint firstItem="RkK-oU-RXu" firstAttribute="leading" secondItem="aUZ-SD-1oA" secondAttribute="leading" id="OXV-F3-LJ3"/>
                             <constraint firstItem="Kn4-Qu-Bwt" firstAttribute="centerY" secondItem="RkK-oU-RXu" secondAttribute="centerY" id="PCi-lQ-AvV"/>
-                            <constraint firstItem="dGJ-cz-seA" firstAttribute="centerX" secondItem="V5K-cK-30n" secondAttribute="centerX" id="RA1-nS-N8y"/>
+                            <constraint firstItem="xlA-MX-uxD" firstAttribute="centerY" secondItem="vv2-xS-dnB" secondAttribute="centerY" id="S43-g8-4yr"/>
                             <constraint firstItem="AO5-3H-3CI" firstAttribute="leading" secondItem="Kn4-Qu-Bwt" secondAttribute="trailing" constant="10" id="SH2-6t-D0m"/>
-                            <constraint firstItem="yN4-Cc-DMG" firstAttribute="top" secondItem="vv2-xS-dnB" secondAttribute="bottom" constant="10" id="VgC-xK-lLG"/>
-                            <constraint firstItem="vv2-xS-dnB" firstAttribute="centerX" secondItem="V5K-cK-30n" secondAttribute="centerX" id="X4n-bO-q2k"/>
+                            <constraint firstItem="AO5-3H-3CI" firstAttribute="trailing" secondItem="guh-k4-HLf" secondAttribute="trailing" id="XBU-gi-3cu"/>
                             <constraint firstItem="VpH-5Q-RAo" firstAttribute="centerY" secondItem="RkK-oU-RXu" secondAttribute="centerY" id="Z7r-wb-yfT"/>
-                            <constraint firstItem="xlA-MX-uxD" firstAttribute="centerX" secondItem="V5K-cK-30n" secondAttribute="centerX" id="bg7-Yx-fUE"/>
                             <constraint firstItem="vv2-xS-dnB" firstAttribute="top" secondItem="RkK-oU-RXu" secondAttribute="bottom" constant="30" id="bxZ-td-Xt7"/>
-                            <constraint firstItem="sSI-gq-YaM" firstAttribute="top" secondItem="rfA-9C-lMP" secondAttribute="bottom" constant="6" id="dAp-6E-7Lu"/>
-                            <constraint firstItem="xlA-MX-uxD" firstAttribute="top" secondItem="dGJ-cz-seA" secondAttribute="bottom" constant="10" id="dN9-Gy-QKc"/>
-                            <constraint firstItem="sSI-gq-YaM" firstAttribute="centerX" secondItem="V5K-cK-30n" secondAttribute="centerX" id="fYG-l5-j6v"/>
+                            <constraint firstItem="AO5-3H-3CI" firstAttribute="trailing" secondItem="yN4-Cc-DMG" secondAttribute="trailing" constant="-5" id="geD-PI-r6s"/>
+                            <constraint firstItem="yN4-Cc-DMG" firstAttribute="centerY" secondItem="vv2-xS-dnB" secondAttribute="centerY" id="gkf-D7-Za3"/>
                             <constraint firstItem="VpH-5Q-RAo" firstAttribute="leading" secondItem="Xp6-rY-1t4" secondAttribute="leading" id="iZG-dJ-sZr"/>
-                            <constraint firstItem="Xp6-rY-1t4" firstAttribute="leading" secondItem="V5K-cK-30n" secondAttribute="centerX" constant="-27" id="kVj-I2-pE8"/>
-                            <constraint firstItem="guh-k4-HLf" firstAttribute="leading" secondItem="aUZ-SD-1oA" secondAttribute="trailing" constant="45" id="lcK-bS-0CS"/>
+                            <constraint firstItem="vv2-xS-dnB" firstAttribute="trailing" secondItem="V5K-cK-30n" secondAttribute="centerX" constant="-25" id="ion-ry-7XS"/>
+                            <constraint firstItem="aUZ-SD-1oA" firstAttribute="top" secondItem="rfA-9C-lMP" secondAttribute="bottom" constant="35" id="kkE-iS-3gM"/>
                             <constraint firstItem="rfA-9C-lMP" firstAttribute="top" secondItem="V5K-cK-30n" secondAttribute="top" id="pLU-CM-43C"/>
                             <constraint firstItem="Kn4-Qu-Bwt" firstAttribute="top" secondItem="guh-k4-HLf" secondAttribute="bottom" constant="25" id="vJ4-S7-La3"/>
+                            <constraint firstItem="xlA-MX-uxD" firstAttribute="leading" secondItem="vv2-xS-dnB" secondAttribute="trailing" constant="55" id="wm2-Na-uoD"/>
                             <constraint firstItem="rfA-9C-lMP" firstAttribute="leading" secondItem="cey-pS-9yo" secondAttribute="leading" id="z0O-dD-Etw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="cey-pS-9yo"/>
@@ -1545,20 +1522,14 @@
                     <connections>
                         <outlet property="addButton" destination="vv2-xS-dnB" id="UP7-sh-puh"/>
                         <outlet property="addButtonHeight" destination="OQX-D9-NlC" id="o6u-c5-0OA"/>
-                        <outlet property="addButtonLowerConstraint" destination="VgC-xK-lLG" id="Lgp-P0-Na0"/>
                         <outlet property="bottlePicker" destination="rfA-9C-lMP" id="JaB-eD-pTD"/>
                         <outlet property="deleteButton" destination="xlA-MX-uxD" id="XCr-qo-NtV"/>
                         <outlet property="deleteButtonHeight" destination="QJj-YM-E18" id="EH5-0S-kqx"/>
-                        <outlet property="editButton" destination="dGJ-cz-seA" id="7NZ-UL-wp7"/>
-                        <outlet property="editButtonHeight" destination="a4z-xL-NMR" id="izx-ot-tnj"/>
-                        <outlet property="editButtonLowerConstraint" destination="dN9-Gy-QKc" id="6sw-eL-yOI"/>
-                        <outlet property="headerLabel" destination="sSI-gq-YaM" id="HqT-lK-KfS"/>
                         <outlet property="nameCustome" destination="Xp6-rY-1t4" id="cLC-zD-1oq"/>
                         <outlet property="nameInput" destination="guh-k4-HLf" id="8rx-xw-uXo"/>
                         <outlet property="nameLabel" destination="aUZ-SD-1oA" id="gMj-Pl-zq4"/>
                         <outlet property="saveButton" destination="yN4-Cc-DMG" id="bXW-E3-WOH"/>
                         <outlet property="saveButtonHeight" destination="uY7-w3-pKZ" id="mqQ-SJ-SMy"/>
-                        <outlet property="saveButtonLowerConstraint" destination="Inp-rl-S90" id="SzC-GD-JaH"/>
                         <outlet property="volumeCustome" destination="VpH-5Q-RAo" id="Hih-hJ-Se6"/>
                         <outlet property="volumeLabel" destination="RkK-oU-RXu" id="r3T-KY-r0O"/>
                         <outlet property="volumeReadOut" destination="AO5-3H-3CI" id="24V-if-HMN"/>

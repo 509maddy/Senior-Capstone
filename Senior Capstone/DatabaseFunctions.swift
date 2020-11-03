@@ -28,6 +28,23 @@ class DatabaseFunctions {
 
         return foodRecords
     }
+    
+    static func retriveBottleRecord() -> [BottleRecord] {
+        var bottleRecords = [BottleRecord]()
+        let request = BottleRecord.createFetchRequest()
+
+        // order by date (newest date at top)
+        let sort = NSSortDescriptor(key: "name", ascending: true)
+        request.sortDescriptors = [sort]
+
+        do {
+            bottleRecords = try appDelegate.persistentContainer.viewContext.fetch(request)
+        } catch {
+            print("Fetch failed")
+        }
+
+        return bottleRecords
+    }
 
     static func retrieveGoalRecord() -> [GoalRecord] {
         var goalRecords = [GoalRecord]()
@@ -62,7 +79,6 @@ class DatabaseFunctions {
            }
 
            return foodRecords
-
     }
 
     static func retriveGoalRecordOnCondition(predicate: NSPredicate) -> [GoalRecord] {
@@ -96,6 +112,13 @@ class DatabaseFunctions {
         foodRecord.vegServings = vegServings
         appDelegate.saveContext()
     }
+    
+    static func insertBottleVolumeRecord(name: String, volume: Double){
+        let bottleRecord = BottleRecord(context: appDelegate.persistentContainer.viewContext)
+        bottleRecord.name = name
+        bottleRecord.volume = volume
+        appDelegate.saveContext()
+    }
 
     static func insertGoalRecord(fruitGoal: Double, vegetableGoal: Double, proteinGoal: Double, grainGoal: Double, dairyGoal: Double) {
         // check to see if one already exists
@@ -120,6 +143,11 @@ class DatabaseFunctions {
 
     static func deleteFoodRecord(foodItem: FoodRecord) {
         appDelegate.persistentContainer.viewContext.delete(foodItem)
+        appDelegate.saveContext()
+    }
+    
+    static func deleteBottleRecord(bottleItem: BottleRecord) {
+        appDelegate.persistentContainer.viewContext.delete(bottleItem)
         appDelegate.saveContext()
     }
 
