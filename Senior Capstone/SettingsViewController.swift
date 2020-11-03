@@ -88,7 +88,6 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
         
     }
     
-    
     func popoverDismissed() {
         self.navigationController?.dismiss(animated: true, completion: nil)
         reloadView()
@@ -129,39 +128,94 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
         dairyValue = Double(currentValue)
     }
     
-    // personal settings logic
-    /**
-     check if they were changed
-     
-     if they were, calculate category
-     
-     male: tall > 5'6 = 66 in
-     female: tall > 5'2 = 62 in
-     
-     male lose weight
-        short: 2 fruit, 3 veg, 8 grains, 6 protein, 3 dairy
-        tall: 2.5 fruit, 3 veg, 9 grains, 6.5 protein, 3 dairy
-     
-     male gain weight:
-        short: 2 fruit, 3.5 veg, 10 grains, 7 protein, 3 dairy
-        tall: 2.5 fruit, 3.5 veg, 11 grains, 7.5 protein, 3 dairy
-     
-     male maintain weight
-        short: 2 fruit, 3.5 veg, 9 grains, 6.5 protein, 3 dairy
-        tall: 2.5 fruit, 3.5 veg, 10 grains, 7 protein, 3 dairy
-     
-     female lose weight:
-        short: 2 fruit, 2.5 veg, 6 grains, 5.5 protein, 3 dairy
-        tall: 2.5 fruit, 2.5 veg, 7 grains, 6 protein, 3 dairy
-     
-     femal gain weight:
-        short: 2 fruit, 3 veg, 8 grains, 6.5 protein, 3 dairy
-        tall: 2.5 fruit, 3 veg, 9 grains, 7 protein, 3 dairy
-     
-     female maintain weight
-        short:  2 fruit, 3 veg, 7 grains, 6 protein, 3 dairy
-        tall: 2.5 fruit, 3 veg, 8 grains, 6.5 protein, 3 dairy
-
-     */
+    
+    // logic for personal goals 
+    func suggestGoals(height: UITextField, weight: UITextField, goalWeight: UITextField, sex: UISwitch) {
+        if (sex.isOn) { // female
+            if (Int(height.text!) ?? 0 > 62) { // tall
+                if ((Int(weight.text!) ?? 0 - Int(goalWeight.text!)!) == 0) { // maintain
+                    fruitValue = 2.5
+                    vegetableValue = 3
+                    grainValue = 8
+                    proteinValue = 6.5
+                    dairyValue = 3
+                } else if ((Int(weight.text!) ?? 0 - Int(goalWeight.text!)!) > 0) { // lose weight
+                    fruitValue = 2.5
+                    vegetableValue = 2.5
+                    grainValue = 7
+                    proteinValue = 6
+                    dairyValue = 3
+                } else if ((Int(weight.text!) ?? 0 - Int(goalWeight.text!)!) < 0) { // gain weight
+                    fruitValue = 2.5
+                    vegetableValue = 3
+                    grainValue = 9
+                    proteinValue = 7
+                    dairyValue = 3
+                }
+            } else { // short
+                if ((Int(weight.text!) ?? 0 - Int(goalWeight.text!)!) == 0) { // maintain
+                    fruitValue = 2
+                    vegetableValue = 3
+                    grainValue = 7
+                    proteinValue = 6
+                    dairyValue = 3
+                } else if ((Int(weight.text!) ?? 0 - Int(goalWeight.text!)!) > 0) { // lose weight
+                    fruitValue = 2
+                    vegetableValue = 2.5
+                    grainValue = 6
+                    proteinValue = 5.5
+                    dairyValue = 3
+                } else if ((Int(weight.text!) ?? 0 - Int(goalWeight.text!)!) < 0) { // gain weight
+                    fruitValue = 2
+                    vegetableValue = 3
+                    grainValue = 8
+                    proteinValue = 6.5
+                    dairyValue = 3
+                }
+            }
+           } else { // male
+                if (Int(height.text!) ?? 0 > 66) { // tall
+                   if ((Int(weight.text!) ?? 0 - Int(goalWeight.text!)!) == 0) { // maintain
+                        fruitValue = 2.5
+                        vegetableValue = 3.5
+                        grainValue = 10
+                        proteinValue = 7
+                        dairyValue = 3
+                   } else if ((Int(weight.text!) ?? 0 - Int(goalWeight.text!)!) > 0) { // lose weight
+                        fruitValue = 2.5
+                        vegetableValue = 3
+                        grainValue = 9
+                        proteinValue = 6.5
+                        dairyValue = 3
+                   } else if ((Int(weight.text!) ?? 0 - Int(goalWeight.text!)!) < 0) { // gain weight
+                        fruitValue = 2.5
+                        vegetableValue = 3.5
+                        grainValue = 11
+                        proteinValue = 7.5
+                        dairyValue = 3
+                }
+               } else { // short
+                    if ((Int(weight.text!) ?? 0 - Int(goalWeight.text!)!) == 0) { // maintain
+                            fruitValue = 2
+                            vegetableValue = 3.5
+                            grainValue = 9
+                            proteinValue = 6.5
+                            dairyValue = 3
+                       } else if ((Int(weight.text!) ?? 0 - Int(goalWeight.text!)!) > 0) { // lose weight
+                            fruitValue = 2
+                            vegetableValue = 3
+                            grainValue = 8
+                            proteinValue = 6
+                            dairyValue = 3
+                       } else if ((Int(weight.text!) ?? 0 - Int(goalWeight.text!)!) < 0) { // gain weight
+                            fruitValue = 2
+                            vegetableValue = 3.5
+                            grainValue = 10
+                            proteinValue = 7
+                            dairyValue = 3
+                    }
+            }
+        }
+    }
 }
 
