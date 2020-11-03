@@ -168,7 +168,7 @@ class AddWaterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
             }
         }
         
-        pickerBottles.append("New Custom Entry")
+        pickerBottles.append("New Custom Volume")
         pickerBottles.insert("Choose An Option:", at: 0)
     }
     
