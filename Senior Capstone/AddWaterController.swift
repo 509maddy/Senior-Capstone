@@ -105,10 +105,37 @@ class AddWaterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         nameInput.text = ""
     }
     
+    // Add an entry for a drink
     @IBAction func addDrink(_ sender: Any) {
-        // log that the drink was added
+        let pickerRow = bottlePicker.selectedRow(inComponent: 0)
+        var nameToSave: String
+        var volumeToSave: Double
+        
+        if pickerRow == pickerBottles.count-1{
+            if !nameValidation(){
+                let alert = UIAlertController(title: "Name Field Empty", message: "Please provide a name for the water entry you are making.", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "Okay", style: .cancel, handler: nil))
+                self.present(alert, animated: true)
+                return
+            }
+            
+            guard let name = nameInput.text else {
+                return
+            }
+            
+            nameToSave = name
+            volumeToSave = Double(round(volumeSlider.value / 0.5) * 0.5)
+        } else {
+            nameToSave = pickerBottles[pickerRow]
+            volumeToSave = storedBottles[pickerRow-1].value(forKey: "volume") as! Double
+        }
+        
+        DatabaseFunctions.insertWaterRecord(name: nameToSave, volume: volumeToSave)
+        nameLabel.textColor = UIColor.black
+        nameInput.text = ""
     }
     
+    // Save a volume for later use
     @IBAction func saveDrink(_ sender: Any) {
         if !nameValidation(){
             let alert = UIAlertController(title: "Name Field Empty", message: "Please provide a name for the water entry you are making.", preferredStyle: .alert)
@@ -122,7 +149,6 @@ class AddWaterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
         }
         
         let volumeToSave: Double = Double(round(volumeSlider.value / 0.5) * 0.5)
-        print(volumeToSave)
         
         DatabaseFunctions.insertBottleVolumeRecord(name: nameToSave, volume: volumeToSave)
         loadSavedBottles()
