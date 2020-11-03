@@ -40,6 +40,9 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var goalWeight: UITextField!
     @IBOutlet weak var sex: UISwitch!
+    @IBOutlet weak var updateGoals: UIButton!
+    
+    
     
     
     @IBAction func saveSliderValues(_ sender: Any) {

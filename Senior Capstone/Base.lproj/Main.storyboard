@@ -258,6 +258,10 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPe-Dr-Z0C">
+                                                <rect key="frame" x="294" y="695" width="93" height="30"/>
+                                                <state key="normal" title="Update Goals"/>
+                                            </button>
                                         </subviews>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
@@ -280,6 +284,7 @@
                                             <constraint firstItem="hSq-Hy-zkh" firstAttribute="leading" secondItem="EBC-fs-3AM" secondAttribute="leading" id="EZJ-Q4-Lpn"/>
                                             <constraint firstItem="QVm-Ur-mWK" firstAttribute="top" secondItem="eUm-SQ-0VU" secondAttribute="bottom" constant="25" id="EeV-3O-AIf"/>
                                             <constraint firstItem="dB0-MW-zUZ" firstAttribute="top" secondItem="ljq-Jx-erX" secondAttribute="bottom" constant="23" id="FZM-ZY-Qcw"/>
+                                            <constraint firstItem="JPe-Dr-Z0C" firstAttribute="top" secondItem="QVm-Ur-mWK" secondAttribute="bottom" constant="13" id="GAl-sF-eYm"/>
                                             <constraint firstItem="t0K-4a-aPp" firstAttribute="centerY" secondItem="ODj-v6-tEX" secondAttribute="centerY" id="Jff-Ni-MDf"/>
                                             <constraint firstItem="ljq-Jx-erX" firstAttribute="leading" secondItem="0Yk-Su-3MP" secondAttribute="leading" id="K8b-SC-JUe"/>
                                             <constraint firstItem="ZXz-18-kWA" firstAttribute="top" secondItem="H4N-jI-2Cp" secondAttribute="top" constant="30" id="Khg-lV-FHp"/>
@@ -317,6 +322,7 @@
                                             <constraint firstItem="05o-sG-xm4" firstAttribute="leading" secondItem="67b-fg-n3C" secondAttribute="trailing" constant="5" id="rl5-Z9-VP9"/>
                                             <constraint firstItem="gE7-8H-W5Y" firstAttribute="leading" secondItem="T8E-Ho-lb7" secondAttribute="leading" id="s3Z-Lb-N4b"/>
                                             <constraint firstItem="y0g-TR-noI" firstAttribute="top" secondItem="yHl-vj-7a8" secondAttribute="bottom" constant="23" id="tGm-JC-CDo"/>
+                                            <constraint firstAttribute="trailing" secondItem="JPe-Dr-Z0C" secondAttribute="trailing" constant="20" id="tOo-58-5J7"/>
                                             <constraint firstItem="Axo-oD-Afm" firstAttribute="centerX" secondItem="EBC-fs-3AM" secondAttribute="centerX" id="tnp-uo-fxk"/>
                                             <constraint firstItem="05o-sG-xm4" firstAttribute="top" secondItem="eUm-SQ-0VU" secondAttribute="bottom" constant="25" id="uD5-qs-gtx"/>
                                             <constraint firstItem="QVm-Ur-mWK" firstAttribute="leading" secondItem="05o-sG-xm4" secondAttribute="trailing" constant="10" id="udF-KB-ZbJ"/>
@@ -371,6 +377,7 @@
                         <outlet property="pLabel" destination="T8E-Ho-lb7" id="6CR-eJ-Q6P"/>
                         <outlet property="pSlider" destination="ljq-Jx-erX" id="x1p-a0-rM7"/>
                         <outlet property="sex" destination="05o-sG-xm4" id="GPc-Kl-4Sl"/>
+                        <outlet property="updateGoals" destination="JPe-Dr-Z0C" id="tS3-p8-iEd"/>
                         <outlet property="vLabel" destination="gE7-8H-W5Y" id="GVg-4J-Jov"/>
                         <outlet property="vSlider" destination="0Yk-Su-3MP" id="Iqe-DM-c0h"/>
                         <outlet property="weight" destination="eUm-SQ-0VU" id="hMl-B8-j3C"/>
