@@ -203,4 +203,23 @@ class DatabaseFunctions {
 
         DailyState.refreshGoals()
     }
+    
+    static func setColorScheme(theme: String){
+        let currentTheme = ThemeRecord(context: appDelegate.persistentContainer.viewContext)
+        currentTheme.themeName = theme
+        appDelegate.saveContext()
+    }
+    
+    static func getColorScheme() -> String{
+        var themeRecords = ""
+        let request = ThemeRecord.createFetchRequest()
+        
+        do {
+            themeRecord = try appDelegate.persistentContainer.viewContext.fetch(request)
+        } catch {
+            print("Fetch failed")
+        }
+        
+        appDelegate.saveContext()
+    }
 }
