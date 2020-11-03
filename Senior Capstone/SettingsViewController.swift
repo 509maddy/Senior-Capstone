@@ -42,7 +42,10 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
     @IBOutlet weak var sex: UISwitch!
     @IBOutlet weak var updateGoals: UIButton!
     
-    
+    @IBAction func customGoals(_sender: Any) {
+        suggestGoals(height: height, weight: weight, goalWeight: goalWeight, sex: sex)
+        reloadView()
+    }
     
     
     @IBAction func saveSliderValues(_ sender: Any) {
