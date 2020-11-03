@@ -155,19 +155,33 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
      
      if they were, calculate category
      
-     male lose weight: 2.5 fruit, 3 veg, 9 grains, 6.5 protein, 3 dairy
+     male: tall > 5'6 = 66 in
+     female: tall > 5'2 = 62 in
      
-     male gain weight: 2.5 fruit, 3.5 veg, 11 grains, 7.5 protein, 3 dairy
+     male lose weight
+        short: 2 fruit, 3 veg, 8 grains, 6 protein, 3 dairy
+        tall: 2.5 fruit, 3 veg, 9 grains, 6.5 protein, 3 dairy
      
-     male maintain weight: 2.5 fruit, 3.5 veg, 10 grains, 7 protein, 3 dairy
+     male gain weight:
+        short: 2 fruit, 3.5 veg, 10 grains, 7 protein, 3 dairy
+        tall: 2.5 fruit, 3.5 veg, 11 grains, 7.5 protein, 3 dairy
      
-     female lose weight: 2  fruit, 2.5 veg, 6 grains, 5.5 protein, 3 dairy
+     male maintain weight
+        short: 2 fruit, 3.5 veg, 9 grains, 6.5 protein, 3 dairy
+        tall: 2.5 fruit, 3.5 veg, 10 grains, 7 protein, 3 dairy
      
-     femal gain weight: 2 fruit, 3 veg, 8 grains, 6.5 protein, 3 dairy
+     female lose weight:
+        short: 2 fruit, 2.5 veg, 6 grains, 5.5 protein, 3 dairy
+        tall: 2.5 fruit, 2.5 veg, 7 grains, 6 protein, 3 dairy
      
-     female maintain weight: 2 fruit, 3 veg, 7 grains, 6 protein, 3 dairy
+     femal gain weight:
+        short: 2 fruit, 3 veg, 8 grains, 6.5 protein, 3 dairy
+        tall: 2.5 fruit, 3 veg, 9 grains, 7 protein, 3 dairy
      
-     
+     female maintain weight
+        short:  2 fruit, 3 veg, 7 grains, 6 protein, 3 dairy
+        tall: 2.5 fruit, 3 veg, 8 grains, 6.5 protein, 3 dairy
+
      */
 }
 
