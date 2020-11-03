@@ -16,6 +16,18 @@ class AddEntryViewController: UIViewController, UIPickerViewDelegate, ModalTrans
     @IBOutlet weak var addFoodView: UIView!
     @IBOutlet weak var addWaterView: UIView!
     
+    var waterController: AddWaterViewController? = nil
+    var foodController: AddFoodViewController? = nil
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let waterController = segue.destination as? AddWaterViewController {
+            self.waterController = waterController
+        }
+        if let foodController = segue.destination as? AddFoodViewController {
+            self.foodController = foodController
+        }
+    }
+    
     let appDelegate = UIApplication.shared.delegate as! AppDelegate;
     
     func popoverDismissed() {
@@ -49,10 +61,13 @@ class AddEntryViewController: UIViewController, UIPickerViewDelegate, ModalTrans
             addFoodView.alpha = 1
             addWaterView.alpha = 0
             self.view.endEditing(true)
+            foodController?.reloadView()
         } else {
             addFoodView.alpha = 0
             addWaterView.alpha = 1
             self.view.endEditing(true)
+            addWaterView.setNeedsDisplay()
+            waterController?.reloadView()
         }
     }
         
