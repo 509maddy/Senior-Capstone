@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 /**
  * This is the first thing to get launched when the app restarts (i.e. actually close app rather than resuming session).
@@ -22,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        registerForPushNotifications()
         ThemeManager.applyTheme(theme: .coolBlue)
         
         return true
@@ -79,6 +81,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
+    
+    
+    func registerForPushNotifications(){
+        UNUserNotificationCenter.current() //1
+            .requestAuthorization(options: [.alert, .sound, .badge]) {
+                granted, error in
+                print("Permission granted: \(granted)")
+        }
+    }
 
     // MARK: - Core Data Saving support
 
