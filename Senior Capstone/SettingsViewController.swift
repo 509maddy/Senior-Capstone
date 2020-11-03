@@ -44,7 +44,6 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
     
     @IBAction func customGoals(_sender: Any) {
         suggestGoals(height: height, weight: weight, goalWeight: goalWeight, sex: sex)
-        reloadView()
     }
     
     
@@ -196,6 +195,7 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
                     gLabel.text = "6"
                     pLabel.text = "5.5"
                     dLabel.text = "3"
+                    print("lose weight short")
                 } else if ((Int(weight.text!) ?? 0 - Int(goalWeight.text!)!) < 0) { // gain weight
                     fruitValue = 2
                     vegetableValue = 3

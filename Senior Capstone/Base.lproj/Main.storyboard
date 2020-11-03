@@ -259,8 +259,8 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JPe-Dr-Z0C">
-                                                <rect key="frame" x="294" y="695" width="93" height="30"/>
-                                                <state key="normal" title="Update Goals"/>
+                                                <rect key="frame" x="291" y="695" width="100" height="30"/>
+                                                <state key="normal" title="Suggest Goals"/>
                                                 <connections>
                                                     <action selector="customGoalsWith_sender:" destination="xdt-Tk-pTc" eventType="touchUpInside" id="7FM-Ri-8OG"/>
                                                 </connections>
