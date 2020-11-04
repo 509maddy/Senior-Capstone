@@ -17,14 +17,25 @@ import UserNotifications
  * other personal settings.
  */
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         registerForPushNotifications()
         ThemeManager.applyTheme(theme: .coolBlue)
+        
+        UNUserNotificationCenter.current().delegate = self
+        
+        // request permission from user to send notification
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { authorized, error in
+          if authorized {
+            DispatchQueue.main.async(execute: {
+                application.registerForRemoteNotifications()
+            })
+          }
+        })
+
         
         return true
     }
@@ -41,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+        
     }
 
     private func preloadData() {
@@ -90,6 +102,27 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print("Permission granted: \(granted)")
         }
     }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+      let application = UIApplication.shared
+      
+      if(application.applicationState == .active){
+        print("user tapped the notification bar when the app is in foreground")
+        
+      }
+      
+      if(application.applicationState == .inactive)
+      {
+        print("user tapped the notification bar when the app is in background")
+      }
+      
+      /* Change root view controller to a specific viewcontroller */
+      // let storyboard = UIStoryboard(name: "Main", bundle: nil)
+      // let vc = storyboard.instantiateViewController(withIdentifier: "ViewControllerStoryboardID") as? ViewController
+      // self.window?.rootViewController = vc
+      
+      completionHandler()
+    }
 
     // MARK: - Core Data Saving support
 
@@ -106,6 +139,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }
+
 
