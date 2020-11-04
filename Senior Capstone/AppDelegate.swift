@@ -103,6 +103,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         }
     }
     
+    
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
         
         // retrieve the root view controller (which is a tab bar controller)
@@ -120,17 +121,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             let tabBarController = rootViewController as? UITabBarController,
             let navController = tabBarController.selectedViewController as? UINavigationController {
 
+                print("tap")
                 // we can modify variable of the new view controller using notification data
                 // (eg: title of notification)
                 //conversationVC.senderDisplayName = response.notification.request.content.title
                 // you can access custom data of the push notification by using userInfo property
                 // response.notification.request.content.userInfo
-                navController.pushViewController(conversationVC, animated: true)
+                //navController.pushViewController(conversationVC, animated: true)
         }
         
         // tell the app that we have finished processing the user’s action / response
         completionHandler()
     }
+    
 
     // MARK: - Core Data Saving support
 
