@@ -15,6 +15,7 @@ class AddEntryViewController: UIViewController, UIPickerViewDelegate, ModalTrans
     @IBOutlet weak var navDate: UIBarButtonItem!
     @IBOutlet weak var addFoodView: UIView!
     @IBOutlet weak var addWaterView: UIView!
+    @IBOutlet weak var addFood_addWater: UISegmentedControl!
     
     var waterController: AddWaterViewController? = nil
     var foodController: AddFoodViewController? = nil
@@ -33,13 +34,14 @@ class AddEntryViewController: UIViewController, UIPickerViewDelegate, ModalTrans
     func popoverDismissed() {
         self.navigationController?.dismiss(animated: true, completion: nil)
         reloadView()
-        ModalTransitionMediator.instance.setListener(listener: self)
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         reloadView()
         ModalTransitionMediator.instance.setListener(listener: self)
+        addFood_addWater.selectedSegmentIndex = 0
+        switchViews(addFood_addWater)
     }
 
     func reloadView() {
@@ -48,12 +50,7 @@ class AddEntryViewController: UIViewController, UIPickerViewDelegate, ModalTrans
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateStyle = DateFormatter.Style.short
         DailyState.updateNavDate(navDate: navDate)
-        
-        addFoodView.alpha = 1
-        addWaterView.alpha = 0
     }
     
     @IBAction func switchViews(_ sender: UISegmentedControl) {

@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 import UIKit
 
-class AddFoodViewController: UIViewController, UIPickerViewDelegate, ModalTransitionListener {
+class AddFoodViewController: UIViewController, UIPickerViewDelegate {
 
     @IBOutlet weak var nameInputBox: UITextField!
     @IBOutlet weak var nameLabel: UILabel!
@@ -38,11 +38,6 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, ModalTransi
     @IBOutlet weak var submitButton: UIButton!
 
     let appDelegate = UIApplication.shared.delegate as! AppDelegate;
-    
-    func popoverDismissed() {
-         self.navigationController?.dismiss(animated: true, completion: nil)
-         reloadView()
-     }
     
     func updateFoodGroup(_ sender: UIStepper, label: UILabel){
         if String(sender.value) == "0.0" {
@@ -154,7 +149,6 @@ class AddFoodViewController: UIViewController, UIPickerViewDelegate, ModalTransi
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         reloadView()
-        ModalTransitionMediator.instance.setListener(listener: self)
     }
     
     func reloadView(){

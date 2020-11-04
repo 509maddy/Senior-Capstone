@@ -946,6 +946,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="addFoodView" destination="OPP-RL-HMP" id="bMQ-eb-h4Q"/>
+                        <outlet property="addFood_addWater" destination="KKR-0I-jbw" id="KGx-o9-g9n"/>
                         <outlet property="addWaterView" destination="Ech-BC-0FX" id="O9J-l1-vON"/>
                         <outlet property="navDate" destination="1XJ-GV-Dox" id="7dt-dx-ueU"/>
                     </connections>
