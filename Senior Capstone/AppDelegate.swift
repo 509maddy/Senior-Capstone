@@ -104,30 +104,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     }
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-      let application = UIApplication.shared
-      let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
-      
-      if(application.applicationState == .inactive)
-      {
-        print("user tapped the notification bar when the app is in background")
-      }
         
-    // instantiate the view controller from storyboard
-    if  let conversationVC = storyboard.instantiateViewController(withIdentifier: "AddFoodViewController") as? FoodViewController {
+        // retrieve the root view controller (which is a tab bar controller)
+        guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else {
+            return
+        }
+      
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
 
-        // set the view controller as root
-        let sceneDelegate = SceneDelegate()
+        // instantiate the view controller we want to show from storyboard
+        // root view controller is tab bar controller
+        // the selected tab is a navigation controller
+        // then we push the new view controller to it
+        if  let conversationVC = storyboard.instantiateViewController(withIdentifier: "DinnerPushViewController") as? DinnerPushViewController,
+            let tabBarController = rootViewController as? UITabBarController,
+            let navController = tabBarController.selectedViewController as? UINavigationController {
+
+                // we can modify variable of the new view controller using notification data
+                // (eg: title of notification)
+                //conversationVC.senderDisplayName = response.notification.request.content.title
+                // you can access custom data of the push notification by using userInfo property
+                // response.notification.request.content.userInfo
+                navController.pushViewController(conversationVC, animated: true)
+        }
         
-        sceneDelegate.window?.rootViewController = conversationVC
-    }
-      
-      /* Change root view controller to a specific viewcontroller */
-      // let storyboard = UIStoryboard(name: "Main", bundle: nil)
-      // let vc = storyboard.instantiateViewController(withIdentifier: "ViewControllerStoryboardID") as? ViewController
-      // self.window?.rootViewController = vc
-      
-      completionHandler()
+        // tell the app that we have finished processing the user’s action / response
+        completionHandler()
     }
 
     // MARK: - Core Data Saving support

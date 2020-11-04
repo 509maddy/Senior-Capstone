@@ -1332,6 +1332,33 @@
             </objects>
             <point key="canvasLocation" x="1205.7971014492755" y="-567.1875"/>
         </scene>
+        <!--Dinner Push View Controller-->
+        <scene sceneID="awC-li-gdS">
+            <objects>
+                <viewController storyboardIdentifier="DinnerPushViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="gvo-ws-VJH" customClass="DinnerPushViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="RtN-eY-Lf2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Eat dinner" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="suH-7K-jYx">
+                                <rect key="frame" x="106" y="168" width="229" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="hN8-dX-AwA"/>
+                    </view>
+                    <connections>
+                        <outlet property="test" destination="suH-7K-jYx" id="MRK-oy-br1"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="agy-JM-mhA" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1465.217391304348" y="-906.69642857142856"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="EEw-Aj-ZL7"/>
