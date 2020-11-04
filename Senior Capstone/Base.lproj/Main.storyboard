@@ -888,7 +888,7 @@
         <!--Add Food View Controller-->
         <scene sceneID="nRN-yC-a5Q">
             <objects>
-                <viewController id="b6A-cl-TVP" customClass="AddFoodViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddFoodViewController" id="b6A-cl-TVP" customClass="AddFoodViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WOe-9f-uvI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

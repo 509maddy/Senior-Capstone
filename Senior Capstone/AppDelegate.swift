@@ -105,16 +105,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
       let application = UIApplication.shared
-      
-      if(application.applicationState == .active){
-        print("user tapped the notification bar when the app is in foreground")
-        
-      }
+      let storyboard = UIStoryboard(name: "Main", bundle: nil)
+
       
       if(application.applicationState == .inactive)
       {
         print("user tapped the notification bar when the app is in background")
       }
+        
+    // instantiate the view controller from storyboard
+    if  let conversationVC = storyboard.instantiateViewController(withIdentifier: "AddFoodViewController") as? FoodViewController {
+
+        // set the view controller as root
+        let sceneDelegate = SceneDelegate()
+        
+        sceneDelegate.window?.rootViewController = conversationVC
+    }
       
       /* Change root view controller to a specific viewcontroller */
       // let storyboard = UIStoryboard(name: "Main", bundle: nil)
