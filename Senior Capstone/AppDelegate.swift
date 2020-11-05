@@ -111,24 +111,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             return
         }
       
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-
         // instantiate the view controller we want to show from storyboard
         // root view controller is tab bar controller
         // the selected tab is a navigation controller
         // then we push the new view controller to it
-        if  let conversationVC = storyboard.instantiateViewController(withIdentifier: "DinnerPushViewController") as? DinnerPushViewController,
-            let tabBarController = rootViewController as? UITabBarController,
-            let navController = tabBarController.selectedViewController as? UINavigationController {
-
-                print("tap")
-                // we can modify variable of the new view controller using notification data
-                // (eg: title of notification)
-                //conversationVC.senderDisplayName = response.notification.request.content.title
-                // you can access custom data of the push notification by using userInfo property
-                // response.notification.request.content.userInfo
-                //navController.pushViewController(conversationVC, animated: true)
-        }
         
         // tell the app that we have finished processing the user’s action / response
         completionHandler()
