@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 /**
  * This is the first thing to get launched when the app restarts (i.e. actually close app rather than resuming session).
@@ -16,13 +17,25 @@ import CoreData
  * other personal settings.
  */
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        registerForPushNotifications()
         ThemeManager.applyTheme(theme: .coolBlue)
+        
+        UNUserNotificationCenter.current().delegate = self
+        
+        // request permission from user to send notification
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { authorized, error in
+          if authorized {
+            DispatchQueue.main.async(execute: {
+                application.registerForRemoteNotifications()
+            })
+          }
+        })
+
         
         return true
     }
@@ -39,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+        
     }
 
     private func preloadData() {
@@ -79,6 +93,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
+    
+    
+    func registerForPushNotifications(){
+        UNUserNotificationCenter.current() //1
+            .requestAuthorization(options: [.alert, .sound, .badge]) {
+                granted, error in
+                print("Permission granted: \(granted)")
+        }
+    }
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        // retrieve the root view controller (which is a tab bar controller)
+        guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else {
+            return
+        }
+      
+        // instantiate the view controller we want to show from storyboard
+        // root view controller is tab bar controller
+        // the selected tab is a navigation controller
+        // then we push the new view controller to it
+        
+        // tell the app that we have finished processing the user’s action / response
+        completionHandler()
+    }
+    
 
     // MARK: - Core Data Saving support
 
@@ -95,6 +136,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }
+
 
