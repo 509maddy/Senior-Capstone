@@ -11,7 +11,7 @@
         <!--Settings View Controller-->
         <scene sceneID="fxP-Vo-tQV">
             <objects>
-                <viewController id="xdt-Tk-pTc" customClass="SettingsViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xdt-Tk-pTc" customClass="SettingsViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PTv-kx-zU1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,7 +261,7 @@
         <!--Home View Controller-->
         <scene sceneID="hSK-Jq-zNg">
             <objects>
-                <viewController id="eiP-0m-p1r" customClass="HomeViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eiP-0m-p1r" customClass="HomeViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WYY-9T-hKs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -565,7 +565,7 @@
         <!--Date Picker View Controller-->
         <scene sceneID="hAF-LC-xbQ">
             <objects>
-                <viewController id="NOk-wN-ufv" customClass="DatePickerViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NOk-wN-ufv" customClass="DatePickerViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qDV-M3-vhx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -669,7 +669,7 @@
         <!--Food View Controller-->
         <scene sceneID="LiL-Gi-xf5">
             <objects>
-                <viewController storyboardIdentifier="Food2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZTH-Mu-lc6" customClass="FoodViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Food2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZTH-Mu-lc6" customClass="FoodViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tOj-13-Uqp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -719,7 +719,7 @@
         <!--DetailVC-->
         <scene sceneID="wJB-jE-X22">
             <objects>
-                <viewController id="cZR-ui-mYQ" customClass="DetailVC" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cZR-ui-mYQ" customClass="DetailVC" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Obd-Vg-V4f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -888,7 +888,7 @@
         <!--Add Food View Controller-->
         <scene sceneID="nRN-yC-a5Q">
             <objects>
-                <viewController id="b6A-cl-TVP" customClass="AddFoodViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AddFoodViewController" id="b6A-cl-TVP" customClass="AddFoodViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WOe-9f-uvI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
