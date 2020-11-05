@@ -270,8 +270,10 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     private func colorsOfCharts(numbersOfColor: Int, hasRemainder: Bool) -> [UIColor] {
       var colors: [UIColor] = []
         //assign colors to the slices
-        for sliceNumber in 0..<(numbersOfColor-1) {
-            colors.append(ThemeManager.pieChartColor(sliceNumber: sliceNumber))
+        if numbersOfColor > 1 {
+            for sliceNumber in 0..<(numbersOfColor-1) {
+                colors.append(ThemeManager.pieChartColor(sliceNumber: sliceNumber))
+            }
         }
         
         //if there is a Remainder slice it should be in the base color
