@@ -902,6 +902,10 @@
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="5oe-F1-5uF" id="tKF-gC-9eo"/>
+                                            <outlet property="delegate" destination="5oe-F1-5uF" id="q2m-1p-OCW"/>
+                                        </connections>
                                     </tableView>
                                 </subviews>
                                 <viewLayoutGuide key="contentLayoutGuide" id="e9w-S1-gsA"/>
@@ -911,7 +915,22 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="ccf-Fd-xsc"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4GO-DQ-3Ub"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="4GO-DQ-3Ub">
+                        <barButtonItem key="rightBarButtonItem" title="Date" id="m7w-Vc-N9m">
+                            <connections>
+                                <action selector="navDate:" destination="fTn-Mi-0BK" id="FHu-fH-Dsn"/>
+                                <segue destination="NOk-wN-ufv" kind="popoverPresentation" popoverAnchorBarButtonItem="m7w-Vc-N9m" id="frn-RO-N6w">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="navDate" destination="m7w-Vc-N9m" id="Z5v-Tj-kB6"/>
+                        <outlet property="tableView" destination="uWS-aD-rF7" id="I76-vA-dl7"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I5d-me-4h8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1575,7 +1594,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="huP-a5-k6O"/>
+        <segue reference="frn-RO-N6w"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gear" catalog="system" width="128" height="119"/>
