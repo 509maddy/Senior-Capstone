@@ -100,7 +100,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
             .requestAuthorization(options: [.alert, .sound, .badge]) {
                 granted, error in
                 print("Permission granted: \(granted)")
+                self.scheduleDinnerNotification()
         }
+    }
+    
+    func scheduleDinnerNotification() {
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        
+        let content = UNMutableNotificationContent()
+        content.title = "It's time for dinner!"
+        content.body = "See how you can complete your goals."
+        content.categoryIdentifier = "alarm"
+        content.userInfo = ["customData":"fizzbuzz"]
+        content.sound = .default
+        
+        var dateComponents = DateComponents()
+        dateComponents.hour = 21 //18 = 6pm
+        dateComponents.minute = 0
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
     }
     
     
