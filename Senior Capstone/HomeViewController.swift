@@ -40,12 +40,19 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     @IBOutlet weak var grainPieChartView: PieChartView!
     @IBOutlet weak var grainPieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var grainLabelHeight: NSLayoutConstraint!
+    @IBOutlet weak var grainPaddingHeight: NSLayoutConstraint!
+    @IBOutlet weak var grainDividerHeight: NSLayoutConstraint!
+
+    @IBOutlet weak var waterPieChartView: PieChartView!
+    @IBOutlet weak var waterPieChartHeight: NSLayoutConstraint!
+    @IBOutlet weak var waterLabelHeight: NSLayoutConstraint!
 
     var goalFruit: Double = 0.0
     var goalDairy: Double = 0.0
     var goalGrain: Double = 0.0
     var goalProtein: Double = 0.0
     var goalVeg: Double = 0.0
+    var isAnyWater: Bool = false
     @IBOutlet weak var navDate: UIBarButtonItem!
     
     override func viewDidLoad() {
@@ -69,6 +76,8 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         super.viewWillAppear(true)
         DailyState.updateNavDate(navDate: navDate)
         loadPieCharts()
+        isAnyWater = false
+        loadWater()
         loadViews()
         hideViews()
     }
@@ -136,6 +145,29 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         customPieChart(dataEntries: &vegChartEntries, pieChartView: vegetablePieChartView, goalServings: goalVeg, totalServings: totalVegServings)
     }
 
+    func loadWater() {
+        var waterRecords = [WaterRecord]()
+        let predicate = NSPredicate(format: "date == %@", DailyState.todaysDateAsDate as NSDate)
+        waterRecords = DatabaseFunctions.retriveWaterRecordOnCondition(predicate: predicate)
+
+        var waterChartEntries: [ChartDataEntry] = []
+        var totalWaterServings = 0.0
+        for i in 0..<waterRecords.count {
+            let label = waterRecords[i].value(forKeyPath: "name") as? String
+            let volume = waterRecords[i].value(forKeyPath: "volume") as! Double
+
+            totalWaterServings += volume
+
+            if (volume > 0){
+                let dataEntry = PieChartDataEntry(value: volume, label: label)
+                waterChartEntries.append(dataEntry)
+                isAnyWater = true
+            }
+        }
+
+        customPieChart(dataEntries: &waterChartEntries, pieChartView: waterPieChartView, goalServings: 0, totalServings: totalWaterServings)
+    }
+
     func updateGoals(){
         goalFruit = DailyState.fruitGoal
         goalDairy = DailyState.dairyGoal
@@ -163,6 +195,10 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         dairyDividerHeight.constant = 3.0
         grainPieChartHeight.constant = 300.0
         grainLabelHeight.constant = 40.0
+        grainPaddingHeight.constant = 15.0
+        grainDividerHeight.constant = 3.0
+        waterPieChartHeight.constant = 300.0
+        waterLabelHeight.constant = 40.0
         noDataHeight.constant = 0.0
         noDataView.isHidden = true
     }
@@ -201,7 +237,15 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         if goalGrain == 0.0 {
             grainPieChartHeight.constant = 0.0
             grainLabelHeight.constant = 0.0
+            grainPaddingHeight.constant = 0.0
+            grainDividerHeight.constant = 0.0
             visible[4] = false
+        }
+        if isAnyWater == false {
+            waterPieChartHeight.constant = 0.0
+            waterLabelHeight.constant = 0.0
+            grainPaddingHeight.constant = 0.0
+            grainDividerHeight.constant = 0.0
         }
 
         var index = 4

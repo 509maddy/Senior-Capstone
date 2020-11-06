@@ -22,4 +22,5 @@ extension WaterRecord {
 
     @NSManaged public var name: String
     @NSManaged public var volume: Double
+    @NSManaged public var date: Date
 }
