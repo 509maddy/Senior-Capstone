@@ -11,7 +11,7 @@
         <!--Settings View Controller-->
         <scene sceneID="fxP-Vo-tQV">
             <objects>
-                <viewController id="xdt-Tk-pTc" customClass="SettingsViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="xdt-Tk-pTc" customClass="SettingsViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PTv-kx-zU1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -261,7 +261,7 @@
         <!--Home View Controller-->
         <scene sceneID="hSK-Jq-zNg">
             <objects>
-                <viewController id="eiP-0m-p1r" customClass="HomeViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="eiP-0m-p1r" customClass="HomeViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WYY-9T-hKs">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="808"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -270,7 +270,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AvV-rO-Fzt">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2638"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2538"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cin-Nz-RbJ" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -444,10 +444,10 @@
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0g6-KP-kMP" userLabel="No Data View">
-                                                <rect key="frame" x="0.0" y="2138" width="414" height="500"/>
+                                                <rect key="frame" x="0.0" y="2138" width="414" height="400"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="No Goals Set" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iy9-82-ZpG">
-                                                        <rect key="frame" x="0.0" y="50" width="414" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="yCY-jA-2RQ"/>
                                                         </constraints>
@@ -457,9 +457,9 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="500" id="G1Q-AB-tuG"/>
+                                                    <constraint firstAttribute="height" constant="400" id="G1Q-AB-tuG"/>
                                                     <constraint firstAttribute="trailing" secondItem="Iy9-82-ZpG" secondAttribute="trailing" id="QbD-tX-nkU"/>
-                                                    <constraint firstItem="Iy9-82-ZpG" firstAttribute="top" secondItem="0g6-KP-kMP" secondAttribute="top" constant="50" id="wBm-Wf-FSa"/>
+                                                    <constraint firstItem="Iy9-82-ZpG" firstAttribute="top" secondItem="0g6-KP-kMP" secondAttribute="top" id="wBm-Wf-FSa"/>
                                                     <constraint firstItem="Iy9-82-ZpG" firstAttribute="leading" secondItem="0g6-KP-kMP" secondAttribute="leading" id="zXw-yZ-Xgk"/>
                                                 </constraints>
                                             </view>
@@ -613,7 +613,7 @@
         <!--Date Picker View Controller-->
         <scene sceneID="hAF-LC-xbQ">
             <objects>
-                <viewController id="NOk-wN-ufv" customClass="DatePickerViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="NOk-wN-ufv" customClass="DatePickerViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="qDV-M3-vhx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -717,7 +717,7 @@
         <!--Food View Controller-->
         <scene sceneID="LiL-Gi-xf5">
             <objects>
-                <viewController storyboardIdentifier="Food2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZTH-Mu-lc6" customClass="FoodViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="Food2ViewController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ZTH-Mu-lc6" customClass="FoodViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tOj-13-Uqp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -767,7 +767,7 @@
         <!--DetailVC-->
         <scene sceneID="wJB-jE-X22">
             <objects>
-                <viewController id="cZR-ui-mYQ" customClass="DetailVC" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cZR-ui-mYQ" customClass="DetailVC" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Obd-Vg-V4f">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -936,7 +936,7 @@
         <!--Add Entry View Controller-->
         <scene sceneID="nRN-yC-a5Q">
             <objects>
-                <viewController id="b6A-cl-TVP" customClass="AddEntryViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="b6A-cl-TVP" customClass="AddEntryViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="WOe-9f-uvI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1171,7 +1171,7 @@
         <!--Add Food View Controller-->
         <scene sceneID="YlG-ZL-yq3">
             <objects>
-                <viewController id="PcU-4W-SNW" customClass="AddFoodViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="PcU-4W-SNW" customClass="AddFoodViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="mxh-AL-UcM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="649"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1427,7 +1427,7 @@
         <!--Add Water View Controller-->
         <scene sceneID="QzI-SD-Egv">
             <objects>
-                <viewController id="40f-uk-JBh" customClass="AddWaterViewController" customModule="Senior_Capstone" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="40f-uk-JBh" customClass="AddWaterViewController" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="V5K-cK-30n">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="649"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

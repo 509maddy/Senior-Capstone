@@ -204,7 +204,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     }
 
     func hideViews() {
-        var visible:[Bool] = [true, true, true, true, true]
+        var visible:[Bool] = [true, true, true, true, true, true]
 
         if goalFruit == 0.0 {
             fruitPieChartHeight.constant = 0.0
@@ -244,11 +244,10 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         if isAnyWater == false {
             waterPieChartHeight.constant = 0.0
             waterLabelHeight.constant = 0.0
-            grainPaddingHeight.constant = 0.0
-            grainDividerHeight.constant = 0.0
+            visible[5] = false
         }
 
-        var index = 4
+        var index = 5
         var firstTrue = -1
         while index >= 0 && firstTrue == -1 {
             if visible[index] == true {
@@ -273,6 +272,9 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         case 3:
             dairyPaddingHeight.constant = 0.0
             dairyDividerHeight.constant = 0.0
+        case 4:
+            grainPaddingHeight.constant = 0.0
+            grainDividerHeight.constant = 0.0
         default:
             break
         }
