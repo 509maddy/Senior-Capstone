@@ -56,15 +56,6 @@ On the add food page, users can add food records. They are promted with tickers 
 
 <img src="./images/hummus.png" alt="Today's Food" height="500">
 
-## Force Push Notification
-
-1. cd into `Senior-Capstone/Senior Capstone`
-1. Run `xcrun simctl push <device id> me.Senior-Capstone DinnerPush.apns`
-1. To find your `<device id>`
-   1. Go to XCode > Window > Devices and Simulators
-   1. Click simulators tab
-   1. CLick the simulator you want and copy the identifier field
-
 ## How To Implement Date Picker
 
 1. Create all connections on storyboard

@@ -33,7 +33,6 @@
 		E1E611A42551944A000F1506 /* WaterRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1E611A32551944A000F1506 /* WaterRecord+CoreDataProperties.swift */; };
 		E1F224E425516E5A00402368 /* BottleRecord+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F224E325516E5A00402368 /* BottleRecord+CoreDataClass.swift */; };
 		E1F224E625516E8600402368 /* BottleRecord+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1F224E525516E8600402368 /* BottleRecord+CoreDataProperties.swift */; };
-		E45E2A092551DE7100E894E4 /* DinnerPush.apns in Resources */ = {isa = PBXBuildFile; fileRef = E45E2A082551DE7100E894E4 /* DinnerPush.apns */; };
 		E4FE6A2025427F6A000EFBFE /* DatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FE6A1F25427F6A000EFBFE /* DatePickerViewController.swift */; };
 		E4FE6A252545F022000EFBFE /* ModalTransitionMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = E4FE6A242545F022000EFBFE /* ModalTransitionMediator.swift */; };
 /* End PBXBuildFile section */
@@ -69,7 +68,6 @@
 		E1E611A32551944A000F1506 /* WaterRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WaterRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		E1F224E325516E5A00402368 /* BottleRecord+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottleRecord+CoreDataClass.swift"; sourceTree = "<group>"; };
 		E1F224E525516E8600402368 /* BottleRecord+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "BottleRecord+CoreDataProperties.swift"; sourceTree = "<group>"; };
-		E45E2A082551DE7100E894E4 /* DinnerPush.apns */ = {isa = PBXFileReference; lastKnownFileType = text; path = DinnerPush.apns; sourceTree = "<group>"; };
 		E4FE6A1F25427F6A000EFBFE /* DatePickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DatePickerViewController.swift; sourceTree = "<group>"; };
 		E4FE6A242545F022000EFBFE /* ModalTransitionMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModalTransitionMediator.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -135,7 +133,6 @@
 				2CAE271825001CEB00BAAB6A /* Senior_Capstone.xcdatamodeld */,
 				E4FE6A1F25427F6A000EFBFE /* DatePickerViewController.swift */,
 				E4FE6A242545F022000EFBFE /* ModalTransitionMediator.swift */,
-				E45E2A082551DE7100E894E4 /* DinnerPush.apns */,
 			);
 			path = "Senior Capstone";
 			sourceTree = "<group>";
@@ -221,7 +218,6 @@
 				2CAE271F25001CED00BAAB6A /* LaunchScreen.storyboard in Resources */,
 				2CAE271C25001CED00BAAB6A /* Assets.xcassets in Resources */,
 				2CAE271725001CEB00BAAB6A /* Main.storyboard in Resources */,
-				E45E2A092551DE7100E894E4 /* DinnerPush.apns in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
