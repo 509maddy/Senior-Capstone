@@ -35,7 +35,6 @@ class FoodViewController: UIViewController, UITableViewDelegate, ModalTransition
     func reloadView(){
         title = "Today's Food"
         tableView.register(UITableViewCell.self, forCellReuseIdentifier: "Cell")
-
         loadSavedData()
         self.tableView.register(UITableViewCell.self, forCellReuseIdentifier: "cell")
         DailyState.updateNavDate(navDate: navDate)
@@ -47,15 +46,18 @@ class FoodViewController: UIViewController, UITableViewDelegate, ModalTransition
     }
 
     func loadSavedData() {
-        
         let predicate = NSPredicate(format: "date == %@", DailyState.todaysDateAsDate as NSDate)
-       
         foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
         tableView.reloadData()
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath : IndexPath) {
-        performSegue(withIdentifier: "showDetail", sender: self)
+        if(indexPath.row == 0) {
+            performSegue(withIdentifier: "showWaterDetail", sender: self)
+        }
+        else {
+            performSegue(withIdentifier: "showDetail", sender: self)
+        }
     }
     
 }
@@ -66,7 +68,7 @@ extension FoodViewController: UITableViewDataSource {
     // saying the number of rows is equal to the number of foodItems returned
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        return foodRecords.count
+        return foodRecords.count + 1
     }
 
     // saying that you can modify the table
@@ -76,27 +78,39 @@ extension FoodViewController: UITableViewDataSource {
 
     // saying that I want to display the name in each cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-            let foodRecord = foodRecords[indexPath.row]
-            let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-            cell.textLabel?.text = foodRecord.value(forKeyPath: "name") as? String
-            
-            return cell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
+        
+        if(indexPath.row == 0) {
+            cell.textLabel?.text = "View Today's Water Intake >"
+            cell.textLabel?.textColor = ThemeManager.currentTheme().mainTextColor
+            cell.backgroundColor = ThemeManager.currentTheme().accentColor
+        } else {
+            cell.textLabel?.text = foodRecords[indexPath.row - 1].value(forKeyPath: "name") as? String
+        }
+        
+        return cell
     }
 
     // saying that if the user deletes (i.e. swipeing a row to the left), heres how you do it
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if ( indexPath.row == 0) {
+            return;
+        }
         if (editingStyle == .delete) {
             // pull out the item the user swiped left on
-            let item = foodRecords[indexPath.row]
+            let item = foodRecords[indexPath.row-1]
             DatabaseFunctions.deleteFoodRecord(foodItem: item)
-            foodRecords.remove(at: indexPath.row)
+            foodRecords.remove(at: indexPath.row-1)
             tableView.deleteRows(at: [indexPath], with: .fade)
         }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let destination = segue.destination as? DetailVC {
-            destination.foodItem = foodRecords[(tableView.indexPathForSelectedRow?.row)!]
+            destination.foodItem = foodRecords[(tableView.indexPathForSelectedRow?.row)!-1]
+        }
+        if let destination = segue.destination as? WaterDetailVC {
+            
         }
     }
     
