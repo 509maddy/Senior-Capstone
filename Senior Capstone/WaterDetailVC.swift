@@ -14,7 +14,8 @@ class WaterDetailVC: UIViewController, UITableViewDelegate, ModalTransitionListe
     
     @IBOutlet weak var navDate: UIBarButtonItem!
     // each cell will hold a different entry that conforms to the FoodItem entity
-    var waterRecords = [WaterRecord]()
+    var waterRecords:[WaterRecord] = [WaterRecord]()
+    var totalWaterIntake:Double = 0
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate;
     
@@ -45,8 +46,15 @@ class WaterDetailVC: UIViewController, UITableViewDelegate, ModalTransitionListe
     func loadSavedData() {
         let predicate = NSPredicate(format: "date == %@", DailyState.todaysDateAsDate as NSDate)
         waterRecords = DatabaseFunctions.retriveWaterRecordOnCondition(predicate: predicate)
-        print(waterRecords[0].value(forKeyPath: "name") as? String ?? "no value")
+        calculateTotalWaterIntake()
         tableView.reloadData()
+    }
+    
+    func calculateTotalWaterIntake() {
+        totalWaterIntake = 0
+        for record in waterRecords {
+            totalWaterIntake += record.value(forKey: "volume") as! Double
+        }
     }
 }
 
@@ -56,35 +64,42 @@ extension WaterDetailVC: UITableViewDataSource {
     // saying the number of rows is equal to the number of foodItems returned
     func tableView(_ tableView: UITableView,
                    numberOfRowsInSection section: Int) -> Int {
-        print("here1")
-        return waterRecords.count
+        return waterRecords.count + 1
     }
 
     // saying that you can modify the table
     func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        print("here2")
         return true
     }
 
     // saying that I want to display the name in each cell
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        print("here3")
-        print("entering a value into the table")
-        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath)
-        cell.textLabel?.text = waterRecords[indexPath.row].value(forKeyPath: "name") as? String
-        print(cell.textLabel?.text ?? "error")
+        let cell = UITableViewCell(style: UITableViewCell.CellStyle.value1, reuseIdentifier: "cell")
+        
+        if(indexPath.row != waterRecords.count) {
+            let recordName = waterRecords[indexPath.row].value(forKeyPath: "name") as? String
+            let recordVolume = String(format: "%.1f", waterRecords[indexPath.row].value(forKey: "volume") as! Double)
+            cell.textLabel?.text = String(recordName!.prefix(1)).capitalized + String(recordName!.dropFirst())
+            cell.detailTextLabel?.text = "+" + recordVolume + " oz"
+        } else {
+            cell.detailTextLabel?.text = "Total = " + String(format: "%.1f", totalWaterIntake) + " oz"
+        }
         return cell
     }
 
     // saying that if the user deletes (i.e. swipeing a row to the left), heres how you do it
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        print("here4")
+        if (indexPath.row == waterRecords.count) {
+            return;
+        }
         if (editingStyle == .delete) {
             // pull out the item the user swiped left on
             let item = waterRecords[indexPath.row]
             DatabaseFunctions.deleteWaterRecord(waterItem: item)
             waterRecords.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
+            calculateTotalWaterIntake()
+            tableView.reloadData()
         }
     }
 }
