@@ -7,4 +7,5 @@ target 'Senior Capstone' do
 
   # Pods for Senior Capstone
 pod 'Charts'
+pod 'DropDown'
 end
