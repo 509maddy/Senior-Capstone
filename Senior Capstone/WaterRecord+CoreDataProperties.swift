@@ -20,6 +20,7 @@ extension WaterRecord {
         return NSFetchRequest<WaterRecord>(entityName: "WaterRecord")
     }
 
+    @NSManaged public var date: Date
     @NSManaged public var name: String
     @NSManaged public var volume: Double
 }

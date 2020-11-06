@@ -140,6 +140,7 @@ class DatabaseFunctions {
     
     static func insertWaterRecord(name: String, volume: Double){
         let waterRecord = WaterRecord(context: appDelegate.persistentContainer.viewContext)
+        waterRecord.date = DailyState.todaysDateAsDate
         waterRecord.name = name
         waterRecord.volume = volume
         appDelegate.saveContext()
