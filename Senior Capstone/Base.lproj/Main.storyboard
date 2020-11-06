@@ -363,7 +363,7 @@
                         <outlet property="fSlider" destination="oXY-AX-v25" id="rjJ-dk-1Ui"/>
                         <outlet property="gLabel" destination="ow3-Cn-aeG" id="x3n-5Y-1O6"/>
                         <outlet property="gSlider" destination="FDy-54-VUR" id="6JU-Ny-Oec"/>
-                        <outlet property="goalWeight" destination="PnU-Co-ZIy" id="Odt-MD-XZc"/>
+                        <outlet property="goalWeight" destination="eUm-SQ-0VU" id="qKf-gw-y67"/>
                         <outlet property="height" destination="oe6-y9-OOz" id="a60-e0-RNC"/>
                         <outlet property="navDate" destination="bfM-Q9-AnU" id="4g4-F0-SuK"/>
                         <outlet property="pLabel" destination="T8E-Ho-lb7" id="6CR-eJ-Q6P"/>
@@ -372,7 +372,7 @@
                         <outlet property="updateGoals" destination="JPe-Dr-Z0C" id="tS3-p8-iEd"/>
                         <outlet property="vLabel" destination="gE7-8H-W5Y" id="GVg-4J-Jov"/>
                         <outlet property="vSlider" destination="0Yk-Su-3MP" id="Iqe-DM-c0h"/>
-                        <outlet property="weight" destination="eUm-SQ-0VU" id="hMl-B8-j3C"/>
+                        <outlet property="weight" destination="PnU-Co-ZIy" id="V1w-sQ-TAK"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4TM-sF-Ztw" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
