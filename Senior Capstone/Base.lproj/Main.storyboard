@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2h-8f-ZMB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2h-8f-ZMB">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -408,7 +408,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AvV-rO-Fzt">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2272"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="2538"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cin-Nz-RbJ" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
@@ -550,11 +550,42 @@
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mIw-Qo-Wzr" userLabel="Padding">
+                                                <rect key="frame" x="0.0" y="1772" width="414" height="15"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="15" id="GSv-Iz-CB8"/>
+                                                </constraints>
+                                            </view>
+                                            <imageView opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="Pmk-i6-4c2" userLabel="Grey Divider">
+                                                <rect key="frame" x="0.0" y="1795" width="414" height="3"/>
+                                                <color key="backgroundColor" name="Light_Grey"/>
+                                                <color key="tintColor" systemColor="opaqueSeparatorColor" red="0.77647058820000003" green="0.77647058820000003" blue="0.7843137255" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="3" id="la5-fn-A07"/>
+                                                </constraints>
+                                            </imageView>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UT6-jc-9NA" userLabel="Water Pie Chart View" customClass="PieChartView" customModule="Charts">
+                                                <rect key="frame" x="0.0" y="1798" width="414" height="300"/>
+                                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="300" id="BFb-wR-Ekg"/>
+                                                </constraints>
+                                            </view>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8u3-AP-fOE" userLabel="Water">
+                                                <rect key="frame" x="0.0" y="2098" width="414" height="40"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="40" id="mIi-zc-lv5"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0g6-KP-kMP" userLabel="No Data View">
-                                                <rect key="frame" x="0.0" y="1772" width="414" height="500"/>
+                                                <rect key="frame" x="0.0" y="2138" width="414" height="400"/>
                                                 <subviews>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="No Goals Set" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Iy9-82-ZpG">
-                                                        <rect key="frame" x="0.0" y="50" width="414" height="50"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="50"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="50" id="yCY-jA-2RQ"/>
                                                         </constraints>
@@ -564,9 +595,9 @@
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="500" id="G1Q-AB-tuG"/>
+                                                    <constraint firstAttribute="height" constant="400" id="G1Q-AB-tuG"/>
                                                     <constraint firstAttribute="trailing" secondItem="Iy9-82-ZpG" secondAttribute="trailing" id="QbD-tX-nkU"/>
-                                                    <constraint firstItem="Iy9-82-ZpG" firstAttribute="top" secondItem="0g6-KP-kMP" secondAttribute="top" constant="50" id="wBm-Wf-FSa"/>
+                                                    <constraint firstItem="Iy9-82-ZpG" firstAttribute="top" secondItem="0g6-KP-kMP" secondAttribute="top" id="wBm-Wf-FSa"/>
                                                     <constraint firstItem="Iy9-82-ZpG" firstAttribute="leading" secondItem="0g6-KP-kMP" secondAttribute="leading" id="zXw-yZ-Xgk"/>
                                                 </constraints>
                                             </view>
@@ -574,12 +605,14 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstAttribute="trailing" secondItem="43h-qa-yoY" secondAttribute="trailing" id="1fV-Wk-hn6"/>
+                                            <constraint firstItem="8u3-AP-fOE" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="1gE-7H-IqK"/>
+                                            <constraint firstItem="mIw-Qo-Wzr" firstAttribute="top" secondItem="abQ-cE-xwd" secondAttribute="bottom" id="1kM-qr-6MX"/>
                                             <constraint firstItem="1mh-L5-HfN" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="2cy-vQ-px4"/>
                                             <constraint firstItem="WGa-Eo-7rK" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="386-qA-wni"/>
                                             <constraint firstItem="WGa-Eo-7rK" firstAttribute="top" secondItem="43h-qa-yoY" secondAttribute="bottom" id="4k2-sc-qdO"/>
-                                            <constraint firstItem="0g6-KP-kMP" firstAttribute="top" secondItem="abQ-cE-xwd" secondAttribute="bottom" id="5jk-zk-5AO"/>
                                             <constraint firstItem="d7O-rV-jgD" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="5xS-TB-khp"/>
                                             <constraint firstItem="43h-qa-yoY" firstAttribute="top" secondItem="ZV2-WT-Zcs" secondAttribute="bottom" id="61N-GL-SQm"/>
+                                            <constraint firstItem="8u3-AP-fOE" firstAttribute="top" secondItem="UT6-jc-9NA" secondAttribute="bottom" id="6SN-9n-LzT"/>
                                             <constraint firstItem="Cin-Nz-RbJ" firstAttribute="top" secondItem="AvV-rO-Fzt" secondAttribute="top" id="8Bm-lx-7nJ"/>
                                             <constraint firstAttribute="trailing" secondItem="YGd-0A-xOJ" secondAttribute="trailing" id="8eL-Sq-eIU"/>
                                             <constraint firstItem="llF-28-ZLL" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="99t-dY-I99"/>
@@ -592,6 +625,8 @@
                                             <constraint firstItem="abQ-cE-xwd" firstAttribute="top" secondItem="1mh-L5-HfN" secondAttribute="bottom" id="FEX-81-LFZ"/>
                                             <constraint firstItem="YGd-0A-xOJ" firstAttribute="top" secondItem="o2B-5z-6ui" secondAttribute="bottom" id="H4R-tt-j2o"/>
                                             <constraint firstAttribute="trailing" secondItem="llF-28-ZLL" secondAttribute="trailing" id="HtA-nh-KVM"/>
+                                            <constraint firstItem="UT6-jc-9NA" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="I6p-nW-xl1"/>
+                                            <constraint firstItem="0g6-KP-kMP" firstAttribute="top" secondItem="8u3-AP-fOE" secondAttribute="bottom" id="IE6-Ev-cAr"/>
                                             <constraint firstAttribute="trailing" secondItem="WGa-Eo-7rK" secondAttribute="trailing" id="IHn-Nh-mPy"/>
                                             <constraint firstAttribute="trailing" secondItem="3Ud-I9-8Ue" secondAttribute="trailing" id="IPi-wC-649"/>
                                             <constraint firstAttribute="trailing" secondItem="aa4-p5-IMm" secondAttribute="trailing" id="IfK-dG-8cM"/>
@@ -601,12 +636,15 @@
                                             <constraint firstAttribute="bottom" secondItem="0g6-KP-kMP" secondAttribute="bottom" id="MWy-w5-EkN"/>
                                             <constraint firstAttribute="trailing" secondItem="phN-gd-XJQ" secondAttribute="trailing" id="MZI-A1-3IZ"/>
                                             <constraint firstAttribute="trailing" secondItem="o2B-5z-6ui" secondAttribute="trailing" id="OBe-Ye-1nK"/>
+                                            <constraint firstItem="Pmk-i6-4c2" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="OoA-vy-VSh"/>
                                             <constraint firstAttribute="trailing" secondItem="lEZ-QS-BKW" secondAttribute="trailing" id="PcR-l6-nJt"/>
                                             <constraint firstAttribute="trailing" secondItem="1mh-L5-HfN" secondAttribute="trailing" id="R9U-em-nsF"/>
                                             <constraint firstItem="0g6-KP-kMP" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="Z9B-eU-hgf"/>
                                             <constraint firstItem="o7g-zR-gLU" firstAttribute="top" secondItem="R7x-bn-xf7" secondAttribute="bottom" id="avc-zv-qZ0"/>
                                             <constraint firstItem="3Ud-I9-8Ue" firstAttribute="top" secondItem="p6q-rO-CoL" secondAttribute="bottom" id="b9R-0H-V7S"/>
                                             <constraint firstAttribute="trailing" secondItem="Cin-Nz-RbJ" secondAttribute="trailing" id="bz3-TB-IrZ"/>
+                                            <constraint firstAttribute="trailing" secondItem="Pmk-i6-4c2" secondAttribute="trailing" id="c6s-mD-Xk8"/>
+                                            <constraint firstAttribute="trailing" secondItem="UT6-jc-9NA" secondAttribute="trailing" id="cSb-lo-kKo"/>
                                             <constraint firstItem="p6q-rO-CoL" firstAttribute="top" secondItem="llF-28-ZLL" secondAttribute="bottom" id="cYl-XV-tc6"/>
                                             <constraint firstItem="lEZ-QS-BKW" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="cr8-jm-zpy"/>
                                             <constraint firstItem="p6q-rO-CoL" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="d3Q-HL-pCx"/>
@@ -615,11 +653,16 @@
                                             <constraint firstItem="llF-28-ZLL" firstAttribute="top" secondItem="Uf5-Tz-bIi" secondAttribute="bottom" id="eCN-tD-wVg"/>
                                             <constraint firstItem="YGd-0A-xOJ" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="fUD-tv-NMk"/>
                                             <constraint firstItem="Cin-Nz-RbJ" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="g0M-15-xt9"/>
+                                            <constraint firstItem="UT6-jc-9NA" firstAttribute="top" secondItem="Pmk-i6-4c2" secondAttribute="bottom" id="g3P-GX-a0W"/>
+                                            <constraint firstAttribute="trailing" secondItem="mIw-Qo-Wzr" secondAttribute="trailing" id="gu6-pf-JpC"/>
                                             <constraint firstItem="o2B-5z-6ui" firstAttribute="top" secondItem="aa4-p5-IMm" secondAttribute="bottom" id="h6U-72-6TK"/>
                                             <constraint firstItem="3Ud-I9-8Ue" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="iyj-0F-Emg"/>
                                             <constraint firstItem="d7O-rV-jgD" firstAttribute="top" secondItem="lEZ-QS-BKW" secondAttribute="bottom" id="kxl-zR-Tq1"/>
                                             <constraint firstItem="phN-gd-XJQ" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="kzb-B7-wA7"/>
+                                            <constraint firstItem="Pmk-i6-4c2" firstAttribute="top" secondItem="mIw-Qo-Wzr" secondAttribute="bottom" constant="8" symbolic="YES" id="l1r-RE-o16"/>
                                             <constraint firstItem="o2B-5z-6ui" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="nxq-yi-bhi"/>
+                                            <constraint firstItem="mIw-Qo-Wzr" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="o8d-oM-dyS"/>
+                                            <constraint firstAttribute="trailing" secondItem="8u3-AP-fOE" secondAttribute="trailing" id="omi-IV-cWA"/>
                                             <constraint firstItem="ZV2-WT-Zcs" firstAttribute="leading" secondItem="AvV-rO-Fzt" secondAttribute="leading" id="ozG-Xm-8Dl"/>
                                             <constraint firstItem="ZV2-WT-Zcs" firstAttribute="top" secondItem="YGd-0A-xOJ" secondAttribute="bottom" id="q6O-Bc-eQt"/>
                                             <constraint firstItem="1mh-L5-HfN" firstAttribute="top" secondItem="phN-gd-XJQ" secondAttribute="bottom" id="qSJ-3c-Myb"/>
@@ -677,7 +720,9 @@
                         <outlet property="fruitPaddingHeight" destination="1rm-D2-9RK" id="9hZ-g1-E5H"/>
                         <outlet property="fruitPieChartHeight" destination="yUI-OI-C7V" id="Oej-W7-t52"/>
                         <outlet property="fruitPieChartView" destination="Cin-Nz-RbJ" id="tL7-8v-Hrr"/>
+                        <outlet property="grainDividerHeight" destination="la5-fn-A07" id="cJv-nP-m6Y"/>
                         <outlet property="grainLabelHeight" destination="Q9B-ED-o2r" id="WSV-3w-ph6"/>
+                        <outlet property="grainPaddingHeight" destination="GSv-Iz-CB8" id="fzU-Nx-8Xx"/>
                         <outlet property="grainPieChartHeight" destination="8G2-G1-4Lb" id="R7Y-3R-0B5"/>
                         <outlet property="grainPieChartView" destination="1mh-L5-HfN" id="7NG-im-irH"/>
                         <outlet property="meatDividerHeight" destination="Q5N-du-O51" id="UGG-Kg-Oe3"/>
@@ -693,6 +738,9 @@
                         <outlet property="vegetablePaddingHeight" destination="W6g-c3-3q5" id="lmE-Xq-enf"/>
                         <outlet property="vegetablePieChartHeight" destination="NB9-as-HvX" id="fL6-bO-Tct"/>
                         <outlet property="vegetablePieChartView" destination="3Ud-I9-8Ue" id="B0c-pA-Lgf"/>
+                        <outlet property="waterLabelHeight" destination="mIi-zc-lv5" id="WvF-pb-VT5"/>
+                        <outlet property="waterPieChartHeight" destination="BFb-wR-Ekg" id="mLz-4X-P8R"/>
+                        <outlet property="waterPieChartView" destination="UT6-jc-9NA" id="HXc-ZB-P7u"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdB-UL-7Fb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1684,12 +1732,15 @@
         <segue reference="0kR-tb-9Se"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="gear" catalog="system" width="128" height="119"/>
-        <image name="hare" catalog="system" width="128" height="92"/>
-        <image name="house" catalog="system" width="128" height="110"/>
-        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
+        <image name="hare" catalog="system" width="64" height="46"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="plus.circle" catalog="system" width="64" height="60"/>
         <namedColor name="Light_Grey">
             <color red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="BzP-gj-IiQ"/>
+    </inferredMetricsTieBreakers>
 </document>
