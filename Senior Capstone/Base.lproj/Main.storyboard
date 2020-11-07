@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2h-8f-ZMB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2h-8f-ZMB">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -632,9 +632,22 @@
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UT6-jc-9NA" userLabel="Water Pie Chart View" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="0.0" y="1798" width="414" height="300"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWm-Rx-RiG">
+                                                        <rect key="frame" x="181" y="130" width="52" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="rua-Hi-6EM"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="Total"/>
+                                                    </button>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="BFb-wR-Ekg"/>
+                                                    <constraint firstItem="nWm-Rx-RiG" firstAttribute="centerX" secondItem="UT6-jc-9NA" secondAttribute="centerX" id="Exv-gK-SWg"/>
+                                                    <constraint firstItem="nWm-Rx-RiG" firstAttribute="top" secondItem="UT6-jc-9NA" secondAttribute="top" constant="130" id="SQ8-sP-6u3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nWm-Rx-RiG" secondAttribute="bottom" constant="130" id="dHD-XQ-ReK"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8u3-AP-fOE" userLabel="Water">
@@ -811,6 +824,7 @@
                         <outlet property="waterLabelHeight" destination="mIi-zc-lv5" id="WvF-pb-VT5"/>
                         <outlet property="waterPieChartHeight" destination="BFb-wR-Ekg" id="mLz-4X-P8R"/>
                         <outlet property="waterPieChartView" destination="UT6-jc-9NA" id="HXc-ZB-P7u"/>
+                        <outlet property="waterVolTotal" destination="nWm-Rx-RiG" id="PAY-EW-KDH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdB-UL-7Fb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1803,7 +1817,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="gear" catalog="system" width="128" height="119"/>
-        <image name="green_checkMark" width="400" height="400"/>
+        <image name="green_checkMark" width="1200" height="1200"/>
         <image name="hare" catalog="system" width="128" height="92"/>
         <image name="house" catalog="system" width="128" height="110"/>
         <image name="plus.circle" catalog="system" width="128" height="121"/>
@@ -1811,7 +1825,4 @@
             <color red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="BzP-gj-IiQ"/>
-    </inferredMetricsTieBreakers>
 </document>

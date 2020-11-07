@@ -51,6 +51,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     @IBOutlet weak var waterPieChartView: PieChartView!
     @IBOutlet weak var waterPieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var waterLabelHeight: NSLayoutConstraint!
+    @IBOutlet weak var waterVolTotal: UIButton!
 
     var goalFruit: Double = 0.0
     var goalDairy: Double = 0.0
@@ -162,7 +163,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         waterRecords = DatabaseFunctions.retriveWaterRecordOnCondition(predicate: predicate)
 
         var waterChartEntries: [ChartDataEntry] = []
-        var totalWaterServings = 0.0
+        var totalWaterServings: Double = 0.0
         for i in 0..<waterRecords.count {
             let label = waterRecords[i].value(forKeyPath: "name") as? String
             let volume = waterRecords[i].value(forKeyPath: "volume") as! Double
@@ -175,7 +176,9 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
                 isAnyWater = true
             }
         }
-
+        
+        waterVolTotal.setTitle(String(format: "%.1f oz", totalWaterServings), for: .normal)
+            
         customPieChart(dataEntries: &waterChartEntries, pieChartView: waterPieChartView, goalServings: 0, totalServings: totalWaterServings)
     }
 
