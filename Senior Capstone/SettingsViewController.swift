@@ -6,28 +6,48 @@
 //  Copyright © 2020 Madison Lucas. All rights reserved.
 //
 
+import DropDown
 import UIKit
 
 class SettingsViewController: UIViewController, ModalTransitionListener  {
        
+    // outlets to labels
     @IBOutlet weak var gLabel: UILabel!
     @IBOutlet weak var fLabel: UILabel!
     @IBOutlet weak var vLabel: UILabel!
     @IBOutlet weak var pLabel: UILabel!
     @IBOutlet weak var dLabel: UILabel!
+    
+    // outlets to sliders
     @IBOutlet weak var gSlider: UISlider!
     @IBOutlet weak var dSlider: UISlider!
     @IBOutlet weak var pSlider: UISlider!
     @IBOutlet weak var fSlider: UISlider!
     @IBOutlet weak var vSlider: UISlider!
+    
+    // outlet to date
     @IBOutlet weak var navDate: UIBarButtonItem!
     
+    // value of goals
     var grainValue: Double = DailyState.grainGoal
     var fruitValue: Double = DailyState.fruitGoal
     var vegetableValue: Double = DailyState.vegetableGoal
     var proteinValue: Double = DailyState.proteinGoal
     var dairyValue: Double = DailyState.dairyGoal
+    
+    // personal info outlets
+    @IBOutlet weak var height: UITextField!
 
+    @IBOutlet weak var weight: UITextField!
+    @IBOutlet weak var goalWeight: UITextField!
+    @IBOutlet weak var sex: UISegmentedControl!
+    @IBOutlet weak var updateGoals: UIButton!
+    
+    @IBAction func customGoals(_sender: Any) {
+        suggestGoals(height: height, weight: weight, goalWeight: goalWeight, sex: sex)
+    }
+    
+    
     @IBAction func saveSliderValues(_ sender: Any) {
 
         var goalRecords = [GoalRecord]()
@@ -71,6 +91,7 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
         dLabel.text = String(DailyState.dairyGoal)
         dSlider.setValue(Float(DailyState.dairyGoal), animated: true)
         DailyState.updateNavDate(navDate: navDate)
+        
     }
     
     func popoverDismissed() {
@@ -111,6 +132,143 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
         let currentValue = increment(value: sender.value)
         dLabel.text = "\(currentValue)"
         dairyValue = Double(currentValue)
+    }
+    
+    
+    // logic for personal goals 
+    func suggestGoals(height: UITextField, weight: UITextField, goalWeight: UITextField, sex: UISegmentedControl) {
+        if (sex.isEnabledForSegment(at: 1)) { // female
+            if (Int(height.text!) ?? 0 > 62) { // tall
+                if ((Int(weight.text!)! - Int(goalWeight.text!)!) == 0) { // maintain
+                    fruitValue = 2.5
+                    vegetableValue = 3.0
+                    grainValue = 8.0
+                    proteinValue = 6.5
+                    dairyValue = 3.0
+                } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) > 0) { // lose weight
+                    fruitValue = 2.5
+                    vegetableValue = 2.5
+                    grainValue = 7.0
+                    proteinValue = 6.0
+                    dairyValue = 3.0
+                } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) < 0) { // gain weight
+                    fruitValue = 2.5
+                    vegetableValue = 3.0
+                    grainValue = 9.0
+                    proteinValue = 7.0
+                    dairyValue = 3.0
+                }
+            } else { // short
+                if ((Int(weight.text!)! - Int(goalWeight.text!)!) == 0) { // maintain
+                    fruitValue = 2.0
+                    vegetableValue = 3.0
+                    grainValue = 7.0
+                    proteinValue = 6.0
+                    dairyValue = 3.0
+                } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) > 0) { // lose weight
+                    fruitValue = 2.0
+                    vegetableValue = 2.5
+                    grainValue = 6.0
+                    proteinValue = 5.5
+                    dairyValue = 3.0
+                } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) < 0) { // gain weight
+                    fruitValue = 2.0
+                    vegetableValue = 3.0
+                    grainValue = 8.0
+                    proteinValue = 6.5
+                    dairyValue = 3.0
+                }
+            }
+        } else if (sex.isEnabledForSegment(at: 0)) { // male
+            if (Int(height.text!) ?? 0 > 66) { // tall
+                if ((Int(weight.text!)! - Int(goalWeight.text!)!) == 0) { // maintain
+                    fruitValue = 2.5
+                    vegetableValue = 3.5
+                    grainValue = 10.0
+                    proteinValue = 7.0
+                    dairyValue = 3.0
+                } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) > 0) { // lose weight
+                    fruitValue = 2.5
+                    vegetableValue = 3.0
+                    grainValue = 9.0
+                    proteinValue = 6.5
+                    dairyValue = 3.0
+                } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) < 0) { // gain weight
+                    fruitValue = 2.5
+                    vegetableValue = 3.5
+                    grainValue = 11.0
+                    proteinValue = 7.5
+                    dairyValue = 3.0
+                }
+               } else { // short
+                    if ((Int(weight.text!)! - Int(goalWeight.text!)!) == 0) { // maintain
+                        fruitValue = 2.0
+                        vegetableValue = 3.5
+                        grainValue = 9.5
+                        proteinValue = 7.0
+                        dairyValue = 3.0
+                       } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) > 0) { // lose weight
+                        fruitValue = 2.0
+                        vegetableValue = 3.0
+                        grainValue = 8.0
+                        proteinValue = 6.0
+                        dairyValue = 3.0
+                       } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) < 0) { // gain weight
+                        fruitValue = 2.0
+                        vegetableValue = 3.5
+                        grainValue = 10.0
+                        proteinValue = 7.0
+                        dairyValue = 3.0
+                    }
+            }
+        } else if (sex.isEnabledForSegment(at: 2)) { // other
+            if (Int(height.text!) ?? 0 > 64) { // tall
+                if ((Int(weight.text!)! - Int(goalWeight.text!)!) == 0) { // maintain
+                    fruitValue = 2.5
+                    vegetableValue = 3.0
+                    grainValue = 8.0
+                    proteinValue = 6.5
+                    dairyValue = 3.0
+                } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) > 0) { // lose weight
+                    fruitValue = 2.5
+                    vegetableValue = 3.0
+                    grainValue = 8.0
+                    proteinValue = 6.0
+                    dairyValue = 3.0
+                } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) < 0) { // gain weight
+                    fruitValue = 2.5
+                    vegetableValue = 3.5
+                    grainValue = 10.0
+                    proteinValue = 7.5
+                    dairyValue = 3.0
+                }
+            } else { // short
+                if ((Int(weight.text!)! - Int(goalWeight.text!)!) == 0) { // maintain
+                    fruitValue = 2.0
+                    vegetableValue = 3.5
+                    grainValue = 8.0
+                    proteinValue = 6.5
+                    dairyValue = 3.0
+                } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) > 0) { // lose weight
+                    fruitValue = 2.0
+                    vegetableValue = 3.0
+                    grainValue = 7.0
+                    proteinValue = 6.0
+                    dairyValue = 3.0
+                } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) < 0) { // gain weight
+                    fruitValue = 2.0
+                    vegetableValue = 3.5
+                    grainValue = 9.0
+                    proteinValue = 7.0
+                    dairyValue = 3.0
+                }
+            }
+        }
+        fLabel.text = "\(fruitValue)"
+        vLabel.text = "\(vegetableValue)"
+        gLabel.text = "\(grainValue)"
+        pLabel.text = "\(proteinValue)"
+        dLabel.text = "\(dairyValue)"
     }
 }
 
