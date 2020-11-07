@@ -640,6 +640,9 @@
                                                         </constraints>
                                                         <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                                         <state key="normal" title="Total"/>
+                                                        <connections>
+                                                            <segue destination="5oe-F1-5uF" kind="show" id="gfb-tW-8YC"/>
+                                                        </connections>
                                                     </button>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -1864,6 +1867,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="emt-0M-AAx"/>
         <segue reference="BzP-gj-IiQ"/>
     </inferredMetricsTieBreakers>
     <resources>
