@@ -1,14 +1,6 @@
-//
-//  ViewController.swift
-//  Senior Capstone
-//
-//  Created by Madison Lucas on 9/2/20.
-//  Copyright © 2020 Madison Lucas. All rights reserved.
-//
-
-import DropDown
 import UIKit
 
+// class to control functions for the settings page
 class SettingsViewController: UIViewController, ModalTransitionListener  {
        
     // outlets to labels
@@ -37,17 +29,17 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
     
     // personal info outlets
     @IBOutlet weak var height: UITextField!
-
     @IBOutlet weak var weight: UITextField!
     @IBOutlet weak var goalWeight: UITextField!
     @IBOutlet weak var sex: UISegmentedControl!
     @IBOutlet weak var updateGoals: UIButton!
     
+    // runs when the customize goals button is selected
     @IBAction func customGoals(_sender: Any) {
         suggestGoals(height: height, weight: weight, goalWeight: goalWeight, sex: sex)
     }
     
-    
+    // a method to save the slider values to the backend
     @IBAction func saveSliderValues(_ sender: Any) {
 
         var goalRecords = [GoalRecord]()
@@ -61,24 +53,29 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
         }
     }
     
+    // changes the app theme to cool when selected
     @IBAction func coolThemeSelect(_ sender: Any) {
         ThemeManager.applyTheme(theme: Theme.coolBlue)
     }
  
+    // changes the app theme to warm when selected
     @IBAction func warmThemeSelect(_ sender: Any) {
         ThemeManager.applyTheme(theme: Theme.warmOrange)
     }
     
+    // changes the app theme to dark when selected
     @IBAction func darkThemeSelect(_ sender: Any) {
         ThemeManager.applyTheme(theme: Theme.darkTones)
     }
 
+    // a method to show the view
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         reloadView()
         ModalTransitionMediator.instance.setListener(listener: self)
     }
     
+    // a method to reload the view with the goals from the backend
     func reloadView(){
         gLabel.text = String(DailyState.grainGoal)
         gSlider.setValue(Float(DailyState.grainGoal), animated: true)
@@ -91,49 +88,54 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
         dLabel.text = String(DailyState.dairyGoal)
         dSlider.setValue(Float(DailyState.dairyGoal), animated: true)
         DailyState.updateNavDate(navDate: navDate)
-        
     }
     
+    // called when the date picker popover is dismissed
     func popoverDismissed() {
         self.navigationController?.dismiss(animated: true, completion: nil)
         reloadView()
     }
     
+    // increments the slider values
     func increment(value: Float) -> Float {
         let increment: Float = 0.5
         return round(value / increment) * increment
     }
-
+    
+    // updates grain goal based on slider change
     @IBAction func gSliderValueChanged(_ sender: UISlider) {
         let currentValue = increment(value: sender.value)
         gLabel.text = "\(currentValue)"
         grainValue = Double(currentValue)
     }
     
+    // updates fruit goal based on slider change
     @IBAction func fSliderValueChanged(_ sender: UISlider) {
         let currentValue = increment(value: sender.value)
         fLabel.text = "\(currentValue)"
         fruitValue = Double(currentValue)
     }
     
+    // updates vegetable goal based on slider change
     @IBAction func vSliderValueChanged(_ sender: UISlider) {
         let currentValue = increment(value: sender.value)
         vLabel.text = "\(currentValue)"
         vegetableValue = Double(currentValue)
     }
     
+    // updates protein goal based on slider change
     @IBAction func pSliderValueChanged(_ sender: UISlider) {
         let currentValue = increment(value: sender.value)
         pLabel.text = "\(currentValue)"
         proteinValue = Double(currentValue)
     }
     
+    // updates dairy goal based on slider change
     @IBAction func dSliderValueChanged(_ sender: UISlider) {
         let currentValue = increment(value: sender.value)
         dLabel.text = "\(currentValue)"
         dairyValue = Double(currentValue)
     }
-    
     
     // logic for personal goals 
     func suggestGoals(height: UITextField, weight: UITextField, goalWeight: UITextField, sex: UISegmentedControl) {
@@ -271,4 +273,3 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
         dLabel.text = "\(dairyValue)"
     }
 }
-
