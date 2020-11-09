@@ -18,34 +18,40 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     @IBOutlet weak var fruitLabelHeight: NSLayoutConstraint!
     @IBOutlet weak var fruitPaddingHeight: NSLayoutConstraint!
     @IBOutlet weak var fruitDividerHeight: NSLayoutConstraint!
-
+    @IBOutlet weak var fruitCompletedCheck: UIImageView!
+    
     @IBOutlet weak var vegetablePieChartView: PieChartView!
     @IBOutlet weak var vegetablePieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var vegetableLabelHight: NSLayoutConstraint!
     @IBOutlet weak var vegetablePaddingHeight: NSLayoutConstraint!
     @IBOutlet weak var vegetableDividerHeight: NSLayoutConstraint!
-
+    @IBOutlet weak var vegetableCompletedCheck: UIImageView!
+    
     @IBOutlet weak var meatPieChartView: PieChartView!
     @IBOutlet weak var meatPieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var meatLabelHeight: NSLayoutConstraint!
     @IBOutlet weak var meatPaddingHeight: NSLayoutConstraint!
     @IBOutlet weak var meatDividerHeight: NSLayoutConstraint!
+    @IBOutlet weak var meatCompletedCheck: UIImageView!
 
     @IBOutlet weak var dairyPieChartView: PieChartView!
     @IBOutlet weak var diaryPieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var dairyLabelHeight: NSLayoutConstraint!
     @IBOutlet weak var dairyPaddingHeight: NSLayoutConstraint!
     @IBOutlet weak var dairyDividerHeight: NSLayoutConstraint!
+    @IBOutlet weak var dairyCompletedCheck: UIImageView!
 
     @IBOutlet weak var grainPieChartView: PieChartView!
     @IBOutlet weak var grainPieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var grainLabelHeight: NSLayoutConstraint!
+    @IBOutlet weak var grainCompletedCheck: UIImageView!
     @IBOutlet weak var grainPaddingHeight: NSLayoutConstraint!
     @IBOutlet weak var grainDividerHeight: NSLayoutConstraint!
 
     @IBOutlet weak var waterPieChartView: PieChartView!
     @IBOutlet weak var waterPieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var waterLabelHeight: NSLayoutConstraint!
+    @IBOutlet weak var waterVolTotal: UIButton!
 
     var goalFruit: Double = 0.0
     var goalDairy: Double = 0.0
@@ -96,11 +102,11 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         var proteinChartEntries: [ChartDataEntry] = []
         var vegChartEntries: [ChartDataEntry] = []
 
-        var totalFruitServings = 0.0
-        var totalDairyServings = 0.0
-        var totalGrainServings = 0.0
-        var totalProteinServings = 0.0
-        var totalVegServings = 0.0
+        var totalFruitServings: Double = 0.0
+        var totalDairyServings: Double = 0.0
+        var totalGrainServings: Double = 0.0
+        var totalProteinServings: Double = 0.0
+        var totalVegServings: Double = 0.0
 
         for i in 0..<foodRecords.count {
             let label = foodRecords[i].value(forKeyPath: "name") as? String
@@ -143,6 +149,12 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         customPieChart(dataEntries: &grainChartEntries, pieChartView: grainPieChartView, goalServings: goalGrain, totalServings: totalGrainServings)
         customPieChart(dataEntries: &proteinChartEntries, pieChartView: meatPieChartView, goalServings: goalProtein, totalServings: totalProteinServings)
         customPieChart(dataEntries: &vegChartEntries, pieChartView: vegetablePieChartView, goalServings: goalVeg, totalServings: totalVegServings)
+        
+        progressCheck(goalServings: goalFruit, actualServings: totalFruitServings, checkMark: fruitCompletedCheck)
+        progressCheck(goalServings: goalVeg, actualServings: totalVegServings, checkMark: vegetableCompletedCheck)
+        progressCheck(goalServings: goalProtein, actualServings: totalProteinServings, checkMark: meatCompletedCheck)
+        progressCheck(goalServings: goalDairy, actualServings: totalDairyServings, checkMark: dairyCompletedCheck)
+        progressCheck(goalServings: goalGrain, actualServings: totalGrainServings, checkMark: grainCompletedCheck)
     }
 
     func loadWater() {
@@ -151,7 +163,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         waterRecords = DatabaseFunctions.retriveWaterRecordOnCondition(predicate: predicate)
 
         var waterChartEntries: [ChartDataEntry] = []
-        var totalWaterServings = 0.0
+        var totalWaterServings: Double = 0.0
         for i in 0..<waterRecords.count {
             let label = waterRecords[i].value(forKeyPath: "name") as? String
             let volume = waterRecords[i].value(forKeyPath: "volume") as! Double
@@ -164,7 +176,9 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
                 isAnyWater = true
             }
         }
-
+        
+        waterVolTotal.setTitle(String(format: "%.1f oz", totalWaterServings), for: .normal)
+            
         customPieChart(dataEntries: &waterChartEntries, pieChartView: waterPieChartView, goalServings: 0, totalServings: totalWaterServings)
     }
 
@@ -330,5 +344,19 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
             colors.append(ThemeManager.pieChartColor(sliceNumber: numbersOfColor-1))
         }
       return colors
+    }
+    
+    func progressCheck(goalServings: Double, actualServings: Double, checkMark: UIImageView){
+        
+        if actualServings >= goalServings+2 {
+            //checkMark.alpha = 1
+            checkMark.image = UIImage(named: "red_greaterThan")
+        } else if actualServings >= goalServings {
+            //checkMark.alpha = 1
+            checkMark.image = UIImage(named: "green_checkMark")
+        } else {
+            //checkMark.alpha = 0
+            checkMark.image = UIImage(named: "blue_lessThan")
+        }
     }
 }

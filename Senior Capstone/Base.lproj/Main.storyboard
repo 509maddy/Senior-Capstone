@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2h-8f-ZMB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2h-8f-ZMB">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -412,9 +412,22 @@
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cin-Nz-RbJ" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="0.0" y="0.0" width="414" height="300"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_checkMark" translatesAutoresizingMaskIntoConstraints="NO" id="C0O-Ok-WR4">
+                                                        <rect key="frame" x="150" y="93" width="114" height="114"/>
+                                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="114" id="SYk-qI-0wZ"/>
+                                                            <constraint firstAttribute="height" constant="114" id="n42-EA-3ec"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="C0O-Ok-WR4" firstAttribute="top" secondItem="Cin-Nz-RbJ" secondAttribute="top" constant="93" id="UzO-1A-4OT"/>
+                                                    <constraint firstItem="C0O-Ok-WR4" firstAttribute="centerX" secondItem="Cin-Nz-RbJ" secondAttribute="centerX" id="eqo-tH-hM2"/>
                                                     <constraint firstAttribute="height" constant="300" id="yUI-OI-C7V"/>
+                                                    <constraint firstAttribute="bottom" secondItem="C0O-Ok-WR4" secondAttribute="bottom" constant="93" id="ygH-4t-SPp"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Fruit" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Uf5-Tz-bIi">
@@ -443,9 +456,22 @@
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="3Ud-I9-8Ue" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="0.0" y="358" width="414" height="300"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_checkMark" translatesAutoresizingMaskIntoConstraints="NO" id="nxN-ze-Ygj">
+                                                        <rect key="frame" x="150" y="93" width="114" height="114"/>
+                                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="114" id="Qqp-BE-LXc"/>
+                                                            <constraint firstAttribute="width" constant="114" id="uhG-i6-ZmL"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="nxN-ze-Ygj" firstAttribute="centerX" secondItem="3Ud-I9-8Ue" secondAttribute="centerX" id="2Jr-nY-VPo"/>
                                                     <constraint firstAttribute="height" constant="300" id="NB9-as-HvX"/>
+                                                    <constraint firstItem="nxN-ze-Ygj" firstAttribute="top" secondItem="3Ud-I9-8Ue" secondAttribute="top" constant="93" id="fFo-Wg-huS"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nxN-ze-Ygj" secondAttribute="bottom" constant="93" id="tOg-tI-jGZ"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Vegetable" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aa4-p5-IMm" userLabel="Vegetables">
@@ -474,9 +500,22 @@
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ZV2-WT-Zcs" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="0.0" y="716" width="414" height="300"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_checkMark" translatesAutoresizingMaskIntoConstraints="NO" id="5lL-YK-evb">
+                                                        <rect key="frame" x="150" y="93" width="114" height="114"/>
+                                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="114" id="kfe-eq-H4U"/>
+                                                            <constraint firstAttribute="width" constant="114" id="rwO-6O-tsd"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="7A4-og-BXn"/>
+                                                    <constraint firstItem="5lL-YK-evb" firstAttribute="top" secondItem="ZV2-WT-Zcs" secondAttribute="top" constant="93" id="Veu-U5-MkZ"/>
+                                                    <constraint firstItem="5lL-YK-evb" firstAttribute="centerX" secondItem="ZV2-WT-Zcs" secondAttribute="centerX" id="spX-pa-yMk"/>
+                                                    <constraint firstAttribute="bottom" secondItem="5lL-YK-evb" secondAttribute="bottom" constant="93" id="yFG-qv-EKM"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Protein" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="43h-qa-yoY" userLabel="Protein">
@@ -505,9 +544,22 @@
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o7g-zR-gLU" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="0.0" y="1074" width="414" height="300"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_checkMark" translatesAutoresizingMaskIntoConstraints="NO" id="oQn-n7-aZk">
+                                                        <rect key="frame" x="150" y="93" width="114" height="114"/>
+                                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="114" id="2dr-U4-o0i"/>
+                                                            <constraint firstAttribute="height" constant="114" id="9xb-0X-3jt"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
+                                                    <constraint firstItem="oQn-n7-aZk" firstAttribute="top" secondItem="o7g-zR-gLU" secondAttribute="top" constant="93" id="1em-ly-5IQ"/>
                                                     <constraint firstAttribute="height" constant="300" id="7fx-4i-M6k"/>
+                                                    <constraint firstItem="oQn-n7-aZk" firstAttribute="centerX" secondItem="o7g-zR-gLU" secondAttribute="centerX" id="CM7-6D-eJX"/>
+                                                    <constraint firstAttribute="bottom" secondItem="oQn-n7-aZk" secondAttribute="bottom" constant="93" id="dO0-oN-Syn"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dairy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lEZ-QS-BKW" userLabel="Dairy">
@@ -536,9 +588,22 @@
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="1mh-L5-HfN" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="0.0" y="1432" width="414" height="300"/>
+                                                <subviews>
+                                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="green_checkMark" translatesAutoresizingMaskIntoConstraints="NO" id="pYc-yb-4Yj">
+                                                        <rect key="frame" x="150" y="93" width="114" height="114"/>
+                                                        <color key="tintColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="114" id="ht1-ou-xEa"/>
+                                                            <constraint firstAttribute="height" constant="114" id="vwv-0e-S7A"/>
+                                                        </constraints>
+                                                    </imageView>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
+                                                    <constraint firstAttribute="bottom" secondItem="pYc-yb-4Yj" secondAttribute="bottom" constant="93" id="20D-x9-f3H"/>
+                                                    <constraint firstItem="pYc-yb-4Yj" firstAttribute="centerX" secondItem="1mh-L5-HfN" secondAttribute="centerX" id="6lA-Uv-vy2"/>
                                                     <constraint firstAttribute="height" constant="300" id="8G2-G1-4Lb"/>
+                                                    <constraint firstItem="pYc-yb-4Yj" firstAttribute="top" secondItem="1mh-L5-HfN" secondAttribute="top" constant="93" id="idi-bx-Hq2"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Grain" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="abQ-cE-xwd" userLabel="Grains">
@@ -567,9 +632,25 @@
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="UT6-jc-9NA" userLabel="Water Pie Chart View" customClass="PieChartView" customModule="Charts">
                                                 <rect key="frame" x="0.0" y="1798" width="414" height="300"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWm-Rx-RiG">
+                                                        <rect key="frame" x="181" y="130" width="52" height="40"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="40" id="rua-Hi-6EM"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                                        <state key="normal" title="Total"/>
+                                                        <connections>
+                                                            <segue destination="5oe-F1-5uF" kind="show" id="gfb-tW-8YC"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="300" id="BFb-wR-Ekg"/>
+                                                    <constraint firstItem="nWm-Rx-RiG" firstAttribute="centerX" secondItem="UT6-jc-9NA" secondAttribute="centerX" id="Exv-gK-SWg"/>
+                                                    <constraint firstItem="nWm-Rx-RiG" firstAttribute="top" secondItem="UT6-jc-9NA" secondAttribute="top" constant="130" id="SQ8-sP-6u3"/>
+                                                    <constraint firstAttribute="bottom" secondItem="nWm-Rx-RiG" secondAttribute="bottom" constant="130" id="dHD-XQ-ReK"/>
                                                 </constraints>
                                             </view>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Water" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8u3-AP-fOE" userLabel="Water">
@@ -710,21 +791,25 @@
                     </navigationItem>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
+                        <outlet property="dairyCompletedCheck" destination="oQn-n7-aZk" id="Wnu-4y-YrZ"/>
                         <outlet property="dairyDividerHeight" destination="dvX-aZ-GD7" id="xIV-Fb-A4L"/>
                         <outlet property="dairyLabelHeight" destination="ASu-kR-ONG" id="0ui-Cp-R7W"/>
                         <outlet property="dairyPaddingHeight" destination="zZR-pP-M8R" id="zZh-fI-e5e"/>
                         <outlet property="dairyPieChartView" destination="o7g-zR-gLU" id="TDh-tE-2nh"/>
                         <outlet property="diaryPieChartHeight" destination="7fx-4i-M6k" id="kyG-fe-kCe"/>
+                        <outlet property="fruitCompletedCheck" destination="C0O-Ok-WR4" id="3PB-K6-xiG"/>
                         <outlet property="fruitDividerHeight" destination="EKS-WA-Ax4" id="4fJ-8d-7V5"/>
                         <outlet property="fruitLabelHeight" destination="OVF-Rd-N29" id="NHn-R1-hQC"/>
                         <outlet property="fruitPaddingHeight" destination="1rm-D2-9RK" id="9hZ-g1-E5H"/>
                         <outlet property="fruitPieChartHeight" destination="yUI-OI-C7V" id="Oej-W7-t52"/>
                         <outlet property="fruitPieChartView" destination="Cin-Nz-RbJ" id="tL7-8v-Hrr"/>
+                        <outlet property="grainCompletedCheck" destination="pYc-yb-4Yj" id="3uJ-15-dPP"/>
                         <outlet property="grainDividerHeight" destination="la5-fn-A07" id="cJv-nP-m6Y"/>
                         <outlet property="grainLabelHeight" destination="Q9B-ED-o2r" id="WSV-3w-ph6"/>
                         <outlet property="grainPaddingHeight" destination="GSv-Iz-CB8" id="fzU-Nx-8Xx"/>
                         <outlet property="grainPieChartHeight" destination="8G2-G1-4Lb" id="R7Y-3R-0B5"/>
                         <outlet property="grainPieChartView" destination="1mh-L5-HfN" id="7NG-im-irH"/>
+                        <outlet property="meatCompletedCheck" destination="5lL-YK-evb" id="sL9-2z-ZoZ"/>
                         <outlet property="meatDividerHeight" destination="Q5N-du-O51" id="UGG-Kg-Oe3"/>
                         <outlet property="meatLabelHeight" destination="wYw-bJ-MvF" id="9HB-fj-o5n"/>
                         <outlet property="meatPaddingHeight" destination="AaV-ZR-mmR" id="DKk-7R-wgV"/>
@@ -733,6 +818,7 @@
                         <outlet property="navDate" destination="e3V-X7-hDd" id="5Vf-Nv-H8g"/>
                         <outlet property="noDataHeight" destination="G1Q-AB-tuG" id="FkY-KH-Mds"/>
                         <outlet property="noDataView" destination="0g6-KP-kMP" id="Fjc-oU-sSj"/>
+                        <outlet property="vegetableCompletedCheck" destination="nxN-ze-Ygj" id="jD8-cN-6md"/>
                         <outlet property="vegetableDividerHeight" destination="kzc-Iy-gE2" id="Jqc-cp-xNy"/>
                         <outlet property="vegetableLabelHight" destination="wG2-c9-a6w" id="LXg-gX-8jb"/>
                         <outlet property="vegetablePaddingHeight" destination="W6g-c3-3q5" id="lmE-Xq-enf"/>
@@ -741,12 +827,13 @@
                         <outlet property="waterLabelHeight" destination="mIi-zc-lv5" id="WvF-pb-VT5"/>
                         <outlet property="waterPieChartHeight" destination="BFb-wR-Ekg" id="mLz-4X-P8R"/>
                         <outlet property="waterPieChartView" destination="UT6-jc-9NA" id="HXc-ZB-P7u"/>
+                        <outlet property="waterVolTotal" destination="nWm-Rx-RiG" id="PAY-EW-KDH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kdB-UL-7Fb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="Qnx-fp-YqQ" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="-709" y="672"/>
+            <point key="canvasLocation" x="-710.14492753623199" y="671.65178571428567"/>
         </scene>
         <!--Date Picker View Controller-->
         <scene sceneID="hAF-LC-xbQ">
@@ -811,7 +898,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ofH-VC-HKi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-335" y="-169"/>
+            <point key="canvasLocation" x="-762" y="-116"/>
         </scene>
         <!--Settings-->
         <scene sceneID="dpP-g4-pjN">
@@ -895,6 +982,7 @@
                         <outlet property="navDate" destination="MTI-Tt-wlv" id="f32-GL-uy8"/>
                         <outlet property="tableView" destination="efW-4p-Q6x" id="gFW-JE-s9W"/>
                         <segue destination="cZR-ui-mYQ" kind="show" identifier="showDetail" id="Shu-jC-NfW"/>
+                        <segue destination="5oe-F1-5uF" kind="show" identifier="showWaterDetail" id="emt-0M-AAx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gby-0D-Z8S" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -1069,7 +1157,57 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="mJm-gr-CYN" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-29" y="-1137"/>
+            <point key="canvasLocation" x="67" y="-756"/>
+        </scene>
+        <!--WaterDetailVC-->
+        <scene sceneID="f93-eA-I5n">
+            <objects>
+                <viewController title="WaterDetailVC" id="5oe-F1-5uF" customClass="WaterDetailVC" customModule="Cheo" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="t17-yP-17C">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Z3C-2H-ej7">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="uWS-aD-rF7">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="725"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <connections>
+                                            <outlet property="dataSource" destination="5oe-F1-5uF" id="tKF-gC-9eo"/>
+                                            <outlet property="delegate" destination="5oe-F1-5uF" id="q2m-1p-OCW"/>
+                                        </connections>
+                                    </tableView>
+                                </subviews>
+                                <viewLayoutGuide key="contentLayoutGuide" id="e9w-S1-gsA"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="auR-SF-SmU"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="ccf-Fd-xsc"/>
+                    </view>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="4GO-DQ-3Ub">
+                        <barButtonItem key="rightBarButtonItem" title="Date" id="m7w-Vc-N9m">
+                            <connections>
+                                <action selector="navDate:" destination="fTn-Mi-0BK" id="FHu-fH-Dsn"/>
+                                <segue destination="NOk-wN-ufv" kind="popoverPresentation" popoverAnchorBarButtonItem="m7w-Vc-N9m" id="frn-RO-N6w">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="navDate" destination="m7w-Vc-N9m" id="Z5v-Tj-kB6"/>
+                        <outlet property="tableView" destination="uWS-aD-rF7" id="I76-vA-dl7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="I5d-me-4h8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="67" y="-1415"/>
         </scene>
         <!--Add Entry View Controller-->
         <scene sceneID="nRN-yC-a5Q">
@@ -1729,18 +1867,17 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="0kR-tb-9Se"/>
+        <segue reference="emt-0M-AAx"/>
+        <segue reference="BzP-gj-IiQ"/>
     </inferredMetricsTieBreakers>
     <resources>
-        <image name="gear" catalog="system" width="64" height="58"/>
-        <image name="hare" catalog="system" width="64" height="46"/>
-        <image name="house" catalog="system" width="64" height="54"/>
-        <image name="plus.circle" catalog="system" width="64" height="60"/>
+        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="green_checkMark" width="1200" height="1200"/>
+        <image name="hare" catalog="system" width="128" height="92"/>
+        <image name="house" catalog="system" width="128" height="110"/>
+        <image name="plus.circle" catalog="system" width="128" height="121"/>
         <namedColor name="Light_Grey">
             <color red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
-    <inferredMetricsTieBreakers>
-        <segue reference="BzP-gj-IiQ"/>
-    </inferredMetricsTieBreakers>
 </document>
