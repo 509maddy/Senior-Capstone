@@ -8,12 +8,14 @@
 
 import Foundation
 
+// The parent view controller that can be used to navigate to a modal
 protocol ModalTransitionListener {
     func popoverDismissed()
 }
 
+/** Used between the modal and the parent view controller to communivate when the modal has appeared and is dismissed
+ */
 class ModalTransitionMediator {
-    /* Singleton */
     class var instance: ModalTransitionMediator {
         struct Static {
             static let instance: ModalTransitionMediator = ModalTransitionMediator()
@@ -21,17 +23,13 @@ class ModalTransitionMediator {
         return Static.instance
     }
 
-private var listener: ModalTransitionListener?
+    private var listener: ModalTransitionListener?
 
-private init() {
+    func setListener(listener: ModalTransitionListener) {
+        self.listener = listener
+    }
 
-}
-
-func setListener(listener: ModalTransitionListener) {
-    self.listener = listener
-}
-
-func sendPopoverDismissed(modelChanged: Bool) {
-    listener?.popoverDismissed()
-}
+    func sendPopoverDismissed(modelChanged: Bool) {
+        listener?.popoverDismissed()
+    }
 }
