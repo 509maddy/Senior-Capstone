@@ -348,15 +348,14 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     
     func progressCheck(goalServings: Double, actualServings: Double, checkMark: UIImageView){
         
-        if actualServings >= goalServings+2 {
-            //checkMark.alpha = 1
-            checkMark.image = UIImage(named: "red_greaterThan")
-        } else if actualServings >= goalServings {
-            //checkMark.alpha = 1
-            checkMark.image = UIImage(named: "green_checkMark")
+        if actualServings > goalServings+2 {
+            checkMark.image = UIImage(named: "significantly_above_goal")
+        } else if actualServings > goalServings {
+            checkMark.image = UIImage(named: "slightly_above_goal")
+        } else if actualServings == goalServings {
+            checkMark.image = UIImage(named: "completed_goal")
         } else {
-            //checkMark.alpha = 0
-            checkMark.image = UIImage(named: "blue_lessThan")
+            checkMark.image = UIImage(named: "under_goal")
         }
     }
 }
