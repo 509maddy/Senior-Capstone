@@ -11,11 +11,13 @@ import Foundation
 import CoreData
 
 /**
-* Here is where I made the attributes for the enity FoodItem not optional. XCode would default to
-* @NSManaged public var calories: Int32?, but I ommited the question mark.
+* XCode generates the WaterRecord class based on the Senior_Capstone.xcdatamodeld file.
+* This extension speciices the schema for water records inputed by the user. We opted to explicty
+* define the schema, because XCode would otherwise make all fields optional.
 */
 extension WaterRecord {
 
+    // allows for data to be read from storage
     @nonobjc public class func createFetchRequest() -> NSFetchRequest<WaterRecord> {
         return NSFetchRequest<WaterRecord>(entityName: "WaterRecord")
     }
