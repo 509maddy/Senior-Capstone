@@ -118,7 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         
         // What time the notification should be sent at
         var dateComponents = DateComponents()
-        dateComponents.hour = 21 //18 = 6pm
+        dateComponents.hour = 18 //18 = 6pm
         dateComponents.minute = 0
         
         // Schedule the notification
@@ -129,12 +129,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
     
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
-        // retrieve the root view controller (which is a tab bar controller)
-        guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else {
-            return
-        }
-      
         // instantiate the view controller we want to show from storyboard
         // root view controller is tab bar controller
         // the selected tab is a navigation controller
