@@ -1,15 +1,9 @@
-//
-//  DetailVC.swift
-//  Senior Capstone
-//
-//  Created by Ally Dinhofer on 10/14/20.
-//  Copyright © 2020 Madison Lucas. All rights reserved.
-//
-
 import UIKit
 
+// class to control functions for the detail view of a food item
 class DetailVC: UIViewController {
 
+    // the food item the details are being shown about
     var foodItem : FoodRecord?
     
     // servings labels
@@ -32,7 +26,7 @@ class DetailVC: UIViewController {
     @IBOutlet weak var fruitTop: NSLayoutConstraint!
     @IBOutlet weak var fruitServingsConstraint: NSLayoutConstraint!
     
-    // veg contraints
+    // vegetable contraints
     @IBOutlet weak var vegHeight: NSLayoutConstraint!
     @IBOutlet weak var vegTop: NSLayoutConstraint!
     @IBOutlet weak var vegServingsConstraint: NSLayoutConstraint!
@@ -52,11 +46,10 @@ class DetailVC: UIViewController {
     @IBOutlet weak var grainServingsConstraint: NSLayoutConstraint!
     @IBOutlet weak var grainTop: NSLayoutConstraint!
     
+    /** function called when the detail view control loads and only displays food groups that are > 0 */
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         nameLabel.text = "\((foodItem?.name)!)"
-        
         // fruit checks
         if (foodItem?.fruitServings != 0) {
             fruitLabel.text = "\((foodItem?.fruitServings)!)"
@@ -64,9 +57,7 @@ class DetailVC: UIViewController {
             FruitHeight.constant = 0
             fruitServingsConstraint.constant = 0
             fruitTop.constant = 0
-            
         }
-        
         // protein checks
         if (foodItem?.proteinServings != 0) {
             proteinLabel.text = "\((foodItem?.proteinServings)!)"
@@ -75,8 +66,7 @@ class DetailVC: UIViewController {
             proteinServingsConstraint.constant = 0
             proteinHeight.constant = 0
         }
-        
-        // veg checks
+        // vegetable checks
         if (foodItem?.vegServings != 0) {
             vegLabel.text = "\((foodItem?.vegServings)!)"
         } else if (foodItem?.vegServings == 0) {
@@ -84,7 +74,6 @@ class DetailVC: UIViewController {
             vegServingsConstraint.constant = 0
             vegTop.constant = 0
         }
-        
         // grain checks
         if (foodItem?.grainServings != 0) {
             grainsLabel.text = "\((foodItem?.grainServings)!)"
@@ -93,8 +82,7 @@ class DetailVC: UIViewController {
             grainServingsConstraint.constant = 0
             grainHeight.constant = 0
         }
-        
-        // dairy check
+        // dairy checks
         if (foodItem?.dairyServings != 0) {
             dairyLabel.text = "\((foodItem?.dairyServings)!)"
         } else if (foodItem?.dairyServings == 0) {

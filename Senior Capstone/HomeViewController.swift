@@ -1,18 +1,14 @@
-//
-//  HomeViewController.swift
-//  Senior Capstone
-//
-//  Created by Ally Dinhofer on 9/20/20.
-//  Copyright © 2020 Madison Lucas. All rights reserved.
-//
-
 import UIKit
 import Charts
 
+// a class to control the home screen functions
 class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionListener {
+    
+    // unsure what these are ********
     @IBOutlet weak var noDataView: UIView!
     @IBOutlet weak var noDataHeight: NSLayoutConstraint!
 
+    // references to fruit pie chart and constraints
     @IBOutlet weak var fruitPieChartView: PieChartView!
     @IBOutlet weak var fruitPieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var fruitLabelHeight: NSLayoutConstraint!
@@ -20,6 +16,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     @IBOutlet weak var fruitDividerHeight: NSLayoutConstraint!
     @IBOutlet weak var fruitCompletedCheck: UIImageView!
     
+    // references to vegetable pie chart and constraints
     @IBOutlet weak var vegetablePieChartView: PieChartView!
     @IBOutlet weak var vegetablePieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var vegetableLabelHight: NSLayoutConstraint!
@@ -27,6 +24,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     @IBOutlet weak var vegetableDividerHeight: NSLayoutConstraint!
     @IBOutlet weak var vegetableCompletedCheck: UIImageView!
     
+    // references to protein pie chart and constraints
     @IBOutlet weak var meatPieChartView: PieChartView!
     @IBOutlet weak var meatPieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var meatLabelHeight: NSLayoutConstraint!
@@ -34,6 +32,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     @IBOutlet weak var meatDividerHeight: NSLayoutConstraint!
     @IBOutlet weak var meatCompletedCheck: UIImageView!
 
+    // references to dairy pie chart and constraints
     @IBOutlet weak var dairyPieChartView: PieChartView!
     @IBOutlet weak var diaryPieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var dairyLabelHeight: NSLayoutConstraint!
@@ -41,6 +40,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     @IBOutlet weak var dairyDividerHeight: NSLayoutConstraint!
     @IBOutlet weak var dairyCompletedCheck: UIImageView!
 
+    // references to grain pie chart and constraints
     @IBOutlet weak var grainPieChartView: PieChartView!
     @IBOutlet weak var grainPieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var grainLabelHeight: NSLayoutConstraint!
@@ -48,36 +48,44 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     @IBOutlet weak var grainPaddingHeight: NSLayoutConstraint!
     @IBOutlet weak var grainDividerHeight: NSLayoutConstraint!
 
+    // references to water pie chart and constraints
     @IBOutlet weak var waterPieChartView: PieChartView!
     @IBOutlet weak var waterPieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var waterLabelHeight: NSLayoutConstraint!
     @IBOutlet weak var waterVolTotal: UIButton!
 
+    // represents the goals for each food group
     var goalFruit: Double = 0.0
     var goalDairy: Double = 0.0
     var goalGrain: Double = 0.0
     var goalProtein: Double = 0.0
     var goalVeg: Double = 0.0
     var isAnyWater: Bool = false
+    
+    // reference to the date
     @IBOutlet weak var navDate: UIBarButtonItem!
     
+    // the function that's called when the page is selected
     override func viewDidLoad() {
         super.viewDidLoad()
         DailyState.refreshGoals()
         DailyState.updateNavDate(navDate: navDate)
     }
 
+    // reloads the view when its selected
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(true)
         reloadView()
         ModalTransitionMediator.instance.setListener(listener: self)
     }
     
+    // function called when the date picker popover is dismissed
     func popoverDismissed() {
         self.navigationController?.dismiss(animated: true, completion: nil)
         reloadView()
     }
     
+    // a method to reload the view
     func reloadView() {
         super.viewWillAppear(true)
         DailyState.updateNavDate(navDate: navDate)
@@ -88,10 +96,11 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         hideViews()
     }
     
+    // a method to load the pie charts and update the goals
     func loadPieCharts() {
         updateGoals()
 
-        // 1. Set ChartDataEntry
+        // Set ChartDataEntry
         var foodRecords = [FoodRecord]()
         let predicate = NSPredicate(format: "date == %@", DailyState.todaysDateAsDate as NSDate)
         foodRecords = DatabaseFunctions.retriveFoodRecordOnCondition(predicate: predicate)
@@ -108,6 +117,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         var totalProteinServings: Double = 0.0
         var totalVegServings: Double = 0.0
 
+        // adds the information for each food item
         for i in 0..<foodRecords.count {
             let label = foodRecords[i].value(forKeyPath: "name") as? String
             let fruit = foodRecords[i].value(forKeyPath: "fruitServings") as! Double
@@ -122,6 +132,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
             totalProteinServings += protein
             totalVegServings += veg
             
+            // adds the food items to their proper pie charts
             if (fruit > 0){
                 let dataEntry = PieChartDataEntry(value: fruit, label: label)
                 fruitChartEntries.append(dataEntry)
@@ -144,12 +155,14 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
             }
         }
         
+        // adds the data to the pie charts
         customPieChart(dataEntries: &fruitChartEntries, pieChartView: fruitPieChartView, goalServings: goalFruit, totalServings: totalFruitServings)
         customPieChart(dataEntries: &dairyChartEntries, pieChartView: dairyPieChartView, goalServings: goalDairy, totalServings: totalDairyServings)
         customPieChart(dataEntries: &grainChartEntries, pieChartView: grainPieChartView, goalServings: goalGrain, totalServings: totalGrainServings)
         customPieChart(dataEntries: &proteinChartEntries, pieChartView: meatPieChartView, goalServings: goalProtein, totalServings: totalProteinServings)
         customPieChart(dataEntries: &vegChartEntries, pieChartView: vegetablePieChartView, goalServings: goalVeg, totalServings: totalVegServings)
         
+        // checks the progress towards the goal
         progressCheck(goalServings: goalFruit, actualServings: totalFruitServings, checkMark: fruitCompletedCheck)
         progressCheck(goalServings: goalVeg, actualServings: totalVegServings, checkMark: vegetableCompletedCheck)
         progressCheck(goalServings: goalProtein, actualServings: totalProteinServings, checkMark: meatCompletedCheck)
@@ -157,6 +170,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         progressCheck(goalServings: goalGrain, actualServings: totalGrainServings, checkMark: grainCompletedCheck)
     }
 
+    // a function to load the water pie chart
     func loadWater() {
         var waterRecords = [WaterRecord]()
         let predicate = NSPredicate(format: "date == %@", DailyState.todaysDateAsDate as NSDate)
@@ -176,12 +190,12 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
                 isAnyWater = true
             }
         }
-        
         waterVolTotal.setTitle(String(format: "%.1f oz", totalWaterServings), for: .normal)
             
         customPieChart(dataEntries: &waterChartEntries, pieChartView: waterPieChartView, goalServings: 0, totalServings: totalWaterServings)
     }
 
+    // a method to update the goals with the backend data
     func updateGoals(){
         goalFruit = DailyState.fruitGoal
         goalDairy = DailyState.dairyGoal
@@ -190,6 +204,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         goalVeg = DailyState.vegetableGoal
     }
 
+    // a method to load the views of each pie chart
     func loadViews() {
         fruitPieChartHeight.constant = 300.0
         fruitLabelHeight.constant = 40.0
@@ -217,6 +232,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         noDataView.isHidden = true
     }
 
+    // a function to hide a pie chart if its goal is 0
     func hideViews() {
         var visible:[Bool] = [true, true, true, true, true, true]
 
@@ -260,7 +276,6 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
             waterLabelHeight.constant = 0.0
             visible[5] = false
         }
-
         var index = 5
         var firstTrue = -1
         while index >= 0 && firstTrue == -1 {
@@ -269,7 +284,6 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
             }
             index = index - 1
         }
-
         switch firstTrue {
         case -1:
             noDataView.isHidden = false
@@ -294,6 +308,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         }
     }
     
+    // a funciton to create the custom pie chart
     private func customPieChart(dataEntries: inout [ChartDataEntry], pieChartView: PieChartView, goalServings: Double, totalServings: Double) {
         // 1. Figure out remaining
         let remaining = goalServings - totalServings
@@ -327,6 +342,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         pieChartView.transparentCircleRadiusPercent = 0.5
     }
 
+    // a function to set the colors of the pie chart to use the user selected theme
     private func colorsOfCharts(numbersOfColor: Int, hasRemainder: Bool) -> [UIColor] {
       var colors: [UIColor] = []
         //assign colors to the slices
@@ -346,6 +362,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
       return colors
     }
     
+    // a function to check the progress towards the daily goal
     func progressCheck(goalServings: Double, actualServings: Double, checkMark: UIImageView){
         
         if actualServings >= goalServings+2 {
