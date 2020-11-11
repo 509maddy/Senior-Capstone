@@ -1884,15 +1884,12 @@ Volume</string>
                     </view>
                     <connections>
                         <outlet property="addButton" destination="vv2-xS-dnB" id="UP7-sh-puh"/>
-                        <outlet property="addButtonHeight" destination="OQX-D9-NlC" id="o6u-c5-0OA"/>
                         <outlet property="bottlePicker" destination="rfA-9C-lMP" id="JaB-eD-pTD"/>
                         <outlet property="deleteButton" destination="xlA-MX-uxD" id="XCr-qo-NtV"/>
-                        <outlet property="deleteButtonHeight" destination="QJj-YM-E18" id="EH5-0S-kqx"/>
                         <outlet property="nameCustome" destination="Xp6-rY-1t4" id="cLC-zD-1oq"/>
                         <outlet property="nameInput" destination="guh-k4-HLf" id="8rx-xw-uXo"/>
                         <outlet property="nameLabel" destination="aUZ-SD-1oA" id="gMj-Pl-zq4"/>
                         <outlet property="saveButton" destination="yN4-Cc-DMG" id="bXW-E3-WOH"/>
-                        <outlet property="saveButtonHeight" destination="uY7-w3-pKZ" id="mqQ-SJ-SMy"/>
                         <outlet property="volumeCustome" destination="VpH-5Q-RAo" id="Hih-hJ-Se6"/>
                         <outlet property="volumeLabel" destination="RkK-oU-RXu" id="r3T-KY-r0O"/>
                         <outlet property="volumeReadOut" destination="AO5-3H-3CI" id="24V-if-HMN"/>
