@@ -7,7 +7,7 @@ class AddWaterViewController: UIViewController, UIPickerViewDelegate, UIPickerVi
     // Picker that allows you to select between different saved/custom options for logging water
     @IBOutlet weak var bottlePicker: UIPickerView!
     
-    // Different objects  involved in showing/ setting the title of a water entry
+    // Different objects involved in showing/ setting the title of a water entry
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var nameInput: UITextField!
     @IBOutlet weak var nameCustome: UILabel!
