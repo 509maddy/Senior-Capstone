@@ -60,7 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         let userDefaults = UserDefaults.standard
 
         if userDefaults.bool(forKey: preloadedDataKey) == false {
-
             userDefaults.set(true, forKey:preloadedDataKey)
         }
     }
@@ -94,20 +93,22 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         return container
     }()
     
-    
+    // Gets permisision to send notifications and then schedules the notification
     func registerForPushNotifications(){
-        UNUserNotificationCenter.current() //1
+        UNUserNotificationCenter.current()
             .requestAuthorization(options: [.alert, .sound, .badge]) {
                 granted, error in
-                print("Permission granted: \(granted)")
                 self.scheduleDinnerNotification()
         }
     }
     
+    
     func scheduleDinnerNotification() {
+        // Notification Center
         let center = UNUserNotificationCenter.current()
         center.removeAllPendingNotificationRequests()
         
+        // Data for the notification
         let content = UNMutableNotificationContent()
         content.title = "It's time for dinner!"
         content.body = "See how you can complete your goals."
@@ -115,24 +116,19 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterD
         content.userInfo = ["customData":"fizzbuzz"]
         content.sound = .default
         
+        // What time the notification should be sent at
         var dateComponents = DateComponents()
-        dateComponents.hour = 21 //18 = 6pm
+        dateComponents.hour = 18 //18 = 6pm
         dateComponents.minute = 0
         
+        // Schedule the notification
         let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
-        
         let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
         center.add(request)
     }
     
     
     func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
-        
-        // retrieve the root view controller (which is a tab bar controller)
-        guard let rootViewController = (UIApplication.shared.connectedScenes.first?.delegate as? SceneDelegate)?.window?.rootViewController else {
-            return
-        }
-      
         // instantiate the view controller we want to show from storyboard
         // root view controller is tab bar controller
         // the selected tab is a navigation controller
