@@ -1,14 +1,9 @@
-//
-//  ThemeManager.swift
-//  Senior Capstone
-//
-//  Created by Emily Howell on 10/14/20.
-//  Copyright © 2020 Madison Lucas. All rights reserved.
-//
-
 import UIKit
 import Foundation
 
+/*
+ Extend the UI color class to add a function for taking in hex values
+ */
 extension UIColor {
     func colorFromHexString (_ hex:String) -> UIColor {
         let colorString:String = hex.trimmingCharacters(in: .whitespacesAndNewlines).uppercased()
@@ -25,10 +20,16 @@ extension UIColor {
     }
 }
 
+/*
+ Enum for all of the hardcoded Theme settings
+ */
 enum Theme: Int {
     case coolBlue, warmOrange, darkTones
     
-    // a beige tone for the lighter themes and a navy tone for the dark one
+    /*
+     Setting the based color for each of the color themes
+     A beige tone for the lighter themes and a navy tone for the dark one
+     */
     var baseColor: UIColor {
         switch self {
         case .coolBlue:
@@ -40,6 +41,9 @@ enum Theme: Int {
         }
     }
     
+    /*
+     Setting one of the main colors for each of the color themes
+     */
     var mainColor1: UIColor {
         switch self {
         case .coolBlue:
@@ -51,6 +55,9 @@ enum Theme: Int {
         }
     }
     
+    /*
+     Setting a second main color for each color theme
+     */
     var mainColor2: UIColor {
         switch self {
         case .coolBlue:
@@ -62,7 +69,10 @@ enum Theme: Int {
         }
     }
     
-    // the bridghtest color in the theme
+    /*
+     Setting the accent color for each theme
+     The accent is the brightest color in the theme
+     */
     var accentColor: UIColor {
         switch self {
         case .coolBlue:
@@ -74,6 +84,9 @@ enum Theme: Int {
         }
     }
     
+    /*
+     Set the bar style so that it reflects the selected theme's tone
+     */
     var barStyle: UIBarStyle {
         switch self {
         case .coolBlue:
@@ -85,6 +98,10 @@ enum Theme: Int {
         }
     }
     
+    /*
+     Set the main text color for each theme
+     This color is used for titles and labels
+     */
     var mainTextColor: UIColor {
         switch self {
         case .coolBlue:
@@ -96,7 +113,11 @@ enum Theme: Int {
         }
     }
     
-    // greys used for pie chart labels
+    /*
+     Set the seconday text color for each theme
+     This is a gray color slightly off from the main text color
+     Used in the pie charts
+     */
     var secondaryTextColor: UIColor {
         switch self {
         case .coolBlue:
@@ -113,6 +134,9 @@ let ThemeKey = "CurrentTheme"
 
 class ThemeManager {
     
+    /*
+     Returns the curent theme selected by the user. If none currently selected, return coolBlue as a default
+     */
     static func currentTheme() -> Theme {
         if let storedTheme = (UserDefaults.standard.value(forKey: ThemeKey) as AnyObject).integerValue {
             return Theme(rawValue: storedTheme)!
@@ -121,6 +145,12 @@ class ThemeManager {
         }
     }
     
+    /*
+     Returns a color for a slice in the pie chart.
+     An equation is used for generated these colors based off the hardcoded values in the Theme
+     This means that each slice in a pie char will have it's own unique color for that chart
+     But each chart will have the same colors used in the same order
+     */
     static func pieChartColor(sliceNumber: Int) -> UIColor {
         var cRed : CGFloat = 0
         var cGreen : CGFloat = 0
@@ -153,7 +183,9 @@ class ThemeManager {
         return color
     }
     
-    // a bunch of settings that will impliment the color change when selected
+    /*
+     A bunch of settings that will impliment the color change when selected
+     */
     static func applyTheme(theme: Theme) {
         UserDefaults.standard.setValue(theme.rawValue, forKey: ThemeKey)
         UserDefaults.standard.synchronize()
