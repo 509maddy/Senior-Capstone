@@ -271,5 +271,10 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
         gLabel.text = "\(grainValue)"
         pLabel.text = "\(proteinValue)"
         dLabel.text = "\(dairyValue)"
+        gSlider.setValue(Float(grainValue), animated: true)
+        fSlider.setValue(Float(fruitValue), animated: true)
+        vSlider.setValue(Float(vegetableValue), animated: true)
+        pSlider.setValue(Float(proteinValue), animated: true)
+        dSlider.setValue(Float(dairyValue), animated: true)
     }
 }
