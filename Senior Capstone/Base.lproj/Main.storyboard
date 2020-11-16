@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16097.3" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2h-8f-ZMB">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="E2h-8f-ZMB">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -804,24 +804,28 @@
                     </navigationItem>
                     <size key="freeformSize" width="414" height="896"/>
                     <connections>
+                        <outlet property="dairyCheckHeight" destination="9xb-0X-3jt" id="XsR-ji-M8Q"/>
                         <outlet property="dairyCompletedCheck" destination="oQn-n7-aZk" id="Wnu-4y-YrZ"/>
                         <outlet property="dairyDividerHeight" destination="dvX-aZ-GD7" id="xIV-Fb-A4L"/>
                         <outlet property="dairyLabelHeight" destination="ASu-kR-ONG" id="0ui-Cp-R7W"/>
                         <outlet property="dairyPaddingHeight" destination="zZR-pP-M8R" id="zZh-fI-e5e"/>
                         <outlet property="dairyPieChartView" destination="o7g-zR-gLU" id="TDh-tE-2nh"/>
                         <outlet property="diaryPieChartHeight" destination="7fx-4i-M6k" id="kyG-fe-kCe"/>
+                        <outlet property="fruitCheckHeight" destination="n42-EA-3ec" id="ekX-hd-Qye"/>
                         <outlet property="fruitCompletedCheck" destination="C0O-Ok-WR4" id="3PB-K6-xiG"/>
                         <outlet property="fruitDividerHeight" destination="EKS-WA-Ax4" id="4fJ-8d-7V5"/>
                         <outlet property="fruitLabelHeight" destination="OVF-Rd-N29" id="NHn-R1-hQC"/>
                         <outlet property="fruitPaddingHeight" destination="1rm-D2-9RK" id="9hZ-g1-E5H"/>
                         <outlet property="fruitPieChartHeight" destination="yUI-OI-C7V" id="Oej-W7-t52"/>
                         <outlet property="fruitPieChartView" destination="Cin-Nz-RbJ" id="tL7-8v-Hrr"/>
+                        <outlet property="grainCheckHeight" destination="vwv-0e-S7A" id="vLP-fq-G20"/>
                         <outlet property="grainCompletedCheck" destination="pYc-yb-4Yj" id="3uJ-15-dPP"/>
                         <outlet property="grainDividerHeight" destination="la5-fn-A07" id="cJv-nP-m6Y"/>
                         <outlet property="grainLabelHeight" destination="Q9B-ED-o2r" id="WSV-3w-ph6"/>
                         <outlet property="grainPaddingHeight" destination="GSv-Iz-CB8" id="fzU-Nx-8Xx"/>
                         <outlet property="grainPieChartHeight" destination="8G2-G1-4Lb" id="R7Y-3R-0B5"/>
                         <outlet property="grainPieChartView" destination="1mh-L5-HfN" id="7NG-im-irH"/>
+                        <outlet property="meatCheckHeight" destination="kfe-eq-H4U" id="Pdo-gK-sLR"/>
                         <outlet property="meatCompletedCheck" destination="5lL-YK-evb" id="sL9-2z-ZoZ"/>
                         <outlet property="meatDividerHeight" destination="Q5N-du-O51" id="UGG-Kg-Oe3"/>
                         <outlet property="meatLabelHeight" destination="wYw-bJ-MvF" id="9HB-fj-o5n"/>
@@ -831,12 +835,14 @@
                         <outlet property="navDate" destination="e3V-X7-hDd" id="5Vf-Nv-H8g"/>
                         <outlet property="noDataHeight" destination="G1Q-AB-tuG" id="FkY-KH-Mds"/>
                         <outlet property="noDataView" destination="0g6-KP-kMP" id="Fjc-oU-sSj"/>
+                        <outlet property="vegetableCheckHeight" destination="Qqp-BE-LXc" id="hKX-ut-smG"/>
                         <outlet property="vegetableCompletedCheck" destination="nxN-ze-Ygj" id="jD8-cN-6md"/>
                         <outlet property="vegetableDividerHeight" destination="kzc-Iy-gE2" id="Jqc-cp-xNy"/>
                         <outlet property="vegetableLabelHight" destination="wG2-c9-a6w" id="LXg-gX-8jb"/>
                         <outlet property="vegetablePaddingHeight" destination="W6g-c3-3q5" id="lmE-Xq-enf"/>
                         <outlet property="vegetablePieChartHeight" destination="NB9-as-HvX" id="fL6-bO-Tct"/>
                         <outlet property="vegetablePieChartView" destination="3Ud-I9-8Ue" id="B0c-pA-Lgf"/>
+                        <outlet property="waterCheckHeight" destination="rua-Hi-6EM" id="kHs-Gv-EnK"/>
                         <outlet property="waterLabelHeight" destination="mIi-zc-lv5" id="WvF-pb-VT5"/>
                         <outlet property="waterPieChartHeight" destination="BFb-wR-Ekg" id="mLz-4X-P8R"/>
                         <outlet property="waterPieChartView" destination="UT6-jc-9NA" id="HXc-ZB-P7u"/>
@@ -1900,18 +1906,18 @@ Volume</string>
             <point key="canvasLocation" x="3137.68115942029" y="-466.40625"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="emt-0M-AAx"/>
-        <segue reference="0kR-tb-9Se"/>
-    </inferredMetricsTieBreakers>
     <resources>
-        <image name="gear" catalog="system" width="128" height="119"/>
+        <image name="gear" catalog="system" width="64" height="58"/>
         <image name="green_checkMark" width="1200" height="1200"/>
-        <image name="hare" catalog="system" width="128" height="92"/>
-        <image name="house" catalog="system" width="128" height="110"/>
-        <image name="plus.circle" catalog="system" width="128" height="121"/>
+        <image name="hare" catalog="system" width="64" height="46"/>
+        <image name="house" catalog="system" width="64" height="54"/>
+        <image name="plus.circle" catalog="system" width="64" height="60"/>
         <namedColor name="Light_Grey">
             <color red="0.86274509803921573" green="0.86274509803921573" blue="0.86274509803921573" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="emt-0M-AAx"/>
+        <segue reference="0kR-tb-9Se"/>
+    </inferredMetricsTieBreakers>
 </document>

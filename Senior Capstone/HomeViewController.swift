@@ -15,7 +15,8 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     @IBOutlet weak var fruitPaddingHeight: NSLayoutConstraint!
     @IBOutlet weak var fruitDividerHeight: NSLayoutConstraint!
     @IBOutlet weak var fruitCompletedCheck: UIImageView!
-    
+    @IBOutlet weak var fruitCheckHeight: NSLayoutConstraint!
+
     // references to vegetable pie chart and constraints
     @IBOutlet weak var vegetablePieChartView: PieChartView!
     @IBOutlet weak var vegetablePieChartHeight: NSLayoutConstraint!
@@ -23,7 +24,8 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     @IBOutlet weak var vegetablePaddingHeight: NSLayoutConstraint!
     @IBOutlet weak var vegetableDividerHeight: NSLayoutConstraint!
     @IBOutlet weak var vegetableCompletedCheck: UIImageView!
-    
+    @IBOutlet weak var vegetableCheckHeight: NSLayoutConstraint!
+
     // references to protein pie chart and constraints
     @IBOutlet weak var meatPieChartView: PieChartView!
     @IBOutlet weak var meatPieChartHeight: NSLayoutConstraint!
@@ -31,6 +33,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     @IBOutlet weak var meatPaddingHeight: NSLayoutConstraint!
     @IBOutlet weak var meatDividerHeight: NSLayoutConstraint!
     @IBOutlet weak var meatCompletedCheck: UIImageView!
+    @IBOutlet weak var meatCheckHeight: NSLayoutConstraint!
 
     // references to dairy pie chart and constraints
     @IBOutlet weak var dairyPieChartView: PieChartView!
@@ -39,6 +42,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     @IBOutlet weak var dairyPaddingHeight: NSLayoutConstraint!
     @IBOutlet weak var dairyDividerHeight: NSLayoutConstraint!
     @IBOutlet weak var dairyCompletedCheck: UIImageView!
+    @IBOutlet weak var dairyCheckHeight: NSLayoutConstraint!
 
     // references to grain pie chart and constraints
     @IBOutlet weak var grainPieChartView: PieChartView!
@@ -47,12 +51,14 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
     @IBOutlet weak var grainCompletedCheck: UIImageView!
     @IBOutlet weak var grainPaddingHeight: NSLayoutConstraint!
     @IBOutlet weak var grainDividerHeight: NSLayoutConstraint!
+    @IBOutlet weak var grainCheckHeight: NSLayoutConstraint!
 
     // references to water pie chart and constraints
     @IBOutlet weak var waterPieChartView: PieChartView!
     @IBOutlet weak var waterPieChartHeight: NSLayoutConstraint!
     @IBOutlet weak var waterLabelHeight: NSLayoutConstraint!
     @IBOutlet weak var waterVolTotal: UIButton!
+    @IBOutlet weak var waterCheckHeight: NSLayoutConstraint!
 
     // represents the goals for each food group
     var goalFruit: Double = 0.0
@@ -210,24 +216,31 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
         fruitLabelHeight.constant = 40.0
         fruitPaddingHeight.constant = 15.0
         fruitDividerHeight.constant = 3.0
+        fruitCheckHeight.constant = 114.0
         vegetablePieChartHeight.constant = 300.0
         vegetableLabelHight.constant = 40.0
         vegetablePaddingHeight.constant = 15.0
         vegetableDividerHeight.constant = 3.0
+        vegetableCheckHeight.constant = 114.0
         meatPieChartHeight.constant = 300.0
         meatLabelHeight.constant = 40.0
         meatPaddingHeight.constant = 15.0
         meatDividerHeight.constant = 3.0
+        meatCheckHeight.constant = 114.0
         diaryPieChartHeight.constant = 300.0
         dairyLabelHeight.constant = 40.0
         dairyPaddingHeight.constant = 15.0
         dairyDividerHeight.constant = 3.0
+        dairyCheckHeight.constant = 114.0
         grainPieChartHeight.constant = 300.0
         grainLabelHeight.constant = 40.0
         grainPaddingHeight.constant = 15.0
         grainDividerHeight.constant = 3.0
+        grainCheckHeight.constant = 114.0
         waterPieChartHeight.constant = 300.0
         waterLabelHeight.constant = 40.0
+        waterCheckHeight.constant = 114.0
+        waterVolTotal.isHidden = false
         noDataHeight.constant = 0.0
         noDataView.isHidden = true
     }
@@ -241,6 +254,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
             fruitLabelHeight.constant = 0.0
             fruitPaddingHeight.constant = 0.0
             fruitDividerHeight.constant = 0.0
+            fruitCheckHeight.constant = 0.0
             visible[0] = false
         }
         if goalVeg == 0.0 {
@@ -248,6 +262,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
             vegetableLabelHight.constant = 0.0
             vegetablePaddingHeight.constant = 0.0
             vegetableDividerHeight.constant = 0.0
+            vegetableCheckHeight.constant = 0.0
             visible[1] = false
         }
         if goalProtein == 0.0 {
@@ -255,6 +270,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
             meatLabelHeight.constant = 0.0
             meatPaddingHeight.constant = 0.0
             meatDividerHeight.constant = 0.0
+            meatCheckHeight.constant = 0.0
             visible[2] = false
         }
         if goalDairy == 0.0 {
@@ -262,6 +278,7 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
             dairyLabelHeight.constant = 0.0
             dairyPaddingHeight.constant = 0.0
             dairyDividerHeight.constant = 0.0
+            dairyCheckHeight.constant = 0.0
             visible[3] = false
         }
         if goalGrain == 0.0 {
@@ -269,11 +286,14 @@ class HomeViewController: UIViewController, ChartViewDelegate, ModalTransitionLi
             grainLabelHeight.constant = 0.0
             grainPaddingHeight.constant = 0.0
             grainDividerHeight.constant = 0.0
+            grainCheckHeight.constant = 0.0
             visible[4] = false
         }
         if isAnyWater == false {
             waterPieChartHeight.constant = 0.0
             waterLabelHeight.constant = 0.0
+            waterCheckHeight.constant = 0.0
+            waterVolTotal.isHidden = true
             visible[5] = false
         }
         var index = 5
