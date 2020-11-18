@@ -277,16 +277,16 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
         }
         var rateOfChange = "";
         if (Int(weight.text!)! > Int(goalWeight.text!)!) {
-            rateOfChange = "With these goals, you should loose 1 pound per week"
+            rateOfChange = "With these goals, you should lose 1 pound per week"
         } else if (Int(weight.text!)! < Int(goalWeight.text!)!) {
             rateOfChange = "With these goals, you should gain 1 pound per week"
         } else {
             rateOfChange = "With these goals, you should maintain your current weight"
         }
             
-        let message = String(format: "Based on your input date, we recomend the following goals:\n" + "Fruit: %.1f servings\nVegetable: %.1fservings\nProtein: %.1fservings\nDairy: %.1fservings\nGrain: %.1fservings\n\n", generatedFruitValue, generatedVegetableValue, generatedProteinValue, generatedDairyValue, generatedGrainValue)
-        print("testing 123")
+        let message = String(format: "Based on your input data, we recommend the following goals:\n" + "Fruit: %.1f servings\nVegetable: %.1f servings\nProtein: %.1f servings\nDairy: %.1f servings\nGrain: %.1f servings\n\n", generatedFruitValue, generatedVegetableValue, generatedProteinValue, generatedDairyValue, generatedGrainValue)
         let alert = UIAlertController(title: "Recommended Goals", message: message + rateOfChange, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         alert.addAction(UIAlertAction(title: "Save Goals", style: .default, handler: {
             (UIAlertAction) in
             self.fruitValue = generatedFruitValue
@@ -306,7 +306,6 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
             self.dSlider.setValue(Float(self.dairyValue), animated: true)
             self.saveValues()
         }))
-        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
         self.present(alert, animated: true)
         
         
