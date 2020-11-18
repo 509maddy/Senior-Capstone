@@ -41,12 +41,15 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
     
     // a method to save the slider values to the backend
     @IBAction func saveSliderValues(_ sender: Any) {
-
+        saveValues()
+    }
+    
+    func saveValues(){
         var goalRecords = [GoalRecord]()
         let predicate = NSPredicate(format: "date == %@", DailyState.todaysDateAsDate as NSDate)
         goalRecords = DatabaseFunctions.retriveGoalRecordOnCondition(predicate: predicate)
 
-        if goalRecords.count != 0 {            
+        if goalRecords.count != 0 {
             DatabaseFunctions.modifyGoalRecord(fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
         } else {
             DatabaseFunctions.insertGoalRecord(fruitGoal: fruitValue, vegetableGoal: vegetableValue, proteinGoal: proteinValue, grainGoal: grainValue, dairyGoal: dairyValue)
@@ -139,142 +142,172 @@ class SettingsViewController: UIViewController, ModalTransitionListener  {
     
     // logic for personal goals 
     func suggestGoals(height: UITextField, weight: UITextField, goalWeight: UITextField, sex: UISegmentedControl) {
+        var generatedGrainValue: Double = DailyState.grainGoal
+        var generatedFruitValue: Double = DailyState.fruitGoal
+        var generatedVegetableValue: Double = DailyState.vegetableGoal
+        var generatedProteinValue: Double = DailyState.proteinGoal
+        var generatedDairyValue: Double = DailyState.dairyGoal
+        
         if (sex.isEnabledForSegment(at: 1)) { // female
             if (Int(height.text!) ?? 0 > 62) { // tall
                 if ((Int(weight.text!)! - Int(goalWeight.text!)!) == 0) { // maintain
-                    fruitValue = 2.5
-                    vegetableValue = 3.0
-                    grainValue = 8.0
-                    proteinValue = 6.5
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.5
+                    generatedVegetableValue = 3.0
+                    generatedGrainValue = 8.0
+                    generatedProteinValue = 6.5
+                    generatedDairyValue = 3.0
                 } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) > 0) { // lose weight
-                    fruitValue = 2.5
-                    vegetableValue = 2.5
-                    grainValue = 7.0
-                    proteinValue = 6.0
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.5
+                    generatedVegetableValue = 2.5
+                    generatedGrainValue = 7.0
+                    generatedProteinValue = 6.0
+                    generatedDairyValue = 3.0
                 } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) < 0) { // gain weight
-                    fruitValue = 2.5
-                    vegetableValue = 3.0
-                    grainValue = 9.0
-                    proteinValue = 7.0
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.5
+                    generatedVegetableValue = 3.0
+                    generatedGrainValue = 9.0
+                    generatedProteinValue = 7.0
+                    generatedDairyValue = 3.0
                 }
             } else { // short
                 if ((Int(weight.text!)! - Int(goalWeight.text!)!) == 0) { // maintain
-                    fruitValue = 2.0
-                    vegetableValue = 3.0
-                    grainValue = 7.0
-                    proteinValue = 6.0
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.0
+                    generatedVegetableValue = 3.0
+                    generatedGrainValue = 7.0
+                    generatedProteinValue = 6.0
+                    generatedDairyValue = 3.0
                 } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) > 0) { // lose weight
-                    fruitValue = 2.0
-                    vegetableValue = 2.5
-                    grainValue = 6.0
-                    proteinValue = 5.5
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.0
+                    generatedVegetableValue = 2.5
+                    generatedGrainValue = 6.0
+                    generatedProteinValue = 5.5
+                    generatedDairyValue = 3.0
                 } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) < 0) { // gain weight
-                    fruitValue = 2.0
-                    vegetableValue = 3.0
-                    grainValue = 8.0
-                    proteinValue = 6.5
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.0
+                    generatedVegetableValue = 3.0
+                    generatedGrainValue = 8.0
+                    generatedProteinValue = 6.5
+                    generatedDairyValue = 3.0
                 }
             }
         } else if (sex.isEnabledForSegment(at: 0)) { // male
             if (Int(height.text!) ?? 0 > 66) { // tall
                 if ((Int(weight.text!)! - Int(goalWeight.text!)!) == 0) { // maintain
-                    fruitValue = 2.5
-                    vegetableValue = 3.5
-                    grainValue = 10.0
-                    proteinValue = 7.0
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.5
+                    generatedVegetableValue = 3.5
+                    generatedGrainValue = 10.0
+                    generatedProteinValue = 7.0
+                    generatedDairyValue = 3.0
                 } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) > 0) { // lose weight
-                    fruitValue = 2.5
-                    vegetableValue = 3.0
-                    grainValue = 9.0
-                    proteinValue = 6.5
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.5
+                    generatedVegetableValue = 3.0
+                    generatedGrainValue = 9.0
+                    generatedProteinValue = 6.5
+                    generatedDairyValue = 3.0
                 } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) < 0) { // gain weight
-                    fruitValue = 2.5
-                    vegetableValue = 3.5
-                    grainValue = 11.0
-                    proteinValue = 7.5
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.5
+                    generatedVegetableValue = 3.5
+                    generatedGrainValue = 11.0
+                    generatedProteinValue = 7.5
+                    generatedDairyValue = 3.0
                 }
                } else { // short
                     if ((Int(weight.text!)! - Int(goalWeight.text!)!) == 0) { // maintain
-                        fruitValue = 2.0
-                        vegetableValue = 3.5
-                        grainValue = 9.5
-                        proteinValue = 7.0
-                        dairyValue = 3.0
+                        generatedFruitValue = 2.0
+                        generatedVegetableValue = 3.5
+                        generatedGrainValue = 9.5
+                        generatedProteinValue = 7.0
+                        generatedDairyValue = 3.0
                        } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) > 0) { // lose weight
-                        fruitValue = 2.0
-                        vegetableValue = 3.0
-                        grainValue = 8.0
-                        proteinValue = 6.0
-                        dairyValue = 3.0
+                        generatedFruitValue = 2.0
+                        generatedVegetableValue = 3.0
+                        generatedGrainValue = 8.0
+                        generatedProteinValue = 6.0
+                        generatedDairyValue = 3.0
                        } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) < 0) { // gain weight
-                        fruitValue = 2.0
-                        vegetableValue = 3.5
-                        grainValue = 10.0
-                        proteinValue = 7.0
-                        dairyValue = 3.0
+                        generatedFruitValue = 2.0
+                        generatedVegetableValue = 3.5
+                        generatedGrainValue = 10.0
+                        generatedProteinValue = 7.0
+                        generatedDairyValue = 3.0
                     }
             }
         } else if (sex.isEnabledForSegment(at: 2)) { // other
             if (Int(height.text!) ?? 0 > 64) { // tall
                 if ((Int(weight.text!)! - Int(goalWeight.text!)!) == 0) { // maintain
-                    fruitValue = 2.5
-                    vegetableValue = 3.0
-                    grainValue = 8.0
-                    proteinValue = 6.5
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.5
+                    generatedVegetableValue = 3.0
+                    generatedGrainValue = 8.0
+                    generatedProteinValue = 6.5
+                    generatedDairyValue = 3.0
                 } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) > 0) { // lose weight
-                    fruitValue = 2.5
-                    vegetableValue = 3.0
-                    grainValue = 8.0
-                    proteinValue = 6.0
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.5
+                    generatedVegetableValue = 3.0
+                    generatedGrainValue = 8.0
+                    generatedProteinValue = 6.0
+                    generatedDairyValue = 3.0
                 } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) < 0) { // gain weight
-                    fruitValue = 2.5
-                    vegetableValue = 3.5
-                    grainValue = 10.0
-                    proteinValue = 7.5
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.5
+                    generatedVegetableValue = 3.5
+                    generatedGrainValue = 10.0
+                    generatedProteinValue = 7.5
+                    generatedDairyValue = 3.0
                 }
             } else { // short
                 if ((Int(weight.text!)! - Int(goalWeight.text!)!) == 0) { // maintain
-                    fruitValue = 2.0
-                    vegetableValue = 3.5
-                    grainValue = 8.0
-                    proteinValue = 6.5
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.0
+                    generatedVegetableValue = 3.5
+                    generatedGrainValue = 8.0
+                    generatedProteinValue = 6.5
+                    generatedDairyValue = 3.0
                 } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) > 0) { // lose weight
-                    fruitValue = 2.0
-                    vegetableValue = 3.0
-                    grainValue = 7.0
-                    proteinValue = 6.0
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.0
+                    generatedVegetableValue = 3.0
+                    generatedGrainValue = 7.0
+                    generatedProteinValue = 6.0
+                    generatedDairyValue = 3.0
                 } else if ((Int(weight.text!)! - Int(goalWeight.text!)!) < 0) { // gain weight
-                    fruitValue = 2.0
-                    vegetableValue = 3.5
-                    grainValue = 9.0
-                    proteinValue = 7.0
-                    dairyValue = 3.0
+                    generatedFruitValue = 2.0
+                    generatedVegetableValue = 3.5
+                    generatedGrainValue = 9.0
+                    generatedProteinValue = 7.0
+                    generatedDairyValue = 3.0
                 }
             }
         }
-        fLabel.text = "\(fruitValue)"
-        vLabel.text = "\(vegetableValue)"
-        gLabel.text = "\(grainValue)"
-        pLabel.text = "\(proteinValue)"
-        dLabel.text = "\(dairyValue)"
-        gSlider.setValue(Float(grainValue), animated: true)
-        fSlider.setValue(Float(fruitValue), animated: true)
-        vSlider.setValue(Float(vegetableValue), animated: true)
-        pSlider.setValue(Float(proteinValue), animated: true)
-        dSlider.setValue(Float(dairyValue), animated: true)
+        var rateOfChange = "";
+        if (Int(weight.text!)! > Int(goalWeight.text!)!) {
+            rateOfChange = "With these goals, you should lose 1 pound per week"
+        } else if (Int(weight.text!)! < Int(goalWeight.text!)!) {
+            rateOfChange = "With these goals, you should gain 1 pound per week"
+        } else {
+            rateOfChange = "With these goals, you should maintain your current weight"
+        }
+            
+        let message = String(format: "Based on your input data, we recommend the following goals:\n" + "Fruit: %.1f servings\nVegetable: %.1f servings\nProtein: %.1f servings\nDairy: %.1f servings\nGrain: %.1f servings\n\n", generatedFruitValue, generatedVegetableValue, generatedProteinValue, generatedDairyValue, generatedGrainValue)
+        let alert = UIAlertController(title: "Recommended Goals", message: message + rateOfChange, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "Save Goals", style: .default, handler: {
+            (UIAlertAction) in
+            self.fruitValue = generatedFruitValue
+            self.vegetableValue = generatedVegetableValue
+            self.grainValue = generatedGrainValue
+            self.proteinValue = generatedProteinValue
+            self.dairyValue = generatedDairyValue
+            self.fLabel.text = "\(self.fruitValue)"
+            self.vLabel.text = "\(self.vegetableValue)"
+            self.gLabel.text = "\(self.grainValue)"
+            self.pLabel.text = "\(self.proteinValue)"
+            self.dLabel.text = "\(self.dairyValue)"
+            self.gSlider.setValue(Float(self.grainValue), animated: true)
+            self.fSlider.setValue(Float(self.fruitValue), animated: true)
+            self.vSlider.setValue(Float(self.vegetableValue), animated: true)
+            self.pSlider.setValue(Float(self.proteinValue), animated: true)
+            self.dSlider.setValue(Float(self.dairyValue), animated: true)
+            self.saveValues()
+        }))
+        self.present(alert, animated: true)
+        
+        
     }
 }
