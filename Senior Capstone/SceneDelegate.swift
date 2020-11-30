@@ -8,10 +8,6 @@
 
 import UIKit
 
-/**
- * I don't think we will need to modify this file at all. It's typically used for specifiying the first view controller upon lauch
- * programatically, but we took care of that in Storyboard.
- */
 class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?

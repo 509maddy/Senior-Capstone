@@ -8,6 +8,9 @@
 
 import UIKit
 
+/**
+ The View Controller for the screen that enables a user to change the global date
+ */
 class DatePickerViewController: UIViewController {
     @IBOutlet weak var datePicker: UIDatePicker!
     
@@ -26,6 +29,7 @@ class DatePickerViewController: UIViewController {
         datePicker.date = strDate!
     }
     
+    // Triggers the parent controller to update the date label
     override func viewDidDisappear(_ animated: Bool) {
         ModalTransitionMediator.instance.sendPopoverDismissed(modelChanged: true)
     }

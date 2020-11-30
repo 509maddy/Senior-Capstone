@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import UserNotifications
 
 /**
  * This is the first thing to get launched when the app restarts (i.e. actually close app rather than resuming session).
@@ -16,13 +17,25 @@ import CoreData
  * other personal settings.
  */
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, UNUserNotificationCenterDelegate {
 
-
-
+    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        registerForPushNotifications()
         ThemeManager.applyTheme(theme: .coolBlue)
+        
+        UNUserNotificationCenter.current().delegate = self
+        
+        // request permission from user to send notification
+        UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .badge, .sound], completionHandler: { authorized, error in
+          if authorized {
+            DispatchQueue.main.async(execute: {
+                application.registerForRemoteNotifications()
+            })
+          }
+        })
+
         
         return true
     }
@@ -39,6 +52,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the user discards a scene session.
         // If any sessions were discarded while the application was not running, this will be called shortly after application:didFinishLaunchingWithOptions.
         // Use this method to release any resources that were specific to the discarded scenes, as they will not return.
+        
     }
 
     private func preloadData() {
@@ -46,7 +60,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let userDefaults = UserDefaults.standard
 
         if userDefaults.bool(forKey: preloadedDataKey) == false {
-
             userDefaults.set(true, forKey:preloadedDataKey)
         }
     }
@@ -79,6 +92,52 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         })
         return container
     }()
+    
+    // Gets permisision to send notifications and then schedules the notification
+    func registerForPushNotifications(){
+        UNUserNotificationCenter.current()
+            .requestAuthorization(options: [.alert, .sound, .badge]) {
+                granted, error in
+                self.scheduleDinnerNotification()
+        }
+    }
+    
+    
+    func scheduleDinnerNotification() {
+        // Notification Center
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
+        
+        // Data for the notification
+        let content = UNMutableNotificationContent()
+        content.title = "It's time for dinner!"
+        content.body = "See how you can complete your goals."
+        content.categoryIdentifier = "alarm"
+        content.userInfo = ["customData":"fizzbuzz"]
+        content.sound = .default
+        
+        // What time the notification should be sent at
+        var dateComponents = DateComponents()
+        dateComponents.hour = 18 //18 = 6pm
+        dateComponents.minute = 0
+        
+        // Schedule the notification
+        let trigger = UNCalendarNotificationTrigger(dateMatching: dateComponents, repeats: true)
+        let request = UNNotificationRequest(identifier: UUID().uuidString, content: content, trigger: trigger)
+        center.add(request)
+    }
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        // instantiate the view controller we want to show from storyboard
+        // root view controller is tab bar controller
+        // the selected tab is a navigation controller
+        // then we push the new view controller to it
+        
+        // tell the app that we have finished processing the user’s action / response
+        completionHandler()
+    }
+    
 
     // MARK: - Core Data Saving support
 
@@ -95,6 +154,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             }
         }
     }
-
 }
+
 
